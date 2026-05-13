@@ -1,0 +1,43 @@
+# GitHub Pages — hosting repo (HTML at repository root).
+# Repo: https://github.com/scedro748-ctrl/findmeirl-landing
+#
+# First-time setup on GitHub:
+#   Settings → Pages → Build and deployment → Source: "GitHub Actions"
+#   Settings → Actions → General → Workflow permissions → Read and write
+#
+# Copy this tree into your clone of findmeirl-landing, commit, push main.
+
+name: Deploy website to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
