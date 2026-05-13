@@ -1,57 +1,905 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>findmeIRL</title>
-  <meta name="description" content="Privacy-first nearby discovery. Sign in with Google from the findmeIRL app." />
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #0f1b2e;
-      --card: #1a2740;
-      --text: #e8eef5;
-      --muted: #9aa8bc;
-      --accent: #5e9ed6;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-    }
-    main {
-      max-width: 28rem;
-      background: var(--card);
-      border-radius: 16px;
-      padding: 2rem;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
-    }
-    h1 { margin: 0 0 0.5rem; font-size: 1.75rem; }
-    p { margin: 0 0 1rem; color: var(--muted); line-height: 1.5; }
-    a { color: var(--accent); }
-    .links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; margin-top: 1.25rem; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>findmeIRL — Privacy-First Social Discovery</title>
+    <meta name="description" content="Discover real connections nearby while protecting your exact location with grid-based obfuscation. Join the waitlist for early access.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --primary: #5E9ED6;
+            --accent: #00D4FF;
+        }
+        
+        .tail-container {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        .logo-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #0F1B2E 0%, #1A2740 100%);
+        }
+
+        .glass {
+            background: rgba(26, 39, 74, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(94, 158, 214, 0.2);
+        }
+
+        .nav-link {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .nav-link:hover {
+            color: #5E9ED6;
+            transform: translateY(-1px);
+        }
+
+        .feature-card {
+            transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgb(94 158 214 / 0.15);
+        }
+
+        .screenshot {
+            transition: all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3),
+                        0 4px 6px -4px rgb(0 0 0 / 0.3);
+        }
+        
+        .screenshot:hover {
+            transform: scale(1.03) rotate(1deg);
+            box-shadow: 0 25px 50px -12px rgb(94 158 214 / 0.25);
+        }
+
+        .form-input {
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(94, 158, 214, 0.3);
+            border-color: #5E9ED6;
+        }
+
+        .section-header {
+            position: relative;
+        }
+        
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #5E9ED6, #00D4FF);
+            border-radius: 3px;
+        }
+
+        .hero-glow {
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+    </style>
 </head>
-<body>
-  <main>
-    <h1>findmeIRL</h1>
-    <p>
-      Nearby people and places, with location privacy built in.
-      <strong>Google sign-in</strong> happens in the mobile app &mdash; install findmeIRL and sign in from there.
-    </p>
-    <p class="links">
-      <!-- Add your real store URLs when ready -->
-      <!-- <a href="https://apps.apple.com/...">App Store</a> -->
-      <!-- <a href="https://play.google.com/...">Google Play</a> -->
-      <a href="/privacy.html">Privacy</a>
-    </p>
-  </main>
+<body class="tail-container bg-[#0F1B2E] text-white overflow-x-hidden">
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0F1B2E]/90 backdrop-blur-lg border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <img src="assets/images/app-icon.png" alt="findmeIRL" 
+                     class="w-9 h-9 rounded-2xl shadow-lg shadow-[#5E9ED6]/50 object-cover">
+                <div>
+                    <span class="text-2xl font-semibold tracking-tighter logo-font">findmeIRL</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-x-10 text-sm font-medium">
+                <a href="#features" onclick="smoothScrollTo('features')" class="nav-link text-white/80 hover:text-white">Features</a>
+                <a href="#businesses" onclick="smoothScrollTo('businesses')" class="nav-link text-white/80 hover:text-white">Businesses</a>
+                <a href="#screenshots" onclick="smoothScrollTo('screenshots')" class="nav-link text-white/80 hover:text-white">Screenshots</a>
+                <a href="#waitlist" onclick="smoothScrollTo('waitlist')" class="nav-link text-white/80 hover:text-white">Waitlist</a>
+                <a href="privacy.html" class="nav-link text-white/80 hover:text-white">Privacy</a>
+                <a href="terms.html" class="nav-link text-white/80 hover:text-white">Terms</a>
+            </div>
+            
+            <div class="flex items-center gap-x-4">
+                <a href="#waitlist" 
+                   onclick="smoothScrollTo('waitlist')"
+                   class="px-6 py-2.5 text-sm font-semibold rounded-2xl bg-white text-[#0F1B2E] hover:bg-white/90 transition-all active:scale-95 flex items-center gap-x-2">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Join Waitlist</span>
+                </a>
+                <button onclick="toggleMobileMenu()" 
+                        class="md:hidden w-10 h-10 flex items-center justify-center text-2xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#0F1B2E] border-t border-white/10 px-6 py-6">
+            <div class="flex flex-col gap-y-6 text-lg">
+                <a href="#features" onclick="smoothScrollTo('features');toggleMobileMenu()" class="nav-link">Features</a>
+                <a href="#businesses" onclick="smoothScrollTo('businesses');toggleMobileMenu()" class="nav-link">For Businesses</a>
+                <a href="#screenshots" onclick="smoothScrollTo('screenshots');toggleMobileMenu()" class="nav-link">Screenshots</a>
+                <a href="#waitlist" onclick="smoothScrollTo('waitlist');toggleMobileMenu()" class="nav-link">Join the Waitlist</a>
+                <a href="privacy.html" class="nav-link">Privacy Policy</a>
+                <a href="terms.html" class="nav-link">Terms of Service</a>
+                <div class="pt-4 border-t border-white/10">
+                    <a href="#waitlist" onclick="smoothScrollTo('waitlist');toggleMobileMenu()" 
+                       class="block w-full py-4 text-center bg-[#5E9ED6] hover:bg-[#4A8AC2] rounded-3xl font-semibold text-lg">
+                        Get Early Access
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero-bg min-h-screen flex items-center pt-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(at_top_right,#5E9ED620_0%,transparent_50%)]"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center relative z-10">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-x-2 bg-white/10 text-white/90 text-xs font-mono tracking-[2px] px-5 py-2 rounded-3xl border border-white/20">
+                    <div class="w-2 h-2 bg-[#00D4FF] rounded-full animate-pulse"></div>
+                    COMING SOON TO iOS &amp; ANDROID
+                </div>
+                
+                <h1 class="text-6xl md:text-7xl font-semibold tracking-tighter leading-none logo-font hero-glow">
+                    FIND REAL<br>CONNECTIONS.<br><span class="bg-clip-text text-transparent bg-gradient-to-r from-[#5E9ED6] to-[#00D4FF]">PRIVACY FIRST.</span>
+                </h1>
+                
+                <p class="text-xl text-white/70 max-w-lg">
+                    Discover people nearby who share your interests. 
+                    Your exact location stays private — we use smart grid-based obfuscation so others see only an approximate position.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#waitlist" 
+                       onclick="smoothScrollTo('waitlist')"
+                       class="group px-10 py-4 bg-[#5E9ED6] hover:bg-[#4A8AC2] text-white font-semibold text-lg rounded-3xl flex items-center gap-x-3 transition-all active:scale-[0.97]">
+                        JOIN THE WAITLIST
+                        <i class="fa-solid fa-arrow-right group-active:rotate-45 transition-transform"></i>
+                    </a>
+                    
+                    <a href="#screenshots" 
+                       onclick="smoothScrollTo('screenshots')"
+                       class="px-8 py-4 border border-white/30 hover:border-white/60 font-medium rounded-3xl flex items-center gap-x-2 transition-colors">
+                        <i class="fa-solid fa-play"></i>
+                        SEE THE APP
+                    </a>
+                </div>
+                
+                <div class="flex items-center gap-x-8 text-sm pt-6">
+                    <div class="flex items-center gap-x-2">
+                        <div class="flex -space-x-2">
+                            <div class="w-6 h-6 bg-[#5E9ED6] rounded-full border-2 border-[#0F1B2E] flex items-center justify-center text-[10px]">🗺️</div>
+                            <div class="w-6 h-6 bg-[#00D4FF] rounded-full border-2 border-[#0F1B2E] flex items-center justify-center text-[10px]">💬</div>
+                        </div>
+                        <div class="text-white/60">Trusted by early testers</div>
+                    </div>
+                    <div class="h-4 w-px bg-white/20"></div>
+                    <div class="text-emerald-400 flex items-center gap-x-1 text-sm">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span class="font-medium">Privacy by design</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hero visual -->
+            <div class="relative flex justify-center">
+                <div class="relative w-full max-w-[380px]">
+                    <!-- Phone mock -->
+                    <div class="glass rounded-[3rem] p-3 shadow-2xl border border-white/10 relative z-10">
+                        <div class="bg-[#0F1B2E] rounded-[2.25rem] overflow-hidden h-[620px] relative">
+                            <!-- Status bar -->
+                            <div class="h-11 bg-black/60 flex items-end justify-center text-[10px] text-white/60 pt-3">
+                                9:41 • findmeIRL
+                            </div>
+                            
+                            <!-- Map preview -->
+                            <div class="h-80 bg-[#1A2740] relative flex items-center justify-center overflow-hidden">
+                                <div class="text-center">
+                                    <div class="text-6xl mb-4">🗺️</div>
+                                    <div class="text-[#5E9ED6] text-sm tracking-widest font-mono">NEARBY GRID • 1.2KM</div>
+                                    <div class="mt-8 flex justify-center gap-6">
+                                        <!-- Fake markers -->
+                                        <div class="w-6 h-6 bg-[#00D4FF] rounded-full flex items-center justify-center text-xs shadow-[0_0_15px_#00D4FF] animate-pulse">👤</div>
+                                        <div class="w-6 h-6 bg-[#5E9ED6] rounded-full flex items-center justify-center text-xs -mt-8 shadow-[0_0_15px_#5E9ED6]">👤</div>
+                                    </div>
+                                </div>
+                                <!-- Grid overlay -->
+                                <div class="absolute inset-0 bg-[linear-gradient(#5E9ED620_1px,transparent_1px),linear-gradient(90deg,#5E9ED620_1px,transparent_1px)] bg-[length:40px_40px] opacity-30"></div>
+                            </div>
+                            
+                            <!-- People strip -->
+                            <div class="p-6 space-y-4">
+                                <div class="flex gap-4 overflow-x-auto pb-2">
+                                    <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center text-2xl shadow-inner">😊</div>
+                                    <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center text-2xl shadow-inner">🌍</div>
+                                    <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center text-2xl shadow-inner">🎨</div>
+                                </div>
+                                <div class="text-xs text-white/50 text-center">People near you • 8 matches in your grid</div>
+                            </div>
+                            
+                            <div class="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-md rounded-3xl p-5 text-center">
+                                <div class="text-[#00D4FF] text-xs font-medium mb-1">NEXT EVENT</div>
+                                <div class="font-semibold">Tech Mixer @ The Hub • Tonight</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Decorative elements -->
+                    <div class="absolute -top-8 -right-8 w-48 h-48 bg-[#00D4FF]/10 rounded-full blur-3xl"></div>
+                    <div class="absolute -bottom-12 -left-12 w-64 h-64 bg-[#5E9ED6]/10 rounded-full blur-3xl"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-12 left-1/2 flex flex-col items-center gap-y-2 text-white/40 text-xs tracking-widest">
+            <div class="flex gap-x-8">
+                <div>SCROLL TO EXPLORE ↓</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- TRUST BAR -->
+    <div class="border-b border-white/10 py-6 bg-black/30">
+        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center items-center gap-x-12 gap-y-6 text-white/40 text-sm">
+            <div class="flex items-center gap-x-2">
+                <i class="fa-solid fa-lock text-emerald-400"></i>
+                <span>SUPABASE • SECURE</span>
+            </div>
+            <div>GRID OBFUSCATION</div>
+            <div class="flex items-center gap-x-2">
+                <i class="fa-solid fa-map-marker-alt"></i>
+                <span>OPENSTREETMAP</span>
+            </div>
+            <div>FIREBASE PUSH</div>
+            <div>FLUTTER • RIVERPOD</div>
+        </div>
+    </div>
+
+    <!-- FEATURES -->
+    <section id="features" class="py-24 bg-[#0A1424]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="inline px-4 py-1.5 bg-white/5 text-[#5E9ED6] text-xs font-mono tracking-widest rounded-3xl mb-4">BUILT DIFFERENT</div>
+                <h2 class="text-5xl font-semibold tracking-tighter logo-font section-header">Privacy-first by design</h2>
+                <p class="mt-4 text-white/60 max-w-md mx-auto">No exact GPS ever leaves your device to other users. Only approximate grid cells.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card glass rounded-3xl p-8 group">
+                    <div class="w-12 h-12 bg-[#5E9ED6]/10 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🛡️</div>
+                    <h3 class="text-2xl font-semibold mb-3">Location Obfuscation</h3>
+                    <p class="text-white/70">Your real GPS stays private on our servers. Others see a randomized point within ~600m inside the same 1km² grid cell.</p>
+                    <div class="mt-8 pt-6 border-t border-white/10 text-xs font-mono text-[#00D4FF]">NEVER REVEALED • GRID ONLY</div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card glass rounded-3xl p-8 group">
+                    <div class="w-12 h-12 bg-[#00D4FF]/10 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🔍</div>
+                    <h3 class="text-2xl font-semibold mb-3">Smart Discovery</h3>
+                    <p class="text-white/70">Match on interests, languages, faith, profession, age range, and more. Powerful filters with AND/OR logic. Real people, real proximity.</p>
+                    <div class="mt-8 pt-6 border-t border-white/10 text-xs font-mono text-[#5E9ED6]">INTERESTS • LANGUAGES • FAITH</div>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card glass rounded-3xl p-8 group">
+                    <div class="w-12 h-12 bg-violet-500/10 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">📅</div>
+                    <h3 class="text-2xl font-semibold mb-3">Local Events</h3>
+                    <p class="text-white/70">Create and discover events nearby. RSVP, see who's attending, chat with attendees before you meet. Beautiful event cards with photos.</p>
+                    <div class="mt-8 pt-6 border-t border-white/10 text-xs font-mono text-[#00D4FF]">UPCOMING • MY EVENTS • RSVP</div>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="feature-card glass rounded-3xl p-8 group">
+                    <div class="w-12 h-12 bg-rose-500/10 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">💬</div>
+                    <h3 class="text-2xl font-semibold mb-3">Private Chats</h3>
+                    <p class="text-white/70">Real-time messaging with read receipts. Only connect with people you approve. In-app notifications and push when you're away.</p>
+                    <div class="mt-8 pt-6 border-t border-white/10 text-xs font-mono text-[#5E9ED6]">REQUESTS • ACCEPT • BLOCK</div>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="feature-card glass rounded-3xl p-8 group">
+                    <div class="w-12 h-12 bg-amber-500/10 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">👥</div>
+                    <h3 class="text-2xl font-semibold mb-3">Meaningful Profiles</h3>
+                    <p class="text-white/70">Rich profiles with bio, gallery photos, countries of heritage, custom hobbies. Show avatar on map or keep private.</p>
+                    <div class="mt-8 pt-6 border-t border-white/10 text-xs font-mono text-[#00D4FF]">AVATARS • BANNERS • GALLERY</div>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="feature-card glass rounded-3xl p-8 group">
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🌐</div>
+                    <h3 class="text-2xl font-semibold mb-3">Built with Care</h3>
+                    <p class="text-white/70">Flutter + Riverpod • Supabase backend • Realtime updates • Beautiful dark UI that matches our mobile experience perfectly.</p>
+                    <div class="mt-8 pt-6 border-t border-white/10 text-xs font-mono text-[#5E9ED6]">OPEN SOURCE SPIRIT</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREENSHOTS -->
+    <section id="screenshots" class="py-24 bg-[#0F1B2E]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <div class="uppercase text-xs tracking-[3px] text-[#5E9ED6] font-medium mb-2">THE EXPERIENCE</div>
+                    <h2 class="text-5xl font-semibold tracking-tighter logo-font">See it in action</h2>
+                </div>
+                <p class="max-w-xs text-white/60 mt-4 md:mt-0">
+                    Real screenshots from the Flutter app (replace these placeholders with your actual captures from simulator or device)
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Screenshot 1: Map/Discover -->
+                <div class="group">
+                    <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
+                        <img src="https://picsum.photos/id/1015/400/700" alt="Discover Map Tab" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
+                            <div class="text-xs uppercase tracking-widest text-[#00D4FF]">Discover</div>
+                            <div class="font-semibold">Live map with obfuscated markers + people strip</div>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-black/70 text-[10px] px-3 py-1 rounded-2xl font-mono">MAP</div>
+                    </div>
+                </div>
+                
+                <!-- Screenshot 2: Profile -->
+                <div class="group">
+                    <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
+                        <img src="https://picsum.photos/id/160/400/700" alt="Profile Tab" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
+                            <div class="text-xs uppercase tracking-widest text-[#5E9ED6]">Profile</div>
+                            <div class="font-semibold">Rich editable profile with gallery</div>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-black/70 text-[10px] px-3 py-1 rounded-2xl font-mono">YOU</div>
+                    </div>
+                </div>
+                
+                <!-- Screenshot 3: Chat -->
+                <div class="group">
+                    <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
+                        <img src="https://picsum.photos/id/201/400/700" alt="Chat Screen" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
+                            <div class="text-xs uppercase tracking-widest text-emerald-400">Chats</div>
+                            <div class="font-semibold">Real-time messaging with receipts</div>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-black/70 text-[10px] px-3 py-1 rounded-2xl font-mono">CHAT</div>
+                    </div>
+                </div>
+                
+                <!-- Screenshot 4: Events -->
+                <div class="group">
+                    <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
+                        <img src="https://picsum.photos/id/29/400/700" alt="Events Tab" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
+                            <div class="text-xs uppercase tracking-widest text-violet-400">Events</div>
+                            <div class="font-semibold">Local events &amp; RSVPs</div>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-black/70 text-[10px] px-3 py-1 rounded-2xl font-mono">EVENTS</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://github.com" target="_blank" 
+                   class="inline-flex items-center gap-x-3 text-sm text-white/50 hover:text-white transition-colors">
+                    <i class="fa-brands fa-github"></i>
+                    <span>More previews in the repo (website/sections/)</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BUSINESSES -->
+    <section id="businesses" class="py-24 bg-[#1A2740] relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-x-2 px-6 py-2 bg-amber-500/10 text-amber-400 rounded-3xl text-sm font-medium mb-6">
+                    <i class="fa-solid fa-store"></i>
+                    <span>BUSINESS DISCOVERY</span>
+                </div>
+                <h2 class="text-5xl md:text-6xl font-semibold tracking-tighter logo-font mb-6">Grow your business.<br>Reach the right people.</h2>
+                <p class="max-w-2xl mx-auto text-xl text-white/70">
+                    Verified businesses get prominent placement on the map, rich profile pages, event hosting tools, and targeted reach to local customers — all while respecting user privacy through grid-based discovery.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Benefits -->
+                <div class="lg:col-span-7 space-y-8">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Business Card 1 -->
+                        <div class="glass rounded-3xl p-8 group hover:border-amber-400/30 transition-all">
+                            <div class="w-14 h-14 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center text-4xl mb-6 group-hover:scale-110 transition-transform">🏪</div>
+                            <h3 class="text-2xl font-semibold mb-3 text-amber-100">Rich Business Profiles</h3>
+                            <p class="text-white/70">Professional pages with logo, photos, description, address, website, category, and contact info. Stand out with banners and gallery.</p>
+                            <div class="mt-8 text-xs font-mono text-amber-400 border-t border-white/10 pt-6">VERIFIED • APPROVED BY TEAM</div>
+                        </div>
+
+                        <!-- Business Card 2 -->
+                        <div class="glass rounded-3xl p-8 group hover:border-amber-400/30 transition-all">
+                            <div class="w-14 h-14 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center text-4xl mb-6 group-hover:scale-110 transition-transform">📍</div>
+                            <h3 class="text-2xl font-semibold mb-3 text-amber-100">Local Map Visibility</h3>
+                            <p class="text-white/70">Appear in the Discover tab for users in your grid cell or searching your category. Targeted discovery without invasive user tracking.</p>
+                            <div class="mt-8 text-xs font-mono text-[#00D4FF] border-t border-white/10 pt-6">GRID-BASED • INTEREST MATCHING</div>
+                        </div>
+
+                        <!-- Business Card 3 -->
+                        <div class="glass rounded-3xl p-8 group hover:border-amber-400/30 transition-all">
+                            <div class="w-14 h-14 bg-gradient-to-br from-violet-500 to-purple-500 rounded-2xl flex items-center justify-center text-4xl mb-6 group-hover:scale-110 transition-transform">🎟️</div>
+                            <h3 class="text-2xl font-semibold mb-3 text-amber-100">Events &amp; Promotions</h3>
+                            <p class="text-white/70">Host events, run special offers, and get RSVPs directly in-app. Chat with interested customers before they visit.</p>
+                            <div class="mt-8 text-xs font-mono text-violet-400 border-t border-white/10 pt-6">SPONSORSHIPS • REAL-TIME RSVP</div>
+                        </div>
+
+                        <!-- Business Card 4 -->
+                        <div class="glass rounded-3xl p-8 group hover:border-amber-400/30 transition-all">
+                            <div class="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center text-4xl mb-6 group-hover:scale-110 transition-transform">🌍</div>
+                            <h3 class="text-2xl font-semibold mb-3 text-amber-100">Local + Global Reach</h3>
+                            <p class="text-white/70">Connect with nearby customers and international travelers interested in your category, heritage, or events. Analytics on engagement coming soon.</p>
+                            <div class="mt-8 text-xs font-mono text-emerald-400 border-t border-white/10 pt-6">LOCAL GRID • INTERNATIONAL USERS</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Mock -->
+                <div class="lg:col-span-5">
+                    <div class="glass rounded-3xl p-2 shadow-2xl border border-amber-400/20">
+                        <div class="bg-[#0F1B2E] rounded-3xl overflow-hidden">
+                            <!-- Business profile header -->
+                            <div class="h-48 bg-gradient-to-r from-amber-600 to-orange-600 relative">
+                                <div class="absolute -bottom-8 left-8 w-24 h-24 bg-white rounded-2xl p-1 shadow-xl">
+                                    <div class="w-full h-full bg-zinc-800 rounded-xl flex items-center justify-center text-5xl">☕</div>
+                                </div>
+                            </div>
+                            
+                            <div class="pt-14 px-8 pb-8">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <div class="font-semibold text-2xl">The Daily Grind</div>
+                                        <div class="text-amber-400 text-sm flex items-center gap-x-2 mt-1">
+                                            <span class="inline-block w-3 h-3 bg-green-400 rounded-full animate-pulse"></span>
+                                            VERIFIED BUSINESS
+                                        </div>
+                                    </div>
+                                    <div class="px-5 py-2 bg-white/10 text-xs font-medium rounded-2xl text-center leading-tight">
+                                        COFFEE<br>&amp; TEA
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-8 text-white/70 text-sm leading-relaxed">
+                                    Cozy neighborhood café with fresh pastries and specialty coffee. Open daily 7am–7pm. 
+                                    Host your next meetup here!
+                                </div>
+                                
+                                <div class="flex gap-3 mt-8 text-xs">
+                                    <div class="px-4 py-2 bg-white/5 rounded-2xl flex items-center gap-x-2">
+                                        📍 240m away
+                                    </div>
+                                    <div class="px-4 py-2 bg-white/5 rounded-2xl">🌐 thedailygrind.coffee</div>
+                                </div>
+                                
+                                <button onclick="smoothScrollTo('waitlist')" 
+                                        class="mt-10 w-full py-4 bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl font-semibold flex items-center justify-center gap-x-2 hover:brightness-110 transition-all">
+                                    <i class="fa-solid fa-arrow-trend-up"></i>
+                                    <span>PROMOTE MY BUSINESS</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 text-center text-xs text-white/50 flex items-center justify-center gap-x-4">
+                        <div class="h-px flex-1 bg-white/10"></div>
+                        Example business profile + map marker
+                        <div class="h-px flex-1 bg-white/10"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business Experience Gallery -->
+            <div class="mt-20">
+                <div class="text-center mb-10">
+                    <div class="inline px-4 py-1.5 bg-white/5 text-amber-400 text-xs font-mono tracking-widest rounded-3xl mb-4">IN THE APP</div>
+                    <h3 class="text-4xl font-semibold tracking-tighter logo-font">Business Experience</h3>
+                    <p class="mt-3 text-white/60 max-w-md mx-auto">Simple, powerful tools to connect with nearby customers while keeping their privacy intact.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- 1 -->
+                    <div class="group">
+                        <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
+                            <img src="assets/business/01-business-profile-header.png" alt="Business Profile Header" class="w-full h-full object-cover">
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
+                                <div class="text-xs uppercase tracking-widest text-amber-400">Profile</div>
+                                <div class="font-semibold text-sm">Banner, logo, verification &amp; follower count at a glance</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2 -->
+                    <div class="group">
+                        <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
+                            <img src="assets/business/02-business-about-tab.png" alt="Business About Tab" class="w-full h-full object-cover">
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
+                                <div class="text-xs uppercase tracking-widest text-amber-400">About</div>
+                                <div class="font-semibold text-sm">Description, opening hours, address &amp; contact details</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3 -->
+                    <div class="group">
+                        <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
+                            <img src="assets/business/03-business-insights-overview.png" alt="Business Insights Overview" class="w-full h-full object-cover">
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
+                                <div class="text-xs uppercase tracking-widest text-amber-400">Insights</div>
+                                <div class="font-semibold text-sm">Key metrics: followers, posts published, likes &amp; notifications sent</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4 -->
+                    <div class="group">
+                        <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
+                            <img src="assets/business/04-business-insights-charts.png" alt="Business Insights Charts" class="w-full h-full object-cover">
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
+                                <div class="text-xs uppercase tracking-widest text-amber-400">Analytics</div>
+                                <div class="font-semibold text-sm">Post type breakdown &amp; top posts ranked by reach</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5 -->
+                    <div class="group">
+                        <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
+                            <img src="assets/business/05-business-audience.png" alt="Business Audience Insights" class="w-full h-full object-cover">
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
+                                <div class="text-xs uppercase tracking-widest text-amber-400">Audience</div>
+                                <div class="font-semibold text-sm">Privacy-safe buckets: gender, age bands, follower grid cells</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6 -->
+                    <div class="group">
+                        <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
+                            <img src="assets/business/06-business-create-event.png" alt="Create Event Modal" class="w-full h-full object-cover">
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
+                                <div class="text-xs uppercase tracking-widest text-amber-400">Events</div>
+                                <div class="font-semibold text-sm">Create events with cover, date, category &amp; max attendees</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7 -->
+                    <div class="group">
+                        <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
+                            <img src="assets/business/07-business-my-events.png" alt="My Events Tab" class="w-full h-full object-cover">
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
+                                <div class="text-xs uppercase tracking-widest text-amber-400">My Events</div>
+                                <div class="font-semibold text-sm">Manage your hosted events and see RSVPs in one place</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8 -->
+                    <div class="group">
+                        <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
+                            <img src="assets/business/08-business-discover-map.png" alt="Discover Map with Venue" class="w-full h-full object-cover">
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
+                                <div class="text-xs uppercase tracking-widest text-amber-400">Discover</div>
+                                <div class="font-semibold text-sm">Your venue pin appears on the map alongside nearby people</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trust signals for businesses -->
+            <div class="mt-20 pt-12 border-t border-white/10 flex flex-wrap justify-center gap-x-12 gap-y-6 text-sm text-white/50">
+                <div class="flex items-center gap-x-3">
+                    <i class="fa-solid fa-check text-emerald-400"></i>
+                    <span>Free during beta</span>
+                </div>
+                <div class="flex items-center gap-x-3">
+                    <i class="fa-solid fa-check text-emerald-400"></i>
+                    <span>Manual approval</span>
+                </div>
+                <div class="flex items-center gap-x-3">
+                    <i class="fa-solid fa-check text-emerald-400"></i>
+                    <span>Privacy-first advertising</span>
+                </div>
+                <div class="flex items-center gap-x-3">
+                    <i class="fa-solid fa-check text-emerald-400"></i>
+                    <span>Built on the same Supabase backend as the consumer app</span>
+                </div>
+            </div>
+
+            <div class="text-center mt-16">
+                <a href="#waitlist" onclick="smoothScrollTo('waitlist')" 
+                   class="inline-flex items-center px-10 py-5 bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 rounded-3xl font-semibold text-xl shadow-xl shadow-orange-500/30 hover:brightness-110 transition-all group">
+                    SIGN UP YOUR BUSINESS
+                    <span class="ml-4 text-3xl group-active:rotate-45 transition-transform">→</span>
+                </a>
+                <p class="text-amber-400/70 text-sm mt-6">Join the business waitlist • Early access includes profile setup help</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WAITING LIST -->
+    <section id="waitlist" class="py-24 relative">
+        <div class="max-w-2xl mx-auto px-6">
+            <div class="glass rounded-3xl p-12 md:p-16 text-center">
+                <div class="mx-auto w-20 h-20 bg-gradient-to-br from-[#5E9ED6] to-[#00D4FF] rounded-3xl flex items-center justify-center mb-8 shadow-xl">
+                    <span class="text-4xl">📍</span>
+                </div>
+                
+                <h2 class="text-5xl font-semibold tracking-tighter logo-font mb-4">Join the waitlist</h2>
+                <p class="text-xl text-white/70 max-w-md mx-auto mb-10">
+                    Whether you're an individual looking for real connections or a business ready to reach local customers — be among the first to get access.
+                </p>
+                
+                <form id="waitlist-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID_HERE" method="POST" 
+                      class="space-y-6 max-w-md mx-auto">
+                    <div>
+                        <label class="block text-xs font-medium text-white/60 mb-2 tracking-wider">EMAIL ADDRESS</label>
+                        <input type="email" name="email" id="email" required
+                               class="form-input w-full bg-white/5 border border-white/20 focus:border-[#5E9ED6] rounded-3xl px-7 py-6 text-lg placeholder:text-white/40"
+                               placeholder="you@email.com">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-xs font-medium text-white/60 mb-2 tracking-wider">CITY (OPTIONAL)</label>
+                        <input type="text" name="city" id="city"
+                               class="form-input w-full bg-white/5 border border-white/20 focus:border-[#5E9ED6] rounded-3xl px-7 py-6 text-lg placeholder:text-white/40"
+                               placeholder="Where you'll be using Findme">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-xs font-medium text-white/60 mb-2 tracking-wider">I AM A</label>
+                        <select name="user_type" id="user_type"
+                                class="form-input w-full bg-white/5 border border-white/20 focus:border-[#5E9ED6] rounded-3xl px-7 py-6 text-lg">
+                            <option value="individual">Individual User</option>
+                            <option value="business">Business / Brand Owner</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit"
+                            class="w-full py-6 bg-gradient-to-r from-[#5E9ED6] to-[#00D4FF] hover:brightness-110 font-semibold text-xl rounded-3xl transition-all active:scale-[0.985] flex items-center justify-center gap-x-3 shadow-xl shadow-[#5E9ED6]/40">
+                        <span>GET EARLY ACCESS</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                    
+                    <p class="text-[10px] text-white/40 pt-4">
+                        We respect your inbox. No spam ever. You'll only hear from us about launch updates and invites.
+                        <br><span class="text-emerald-400">🔒 Your data is safe with us.</span>
+                    </p>
+                </form>
+                
+                <div id="form-success" class="hidden mt-8 p-6 bg-emerald-900/30 border border-emerald-500/30 rounded-3xl text-emerald-300">
+                    <i class="fa-solid fa-check-circle text-4xl mb-4 block"></i>
+                    <div class="font-semibold text-lg">Thank you! You're on the list.</div>
+                    <div class="text-sm mt-2">We'll send you an email confirmation shortly.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <div class="bg-black/40 py-16">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="text-[#00D4FF] text-sm font-medium tracking-widest mb-3">PRIVACY FIRST SOCIAL DISCOVERY</div>
+            <h2 class="text-4xl font-semibold tracking-tight mb-8">Ready to find your people?</h2>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#waitlist" onclick="smoothScrollTo('waitlist')" 
+                   class="px-10 py-5 bg-white text-[#0F1B2E] rounded-3xl font-semibold flex items-center justify-center gap-x-3 hover:shadow-2xl hover:shadow-white/20 transition-all">
+                    JOIN WAITLIST
+                </a>
+                <a href="https://github.com/someuser/findme_app" target="_blank" 
+                   class="px-10 py-5 border border-white/40 hover:border-white rounded-3xl font-medium flex items-center gap-x-3 transition-colors">
+                    <i class="fa-brands fa-github"></i>
+                    VIEW ON GITHUB
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-20 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-y-12">
+            <div class="col-span-2 md:col-span-1">
+                <div class="flex items-center gap-x-3 mb-6">
+                    <img src="assets/images/app-icon.png" alt="findmeIRL" 
+                         class="w-8 h-8 rounded-2xl shadow-inner object-cover">
+                    <span class="text-3xl font-semibold tracking-tighter logo-font">findmeIRL</span>
+                </div>
+                <p class="text-white/50 text-sm max-w-[180px]">
+                    Real connections.<br>Real privacy.
+                </p>
+            </div>
+            
+            <div>
+                <div class="uppercase text-xs text-white/40 mb-6 tracking-widest">Product</div>
+                <div class="space-y-3 text-sm">
+                    <a href="#features" onclick="smoothScrollTo('features')" class="block text-white/70 hover:text-white">Features</a>
+                    <a href="#screenshots" onclick="smoothScrollTo('screenshots')" class="block text-white/70 hover:text-white">Screenshots</a>
+                    <a href="#waitlist" onclick="smoothScrollTo('waitlist')" class="block text-white/70 hover:text-white">Waitlist</a>
+                </div>
+            </div>
+            
+            <div>
+                <div class="uppercase text-xs text-white/40 mb-6 tracking-widest">Company</div>
+                <div class="space-y-3 text-sm">
+                    <a href="privacy.html" class="block text-white/70 hover:text-white">Privacy Policy</a>
+                    <a href="terms.html" class="block text-white/70 hover:text-white">Terms of Service</a>
+                    <a href="#" class="block text-white/70 hover:text-white">About</a>
+                </div>
+            </div>
+            
+            <div>
+                <div class="uppercase text-xs text-white/40 mb-6 tracking-widest">Legal</div>
+                <div class="space-y-3 text-sm text-white/70">
+                    <div>© 2026 findmeIRL</div>
+                    <div class="text-xs">Made with ❤️ for better human connections</div>
+                </div>
+            </div>
+            
+            <div class="col-span-2 md:col-span-1 md:text-right">
+                <div class="flex md:justify-end gap-x-6 text-2xl text-white/30">
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com" target="_blank" class="hover:text-white transition-colors"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <div class="mt-8 text-[10px] text-white/30 md:text-right">
+                    findmeirl.info<br>
+                    A privacy-first social discovery app
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script run
+        function initializeTailwind() {
+            // Already initialized via CDN
+        }
+        
+        // Smooth scroll helper
+        function smoothScrollTo(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const navHeight = 80;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.scrollY - navHeight;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        // Mobile menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+        
+        // Form handling with success state
+        function setupForm() {
+            const form = document.getElementById('waitlist-form');
+            const success = document.getElementById('form-success');
+            
+            if (!form) return;
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const userType = document.getElementById('user_type').value;
+                const isBusiness = userType === 'business';
+                
+                // Customize success message for businesses
+                if (isBusiness) {
+                    success.innerHTML = `
+                        <i class="fa-solid fa-store text-4xl mb-4 block text-amber-400"></i>
+                        <div class="font-semibold text-lg">Business application received!</div>
+                        <div class="text-sm mt-2">Our team will review your request and reach out soon about profile setup and early access.</div>
+                    `;
+                    success.style.borderColor = 'rgb(245 158 11 / 0.3)';
+                } else {
+                    success.innerHTML = `
+                        <i class="fa-solid fa-check-circle text-4xl mb-4 block"></i>
+                        <div class="font-semibold text-lg">Thank you! You're on the list.</div>
+                        <div class="text-sm mt-2">We'll send you an email confirmation shortly.</div>
+                    `;
+                    success.style.borderColor = '';
+                }
+                
+                form.classList.add('hidden');
+                success.classList.remove('hidden');
+                
+                setTimeout(() => {
+                    form.reset();
+                    form.classList.remove('hidden');
+                    success.classList.add('hidden');
+                    // Reset success HTML to default
+                    success.innerHTML = `
+                        <i class="fa-solid fa-check-circle text-4xl mb-4 block"></i>
+                        <div class="font-semibold text-lg">Thank you! You're on the list.</div>
+                        <div class="text-sm mt-2">We'll send you an email confirmation shortly.</div>
+                    `;
+                    success.style.borderColor = '';
+                }, 5500);
+                
+                // In production, submit to Formspree (it will include the new "user_type" field)
+            });
+        }
+        
+        // Keyboard shortcuts & other utils
+        function handleKeyboard(e) {
+            if (e.metaKey && e.key === "k") {
+                e.preventDefault();
+                const waitlist = document.getElementById('waitlist');
+                if (waitlist) smoothScrollTo('waitlist');
+            }
+        }
+        
+        // Initialize everything
+        window.onload = function() {
+            initializeTailwind();
+            setupForm();
+            document.addEventListener('keydown', handleKeyboard);
+            
+            // Add active states to nav on scroll
+            const sections = ['features', 'businesses', 'screenshots', 'waitlist'];
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(sectionId => {
+                    const section = document.getElementById(sectionId);
+                    if (!section) return;
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= sectionTop - 200) {
+                        current = sectionId;
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('!text-[#5E9ED6]');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('!text-[#5E9ED6]');
+                    }
+                });
+            });
+            
+            console.log('%c🚀 findmeIRL landing page initialized. Dark pastel theme active. Replace Formspree ID and add real screenshots!', 'color:#5E9ED6; font-family:monospace');
+        };
+    </script>
 </body>
 </html>
