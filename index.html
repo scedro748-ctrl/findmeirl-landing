@@ -310,12 +310,14 @@
                 <!-- Featured Demo Video -->
                 <div class="group">
                     <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 relative aspect-[9/16]">
+                        <!-- Source is already portrait (e.g. 828×1792); no CSS rotation -->
                         <video 
-                            class="absolute top-1/2 left-1/2 h-[56.25%] w-[177.78%] max-w-none -translate-x-1/2 -translate-y-1/2 origin-center rotate-90 object-contain bg-black" 
+                            class="block w-full h-full object-cover bg-black" 
                             controls 
                             muted 
-                            playsinline>
-                            <source src="assets/video/findmeirl-demo.mp4" type="video/mp4">
+                            playsinline
+                            preload="metadata">
+                            <source src="/assets/video/findmeirl-demo.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <div class="absolute top-4 left-4 bg-red-500 text-white text-[10px] px-3 py-1 rounded-2xl font-mono flex items-center gap-x-1.5 shadow-lg">
