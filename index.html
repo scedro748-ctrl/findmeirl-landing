@@ -192,17 +192,13 @@
             <div class="relative flex justify-center">
                 <div class="relative w-full max-w-[380px]">
                     <!-- Phone mock with real screenshot -->
-                    <div class="glass rounded-[3rem] p-3 shadow-2xl border border-white/10 relative z-10">
-                        <div class="bg-[#0F1B2E] rounded-[2.25rem] overflow-hidden h-[620px] relative isolate">
-                            <!-- Status bar -->
-                            <div class="h-11 bg-black/60 flex items-end justify-center text-[10px] text-white/60 pt-3 z-20 relative">
-                                9:41 • findmeIRL
-                            </div>
-                            
-                            <!-- Real app screenshot (draggable=false: avoid Safari drag shifting the bitmap) -->
-                            <img src="/assets/hero-discover-map.png" alt="findmeIRL Discover map" draggable="false"
-                                 class="absolute left-0 right-0 top-11 bottom-0 w-full object-contain object-bottom bg-[#0F1B2E] select-none pointer-events-none">
+                    <div class="glass rounded-[3rem] p-3 shadow-2xl border border-white/10 relative z-10 overflow-hidden">
+                        <!-- Status bar -->
+                        <div class="h-11 bg-black/60 flex items-end justify-center text-[10px] text-white/60 pt-3 z-20 relative">
+                            9:41 • findmeIRL
                         </div>
+                        <img src="/assets/hero-discover-map.png" alt="findmeIRL Discover map" draggable="false"
+                             class="block w-full h-[576px] object-contain object-bottom bg-[#0F1B2E] select-none pointer-events-none">
                     </div>
                     
                     <!-- Decorative elements -->
