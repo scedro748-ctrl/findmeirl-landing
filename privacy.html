@@ -1,83 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — findmeIRL</title>
-  <style>
-    :root { --bg: #0f1b2e; --card: #1a2740; --accent: #5e9ed6; --text: #e0e8f4; --muted: #8aa4c0; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; padding: 2rem 1rem; }
-    .container { max-width: 720px; margin: 0 auto; }
-    header { text-align: center; margin-bottom: 2.5rem; }
-    header h1 { color: var(--accent); font-size: 2rem; margin-bottom: .4rem; }
-    header p { color: var(--muted); font-size: .9rem; }
-    h2 { color: var(--accent); font-size: 1.15rem; margin: 2rem 0 .6rem; }
-    p, li { color: var(--text); margin-bottom: .8rem; }
-    ul { padding-left: 1.4rem; margin-bottom: .8rem; }
-    a { color: var(--accent); }
-    footer { text-align: center; color: var(--muted); font-size: .8rem; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--card); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for findmeIRL — privacy-first social discovery app with business venue support.">
+    <title>Privacy Policy — findmeIRL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        .logo-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .legal-content h1, .legal-content h2, .legal-content h3 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .legal-content a {
+            color: #5E9ED6;
+            text-decoration: none;
+        }
+        
+        .legal-content a:hover {
+            text-decoration: underline;
+        }
+        
+        .legal-content p, .legal-content li {
+            color: #e0e8f4;
+            line-height: 1.75;
+        }
+        
+        .legal-content h2 {
+            color: #5E9ED6;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+        
+        .legal-content h3 {
+            color: #ffffff;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-divider {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            margin: 3rem 0;
+        }
+    </style>
 </head>
-<body>
-<div class="container">
-  <header>
-    <h1>findmeIRL</h1>
-    <p>Privacy Policy &mdash; Last updated: April 2026</p>
-  </header>
+<body class="bg-[#0F1B2E] text-white">
+    <!-- NAV -->
+    <nav class="border-b border-white/10 bg-[#0F1B2E]/95 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-6 py-6 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-x-3 group">
+                <img src="assets/images/app-icon.png" alt="findmeIRL" 
+                     class="w-8 h-8 rounded-2xl shadow-inner object-cover">
+                <span class="text-2xl font-semibold tracking-tighter logo-font group-hover:text-[#5E9ED6] transition-colors">findmeIRL</span>
+            </a>
+            <div class="flex items-center gap-x-8 text-sm">
+                <a href="index.html" class="flex items-center gap-x-2 text-white/70 hover:text-white transition-colors">
+                    <i class="fa-solid fa-arrow-left text-xs"></i>
+                    <span>Back to Home</span>
+                </a>
+                <a href="terms.html" class="text-white/70 hover:text-[#5E9ED6] transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </nav>
 
-  <h2>1. Who We Are</h2>
-  <p>findmeIRL ("we", "our", "us") is a social discovery mobile application that helps users find nearby people with shared interests. We are committed to protecting your privacy and handling your data with care.</p>
+    <div class="max-w-4xl mx-auto px-6 py-16">
+        <div class="prose prose-invert max-w-none legal-content">
+            <!-- Header -->
+            <div class="mb-16">
+                <div class="inline-flex items-center px-5 py-2 bg-white/10 rounded-3xl text-sm mb-6">
+                    <span class="text-emerald-400">●</span>
+                    <span class="ml-2 font-medium">Last updated: May 13, 2026</span>
+                </div>
+                <h1 class="text-6xl font-semibold tracking-tighter logo-font mb-4">Privacy Policy</h1>
+                <p class="text-2xl text-white/70">findmeIRL (“Findme”, “we”, “us”, or “our”)</p>
+            </div>
 
-  <h2>2. Information We Collect</h2>
-  <ul>
-    <li><strong>Account data:</strong> email address, nickname, gender, birthdate, nationality, languages, interests, profession, faith, bio, and profile photo.</li>
-    <li><strong>Location data:</strong> GPS coordinates collected when you grant location permission. Your <em>exact</em> coordinates are stored on our servers but are <strong>never</strong> shared with other users.</li>
-    <li><strong>Messages:</strong> text messages sent between connected users, stored in our database.</li>
-    <li><strong>Usage data:</strong> interaction logs collected by Supabase infrastructure to ensure service stability.</li>
-  </ul>
+            <!-- 1. Introduction -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">1. Introduction</h2>
+            <p class="text-lg leading-relaxed text-white/80">
+                Welcome to findmeIRL, a privacy-first social discovery mobile application and related services (collectively, the “App” or “Services”). The App enables users to discover nearby individuals with shared interests while protecting exact location through grid-based obfuscation, and allows registered businesses and venues to create public profiles, post updates, and engage with followers.
+            </p>
+            <p class="text-lg leading-relaxed text-white/80 mt-6">
+                This Privacy Policy (“Policy”) explains how we collect, use, disclose, and protect personal information when you use the App. By downloading, installing, or using the App, you consent to the practices described in this Policy. If you do not agree, do not use the App.
+            </p>
+            <p class="text-lg leading-relaxed text-white/80 mt-6">
+                This Policy should be read together with our <a href="terms.html">Terms of Service</a>. Capitalized terms not defined herein have the meanings set forth in the Terms of Service.
+            </p>
 
-  <h2>3. How We Use Your Data</h2>
-  <ul>
-    <li>To show other users a <strong>privacy-obfuscated position</strong> (randomised ±500–800 m from your real location) — never your exact GPS.</li>
-    <li>To match you with nearby users based on shared interests and filters you choose.</li>
-    <li>To deliver real-time messages and connection notifications within the app.</li>
-    <li>To improve app performance and resolve bugs.</li>
-  </ul>
+            <!-- 2. Information We Collect -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">2. Information We Collect</h2>
+            
+            <h3>2.1 Information You Provide Directly</h3>
+            <p class="text-lg text-white/80">We collect the following information directly from you:</p>
+            
+            <div class="mt-6 mb-8">
+                <div class="font-semibold text-white mb-3">Personal Users</div>
+                <ul class="list-disc pl-6 space-y-2 text-white/80 text-[17px]">
+                    <li>Account credentials: email address and password</li>
+                    <li>Profile information: nickname, birthdate, gender, country(ies) of origin, current country of residence, profession, faith, languages spoken, interests (predefined and custom), bio, avatar, banner image, and optional gallery photos (up to 15)</li>
+                </ul>
+            </div>
+            
+            <div class="mt-6 mb-8">
+                <div class="font-semibold text-white mb-3">Business Users (Venue Owners)</div>
+                <ul class="list-disc pl-6 space-y-2 text-white/80 text-[17px]">
+                    <li>Business profile details: business name, contact person, business email, phone number, description, category, physical address, website URL, avatar/logo, banner image, owner-selected geographic coordinates (latitude/longitude), and opening hours schedule (JSON format)</li>
+                    <li>Business content: posts including title, body, post type (promotion, update, event, behind-the-scenes, testimonial, community), optional image or external link</li>
+                </ul>
+            </div>
+            
+            <div class="mt-6 mb-8">
+                <div class="font-semibold text-white mb-3">User-Generated Content (All Users)</div>
+                <ul class="list-disc pl-6 space-y-2 text-white/80 text-[17px]">
+                    <li>Events created or RSVPed to, chat messages, connection requests, reports, and reactions</li>
+                </ul>
+            </div>
 
-  <h2>4. Location Privacy Model</h2>
-  <p>findmeIRL uses a <strong>grid-based obfuscation model</strong>. Your real GPS coordinates are stored securely on our servers (Supabase, EU region). Other users only ever see a randomised point within approximately 500–800 metres of your true position. You are the only person who sees your exact location.</p>
+            <h3>2.2 Location Data</h3>
+            <p class="text-lg leading-relaxed text-white/80">Personal Profiles: We collect precise GPS coordinates (latitude and longitude) only when you actively enable location sharing. These coordinates are stored server-side solely to compute a grid cell identifier (approximately 1 km²) and generate an obfuscated position (randomized offset of approximately 500–800 meters). Your exact GPS coordinates are never displayed to other users.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4">Business Venues: Venue locations are selected by the Business User and are intentionally public and non-obfuscated. These fixed coordinates are used to display venue pins on the Discover map and are visible to all App users. Business Users may update these coordinates at any time through the App.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4">Automatically Derived: Grid cell identifiers for proximity matching.</p>
 
-  <h2>5. Data Sharing</h2>
-  <p>We do <strong>not</strong> sell your personal data. We share data only with:</p>
-  <ul>
-    <li><strong>Supabase:</strong> our database and authentication provider.</li>
-    <li><strong>Firebase / FCM:</strong> push notification delivery (optional; device token only).</li>
-    <li><strong>Legal authorities:</strong> if required by applicable law.</li>
-  </ul>
+            <h3>2.3 Automatically Collected Information</h3>
+            <ul class="list-disc pl-6 space-y-3 text-white/80 text-[17px]">
+                <li>Device information: model, operating system version, and unique device identifiers</li>
+                <li>Firebase Cloud Messaging (FCM) registration token for push notification delivery</li>
+                <li>App usage and interaction data (e.g., feature usage, session duration)</li>
+                <li>IP address and coarse location (country level) for analytics and abuse prevention</li>
+                <li>Geocoding requests via third-party services (e.g., Nominatim) when a Business User searches for or sets a venue address</li>
+            </ul>
 
-  <h2>6. Data Retention</h2>
-  <p>Your data is retained while your account is active. You may delete your account at any time from the Profile tab inside the app. Deletion removes your profile, messages, and connections from our database within 30 days.</p>
+            <h3>2.4 Interest and Matching Data</h3>
+            <p class="text-lg leading-relaxed text-white/80">We collect and process your selected interests and custom interest submissions to power personalized recommendations, soulmate matching scores, and Discover feed ranking. Custom interest submissions are subject to administrative review before being added to the public catalog. Match scores are computed server-side and shared only in aggregated or anonymized form within the App.</p>
 
-  <h2>7. Your Rights</h2>
-  <p>Depending on your jurisdiction, you may have the right to access, correct, or delete your personal data. To exercise these rights, contact us at <a href="mailto:privacy@findmeapp.co">privacy@findmeapp.co</a>.</p>
+            <h3>2.5 No Third-Party Advertising or Data Brokerage</h3>
+            <p class="text-lg leading-relaxed text-white/80">We do not integrate advertising SDKs, sell personal data to data brokers, or use your information for behavioral advertising.</p>
 
-  <h2>8. Security</h2>
-  <p>We implement industry-standard security measures including row-level security policies on our database, encrypted connections (TLS), and scoped API keys. No system is 100% secure; please use a strong password and keep your device secure.</p>
+            <!-- 3. How We Use -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">3. How We Use Your Information</h2>
+            <p class="text-lg leading-relaxed text-white/80">We use the information we collect to:</p>
+            <ul class="list-disc pl-6 mt-6 space-y-3 text-white/80 text-[17px]">
+                <li>Provide and operate core App features, including map-based discovery (people and venues), interest-based matching, real-time chat, events, connections, and business post timelines</li>
+                <li>Calculate obfuscated locations and grid-based proximity for Personal Users while displaying fixed public coordinates for Venues</li>
+                <li>Personalize the user experience through filters, recommendations, trending tags, and city-specific interest insights</li>
+                <li>Deliver push notifications (only with your explicit permission) for messages, connection activity, event updates, and business posts from followed venues</li>
+                <li>Enable Business Users to manage listings, publish posts, view follower counts and insights, and moderate their venue content</li>
+                <li>Enforce safety, moderation, and compliance (including in-app reporting, blocking, chat bans, and administrative review of custom interests)</li>
+                <li>Record your acceptance of these Terms and this Policy (via the <code class="bg-white/10 px-1.5 py-0.5 rounded text-sm">terms_accepted_at</code> timestamp on your profile) for compliance and audit purposes</li>
+                <li>Improve, debug, and analyze App performance using anonymized or aggregated data</li>
+                <li>Respond to legal requests and protect the rights, safety, and property of Findme, Users, and the public</li>
+            </ul>
 
-  <h2>9. Children</h2>
-  <p>findmeIRL is not directed to children under 18. We do not knowingly collect data from anyone under 18. If you believe a child has provided us with personal data, contact us and we will delete it.</p>
+            <!-- 4. How We Share -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">4. How We Share (or Do Not Share) Your Information</h2>
+            
+            <div class="bg-red-900/20 border-l-4 border-red-500 p-8 my-10 rounded-r-3xl">
+                <div class="font-semibold text-xl mb-4 text-red-300">We never:</div>
+                <ul class="space-y-3">
+                    <li class="flex gap-x-4"><span class="text-red-400 font-bold">✕</span> Share your exact GPS coordinates with any other User</li>
+                    <li class="flex gap-x-4"><span class="text-red-400 font-bold">✕</span> Sell or rent your personal data</li>
+                    <li class="flex gap-x-4"><span class="text-red-400 font-bold">✕</span> Share data with third parties for advertising or data brokerage purposes</li>
+                </ul>
+            </div>
+            
+            <p class="text-lg text-white/80">We share information in the following limited circumstances:</p>
+            
+            <div class="mt-8">
+                <div class="font-semibold text-white mb-4">With other Users</div>
+                <p class="text-white/80">Obfuscated location and profile data for Personal Users (subject to your privacy settings, connection status, and <code>is_private</code> flag); fixed public venue coordinates, business profile details, and approved business posts for Venues. Business posts are visible to followers and, for approved venues, publicly via API.</p>
+            </div>
+            
+            <div class="mt-8">
+                <div class="font-semibold text-white mb-4">With service providers</div>
+                <p class="text-white/80">Data is shared with contracted processors bound by confidentiality and data protection obligations:</p>
+                <ul class="list-disc pl-6 mt-3 space-y-2 text-white/80">
+                    <li><strong>Supabase</strong> — database, authentication, storage, realtime subscriptions, Row-Level Security</li>
+                    <li><strong>Firebase</strong> — push notification delivery via FCM</li>
+                    <li><strong>Nominatim / OpenStreetMap contributors</strong> — geocoding for venue address lookup (no persistent storage of queries by Findme)</li>
+                </ul>
+            </div>
+            
+            <div class="mt-8">
+                <div class="font-semibold text-white mb-4">Legal and safety</div>
+                <p class="text-white/80">When required by law, legal process, or to protect the rights, safety, or property of Findme, Users, or the public.</p>
+            </div>
+            
+            <div class="mt-8">
+                <div class="font-semibold text-white mb-4">Business transfers</div>
+                <p class="text-white/80">In connection with a merger, acquisition, or sale of assets (with notice to affected Users where required).</p>
+            </div>
 
-  <h2>10. Changes to This Policy</h2>
-  <p>We may update this policy from time to time. The updated version will be posted at this URL with a revised "last updated" date. Continued use of the app after changes constitutes acceptance.</p>
+            <!-- 5. Location Data Special Notice -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">5. Location Data – Special Notice for Personal Users</h2>
+            <p class="text-lg leading-relaxed text-white/80">Precise location access is essential for the core discovery functionality of the App. You control when location is shared via device settings (“When In Use” permission). Exact coordinates remain on our servers and are used exclusively for grid computation and obfuscation. Other Users see only a randomized position within the same ~1 km² grid cell. You may stop sharing location at any time. Business venue coordinates are owner-controlled and publicly visible by design.</p>
 
-  <h2>11. Contact</h2>
-  <p>Questions? Email us at <a href="mailto:privacy@findmeapp.co">privacy@findmeapp.co</a>.</p>
+            <!-- 6. Data Retention -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">6. Data Retention and Deletion</h2>
+            <p class="text-lg leading-relaxed text-white/80">We retain personal data for as long as your account remains active or as necessary to provide the Services and comply with legal obligations. Upon account deletion (initiated by you in Profile → Account or by us for violations), we perform cascading deletion of your profile, messages, connections, events, business profiles (if owned), posts, follows, and gallery photos, subject to any legal hold or backup retention requirements. Location history for Personal Users is retained only for a limited period. Anonymized or aggregated data (including match score statistics and usage analytics) may be retained indefinitely for service improvement.</p>
 
-  <footer>
-    &copy; 2026 findmeIRL. All rights reserved. &nbsp;|&nbsp;
-    <a href="/terms">Terms of Service</a>
-  </footer>
-</div>
+            <!-- 7. Your Rights -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">7. Your Rights and Choices</h2>
+            <p class="text-lg leading-relaxed text-white/80">Depending on your jurisdiction, you may have the right to:</p>
+            <ul class="list-disc pl-6 mt-4 space-y-3 text-white/80 text-[17px]">
+                <li>Access, rectify, or erase your personal data</li>
+                <li>Withdraw consent (where processing is based on consent)</li>
+                <li>Object to or restrict certain processing</li>
+                <li>Request data portability</li>
+                <li>Lodge a complaint with a supervisory authority</li>
+            </ul>
+            <p class="text-lg leading-relaxed text-white/80 mt-6">You may exercise these rights directly in the App (Profile → Account section for deletion and certain edits) or by contacting us at the address below. We respond to valid requests within 30 days (or sooner for deletion requests). Business Users may additionally manage venue visibility, follower lists, and post content through the App.</p>
+            
+            <div class="mt-8">
+                <div class="font-semibold text-white mb-4">Additional controls available in the App:</div>
+                <ul class="list-disc pl-6 space-y-2 text-white/80">
+                    <li>Hide individual conversations from your inbox until new activity occurs</li>
+                    <li>Opt out of showing online presence to peers</li>
+                    <li>Control whether your avatar appears on the map</li>
+                    <li>Set your profile as private (minimal card visible to non-connections)</li>
+                </ul>
+            </div>
+
+            <!-- 8. Security -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">8. Security</h2>
+            <p class="text-lg leading-relaxed text-white/80">We implement appropriate technical and organizational measures to protect personal data, including Row-Level Security (RLS) policies in our database, encryption in transit (TLS) and at rest where applicable, strict access controls, scoped API keys, and regular security reviews. No system is 100% secure. We strongly encourage you to use a strong, unique password and enable any available two-factor authentication.</p>
+
+            <!-- 9. Children’s Privacy -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">9. Children’s Privacy</h2>
+            <p class="text-lg leading-relaxed text-white/80">The App is intended exclusively for individuals aged <strong>16 years and older</strong>. We do not knowingly collect, solicit, or process personal data from anyone under the age of 16. If we become aware that a User is under 16, we will promptly delete the account and all associated data. Business accounts are subject to the same age restriction. Parents or guardians who believe their child has provided data should contact us immediately.</p>
+
+            <!-- 10. International Data Transfers -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">10. International Data Transfers</h2>
+            <p class="text-lg leading-relaxed text-white/80">Our primary infrastructure provider (Supabase) processes data in secure data centers located primarily in the European Economic Area. When personal data is transferred outside your country of residence, we ensure appropriate safeguards are in place, including standard contractual clauses and compliance with applicable data protection laws (including GDPR and the Swiss Federal Act on Data Protection).</p>
+
+            <!-- 11. Changes -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">11. Changes to This Privacy Policy</h2>
+            <p class="text-lg leading-relaxed text-white/80">We may update this Policy from time to time to reflect changes in our practices, the App, or legal requirements. We will notify you of material changes via in-App notice, push notification, or email. Your continued use of the App after the effective date of any update constitutes acceptance of the revised Policy.</p>
+
+            <!-- 12. Contact -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">12. Contact Us</h2>
+            <p class="text-lg leading-relaxed text-white/80">For questions, requests, or complaints regarding this Privacy Policy or our data practices, please contact us at:</p>
+            
+            <div class="mt-6 p-8 bg-white/5 rounded-3xl border border-white/10">
+                <div class="flex flex-col gap-y-3">
+                    <div><span class="font-semibold text-white">Email:</span> <a href="mailto:info@findmeirl.app" class="text-[#5E9ED6]">info@findmeirl.app</a></div>
+                    <div><span class="font-semibold text-white">Website:</span> <a href="https://findmeirl.app" class="text-[#5E9ED6]">https://findmeirl.app</a></div>
+                </div>
+                <div class="mt-6 pt-6 border-t border-white/10 text-sm text-white/60">
+                    Legal pages are published at:<br>
+                    Privacy Policy: <a href="https://findmeirl.app/privacy.html">https://findmeirl.app/privacy.html</a><br>
+                    Terms of Service: <a href="https://findmeirl.app/terms.html">https://findmeirl.app/terms.html</a>
+                </div>
+            </div>
+            
+            <p class="mt-8 text-sm text-white/60">We are committed to responding promptly and transparently to all legitimate inquiries.</p>
+
+            <!-- Footer -->
+            <div class="mt-20 pt-12 border-t border-white/10 text-center text-xs text-white/40">
+                Effective Date: April 30, 2026 • Last Updated: May 13, 2026<br>
+                findmeirl.app • Privacy-first social discovery
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function initializeTailwind() {
+            // Tailwind CDN already loaded
+            console.log('%c[findmeIRL] Privacy Policy page initialized', 'color:#5E9ED6;font-size:10px');
+        }
+        window.onload = initializeTailwind;
+    </script>
 </body>
 </html>
