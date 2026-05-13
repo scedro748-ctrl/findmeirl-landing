@@ -1,90 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Service — findmeIRL</title>
-  <style>
-    :root { --bg: #0f1b2e; --card: #1a2740; --accent: #5e9ed6; --text: #e0e8f4; --muted: #8aa4c0; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; padding: 2rem 1rem; }
-    .container { max-width: 720px; margin: 0 auto; }
-    header { text-align: center; margin-bottom: 2.5rem; }
-    header h1 { color: var(--accent); font-size: 2rem; margin-bottom: .4rem; }
-    header p { color: var(--muted); font-size: .9rem; }
-    h2 { color: var(--accent); font-size: 1.15rem; margin: 2rem 0 .6rem; }
-    p, li { color: var(--text); margin-bottom: .8rem; }
-    ul { padding-left: 1.4rem; margin-bottom: .8rem; }
-    a { color: var(--accent); }
-    footer { text-align: center; color: var(--muted); font-size: .8rem; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--card); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Terms of Service for findmeIRL — privacy-first social discovery app with business venue support.">
+    <title>Terms of Service — findmeIRL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        .logo-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .legal-content h1, .legal-content h2, .legal-content h3 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .legal-content a {
+            color: #5E9ED6;
+            text-decoration: none;
+        }
+        
+        .legal-content a:hover {
+            text-decoration: underline;
+        }
+        
+        .legal-content p, .legal-content li {
+            color: #e0e8f4;
+            line-height: 1.75;
+        }
+        
+        .legal-content h2 {
+            color: #5E9ED6;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+        
+        .legal-content h3 {
+            color: #ffffff;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-divider {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            margin: 3rem 0;
+        }
+    </style>
 </head>
-<body>
-<div class="container">
-  <header>
-    <h1>findmeIRL</h1>
-    <p>Terms of Service &mdash; Last updated: April 2026</p>
-  </header>
+<body class="bg-[#0F1B2E] text-white">
+    <!-- NAV -->
+    <nav class="border-b border-white/10 bg-[#0F1B2E]/95 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-6 py-6 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-x-3 group">
+                <img src="assets/images/app-icon.png" alt="findmeIRL" 
+                     class="w-8 h-8 rounded-2xl shadow-inner object-cover">
+                <span class="text-2xl font-semibold tracking-tighter logo-font group-hover:text-[#5E9ED6] transition-colors">findmeIRL</span>
+            </a>
+            <div class="flex items-center gap-x-8 text-sm">
+                <a href="index.html" class="flex items-center gap-x-2 text-white/70 hover:text-white transition-colors">
+                    <i class="fa-solid fa-arrow-left text-xs"></i>
+                    <span>Back to Home</span>
+                </a>
+                <a href="privacy.html" class="text-white/70 hover:text-[#5E9ED6] transition-colors">Privacy Policy</a>
+            </div>
+        </div>
+    </nav>
 
-  <h2>1. Acceptance of Terms</h2>
-  <p>By downloading, installing, or using findmeIRL ("the App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree, do not use the App.</p>
+    <div class="max-w-4xl mx-auto px-6 py-16">
+        <div class="prose prose-invert max-w-none legal-content">
+            <!-- Header -->
+            <div class="mb-16">
+                <div class="inline-flex items-center px-5 py-2 bg-white/10 rounded-3xl text-sm mb-6">
+                    <span class="text-emerald-400">●</span>
+                    <span class="ml-2 font-medium">Last updated: May 13, 2026</span>
+                </div>
+                <h1 class="text-6xl font-semibold tracking-tighter logo-font mb-4">Terms of Service</h1>
+                <p class="text-2xl text-white/70">findmeIRL (“Findme”, “we”, “us”, or “our”)</p>
+            </div>
 
-  <h2>2. Eligibility</h2>
-  <p>You must be at least 18 years old to use findmeIRL. By using the App you represent that you are 18 or older.</p>
+            <!-- 1. Introduction -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">1. Introduction and Acceptance of Terms</h2>
+            <p class="text-lg leading-relaxed text-white/80">
+                Welcome to findmeIRL — a privacy-first social discovery mobile application and related services (collectively, the “App” or “Services”). The App enables individuals (“Personal Users”) to discover and connect with nearby people who share their interests while protecting exact location, and allows businesses and venue owners (“Business Users”) to create public profiles, publish updates, and engage with followers.
+            </p>
+            <p class="text-lg leading-relaxed text-white/80 mt-6">
+                By downloading, installing, accessing, or using the App, you agree to be bound by these Terms of Service (“Terms”). If you do not agree to these Terms, you must not use the App.
+            </p>
+            <p class="text-lg leading-relaxed text-white/80 mt-6">
+                These Terms constitute a legally binding agreement between you and Findme. Please read them carefully together with our <a href="privacy.html">Privacy Policy</a>. Capitalized terms have the meanings defined herein or in the Privacy Policy.
+            </p>
 
-  <h2>3. Your Account</h2>
-  <ul>
-    <li>You are responsible for maintaining the confidentiality of your account credentials.</li>
-    <li>You must provide accurate information during registration.</li>
-    <li>You may not create more than one account per person.</li>
-    <li>You may delete your account at any time from the Profile tab.</li>
-  </ul>
+            <!-- 2. Eligibility -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">2. Eligibility</h2>
+            <p class="text-lg leading-relaxed text-white/80">You must be at least <strong>sixteen (16) years of age</strong> to use the App. By using the App, you represent and warrant that you are at least 16 years old and have the legal capacity to enter into these Terms. We do not knowingly permit individuals under 16 to create accounts or access the Services. Business accounts are subject to the same minimum age requirement.</p>
 
-  <h2>4. Acceptable Use</h2>
-  <p>You agree not to:</p>
-  <ul>
-    <li>Harass, threaten, or harm other users.</li>
-    <li>Post or transmit illegal, offensive, or deceptive content.</li>
-    <li>Use the App for commercial solicitation without our written consent.</li>
-    <li>Attempt to reverse-engineer, scrape, or abuse the API or infrastructure.</li>
-    <li>Impersonate another person or misrepresent your identity.</li>
-    <li>Share others' private information without consent.</li>
-  </ul>
+            <!-- 3. Definitions -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">3. Definitions</h2>
+            <ul class="list-disc pl-6 space-y-3 text-white/80 text-[17px]">
+                <li><strong>“Personal User”</strong> means an individual using the App for personal social discovery purposes.</li>
+                <li><strong>“Business User”</strong> or <strong>“Venue Owner”</strong> means a User who has registered one or more business profiles through the App.</li>
+                <li><strong>“Venue”</strong> means a physical business location listed via a Business Profile, displayed with owner-selected public coordinates.</li>
+                <li><strong>“Content”</strong> means any text, images, posts, events, messages, profiles, or other materials uploaded, posted, or transmitted through the App.</li>
+                <li><strong>“Business Post”</strong> means content published by a Business User to their venue timeline (types include promotion, update, event, behind-the-scenes, testimonial, and community).</li>
+            </ul>
 
-  <h2>5. Location and Privacy</h2>
-  <p>The App requires location permission to function. Your exact GPS is never shared with other users — only an obfuscated position (±500–800 m) is visible to others. See our <a href="/privacy">Privacy Policy</a> for full details.</p>
+            <!-- 4. Our Services -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">4. Our Services</h2>
+            <p class="text-lg leading-relaxed text-white/80">The App provides a privacy-first platform for social discovery and venue engagement. Key features include:</p>
+            <ul class="list-disc pl-6 mt-6 space-y-3 text-white/80 text-[17px]">
+                <li><strong>Discover:</strong> Interactive map displaying obfuscated positions for Personal Users and fixed public pins for Venues, together with a horizontal people strip and followed-venue posts strip</li>
+                <li><strong>Events:</strong> Creation, discovery, and RSVP functionality with automatic group chat creation for each event</li>
+                <li><strong>Chats:</strong> Direct messaging between connected Users and event-linked group chats (with host administrator privileges, member management, and ban functionality)</li>
+                <li><strong>Connections &amp; Contacts:</strong> Sending, accepting, declining, and blocking connection requests; viewing accepted contacts</li>
+                <li><strong>Profile:</strong> Personal profile management, interest selection, soulmate matching scores, gallery, and privacy controls (including private mode and online status opt-out)</li>
+                <li><strong>Business &amp; Venues:</strong> Business account signup, venue listing editor (including address, coordinates, opening hours), post composition and timeline management, follower insights, and public discoverability for approved Venues</li>
+            </ul>
+            <p class="text-lg leading-relaxed text-white/80 mt-6">We use grid-based location obfuscation so that exact GPS coordinates of Personal Users are never shown to others. Business venue coordinates are intentionally public and controlled by the Venue Owner.</p>
 
-  <h2>6. User Content</h2>
-  <p>You retain ownership of content you create (messages, profile information, photos). You grant findmeIRL a limited, non-exclusive licence to store and display that content solely to operate the App. You are solely responsible for content you post.</p>
+            <!-- 5. User Accounts -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">5. User Accounts and Profiles</h2>
+            
+            <h3>5.1 General Account Rules</h3>
+            <ul class="list-disc pl-6 space-y-3 text-white/80 text-[17px]">
+                <li>You are solely responsible for maintaining the confidentiality of your account credentials and for all activity under your account</li>
+                <li>You must provide accurate, current, and complete information during registration and keep such information updated</li>
+                <li>You may not create more than one personal account or impersonate any person or entity</li>
+                <li>Profile content must comply with these Terms and our Community Guidelines</li>
+            </ul>
 
-  <h2>7. Reporting and Moderation</h2>
-  <p>We provide in-app reporting tools. We reserve the right to remove content and suspend accounts that violate these Terms. We aim to respond to reports within 24 hours.</p>
+            <h3>5.2 Business Accounts and Venues</h3>
+            <p class="text-lg leading-relaxed text-white/80">Business Users may register one or more business profiles. By doing so, you represent that you have authority to list the Venue and that all information provided (including opening hours, coordinates, and post content) is accurate and lawful. Business profiles are linked to your personal profile; setting <code>is_business_owner = true</code> excludes you from personal-people discovery. You are responsible for keeping your listing approved and up to date. Unapproved or inaccurate listings may be removed or limited in visibility.</p>
 
-  <h2>8. Intellectual Property</h2>
-  <p>The App, its design, and code are owned by findmeIRL. You may not reproduce or distribute any part of the App without written permission.</p>
+            <h3>5.3 Consent Record</h3>
+            <p class="text-lg leading-relaxed text-white/80">Your acceptance of these Terms and the Privacy Policy is recorded via a timestamp (<code>terms_accepted_at</code>) on your profile record. This record is required before full access to the App is granted (including after OAuth flows) and is used for compliance and audit purposes.</p>
 
-  <h2>9. Disclaimer of Warranties</h2>
-  <p>The App is provided "as is" without warranties of any kind. We do not guarantee uninterrupted service, accuracy of user profiles, or the outcome of any in-person meeting arranged through the App.</p>
+            <!-- 6. User Content -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">6. User Content, Community Guidelines, and Business Posts</h2>
+            
+            <h3>6.1 Responsibility for Content</h3>
+            <p class="text-lg leading-relaxed text-white/80">You are solely responsible for all Content you create, upload, post, or transmit through the App, including business posts, events, messages, and profile information. You retain ownership of your Content but grant Findme a worldwide, non-exclusive, royalty-free, sublicensable license to host, store, display, reproduce, and distribute such Content solely as necessary to operate and improve the Services.</p>
 
-  <h2>10. Limitation of Liability</h2>
-  <p>To the fullest extent permitted by law, findmeIRL shall not be liable for any indirect, incidental, or consequential damages arising from your use of the App, including but not limited to damages from in-person interactions.</p>
+            <h3>6.2 Prohibited Conduct</h3>
+            <p class="text-lg leading-relaxed text-white/80">You agree not to:</p>
+            <ul class="list-disc pl-6 mt-4 space-y-3 text-white/80 text-[17px]">
+                <li>Harass, bully, threaten, discriminate against, or harm other Users</li>
+                <li>Post, share, or promote illegal, explicit, harmful, deceptive, or infringing Content</li>
+                <li>Spam, scam, solicit, or engage in commercial activity outside the intended business posting features</li>
+                <li>Create fake profiles, impersonate others, or misrepresent your identity or affiliation</li>
+                <li>Violate the privacy of other Users or scrape, reverse-engineer, or abuse the App or its infrastructure</li>
+                <li>Publish false or misleading information about a Venue, promotion, or event</li>
+            </ul>
+            <p class="text-lg leading-relaxed text-white/80 mt-4">Business Posts must comply with applicable advertising and consumer protection laws. We reserve the right to remove any Content, issue warnings, suspend accounts, or terminate access for violations, with or without prior notice.</p>
 
-  <h2>11. Safety</h2>
-  <p>Always exercise personal safety when meeting strangers. Meet in public places, inform someone you trust, and trust your instincts. findmeIRL is not responsible for offline interactions.</p>
+            <h3>6.3 Group Chats and Moderation</h3>
+            <p class="text-lg leading-relaxed text-white/80">Event group chats are created automatically and linked to events. The event host is granted administrator privileges and may remove members or issue bans. Banned Users cannot rejoin the chat. All participants must comply with chat rules; violations may result in removal or permanent ban.</p>
 
-  <h2>12. Changes to Terms</h2>
-  <p>We may update these Terms at any time. We will notify you of material changes by posting the new Terms at this URL. Continued use after changes constitutes acceptance.</p>
+            <!-- 7. Connections, Chats, Events -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">7. Connections, Chats, Events, and Venue Interactions</h2>
+            <ul class="list-disc pl-6 space-y-3 text-white/80 text-[17px]">
+                <li>Connection requests may be accepted, declined, or blocked at the recipient’s discretion</li>
+                <li>All direct chats are private between participants</li>
+                <li>Events are created and managed by Users. Findme is not responsible for the organization, safety, legality, or outcome of any real-world event or meeting arranged through the App</li>
+                <li>Business Users may publish posts visible to followers and the public (for approved Venues). Followers receive notifications of new posts. You use the App at your own risk when deciding to visit a Venue or attend an event</li>
+            </ul>
 
-  <h2>13. Governing Law</h2>
-  <p>These Terms are governed by applicable law. Disputes shall be resolved in the jurisdiction where findmeIRL is registered.</p>
+            <!-- 8. Intellectual Property -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">8. Intellectual Property</h2>
+            <p class="text-lg leading-relaxed text-white/80">The App, its design, code, trademarks, and all original content and features are owned by Findme or its licensors and are protected by copyright, trademark, and other intellectual property laws. You may not reproduce, distribute, modify, or create derivative works without our prior written consent.</p>
 
-  <h2>14. Contact</h2>
-  <p>Questions? Email us at <a href="mailto:support@findmeapp.co">support@findmeapp.co</a>.</p>
+            <!-- 9. Privacy -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">9. Privacy</h2>
+            <p class="text-lg leading-relaxed text-white/80">Your privacy is of paramount importance. Our collection, use, and sharing of personal information is governed by the Privacy Policy, which is incorporated by reference. By using the App, you consent to such processing.</p>
 
-  <footer>
-    &copy; 2026 findmeIRL. All rights reserved. &nbsp;|&nbsp;
-    <a href="/privacy">Privacy Policy</a>
-  </footer>
-</div>
+            <!-- 10. Termination -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">10. Termination</h2>
+            <ul class="list-disc pl-6 space-y-3 text-white/80 text-[17px]">
+                <li>You may delete your account at any time through the in-App settings (Profile → Account section). Deletion triggers cascading removal of associated data as described in the Privacy Policy</li>
+                <li>We may suspend or terminate your account, with or without notice, if you violate these Terms, engage in prohibited conduct, or for any other reason in our reasonable discretion</li>
+                <li>Upon termination, your right to use the App ceases immediately. Provisions that by their nature should survive (including IP, disclaimers, limitation of liability, indemnification, and governing law) shall survive termination</li>
+            </ul>
+
+            <!-- 11. Disclaimers -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">11. Disclaimers and Limitation of Liability</h2>
+            <p class="text-lg leading-relaxed text-white/80">THE APP AND SERVICES ARE PROVIDED “AS IS” AND “AS AVAILABLE” WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-6">We do not guarantee:</p>
+            <ul class="list-disc pl-6 mt-4 space-y-3 text-white/80 text-[17px]">
+                <li>That you will find compatible people or suitable Venues</li>
+                <li>The accuracy, completeness, or timeliness of location data, matching scores, business information, or Content</li>
+                <li>The behavior, identity, or reliability of other Users or Venue Owners</li>
+                <li>The safety, legality, or success of any real-world meeting, event, or transaction</li>
+            </ul>
+            <p class="text-lg leading-relaxed text-white/80 mt-6">To the fullest extent permitted by applicable law, Findme and its affiliates, officers, employees, and agents shall not be liable for any indirect, incidental, special, consequential, punitive, or exemplary damages, including loss of profits, data, goodwill, or other intangible losses, arising out of or in connection with your use of (or inability to use) the App, even if advised of the possibility of such damages.</p>
+
+            <!-- 12. Indemnification -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">12. Indemnification</h2>
+            <p class="text-lg leading-relaxed text-white/80">You agree to indemnify, defend, and hold harmless Findme and its affiliates, officers, directors, employees, and agents from and against any and all claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys’ fees) arising out of or related to your use of the App, your Content, your violation of these Terms, or your violation of any third-party rights.</p>
+
+            <!-- 13. Governing Law -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">13. Governing Law and Dispute Resolution</h2>
+            <p class="text-lg leading-relaxed text-white/80">These Terms shall be governed by and construed in accordance with the laws of Switzerland, without regard to its conflict of law principles. Any dispute arising out of or relating to these Terms or the App shall first be attempted to be resolved informally. If not resolved within thirty (30) days, the dispute shall be submitted to the exclusive jurisdiction of the competent courts in Basel, Switzerland.</p>
+
+            <!-- 14. Changes -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">14. Changes to These Terms</h2>
+            <p class="text-lg leading-relaxed text-white/80">We may update these Terms from time to time. We will notify you of material changes via the App, push notification, or email. Your continued use of the App after the effective date of any update constitutes acceptance of the revised Terms.</p>
+
+            <!-- 15. Contact -->
+            <h2 class="text-3xl font-semibold mt-16 mb-6">15. Contact Us</h2>
+            <p class="text-lg leading-relaxed text-white/80">For questions about these Terms of Service, please contact us at:</p>
+            
+            <div class="mt-6 p-8 bg-white/5 rounded-3xl border border-white/10">
+                <div class="flex flex-col gap-y-3">
+                    <div><span class="font-semibold text-white">Email:</span> <a href="mailto:info@findmeirl.app" class="text-[#5E9ED6]">info@findmeirl.app</a></div>
+                    <div><span class="font-semibold text-white">Website:</span> <a href="https://findmeirl.app" class="text-[#5E9ED6]">https://findmeirl.app</a></div>
+                </div>
+                <div class="mt-6 pt-6 border-t border-white/10 text-sm text-white/60">
+                    Legal pages are published at:<br>
+                    Privacy Policy: <a href="https://findmeirl.app/privacy.html">https://findmeirl.app/privacy.html</a><br>
+                    Terms of Service: <a href="https://findmeirl.app/terms.html">https://findmeirl.app/terms.html</a>
+                </div>
+            </div>
+            
+            <p class="mt-8 text-sm text-white/60">These Terms, together with the Privacy Policy, constitute the entire agreement between you and Findme concerning the App and supersede all prior agreements. If any provision is found to be unenforceable, the remaining provisions shall remain in full force and effect.</p>
+
+            <!-- Footer -->
+            <div class="mt-20 pt-12 border-t border-white/10 text-center text-xs text-white/40">
+                Effective Date: April 30, 2026 • Last Updated: May 13, 2026<br>
+                Governed by the laws of Switzerland<br>
+                findmeirl.app • Privacy-first social discovery
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function initializeTailwind() {
+            console.log('%c[findmeIRL] Terms of Service page initialized', 'color:#5E9ED6;font-size:10px');
+        }
+        window.onload = initializeTailwind;
+    </script>
 </body>
 </html>
