@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.findme.findme_app",
+      "sha256_cert_fingerprints": [
+        "6E:0C:1C:5B:1E:AF:47:80:57:96:0C:0C:92:56:21:33:3C:E4:97:B1:BB:F1:BA:3E:C6:0A:1E:0A:D0:A8:98:2A"
+      ]
+    }
+  }
+]

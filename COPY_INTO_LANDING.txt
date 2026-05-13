@@ -1,0 +1,37 @@
+=== Already done in findme_app repo (Flutter) ===
+  • oauth_config + google_oauth_launch + Android App Link intent-filter
+  • iOS Runner.entitlements applinks:www.findmeirl.app
+  • hosted_oauth_redirect/ static assets (below)
+
+=== Copy into findmeirl-landing (GitHub Pages site root), then push ===
+  Place next to index.html / CNAME:
+
+  .nojekyll                    ← empty file; stops Jekyll hiding .well-known
+  auth/callback/index.html
+  .well-known/assetlinks.json
+  .well-known/apple-app-site-association
+
+Published URLs must return 200 (HTTPS):
+
+  https://www.findmeirl.app/auth/callback
+  https://www.findmeirl.app/.well-known/assetlinks.json
+  https://www.findmeirl.app/.well-known/apple-app-site-association
+
+=== Your manual steps (cannot be scripted from this repo) ===
+  Supabase → Authentication → URL configuration:
+    • Redirect URLs MUST include: https://www.findmeirl.app/auth/callback
+    • Site URL = your production https origin (not localhost).
+
+  developer.apple.com → Identifiers → com.scedro748.findmeirl:
+    • Enable capability: Associated Domains
+
+  Xcode → Runner → Signing & Capabilities:
+    • Associated Domains entry: applinks:www.findmeirl.app
+
+  After changing Play signing keystore: edit assetlinks.json SHA-256, redeploy site.
+
+Quick checks:
+
+  curl -sI https://www.findmeirl.app/.well-known/assetlinks.json
+  curl -sI https://www.findmeirl.app/.well-known/apple-app-site-association
+  adb shell pm get-app-links com.findme.findme_app
