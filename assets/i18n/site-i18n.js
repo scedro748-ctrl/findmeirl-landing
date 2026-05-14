@@ -191,14 +191,23 @@
 
   function init() {
     var initial = DEFAULT;
-    try {
-      var stored = localStorage.getItem(STORAGE_KEY);
-      if (stored && SUPPORTED.indexOf(stored) !== -1) initial = stored;
-      else {
-        var nav = (navigator.language || '').toLowerCase().split('-')[0];
-        if (SUPPORTED.indexOf(nav) !== -1) initial = nav;
-      }
-    } catch (_) {}
+    var body = document.body;
+    var docLangFromPage =
+      body &&
+      body.getAttribute('data-legal-doc') &&
+      body.getAttribute('data-legal-lang');
+    if (docLangFromPage) {
+      initial = normalizeLang(docLangFromPage);
+    } else {
+      try {
+        var stored = localStorage.getItem(STORAGE_KEY);
+        if (stored && SUPPORTED.indexOf(stored) !== -1) initial = stored;
+        else {
+          var nav = (navigator.language || '').toLowerCase().split('-')[0];
+          if (SUPPORTED.indexOf(nav) !== -1) initial = nav;
+        }
+      } catch (_) {}
+    }
 
     document.querySelectorAll('.site-lang-select').forEach(function (sel) {
       sel.addEventListener('change', function (e) {
