@@ -3,6 +3,58 @@
   var SUPPORTED = ['en', 'de', 'fr', 'it'];
   var DEFAULT = 'en';
 
+  var LEGAL_HREF = {
+    privacy: {
+      en: 'privacy.html',
+      de: 'privacy_de.html',
+      fr: 'privacy_fr.html',
+      it: 'privacy_it.html',
+    },
+    terms: {
+      en: 'terms.html',
+      de: 'terms_de.html',
+      fr: 'terms_fr.html',
+      it: 'terms_it.html',
+    },
+  };
+
+  function legalHref(kind, lang) {
+    var L = normalizeLang(lang);
+    var m = LEGAL_HREF[kind];
+    if (!m) return '#';
+    return m[L] || m[DEFAULT];
+  }
+
+  function updateLegalLinkHrefs() {
+    document.querySelectorAll('a[data-legal-link]').forEach(function (a) {
+      var kind = a.getAttribute('data-legal-link');
+      if (!LEGAL_HREF[kind]) return;
+      var file = legalHref(kind, currentLang);
+      a.setAttribute('href', file);
+      if (a.hasAttribute('data-legal-sync-href')) {
+        try {
+          a.textContent = new URL(file, window.location.href).href;
+        } catch (_) {
+          a.textContent = file;
+        }
+      }
+    });
+  }
+
+  function maybeRedirectLegalDocument() {
+    var doc = document.body && document.body.getAttribute('data-legal-doc');
+    var docLangRaw = document.body && document.body.getAttribute('data-legal-lang');
+    if (!doc || !docLangRaw) return false;
+    var L = normalizeLang(currentLang);
+    var want = normalizeLang(docLangRaw);
+    if (L === want) return false;
+    var target = legalHref(doc, L);
+    var currentFile = window.location.pathname.split('/').pop() || '';
+    if (currentFile === target) return false;
+    window.location.replace(target);
+    return true;
+  }
+
   function normalizeLang(code) {
     if (!code) return DEFAULT;
     var c = String(code).toLowerCase().split('-')[0];
@@ -29,6 +81,12 @@
 
     root.querySelectorAll('[data-i18n]').forEach(function (el) {
       var key = el.getAttribute('data-i18n');
+      var fullTr =
+        document.body && document.body.hasAttribute('data-legal-full-translation');
+      if (fullTr && key === 'legal.bindingNote') {
+        el.classList.add('hidden');
+        return;
+      }
       var val = getNested(dict, key);
       if (el.hasAttribute('data-i18n-toggle-hidden')) {
         var show = val != null && String(val).trim() !== '';
@@ -94,6 +152,9 @@
     document.querySelectorAll('.site-lang-select').forEach(function (sel) {
       sel.value = currentLang;
     });
+
+    updateLegalLinkHrefs();
+    if (maybeRedirectLegalDocument()) return;
 
     window.dispatchEvent(
       new CustomEvent('findme:locale-changed', {

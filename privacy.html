@@ -55,7 +55,7 @@
         }
     </style>
 </head>
-<body class="bg-[#0F1B2E] text-white" data-i18n-page="privacy">
+<body class="bg-[#0F1B2E] text-white" data-i18n-page="privacy" data-legal-doc="privacy" data-legal-lang="en">
     <!-- NAV -->
     <nav class="border-b border-white/10 bg-[#0F1B2E]/95 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-4xl mx-auto px-6 py-6 flex items-center justify-between">
@@ -75,7 +75,7 @@
                     <i class="fa-solid fa-arrow-left text-xs"></i>
                     <span data-i18n="legal.priv.back">Back to Home</span>
                 </a>
-                <a href="terms.html" class="text-white/70 hover:text-[#5E9ED6] transition-colors"><span data-i18n="legal.priv.cross">Terms of Service</span></a>
+                <a href="terms.html" data-legal-link="terms" class="text-white/70 hover:text-[#5E9ED6] transition-colors"><span data-i18n="legal.priv.cross">Terms of Service</span></a>
             </div>
         </div>
     </nav>
@@ -102,7 +102,7 @@
                 This Privacy Policy (“Policy”) explains how we collect, use, disclose, and protect personal information when you use the App. By downloading, installing, or using the App, you consent to the practices described in this Policy. If you do not agree, do not use the App.
             </p>
             <p class="text-lg leading-relaxed text-white/80 mt-6">
-                This Policy should be read together with our <a href="terms.html">Terms of Service</a>. Capitalized terms not defined herein have the meanings set forth in the Terms of Service.
+                This Policy should be read together with our <a href="terms.html" data-legal-link="terms">Terms of Service</a>. Capitalized terms not defined herein have the meanings set forth in the Terms of Service.
             </p>
 
             <!-- 2. Information We Collect -->
@@ -265,8 +265,8 @@
                 </div>
                 <div class="mt-6 pt-6 border-t border-white/10 text-sm text-white/60">
                     <span data-i18n="legal.priv.published">Legal pages are published at:</span><br>
-                    <span data-i18n="legal.priv.ppLabel">Privacy Policy:</span> <a href="https://findmeirl.app/privacy.html">https://findmeirl.app/privacy.html</a><br>
-                    <span data-i18n="legal.priv.tosLabel">Terms of Service:</span> <a href="https://findmeirl.app/terms.html">https://findmeirl.app/terms.html</a>
+                    <span data-i18n="legal.priv.ppLabel">Privacy Policy:</span> <a data-legal-link="privacy" data-legal-sync-href="" href="privacy.html" class="text-[#5E9ED6]">https://findmeirl.app/privacy.html</a><br>
+                    <span data-i18n="legal.priv.tosLabel">Terms of Service:</span> <a data-legal-link="terms" data-legal-sync-href="" href="terms.html" class="text-[#5E9ED6]">https://findmeirl.app/terms.html</a>
                 </div>
             </div>
             
