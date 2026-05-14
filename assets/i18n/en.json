@@ -1,0 +1,265 @@
+{
+  "meta": {
+    "title": "findmeIRL — Privacy-First Social Discovery",
+    "description": "Discover real connections nearby while protecting your exact location with grid-based obfuscation. Join the waitlist for early access."
+  },
+  "nav": {
+    "langAria": "Language",
+    "features": "Features",
+    "businesses": "Businesses",
+    "screenshots": "Screenshots",
+    "waitlist": "Waitlist",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "joinWaitlist": "Join Waitlist",
+    "mobileForBusinesses": "For Businesses",
+    "mobileJoinWaitlist": "Join the Waitlist",
+    "mobilePrivacy": "Privacy Policy",
+    "mobileTerms": "Terms of Service",
+    "getEarlyAccess": "Get Early Access"
+  },
+  "hero": {
+    "badge": "COMING SOON TO iOS & ANDROID",
+    "h1_l1": "FIND REAL",
+    "h1_l2": "CONNECTIONS.",
+    "h1_l3": "PRIVACY FIRST.",
+    "sub": "Discover people nearby who share your interests. Your exact location stays private — we use smart grid-based obfuscation so others see only an approximate position.",
+    "ctaPrimary": "JOIN THE WAITLIST",
+    "ctaSecondary": "SEE THE APP",
+    "trusted": "Trusted by early testers",
+    "privacyDesign": "Privacy by design",
+    "phoneStatus": "9:41 • findmeIRL",
+    "scroll": "SCROLL TO EXPLORE ↓"
+  },
+  "trust": {
+    "supabase": "SUPABASE • SECURE",
+    "grid": "GRID OBFUSCATION",
+    "osm": "OPENSTREETMAP",
+    "firebase": "FIREBASE PUSH",
+    "stack": "FLUTTER • RIVERPOD"
+  },
+  "features": {
+    "tag": "BUILT DIFFERENT",
+    "h2": "Privacy-first by design",
+    "sub": "No exact GPS ever leaves your device to other users. Only approximate grid cells.",
+    "f1": {
+      "title": "Location Obfuscation",
+      "body": "Your real GPS stays private on our servers. Others see a randomized point within ~600m inside the same 1km² grid cell.",
+      "footer": "NEVER REVEALED • GRID ONLY"
+    },
+    "f2": {
+      "title": "Smart Discovery",
+      "body": "Match on interests, languages, faith, profession, age range, and more. Powerful filters with AND/OR logic. Real people, real proximity.",
+      "footer": "INTERESTS • LANGUAGES • FAITH"
+    },
+    "f3": {
+      "title": "Local Events",
+      "body": "Create and discover events nearby. RSVP, see who's attending, chat with attendees before you meet. Beautiful event cards with photos.",
+      "footer": "UPCOMING • MY EVENTS • RSVP"
+    },
+    "f4": {
+      "title": "Private Chats",
+      "body": "Real-time messaging with read receipts. Only connect with people you approve. In-app notifications and push when you're away.",
+      "footer": "REQUESTS • ACCEPT • BLOCK"
+    },
+    "f5": {
+      "title": "Meaningful Profiles",
+      "body": "Rich profiles with bio, gallery photos, countries of heritage, custom hobbies. Show avatar on map or keep private.",
+      "footer": "AVATARS • BANNERS • GALLERY"
+    },
+    "f6": {
+      "title": "Built with Care",
+      "body": "Flutter + Riverpod • Supabase backend • Realtime updates • Beautiful dark UI that matches our mobile experience perfectly.",
+      "footer": "OPEN SOURCE SPIRIT"
+    }
+  },
+  "shots": {
+    "kicker": "THE EXPERIENCE",
+    "h2": "See it in action",
+    "sub": "Real screenshots from the Flutter app — filters, profile, settings and more.",
+    "videoNoSupport": "Your browser does not support the video tag.",
+    "demoBadge": "DEMO VIDEO",
+    "demoCaption": "See the full app experience",
+    "demoLive": "LIVE RECORDING",
+    "tile1": {
+      "cat": "Events",
+      "title": "Create, discover & manage local events with RSVPs",
+      "badge": "EVENTS"
+    },
+    "tile2": {
+      "cat": "Profile",
+      "title": "Soulmate Score, match tiers & banner upload",
+      "badge": "YOU"
+    },
+    "tile3": {
+      "cat": "Filters",
+      "title": "Gender, orientation, faith & heritage",
+      "badge": "FILTER"
+    },
+    "tile4": {
+      "cat": "Settings",
+      "title": "Privacy toggles, account & legal links",
+      "badge": "SETTINGS"
+    },
+    "tile5": {
+      "cat": "Chats",
+      "title": "Inbox with direct + event group chats, unread badges",
+      "badge": "CHATS"
+    },
+    "tile6": {
+      "cat": "Profile",
+      "title": "Public profile view with photos, interests & stats",
+      "badge": "VIEW"
+    },
+    "githubMore": "More previews in the repo (website/sections/)"
+  },
+  "biz": {
+    "badge": "BUSINESS DISCOVERY",
+    "h2_l1": "Grow your business.",
+    "h2_l2": "Reach the right people.",
+    "sub": "Verified businesses get prominent placement on the map, rich profile pages, event hosting tools, and targeted reach to local customers — all while respecting user privacy through grid-based discovery.",
+    "reclaim": "Online commerce has reshaped the economy, and local businesses are losing visibility. findmeIRL helps you reclaim your local market.<br><br>Your venue appears naturally on the map for people nearby, while you easily create promotions, events, and posts that reach the right audience. Gain real insights and turn local foot traffic into loyal customers.<br><br><strong>Reclaim your neighborhood. Be seen. Be found.</strong>",
+    "b1": {
+      "title": "Rich Business Profiles",
+      "body": "Professional pages with logo, photos, description, address, website, category, and contact info. Stand out with banners and gallery.",
+      "footer": "VERIFIED • APPROVED BY TEAM"
+    },
+    "b2": {
+      "title": "Local Map Visibility",
+      "body": "Appear in the Discover tab for users in your grid cell or searching your category. Targeted discovery without invasive user tracking.",
+      "footer": "GRID-BASED • INTEREST MATCHING"
+    },
+    "b3": {
+      "title": "Events & Promotions",
+      "body": "Host events, run special offers, and get RSVPs directly in-app. Chat with interested customers before they visit.",
+      "footer": "SPONSORSHIPS • REAL-TIME RSVP"
+    },
+    "b4": {
+      "title": "Local + Global Reach",
+      "body": "Connect with nearby customers and international travelers interested in your category, heritage, or events. Analytics on engagement coming soon.",
+      "footer": "LOCAL GRID • INTERNATIONAL USERS"
+    },
+    "mockCaption": "Real business profile view",
+    "galleryTag": "IN THE APP",
+    "galleryH": "Business Experience",
+    "gallerySub": "Simple, powerful tools to connect with nearby customers while keeping their privacy intact.",
+    "g1": {
+      "cat": "Profile",
+      "title": "Banner, logo, verification & follower count at a glance"
+    },
+    "g2": {
+      "cat": "About",
+      "title": "Description, opening hours, address & contact details"
+    },
+    "g3": {
+      "cat": "Insights",
+      "title": "Key metrics: followers, posts published, likes & notifications sent"
+    },
+    "g4": {
+      "cat": "Analytics",
+      "title": "Post type breakdown & top posts ranked by reach"
+    },
+    "g5": {
+      "cat": "Audience",
+      "title": "Privacy-safe buckets: gender, age bands, follower grid cells"
+    },
+    "g6": {
+      "cat": "Events",
+      "title": "Create events with cover, date, category & max attendees"
+    },
+    "g7": {
+      "cat": "My Events",
+      "title": "Manage your hosted events and see RSVPs in one place"
+    },
+    "g8": {
+      "cat": "Discover",
+      "title": "Your venue pin appears on the map alongside nearby people"
+    },
+    "trust1": "Free during beta",
+    "trust2": "Manual approval",
+    "trust3": "Privacy-first advertising",
+    "trust4": "Built on the same Supabase backend as the consumer app",
+    "cta": "SIGN UP YOUR BUSINESS",
+    "ctaSub": "Join the business waitlist • Early access includes profile setup help"
+  },
+  "waitlist": {
+    "h2": "Join the waitlist",
+    "sub": "Whether you're an individual looking for real connections or a business ready to reach local customers — be among the first to get access.",
+    "labelEmail": "EMAIL ADDRESS",
+    "phEmail": "you@email.com",
+    "labelCity": "CITY (OPTIONAL)",
+    "phCity": "Where you'll be using Findme",
+    "labelType": "I AM A",
+    "optIndividual": "Individual User",
+    "optBusiness": "Business / Brand Owner",
+    "submit": "GET EARLY ACCESS",
+    "footnote1": "We respect your inbox. No spam ever. You'll only hear from us about launch updates and invites.",
+    "footnote2": "🔒 Your data is safe with us.",
+    "successTitle": "Thank you! You're on the list.",
+    "successSub": "We'll reach out with launch updates and invites.",
+    "addAnother": "Submit another entry",
+    "businessSuccessTitle": "Business application received!",
+    "businessSuccessSub": "Our team will reach out about profile setup and early access.",
+    "errEmail": "Please enter a valid email address.",
+    "errType": "Something went wrong. Refresh the page and try again.",
+    "errGeneric": "We couldn't save your signup. Check your connection and try again in a moment.",
+    "sending": "Sending…",
+    "joining": "Joining…"
+  },
+  "final": {
+    "kicker": "PRIVACY FIRST SOCIAL DISCOVERY",
+    "h2": "Ready to find your people?",
+    "cta": "JOIN WAITLIST"
+  },
+  "footer": {
+    "tag1": "Real connections.",
+    "tag2": "Real privacy.",
+    "colProduct": "Product",
+    "colCompany": "Company",
+    "colLegal": "Legal",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "about": "About",
+    "copyright": "© 2026 findmeIRL",
+    "madeWith": "Made with ❤️ for better human connections",
+    "blurb": "A privacy-first social discovery app"
+  },
+  "legal": {
+    "bindingNote": "",
+    "priv": {
+      "metaTitle": "Privacy Policy — findmeIRL",
+      "metaDesc": "Privacy Policy for findmeIRL — privacy-first social discovery app with business venue support.",
+      "back": "Back to Home",
+      "cross": "Terms of Service",
+      "updated": "Last updated: May 13, 2026",
+      "h1": "Privacy Policy",
+      "subtitle": "findmeIRL (“Findme”, “we”, “us”, or “our”)",
+      "footer": "findmeirl.app • Privacy-first social discovery",
+      "published": "Legal pages are published at:",
+      "ppLabel": "Privacy Policy:",
+      "tosLabel": "Terms of Service:",
+      "committed": "We are committed to responding promptly and transparently to all legitimate inquiries.",
+      "effective": "Effective Date: April 30, 2026 • Last Updated: May 13, 2026",
+      "emailLabel": "Email:",
+      "webLabel": "Website:"
+    },
+    "tos": {
+      "metaTitle": "Terms of Service — findmeIRL",
+      "metaDesc": "Terms of Service for findmeIRL — privacy-first social discovery app with business venue support.",
+      "back": "Back to Home",
+      "cross": "Privacy Policy",
+      "updated": "Last updated: May 13, 2026",
+      "h1": "Terms of Service",
+      "subtitle": "findmeIRL (“Findme”, “we”, “us”, or “our”)",
+      "footerLine": "Governed by the laws of Switzerland",
+      "footer": "findmeirl.app • Privacy-first social discovery",
+      "published": "Legal pages are published at:",
+      "ppLabel": "Privacy Policy:",
+      "tosLabel": "Terms of Service:",
+      "closing": "These Terms, together with the Privacy Policy, constitute the entire agreement between you and Findme concerning the App and supersede all prior agreements. If any provision is found to be unenforceable, the remaining provisions shall remain in full force and effect.",
+      "effective": "Effective Date: April 30, 2026 • Last Updated: May 13, 2026",
+      "emailLabel": "Email:",
+      "webLabel": "Website:"
+    }
+  }
+}

@@ -1,0 +1,265 @@
+{
+  "meta": {
+    "title": "findmeIRL — Découverte sociale respectueuse de la vie privée",
+    "description": "Découvrez de vraies connexions à proximité tout en protégeant votre position exacte grâce à l’obfuscation par grille. Inscrivez-vous sur la liste d’attente pour un accès anticipé."
+  },
+  "nav": {
+    "langAria": "Langue",
+    "features": "Fonctionnalités",
+    "businesses": "Entreprises",
+    "screenshots": "Captures",
+    "waitlist": "Liste d’attente",
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "joinWaitlist": "Rejoindre la liste",
+    "mobileForBusinesses": "Pour les entreprises",
+    "mobileJoinWaitlist": "Rejoindre la liste d’attente",
+    "mobilePrivacy": "Politique de confidentialité",
+    "mobileTerms": "Conditions d’utilisation",
+    "getEarlyAccess": "Obtenir un accès anticipé"
+  },
+  "hero": {
+    "badge": "BIENTÔT SUR iOS & ANDROID",
+    "h1_l1": "TROUVEZ DE VRAIES",
+    "h1_l2": "CONNEXIONS.",
+    "h1_l3": "LA VIE PRIVÉE D’ABORD.",
+    "sub": "Découvrez des personnes proches qui partagent vos centres d’intérêt. Votre position exacte reste privée grâce à une obfuscation par grille intelligente : les autres ne voient qu’une position approximative.",
+    "ctaPrimary": "REJOINDRE LA LISTE",
+    "ctaSecondary": "VOIR L’APP",
+    "trusted": "Plébiscité par nos testeurs précoces",
+    "privacyDesign": "Confidentialité par conception",
+    "phoneStatus": "9:41 • findmeIRL",
+    "scroll": "FAITES DÉFILER POUR EXPLORER ↓"
+  },
+  "trust": {
+    "supabase": "SUPABASE • SECURE",
+    "grid": "GRID OBFUSCATION",
+    "osm": "OPENSTREETMAP",
+    "firebase": "FIREBASE PUSH",
+    "stack": "FLUTTER • RIVERPOD"
+  },
+  "features": {
+    "tag": "PENSÉ DIFFÉREMMENT",
+    "h2": "La confidentialité d’abord, par conception",
+    "sub": "Aucune position GPS exacte ne quitte jamais votre appareil vers d’autres utilisateurs. Seulement des cellules de grille approximatives.",
+    "f1": {
+      "title": "Obfuscation de localisation",
+      "body": "Votre GPS réel reste privé sur nos serveurs. Les autres voient un point aléatoire à ~600 m à l’intérieur de la même cellule d’environ 1 km².",
+      "footer": "NEVER REVEALED • GRID ONLY"
+    },
+    "f2": {
+      "title": "Découverte intelligente",
+      "body": "Associez intérêts, langues, foi, profession, tranche d’âge et plus encore. Filtres puissants en ET/OU. De vraies personnes, une vraie proximité.",
+      "footer": "INTERESTS • LANGUAGES • FAITH"
+    },
+    "f3": {
+      "title": "Événements locaux",
+      "body": "Créez et découvrez des événements à proximité. RSVP, voyez qui vient, discutez avant de vous rencontrer. Belles cartes d’événement avec photos.",
+      "footer": "UPCOMING • MY EVENTS • RSVP"
+    },
+    "f4": {
+      "title": "Chats privés",
+      "body": "Messagerie en temps réel avec accusés de lecture. Ne connectez que les personnes que vous acceptez. Notifications in-app et push lorsque vous êtes absent.",
+      "footer": "REQUESTS • ACCEPT • BLOCK"
+    },
+    "f5": {
+      "title": "Profils riches",
+      "body": "Profils complets avec bio, galerie, pays d’héritage, hobbies personnalisés. Affichez l’avatar sur la carte ou restez privé.",
+      "footer": "AVATARS • BANNERS • GALLERY"
+    },
+    "f6": {
+      "title": "Construit avec soin",
+      "body": "Flutter + Riverpod • Backend Supabase • Mises à jour temps réel • UI sombre alignée sur l’expérience mobile.",
+      "footer": "OPEN SOURCE SPIRIT"
+    }
+  },
+  "shots": {
+    "kicker": "L’EXPÉRIENCE",
+    "h2": "Voyez-la en action",
+    "sub": "Vraies captures de l’app Flutter — filtres, profil, réglages et plus.",
+    "videoNoSupport": "Votre navigateur ne prend pas en charge la balise vidéo.",
+    "demoBadge": "VIDÉO DÉMO",
+    "demoCaption": "Voir l’expérience complète",
+    "demoLive": "ENREGISTREMENT LIVE",
+    "tile1": {
+      "cat": "Events",
+      "title": "Créer, découvrir et gérer des événements locaux avec RSVP",
+      "badge": "EVENTS"
+    },
+    "tile2": {
+      "cat": "Profile",
+      "title": "Soulmate Score, paliers d’affinité et bannière",
+      "badge": "YOU"
+    },
+    "tile3": {
+      "cat": "Filters",
+      "title": "Genre, orientation, foi et héritage",
+      "badge": "FILTER"
+    },
+    "tile4": {
+      "cat": "Settings",
+      "title": "Interrupteurs confidentialité, compte et liens légaux",
+      "badge": "SETTINGS"
+    },
+    "tile5": {
+      "cat": "Chats",
+      "title": "Boîte de réception : messages directs + groupes d’événement, badges non lus",
+      "badge": "CHATS"
+    },
+    "tile6": {
+      "cat": "Profile",
+      "title": "Profil public avec photos, intérêts et statistiques",
+      "badge": "VIEW"
+    },
+    "githubMore": "Plus d’aperçus dans le dépôt (website/sections/)"
+  },
+  "biz": {
+    "badge": "DÉCOUVERTE ENTREPRISES",
+    "h2_l1": "Faites grandir votre activité.",
+    "h2_l2": "Touchez les bonnes personnes.",
+    "sub": "Les entreprises vérifiées obtiennent une forte visibilité sur la carte, des pages riches, des outils d’événements et une portée ciblée — tout en respectant la vie privée grâce à la découverte par grille.",
+    "reclaim": "Le commerce en ligne a transformé l’économie, et les commerces locaux perdent en visibilité. findmeIRL vous aide à reconquérir votre marché local.<br><br>Votre lieu apparaît naturellement sur la carte pour les personnes à proximité, tandis que vous créez facilement des promotions, événements et publications qui touchent le bon public. Obtenez des insights concrets et transformez le trafic local en clients fidèles.<br><br><strong>Reprenez votre quartier. Soyez vu. Soyez trouvé.</strong>",
+    "b1": {
+      "title": "Fiches entreprise complètes",
+      "body": "Pages pro avec logo, photos, description, adresse, site, catégorie et contact. Démarquez-vous avec bannières et galerie.",
+      "footer": "VERIFIED • APPROVED BY TEAM"
+    },
+    "b2": {
+      "title": "Visibilité locale sur la carte",
+      "body": "Apparaissez dans Découvrir pour les personnes dans votre cellule ou votre catégorie. Ciblage sans traque invasive.",
+      "footer": "GRID-BASED • INTEREST MATCHING"
+    },
+    "b3": {
+      "title": "Événements & promos",
+      "body": "Animez des événements et des offres, collectez des RSVP dans l’app. Échangez avec les personnes intéressées.",
+      "footer": "SPONSORSHIPS • REAL-TIME RSVP"
+    },
+    "b4": {
+      "title": "Portée locale + globale",
+      "body": "Connectez clients de proximité et voyageurs attirés par votre catégorie, votre héritage ou vos événements. Analyses à venir.",
+      "footer": "LOCAL GRID • INTERNATIONAL USERS"
+    },
+    "mockCaption": "Aperçu réel du profil entreprise",
+    "galleryTag": "DANS L’APP",
+    "galleryH": "Expérience entreprise",
+    "gallerySub": "Des outils simples et puissants pour rejoindre les clients proches en protégeant leur vie privée.",
+    "g1": {
+      "cat": "Profile",
+      "title": "Bannière, logo, vérification & nombre d’abonnés en un coup d’œil"
+    },
+    "g2": {
+      "cat": "About",
+      "title": "Description, horaires, adresse & contact"
+    },
+    "g3": {
+      "cat": "Insights",
+      "title": "Indicateurs clés : abonnés, posts, likes & notifications"
+    },
+    "g4": {
+      "cat": "Analytics",
+      "title": "Répartition des types de posts & meilleurs posts par portée"
+    },
+    "g5": {
+      "cat": "Audience",
+      "title": "Segments respectueux du privacy : genre, tranches d’âge, cellules des abonnés"
+    },
+    "g6": {
+      "cat": "Events",
+      "title": "Événements avec visuel, date, catégorie & nombre max de participants"
+    },
+    "g7": {
+      "cat": "My Events",
+      "title": "Gérez vos événements et consultez les RSVP au même endroit"
+    },
+    "g8": {
+      "cat": "Discover",
+      "title": "Votre épingle lieu apparaît sur la carte avec les personnes à proximité"
+    },
+    "trust1": "Gratuit pendant la bêta",
+    "trust2": "Approbation manuelle",
+    "trust3": "Communication respectueuse de la vie privée",
+    "trust4": "Même backend Supabase que l’app grand public",
+    "cta": "INSCRIVEZ VOTRE ENTREPRISE",
+    "ctaSub": "Liste d’attente entreprises • L’accès anticipé inclut de l’aide pour votre fiche"
+  },
+  "waitlist": {
+    "h2": "Rejoignez la liste d’attente",
+    "sub": "Que vous cherchiez de vraies connexions en tant que particulier ou que vous ciblied des clients locaux en tant qu’entreprise — soyez parmi les premiers à accéder à l’app.",
+    "labelEmail": "ADRESSE E-MAIL",
+    "phEmail": "vous@email.com",
+    "labelCity": "VILLE (OPTIONNEL)",
+    "phCity": "Où vous utiliserez Findme",
+    "labelType": "JE SUIS",
+    "optIndividual": "Utilisateur individuel",
+    "optBusiness": "Entreprise / propriétaire de marque",
+    "submit": "OBTENIR UN ACCÈS ANTICIPÉ",
+    "footnote1": "Nous respectons votre boîte mail. Pas de spam. Vous n’aurez que des nouvelles de lancement et des invitations.",
+    "footnote2": "🔒 Vos données sont en sécurité avec nous.",
+    "successTitle": "Merci ! Vous êtes sur la liste.",
+    "successSub": "Nous vous contacterons pour les lancements et invitations.",
+    "addAnother": "Soumettre une autre inscription",
+    "businessSuccessTitle": "Demande entreprise bien reçue !",
+    "businessSuccessSub": "Notre équipe vous contactera pour la fiche et l’accès anticipé.",
+    "errEmail": "Veuillez saisir une adresse e-mail valide.",
+    "errType": "Un problème est survenu. Actualisez la page et réessayez.",
+    "errGeneric": "Nous n’avons pas pu enregistrer votre inscription. Vérifiez la connexion et réessayez dans un instant.",
+    "sending": "Envoi…",
+    "joining": "Inscription…"
+  },
+  "final": {
+    "kicker": "DÉCOUVERTE SOCIALE FOCALISÉE CONFIDENTIALITÉ",
+    "h2": "Prêt·e à trouver vos personnes ?",
+    "cta": "REJOINDRE LA LISTE"
+  },
+  "footer": {
+    "tag1": "De vraies connexions.",
+    "tag2": "Une vraie confidentialité.",
+    "colProduct": "Produit",
+    "colCompany": "Entreprise",
+    "colLegal": "Mentions légales",
+    "privacyPolicy": "Politique de confidentialité",
+    "termsOfService": "Conditions d’utilisation",
+    "about": "À propos",
+    "copyright": "© 2026 findmeIRL",
+    "madeWith": "Fait avec ❤️ pour de meilleures connexions humaines",
+    "blurb": "Une appli de découverte sociale axée sur la confidentialité"
+  },
+  "legal": {
+    "bindingNote": "Note : le texte juridique complet figure ci-dessous en anglais (il fait foi). La navigation et l’en-tête ont été traduits pour faciliter l’orientation.",
+    "priv": {
+      "metaTitle": "Politique de confidentialité — findmeIRL",
+      "metaDesc": "Politique de confidentialité pour findmeIRL — découverte sociale privacy-first avec fiches lieu business.",
+      "back": "Retour à l’accueil",
+      "cross": "Conditions d’utilisation",
+      "updated": "Dernière mise à jour : 13 mai 2026",
+      "h1": "Politique de confidentialité",
+      "subtitle": "findmeIRL (« Findme », « nous », « notre »)",
+      "footer": "findmeirl.app • Découverte sociale axée confidentialité",
+      "published": "Pages légales publiées sur :",
+      "ppLabel": "Politique de confidentialité :",
+      "tosLabel": "Conditions d’utilisation :",
+      "committed": "Nous nous engageons à répondre rapidement et de manière transparente.",
+      "effective": "En vigueur : 30 avril 2026 • Dernière mise à jour : 13 mai 2026",
+      "emailLabel": "E-mail :",
+      "webLabel": "Site web :"
+    },
+    "tos": {
+      "metaTitle": "Conditions d’utilisation — findmeIRL",
+      "metaDesc": "Conditions d’utilisation pour findmeIRL — découverte sociale privacy-first avec fiches lieu business.",
+      "back": "Retour à l’accueil",
+      "cross": "Politique de confidentialité",
+      "updated": "Dernière mise à jour : 13 mai 2026",
+      "h1": "Conditions d’utilisation",
+      "subtitle": "findmeIRL (« Findme », « nous », « notre »)",
+      "footerLine": "Régies par le droit suisse",
+      "footer": "findmeirl.app • Découverte sociale axée confidentialité",
+      "published": "Pages légales publiées sur :",
+      "ppLabel": "Politique de confidentialité :",
+      "tosLabel": "Conditions d’utilisation :",
+      "closing": "Les présentes conditions et la politique de confidentialité constituent l’intégralité de l’accord avec Findme concernant l’app et remplacent les accords antérieurs. Si une clause est inapplicable, les autres restent en vigueur.",
+      "effective": "En vigueur : 30 avril 2026 • Dernière mise à jour : 13 mai 2026",
+      "emailLabel": "E-mail :",
+      "webLabel": "Site web :"
+    }
+  }
+}
