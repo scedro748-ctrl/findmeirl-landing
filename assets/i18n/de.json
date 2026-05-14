@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "findmeIRL — Soziales Entdecken mit Datenschutz",
-    "description": "Entdecke echte Verbindungen in deiner Nähe und schütze deinen genauen Standort mit gitterbasierter Verschleierung. Trage dich für den frühen Zugang ein."
+    "description": "Entdecke echte Verbindungen in deiner Nähe und schütze deinen genauen Standort mit gitterbasierter Verschleierung. Trage dich ein für frühen Zugang."
   },
   "nav": {
     "langAria": "Sprache",
@@ -32,8 +32,8 @@
     "scroll": "SCROLLEN ZUM ENTDECKEN ↓"
   },
   "trust": {
-    "supabase": "SUPABASE • SECURE",
-    "grid": "GRID OBFUSCATION",
+    "supabase": "SUPABASE • SICHER",
+    "grid": "GITTERVERACHLEIERUNG",
     "osm": "OPENSTREETMAP",
     "firebase": "FIREBASE PUSH",
     "stack": "FLUTTER • RIVERPOD"
@@ -45,7 +45,7 @@
     "f1": {
       "title": "Standort-Verschleierung",
       "body": "Dein echtes GPS bleibt auf unseren Servern privat. Andere sehen einen zufälligen Punkt innerhalb von ~600 m in derselben ~1 km²-Zelle.",
-      "footer": "NEVER REVEALED • GRID ONLY"
+      "footer": "NIE VERÖFFENTLICHT • RASTERZELLE"
     },
     "f2": {
       "title": "Smartes Entdecken",
@@ -55,17 +55,17 @@
     "f3": {
       "title": "Lokale Events",
       "body": "Erstelle und entdecke Events in der Nähe. RSVP, sieh wer dabei ist, chatte vor dem Treffen. Schöne Event-Karten mit Fotos.",
-      "footer": "UPCOMING • MY EVENTS • RSVP"
+      "footer": "ANSTEHEND • MEINE EVENTS • RSVP"
     },
     "f4": {
       "title": "Private Chats",
       "body": "Echtzeit-Nachrichten mit Lesebestätigung. Verbinde dich nur mit Menschen, die du akzeptierst. In-App-Hinweise und Push, wenn du unterwegs bist.",
-      "footer": "REQUESTS • ACCEPT • BLOCK"
+      "footer": "ANFRAGEN • ANNEHMEN • BLOCKEN"
     },
     "f5": {
       "title": "Aussagekräftige Profile",
-      "body": "Reiche Profile mit Bio, Galerie, Herkunftsländern und eigenen Hobbys. Avatar auf der Karte zeigen oder privat lassen.",
-      "footer": "AVATARS • BANNERS • GALLERY"
+      "body": "Umfangreiche Profile mit Bio, Galerie, Herkunftsländern, eigenen Hobbies und mehr. Avatar auf der Karte zeigen oder nicht.",
+      "footer": "AVATARS • BANNERS • GALERIE"
     },
     "f6": {
       "title": "Mit Sorgfalt gebaut",
@@ -76,7 +76,7 @@
   "shots": {
     "kicker": "DAS ERLEBNIS",
     "h2": "So sieht es aus",
-    "sub": "Echte Screenshots aus der Flutter-App – Filter, Profil, Einstellungen und mehr.",
+    "sub": "Echte Screenshots aus der App – Filter, Profil, Einstellungen und mehr.",
     "videoNoSupport": "Dein Browser unterstützt das Video-Tag nicht.",
     "demoCaption": "Das komplette App-Erlebnis ansehen",
     "demoLive": "LIVE-AUFNAHME",
@@ -88,7 +88,7 @@
     "tile2": {
       "cat": "Profile",
       "title": "Soulmate Score, Match-Stufen & Banner-Upload",
-      "badge": "YOU"
+      "badge": "DU"
     },
     "tile3": {
       "cat": "Filters",
@@ -98,7 +98,7 @@
     "tile4": {
       "cat": "Settings",
       "title": "Datenschutz-Schalter, Account & Rechtstexte",
-      "badge": "SETTINGS"
+      "badge": "EINSTELLUNGEN"
     },
     "tile5": {
       "cat": "Chats",
@@ -108,24 +108,24 @@
     "tile6": {
       "cat": "Profile",
       "title": "Öffentliche Profilansicht mit Fotos, Interessen & Statistiken",
-      "badge": "VIEW"
+      "badge": "ANSICHT"
     }
   },
   "biz": {
     "badge": "BUSINESS-ENTDECKUNG",
-    "h2_l1": "Wachse mit deinem Business.",
+    "h2_l1": "Wachse mit deinem Geschäft.",
     "h2_l2": "Erreiche die richtigen Menschen.",
-    "sub": "Verifizierte Unternehmen bekommen starke Platzierung auf der Karte, reichhaltige Profilseiten, Event-Tools und gezielte Reichweite – bei Schutz der Privatsphäre durch rasterbasiertes Entdecken.",
-    "reclaim": "Der Online-Handel hat die Wirtschaft umgestaltet, und lokale Unternehmen verlieren an Sichtbarkeit. findmeIRL hilft Ihnen, Ihren lokalen Markt zurückzugewinnen.<br><br>Ihr Venue erscheint natürlich auf der Karte für Menschen in der Nähe, während Sie ganz einfach Promotionen, Events und Posts erstellen, die die richtige Zielgruppe erreichen. Gewinnen Sie echte Einblicke und verwandeln Sie lokalen Fußverkehr in treue Kunden.<br><br><strong>Gewinnen Sie Ihre Nachbarschaft zurück. Werden Sie gesehen. Werden Sie gefunden.</strong>",
+    "sub": "Verifizierte Unternehmen bekommen starke Platzierung auf der Karte, umfangreiche Profilseiten, Event-Tools und gezielte Reichweite.",
+    "reclaim": "Der Online-Handel hat die Wirtschaft umgestaltet, und lokale Unternehmen verlieren an Sichtbarkeit. FindmeIRL hilft Ihnen, Ihren lokalen Markt zurückzugewinnen.<br><br>Ihr Geschäft erscheint natürlich auf der Karte für Menschen in der Nähe, während Sie ganz einfach Promotionen, Events und Posts erstellen, die die richtige Zielgruppe erreichen. Gewinnen Sie echte Einblicke und verwandeln Sie lokalen Fußverkehr in treue Kunden.<br><br><strong>Gewinnen Sie Ihre Nachbarschaft zurück. Werden Sie gesehen. Werden Sie gefunden.</strong>",
     "b1": {
       "title": "Starke Business-Profile",
-      "body": "Professionelle Seiten mit Logo, Fotos, Beschreibung, Adresse, Website, Kategorie und Kontakt. Hebe dich mit Bannern und Galerie ab.",
-      "footer": "VERIFIED • APPROVED BY TEAM"
+      "body": "Professionelle Seiten mit Logo, Fotos, Beschreibung, Adresse, Webseite, Kategorie und Kontakt. Hebe dich mit Bannern und Galerie ab.",
+      "footer": "VERIFIZIERT • GENEHMIGT DURCH TEAM"
     },
     "b2": {
       "title": "Sichtbarkeit auf der Karte",
       "body": "Erscheine im Entdecken-Tab für Nutzer:innen in deiner Rasterzelle oder bei passender Kategorie. Gezieltes Entdecken ohne invasives Tracking.",
-      "footer": "GRID-BASED • INTEREST MATCHING"
+      "footer": "RASTERBASIERT • INTERESSEN ÜBEREINSTIMMUNG"
     },
     "b3": {
       "title": "Events & Aktionen",
@@ -135,7 +135,7 @@
     "b4": {
       "title": "Lokal + global",
       "body": "Verbinde dich mit Gästen in der Nähe und Reisenden weltweit, die zu deiner Kategorie, Herkunft oder Events passen. Analytics folgen.",
-      "footer": "LOCAL GRID • INTERNATIONAL USERS"
+      "footer": "LOKALES RASTER • INTERNATIONALE USER"
     },
     "mockCaption": "Echte Business-Profilansicht",
     "galleryTag": "IN DER APP",
@@ -177,12 +177,12 @@
     "ctaSub": "Business-Warteliste • Early Access inkl. Hilfe beim Profil-Setup"
   },
   "waitlist": {
-    "h2": "Trage dich auf die Warteliste ein",
+    "h2": "Trage dich ein in die Warteliste",
     "sub": "Ob du echte Verbindungen suchst oder als Business lokale Kund:innen erreichst – gehör zu den Ersten mit Zugang.",
     "labelEmail": "E-MAIL-ADRESSE",
     "phEmail": "du@email.de",
     "labelCity": "STADT (OPTIONAL)",
-    "phCity": "Wo du Findme nutzen wirst",
+    "phCity": "Wo du FindmeIRL nutzen wirst",
     "labelType": "ICH BIN",
     "optIndividual": "Privatperson",
     "optBusiness": "Unternehmen / Markeninhaber:in",
@@ -215,14 +215,14 @@
     "termsOfService": "Nutzungsbedingungen",
     "about": "Über uns",
     "copyright": "© 2026 findmeIRL",
-    "madeWith": "Mit ❤️ für bessere menschliche Verbindungen gemacht",
+    "madeWith": "Mit ❤️ für echte menschliche Verbindungen gemacht",
     "blurb": "Eine privacy-first Social-Discovery-App"
   },
   "legal": {
-    "bindingNote": "Hinweis: Der vollständige Vertragstext und die ausführliche Datenschutzerklärung werden unten auf Englisch bereitgestellt (maßgeblich). Navigation und Überschrift wurden übersetzt, um die Orientierung zu erleichtern.",
+    "bindingNote": "Hinweis: Der vollständige Vertragstext und die ausführliche Datenschutzerklärung werden unten bereitgestellt.",
     "priv": {
       "metaTitle": "Datenschutzerklärung — findmeIRL",
-      "metaDesc": "Datenschutzerklärung für findmeIRL — privacy-first Social Discovery mit Business-Venues.",
+      "metaDesc": "Datenschutzerklärung für findmeIRL — privacy-first Social Discovery mit Geschäften.",
       "back": "Zur Startseite",
       "cross": "Nutzungsbedingungen",
       "updated": "Zuletzt aktualisiert: 13. Mai 2026",
@@ -239,7 +239,7 @@
     },
     "tos": {
       "metaTitle": "Nutzungsbedingungen — findmeIRL",
-      "metaDesc": "Nutzungsbedingungen für findmeIRL — privacy-first Social Discovery mit Business-Venues.",
+      "metaDesc": "Nutzungsbedingungen für findmeIRL — privacy-first Social Discovery mit Geschäften.",
       "back": "Zur Startseite",
       "cross": "Datenschutzerklärung",
       "updated": "Zuletzt aktualisiert: 13. Mai 2026",
