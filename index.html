@@ -509,8 +509,8 @@
                                 Your browser does not support the video tag.
                             </video>
                             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5 pointer-events-none">
-                                <div class="text-xs uppercase tracking-widest text-amber-400">Demo</div>
-                                <div class="font-semibold text-sm">See &amp; be seen locally</div>
+                                <div class="text-xs uppercase tracking-widest text-amber-400">Profile</div>
+                                <div class="font-semibold text-sm">Banner, logo, verification &amp; follower count at a glance</div>
                             </div>
                         </div>
                     </div>
@@ -638,7 +638,7 @@
                     Whether you're an individual looking for real connections or a business ready to reach local customers — be among the first to get access.
                 </p>
                 
-                <form id="waitlist-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID_HERE" method="POST" 
+                <form id="waitlist-form" action="#" method="post"
                       class="space-y-6 max-w-md mx-auto">
                     <div>
                         <label class="block text-xs font-medium text-white/60 mb-2 tracking-wider">EMAIL ADDRESS</label>
@@ -663,11 +663,13 @@
                         </select>
                     </div>
                     
-                    <button type="submit"
-                            class="w-full py-6 bg-gradient-to-r from-[#5E9ED6] to-[#00D4FF] hover:brightness-110 font-semibold text-xl rounded-3xl transition-all active:scale-[0.985] flex items-center justify-center gap-x-3 shadow-xl shadow-[#5E9ED6]/40">
-                        <span>GET EARLY ACCESS</span>
-                        <i class="fa-solid fa-paper-plane"></i>
+                    <button type="submit" id="waitlist-submit"
+                            class="w-full py-6 bg-gradient-to-r from-[#5E9ED6] to-[#00D4FF] hover:brightness-110 font-semibold text-xl rounded-3xl transition-all active:scale-[0.985] flex items-center justify-center gap-x-3 shadow-xl shadow-[#5E9ED6]/40 disabled:opacity-50 disabled:pointer-events-none">
+                        <span id="waitlist-submit-label">GET EARLY ACCESS</span>
+                        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
                     </button>
+
+                    <div id="waitlist-error" class="hidden text-left p-4 bg-red-950/40 border border-red-500/30 rounded-2xl text-red-200 text-sm" role="alert"></div>
                     
                     <p class="text-[10px] text-white/40 pt-4">
                         We respect your inbox. No spam ever. You'll only hear from us about launch updates and invites.
@@ -678,7 +680,11 @@
                 <div id="form-success" class="hidden mt-8 p-6 bg-emerald-900/30 border border-emerald-500/30 rounded-3xl text-emerald-300">
                     <i class="fa-solid fa-check-circle text-4xl mb-4 block"></i>
                     <div class="font-semibold text-lg">Thank you! You're on the list.</div>
-                    <div class="text-sm mt-2">We'll send you an email confirmation shortly.</div>
+                    <div class="text-sm mt-2">We'll reach out with launch updates and invites.</div>
+                    <button type="button" id="waitlist-add-another"
+                            class="mt-6 text-sm text-white/80 underline underline-offset-4 hover:text-white">
+                        Submit another entry
+                    </button>
                 </div>
             </div>
         </div>
@@ -748,6 +754,11 @@
     </footer>
 
     <script>
+        // Public anon key (RLS + RPC only — same as Flutter client defaults).
+        const SUPABASE_URL = 'https://xqxltowodthtgtelhqjf.supabase.co';
+        const SUPABASE_ANON_KEY =
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhxeGx0b3dvZHRodGd0ZWxocWpmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYxMjMwMTksImV4cCI6MjA5MTY5OTAxOX0.nWKqjcTjhTKUX5wbM4HTdO6c7Yy7XuAd5XQDQvajHu8';
+
         // Tailwind script run
         function initializeTailwind() {
             // Already initialized via CDN
@@ -774,53 +785,162 @@
             menu.classList.toggle('hidden');
         }
         
-        // Form handling with success state
+        function waitlistFriendlyErrorMessage(raw) {
+            const t = (raw || '').toLowerCase();
+            if (t.includes('invalid_email')) {
+                return 'Please enter a valid email address.';
+            }
+            if (t.includes('invalid_user_type')) {
+                return 'Something went wrong. Refresh the page and try again.';
+            }
+            return "We couldn't save your signup. Check your connection and try again in a moment.";
+        }
+
+        function resetWaitlistSuccessPanel() {
+            const success = document.getElementById('form-success');
+            if (!success) return;
+            success.innerHTML = `
+                <i class="fa-solid fa-check-circle text-4xl mb-4 block"></i>
+                <div class="font-semibold text-lg">Thank you! You're on the list.</div>
+                <div class="text-sm mt-2">We'll reach out with launch updates and invites.</div>
+                <button type="button" id="waitlist-add-another"
+                        class="mt-6 text-sm text-white/80 underline underline-offset-4 hover:text-white">
+                    Submit another entry
+                </button>
+            `;
+            success.style.borderColor = '';
+            wireWaitlistAddAnother();
+        }
+
+        function wireWaitlistAddAnother() {
+            const btn = document.getElementById('waitlist-add-another');
+            if (!btn) return;
+            btn.addEventListener('click', function () {
+                const form = document.getElementById('waitlist-form');
+                const success = document.getElementById('form-success');
+                const errBox = document.getElementById('waitlist-error');
+                if (form) {
+                    form.reset();
+                    form.classList.remove('hidden');
+                }
+                if (success) success.classList.add('hidden');
+                if (errBox) {
+                    errBox.classList.add('hidden');
+                    errBox.textContent = '';
+                }
+                resetWaitlistSuccessPanel();
+            });
+        }
+
+        // Form → Supabase RPC submit_waitlist_signup (upsert by email)
         function setupForm() {
             const form = document.getElementById('waitlist-form');
             const success = document.getElementById('form-success');
-            
+            const errBox = document.getElementById('waitlist-error');
+            const submitBtn = document.getElementById('waitlist-submit');
+            const submitLabel = document.getElementById('waitlist-submit-label');
+
             if (!form) return;
-            
-            form.addEventListener('submit', function(e) {
+
+            wireWaitlistAddAnother();
+
+            form.addEventListener('submit', function (e) {
                 e.preventDefault();
-                
-                const userType = document.getElementById('user_type').value;
-                const isBusiness = userType === 'business';
-                
-                // Customize success message for businesses
-                if (isBusiness) {
-                    success.innerHTML = `
-                        <i class="fa-solid fa-store text-4xl mb-4 block text-amber-400"></i>
-                        <div class="font-semibold text-lg">Business application received!</div>
-                        <div class="text-sm mt-2">Our team will review your request and reach out soon about profile setup and early access.</div>
-                    `;
-                    success.style.borderColor = 'rgb(245 158 11 / 0.3)';
-                } else {
-                    success.innerHTML = `
-                        <i class="fa-solid fa-check-circle text-4xl mb-4 block"></i>
-                        <div class="font-semibold text-lg">Thank you! You're on the list.</div>
-                        <div class="text-sm mt-2">We'll send you an email confirmation shortly.</div>
-                    `;
-                    success.style.borderColor = '';
+                if (!success) return;
+
+                const emailInput = document.getElementById('email');
+                const cityInput = document.getElementById('city');
+                const userTypeEl = document.getElementById('user_type');
+                const email = (emailInput && emailInput.value) ? emailInput.value.trim() : '';
+                const cityRaw = (cityInput && cityInput.value) ? cityInput.value.trim() : '';
+                const userType = userTypeEl ? userTypeEl.value : 'individual';
+
+                if (errBox) {
+                    errBox.classList.add('hidden');
+                    errBox.textContent = '';
                 }
-                
-                form.classList.add('hidden');
-                success.classList.remove('hidden');
-                
-                setTimeout(() => {
-                    form.reset();
-                    form.classList.remove('hidden');
-                    success.classList.add('hidden');
-                    // Reset success HTML to default
-                    success.innerHTML = `
-                        <i class="fa-solid fa-check-circle text-4xl mb-4 block"></i>
-                        <div class="font-semibold text-lg">Thank you! You're on the list.</div>
-                        <div class="text-sm mt-2">We'll send you an email confirmation shortly.</div>
-                    `;
-                    success.style.borderColor = '';
-                }, 5500);
-                
-                // In production, submit to Formspree (it will include the new "user_type" field)
+
+                const simpleEmailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+                if (!simpleEmailOk) {
+                    if (errBox) {
+                        errBox.textContent = waitlistFriendlyErrorMessage('invalid_email');
+                        errBox.classList.remove('hidden');
+                    }
+                    return;
+                }
+
+                const isBusiness = userType === 'business';
+                const busyLabel = isBusiness ? 'Sending…' : 'Joining…';
+
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.setAttribute('aria-busy', 'true');
+                }
+                if (submitLabel) submitLabel.textContent = busyLabel;
+
+                const payload = {
+                    p_email: email,
+                    p_city: cityRaw === '' ? null : cityRaw,
+                    p_user_type: userType,
+                };
+
+                fetch(SUPABASE_URL + '/rest/v1/rpc/submit_waitlist_signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        apikey: SUPABASE_ANON_KEY,
+                        Authorization: 'Bearer ' + SUPABASE_ANON_KEY,
+                        Prefer: 'return=minimal',
+                    },
+                    body: JSON.stringify(payload),
+                })
+                    .then(async function (res) {
+                        if (res.ok) {
+                            if (isBusiness) {
+                                success.innerHTML = `
+                                    <i class="fa-solid fa-store text-4xl mb-4 block text-amber-400"></i>
+                                    <div class="font-semibold text-lg">Business application received!</div>
+                                    <div class="text-sm mt-2">Our team will reach out about profile setup and early access.</div>
+                                    <button type="button" id="waitlist-add-another"
+                                            class="mt-6 text-sm text-white/80 underline underline-offset-4 hover:text-white">
+                                        Submit another entry
+                                    </button>
+                                `;
+                                success.style.borderColor = 'rgb(245 158 11 / 0.3)';
+                            } else {
+                                resetWaitlistSuccessPanel();
+                            }
+                            form.classList.add('hidden');
+                            success.classList.remove('hidden');
+                            wireWaitlistAddAnother();
+                            return;
+                        }
+
+                        let detail = '';
+                        try {
+                            const j = await res.json();
+                            detail = (j && (j.message || j.error || j.hint)) || JSON.stringify(j);
+                        } catch (_) {
+                            detail = await res.text();
+                        }
+                        if (errBox) {
+                            errBox.textContent = waitlistFriendlyErrorMessage(detail);
+                            errBox.classList.remove('hidden');
+                        }
+                    })
+                    .catch(function () {
+                        if (errBox) {
+                            errBox.textContent = waitlistFriendlyErrorMessage('network');
+                            errBox.classList.remove('hidden');
+                        }
+                    })
+                    .finally(function () {
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.removeAttribute('aria-busy');
+                        }
+                        if (submitLabel) submitLabel.textContent = 'GET EARLY ACCESS';
+                    });
             });
         }
         
@@ -862,7 +982,7 @@
                 });
             });
             
-            console.log('%c🚀 findmeIRL landing page initialized. Dark pastel theme active. Replace Formspree ID and add real screenshots!', 'color:#5E9ED6; font-family:monospace');
+            console.log('%c🚀 findmeIRL landing page initialized. Waitlist → Supabase RPC.', 'color:#5E9ED6; font-family:monospace');
         };
     </script>
 </body>
