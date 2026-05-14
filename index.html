@@ -80,17 +80,24 @@
             0%, 100% { opacity: 0.6; }
             50% { opacity: 1; }
         }
+
+        @media (max-width: 767px) {
+            .feature-card:hover,
+            .screenshot:hover {
+                transform: none;
+            }
+        }
     </style>
 </head>
 <body class="tail-container bg-[#0F1B2E] text-white overflow-x-hidden">
     <!-- NAVBAR -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0F1B2E]/90 backdrop-blur-lg border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0F1B2E]/90 backdrop-blur-lg border-b border-white/10 pt-[env(safe-area-inset-top,0px)]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 md:py-5 flex items-center justify-between gap-2">
             <div class="flex items-center gap-x-3">
                 <img src="assets/images/app-icon.png" alt="findmeIRL" 
                      class="w-12 h-12 rounded-2xl shadow-lg shadow-[#5E9ED6]/50 object-cover">
-                <div>
-                    <span class="text-2xl font-semibold tracking-tighter logo-font">findmeIRL</span>
+                <div class="min-w-0">
+                    <span class="text-lg sm:text-2xl font-semibold tracking-tighter logo-font truncate">findmeIRL</span>
                 </div>
             </div>
             
@@ -103,8 +110,8 @@
                 <a href="terms.html" data-legal-link="terms" class="nav-link text-white/80 hover:text-white"><span data-i18n="nav.terms">Terms</span></a>
             </div>
             
-            <div class="flex items-center gap-x-4">
-                <select class="site-lang-select text-sm font-medium bg-white/5 border border-white/20 rounded-2xl px-2.5 py-2 text-white focus:outline-none focus:ring-2 focus:ring-[#5E9ED6]/40" style="color-scheme: dark;" data-i18n-aria-label="nav.langAria">
+            <div class="flex items-center gap-x-2 sm:gap-x-4 flex-shrink-0">
+                <select class="site-lang-select text-xs sm:text-sm font-medium bg-white/5 border border-white/20 rounded-2xl px-2 sm:px-2.5 py-2 min-h-[44px] text-white focus:outline-none focus:ring-2 focus:ring-[#5E9ED6]/40" style="color-scheme: dark;" data-i18n-aria-label="nav.langAria">
                     <option value="en">EN</option>
                     <option value="de">DE</option>
                     <option value="fr">FR</option>
@@ -112,12 +119,14 @@
                 </select>
                 <a href="#waitlist" 
                    onclick="smoothScrollTo('waitlist')"
-                   class="px-6 py-2.5 text-sm font-semibold rounded-2xl bg-white text-[#0F1B2E] hover:bg-white/90 transition-all active:scale-95 flex items-center gap-x-2">
-                    <i class="fa-solid fa-bell"></i>
-                    <span data-i18n="nav.joinWaitlist">Join Waitlist</span>
+                   class="px-3 sm:px-6 py-2.5 min-h-[44px] text-xs sm:text-sm font-semibold rounded-2xl bg-white text-[#0F1B2E] hover:bg-white/90 transition-all active:scale-95 flex items-center justify-center gap-x-1.5 sm:gap-x-2">
+                    <i class="fa-solid fa-bell text-sm shrink-0"></i>
+                    <span data-i18n="nav.joinWaitlist" class="whitespace-nowrap">Join Waitlist</span>
                 </a>
                 <button onclick="toggleMobileMenu()" 
-                        class="md:hidden w-10 h-10 flex items-center justify-center text-2xl">
+                        type="button"
+                        aria-label="Menu"
+                        class="md:hidden w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center text-2xl rounded-2xl hover:bg-white/5">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
@@ -149,21 +158,21 @@
     </nav>
 
     <!-- HERO -->
-    <header class="hero-bg min-h-screen flex items-center pt-20 relative overflow-x-hidden">
+    <header class="hero-bg min-h-[100dvh] min-h-screen flex items-center pt-20 pb-16 md:pb-0 relative overflow-x-hidden">
         <div class="absolute inset-0 bg-[radial-gradient(at_top_right,#5E9ED620_0%,transparent_50%)]"></div>
         
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center relative z-10">
-            <div class="space-y-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-8 md:gap-16 items-center relative z-10">
+            <div class="space-y-6 md:space-y-8">
                 <div class="inline-flex items-center gap-x-2 bg-white/10 text-white/90 text-xs font-mono tracking-[2px] px-5 py-2 rounded-3xl border border-white/20">
                     <div class="w-2 h-2 bg-[#00D4FF] rounded-full animate-pulse"></div>
                     <span data-i18n="hero.badge">COMING SOON TO iOS &amp; ANDROID</span>
                 </div>
                 
-                <h1 class="text-6xl md:text-7xl font-semibold tracking-tighter leading-none logo-font hero-glow">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tighter leading-none logo-font hero-glow">
                     <span data-i18n="hero.h1_l1">FIND REAL</span><br><span data-i18n="hero.h1_l2">CONNECTIONS.</span><br><span class="bg-clip-text text-transparent bg-gradient-to-r from-[#5E9ED6] to-[#00D4FF]" data-i18n="hero.h1_l3">PRIVACY FIRST.</span>
                 </h1>
                 
-                <p class="text-xl text-white/70 max-w-lg" data-i18n="hero.sub">
+                <p class="text-base sm:text-lg md:text-xl text-white/70 max-w-lg" data-i18n="hero.sub">
                     Discover people nearby who share your interests. 
                     Your exact location stays private — we use smart grid-based obfuscation so others see only an approximate position.
                 </p>
@@ -209,8 +218,8 @@
                         <div class="h-11 bg-black/60 flex items-end justify-center text-[10px] text-white/60 pt-3 z-20 relative">
                             <span data-i18n="hero.phoneStatus">9:41 • findmeIRL</span>
                         </div>
-                        <img src="/assets/hero-discover-map.png" alt="findmeIRL Discover map" draggable="false"
-                             class="block w-full h-[576px] object-contain object-bottom bg-[#0F1B2E] select-none pointer-events-none">
+                        <img src="assets/hero-discover-map.png" alt="findmeIRL Discover map" draggable="false" decoding="async"
+                             class="block w-full max-h-[52vh] sm:max-h-[58vh] md:h-[576px] md:max-h-none object-contain object-bottom bg-[#0F1B2E] select-none pointer-events-none">
                     </div>
                     
                     <!-- Decorative elements -->
@@ -249,7 +258,7 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <div class="inline px-4 py-1.5 bg-white/5 text-[#5E9ED6] text-xs font-mono tracking-widest rounded-3xl mb-4" data-i18n="features.tag">BUILT DIFFERENT</div>
-                <h2 class="text-5xl font-semibold tracking-tighter logo-font section-header" data-i18n="features.h2">Privacy-first by design</h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tighter logo-font section-header" data-i18n="features.h2">Privacy-first by design</h2>
                 <p class="mt-4 text-white/60 max-w-md mx-auto" data-i18n="features.sub">No exact GPS ever leaves your device to other users. Only approximate grid cells.</p>
             </div>
             
@@ -311,7 +320,7 @@
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
                 <div>
                     <div class="uppercase text-xs tracking-[3px] text-[#5E9ED6] font-medium mb-2" data-i18n="shots.kicker">THE EXPERIENCE</div>
-                    <h2 class="text-5xl font-semibold tracking-tighter logo-font" data-i18n="shots.h2">See it in action</h2>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tighter logo-font" data-i18n="shots.h2">See it in action</h2>
                 </div>
                 <p class="max-w-xs text-white/60 mt-4 md:mt-0" data-i18n="shots.sub">
                     Real screenshots from the Flutter app — filters, profile, settings and more.
@@ -328,8 +337,8 @@
                             controls 
                             muted 
                             playsinline
-                            preload="metadata">
-                            <source src="/assets/video/findmeirl-demo.mp4" type="video/mp4">
+                            preload="none">
+                            <source src="assets/video/findmeirl-demo.mp4" type="video/mp4">
                             <span data-i18n="shots.videoNoSupport">Your browser does not support the video tag.</span>
                         </video>
                         <div class="absolute top-4 left-4 bg-red-500 text-white text-[10px] px-3 py-1 rounded-2xl font-mono flex items-center gap-x-1.5 shadow-lg">
@@ -346,7 +355,7 @@
                 <!-- Screenshot 1: Events -->
                 <div class="group">
                     <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                        <img src="assets/business/07-business-my-events.png" alt="Events Tab" 
+                        <img src="assets/business/07-business-my-events.png" alt="Events Tab" loading="lazy" decoding="async"
                              class="w-full h-full object-cover">
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
                             <div class="text-xs uppercase tracking-widest text-violet-400" data-i18n="shots.tile1.cat">Events</div>
@@ -359,7 +368,7 @@
                 <!-- Screenshot 2: Profile -->
                 <div class="group">
                     <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                        <img src="assets/screenshots/03-profile-soulmate.png" alt="Profile Tab" 
+                        <img src="assets/screenshots/03-profile-soulmate.png" alt="Profile Tab" loading="lazy" decoding="async"
                              class="w-full h-full object-cover">
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
                             <div class="text-xs uppercase tracking-widest text-[#5E9ED6]" data-i18n="shots.tile2.cat">Profile</div>
@@ -372,7 +381,7 @@
                 <!-- Screenshot 3: Filters -->
                 <div class="group">
                     <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                        <img src="assets/screenshots/01-filters-people.png" alt="Filters - People" 
+                        <img src="assets/screenshots/01-filters-people.png" alt="Filters - People" loading="lazy" decoding="async"
                              class="w-full h-full object-cover">
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
                             <div class="text-xs uppercase tracking-widest text-emerald-400" data-i18n="shots.tile3.cat">Filters</div>
@@ -385,7 +394,7 @@
                 <!-- Screenshot 4: Settings -->
                 <div class="group">
                     <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                        <img src="assets/screenshots/04-settings.png" alt="Settings" 
+                        <img src="assets/screenshots/04-settings.png" alt="Settings" loading="lazy" decoding="async"
                              class="w-full h-full object-cover">
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
                             <div class="text-xs uppercase tracking-widest text-violet-400" data-i18n="shots.tile4.cat">Settings</div>
@@ -398,7 +407,7 @@
                 <!-- Screenshot 5: Chats -->
                 <div class="group">
                     <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                        <img src="assets/screenshots/05-chats-tab.png" alt="Chats Tab" 
+                        <img src="assets/screenshots/05-chats-tab.png" alt="Chats Tab" loading="lazy" decoding="async"
                              class="w-full h-full object-cover">
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
                             <div class="text-xs uppercase tracking-widest text-emerald-400" data-i18n="shots.tile5.cat">Chats</div>
@@ -411,7 +420,7 @@
                 <!-- Screenshot 6: Profile Detail -->
                 <div class="group">
                     <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                        <img src="assets/screenshots/06-profile-detail.png" alt="Profile Detail" 
+                        <img src="assets/screenshots/06-profile-detail.png" alt="Profile Detail" loading="lazy" decoding="async"
                              class="w-full h-full object-cover">
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
                             <div class="text-xs uppercase tracking-widest text-[#5E9ED6]" data-i18n="shots.tile6.cat">Profile</div>
@@ -440,7 +449,7 @@
                     <i class="fa-solid fa-store"></i>
                     <span data-i18n="biz.badge">BUSINESS DISCOVERY</span>
                 </div>
-                <h2 class="text-5xl md:text-6xl font-semibold tracking-tighter logo-font mb-6"><span data-i18n="biz.h2_l1">Grow your business.</span><br><span data-i18n="biz.h2_l2">Reach the right people.</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tighter logo-font mb-6"><span data-i18n="biz.h2_l1">Grow your business.</span><br><span data-i18n="biz.h2_l2">Reach the right people.</span></h2>
                 <p class="max-w-2xl mx-auto text-xl text-white/70" data-i18n="biz.sub">
                     Verified businesses get prominent placement on the map, rich profile pages, event hosting tools, and targeted reach to local customers — all while respecting user privacy through grid-based discovery.
                 </p>
@@ -490,7 +499,7 @@
                 <!-- Visual Mock -->
                 <div class="lg:col-span-5">
                     <div class="glass rounded-3xl p-2 shadow-2xl border border-amber-400/20">
-                        <img src="assets/business-profile-real.png" alt="Real business profile view" 
+                        <img src="assets/business-profile-real.png" alt="Real business profile view" loading="lazy" decoding="async"
                              class="w-full rounded-3xl shadow-xl">
                     </div>
                     
@@ -506,7 +515,7 @@
             <div class="mt-20">
                 <div class="text-center mb-10">
                     <div class="inline px-4 py-1.5 bg-white/5 text-amber-400 text-xs font-mono tracking-widest rounded-3xl mb-4" data-i18n="biz.galleryTag">IN THE APP</div>
-                    <h3 class="text-4xl font-semibold tracking-tighter logo-font" data-i18n="biz.galleryH">Business Experience</h3>
+                    <h3 class="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tighter logo-font" data-i18n="biz.galleryH">Business Experience</h3>
                     <p class="mt-3 text-white/60 max-w-md mx-auto" data-i18n="biz.gallerySub">Simple, powerful tools to connect with nearby customers while keeping their privacy intact.</p>
                 </div>
 
@@ -519,7 +528,7 @@
                                 controls
                                 muted
                                 playsinline
-                                preload="metadata">
+                                preload="none">
                                 <source src="assets/video/venue.mov" type="video/quicktime">
                                 <span data-i18n="shots.videoNoSupport">Your browser does not support the video tag.</span>
                             </video>
@@ -533,7 +542,7 @@
                     <!-- 2 -->
                     <div class="group">
                         <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                            <img src="assets/business/02-business-about-tab.png" alt="Business About Tab" class="w-full h-full object-cover">
+                            <img src="assets/business/02-business-about-tab.png" alt="Business About Tab" loading="lazy" decoding="async" class="w-full h-full object-cover">
                             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
                                 <div class="text-xs uppercase tracking-widest text-amber-400" data-i18n="biz.g2.cat">About</div>
                                 <div class="font-semibold text-sm" data-i18n="biz.g2.title">Description, opening hours, address &amp; contact details</div>
@@ -544,7 +553,7 @@
                     <!-- 3 -->
                     <div class="group">
                         <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                            <img src="assets/business/03-business-insights-overview.png" alt="Business Insights Overview" class="w-full h-full object-cover">
+                            <img src="assets/business/03-business-insights-overview.png" alt="Business Insights Overview" loading="lazy" decoding="async" class="w-full h-full object-cover">
                             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
                                 <div class="text-xs uppercase tracking-widest text-amber-400" data-i18n="biz.g3.cat">Insights</div>
                                 <div class="font-semibold text-sm" data-i18n="biz.g3.title">Key metrics: followers, posts published, likes &amp; notifications sent</div>
@@ -555,7 +564,7 @@
                     <!-- 4 -->
                     <div class="group">
                         <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                            <img src="assets/business/04-business-insights-charts.png" alt="Business Insights Charts" class="w-full h-full object-cover">
+                            <img src="assets/business/04-business-insights-charts.png" alt="Business Insights Charts" loading="lazy" decoding="async" class="w-full h-full object-cover">
                             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
                                 <div class="text-xs uppercase tracking-widest text-amber-400" data-i18n="biz.g4.cat">Analytics</div>
                                 <div class="font-semibold text-sm" data-i18n="biz.g4.title">Post type breakdown &amp; top posts ranked by reach</div>
@@ -566,7 +575,7 @@
                     <!-- 5 -->
                     <div class="group">
                         <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                            <img src="assets/business/05-business-audience.png" alt="Business Audience Insights" class="w-full h-full object-cover">
+                            <img src="assets/business/05-business-audience.png" alt="Business Audience Insights" loading="lazy" decoding="async" class="w-full h-full object-cover">
                             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
                                 <div class="text-xs uppercase tracking-widest text-amber-400" data-i18n="biz.g5.cat">Audience</div>
                                 <div class="font-semibold text-sm" data-i18n="biz.g5.title">Privacy-safe buckets: gender, age bands, follower grid cells</div>
@@ -577,7 +586,7 @@
                     <!-- 6 -->
                     <div class="group">
                         <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                            <img src="assets/business/06-business-create-event.png" alt="Create Event Modal" class="w-full h-full object-cover">
+                            <img src="assets/business/06-business-create-event.png" alt="Create Event Modal" loading="lazy" decoding="async" class="w-full h-full object-cover">
                             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
                                 <div class="text-xs uppercase tracking-widest text-amber-400" data-i18n="biz.g6.cat">Events</div>
                                 <div class="font-semibold text-sm" data-i18n="biz.g6.title">Create events with cover, date, category &amp; max attendees</div>
@@ -588,7 +597,7 @@
                     <!-- 7 -->
                     <div class="group">
                         <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                            <img src="assets/business/07-business-my-events.png" alt="My Events Tab" class="w-full h-full object-cover">
+                            <img src="assets/business/07-business-my-events.png" alt="My Events Tab" loading="lazy" decoding="async" class="w-full h-full object-cover">
                             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
                                 <div class="text-xs uppercase tracking-widest text-amber-400" data-i18n="biz.g7.cat">My Events</div>
                                 <div class="font-semibold text-sm" data-i18n="biz.g7.title">Manage your hosted events and see RSVPs in one place</div>
@@ -599,7 +608,7 @@
                     <!-- 8 -->
                     <div class="group">
                         <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                            <img src="assets/business/08-business-discover-map.png" alt="Discover Map with Venue" class="w-full h-full object-cover">
+                            <img src="assets/business/08-business-discover-map.png" alt="Discover Map with Venue" loading="lazy" decoding="async" class="w-full h-full object-cover">
                             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
                                 <div class="text-xs uppercase tracking-widest text-amber-400" data-i18n="biz.g8.cat">Discover</div>
                                 <div class="font-semibold text-sm" data-i18n="biz.g8.title">Your venue pin appears on the map alongside nearby people</div>
@@ -648,7 +657,7 @@
                     <span class="text-4xl">📍</span>
                 </div>
                 
-                <h2 class="text-5xl font-semibold tracking-tighter logo-font mb-4" data-i18n="waitlist.h2">Join the waitlist</h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tighter logo-font mb-4" data-i18n="waitlist.h2">Join the waitlist</h2>
                 <p class="text-xl text-white/70 max-w-md mx-auto mb-10" data-i18n="waitlist.sub">
                     Whether you're an individual looking for real connections or a business ready to reach local customers — be among the first to get access.
                 </p>
@@ -711,7 +720,7 @@
     <div class="bg-black/40 py-16">
         <div class="max-w-4xl mx-auto px-6 text-center">
             <div class="text-[#00D4FF] text-sm font-medium tracking-widest mb-3" data-i18n="final.kicker">PRIVACY FIRST SOCIAL DISCOVERY</div>
-            <h2 class="text-4xl font-semibold tracking-tight mb-8" data-i18n="final.h2">Ready to find your people?</h2>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-8" data-i18n="final.h2">Ready to find your people?</h2>
                 <div class="flex justify-center">
                 <a href="#waitlist" onclick="smoothScrollTo('waitlist')" 
                    class="px-10 py-5 bg-white text-[#0F1B2E] rounded-3xl font-semibold flex items-center justify-center gap-x-3 hover:shadow-2xl hover:shadow-white/20 transition-all">
