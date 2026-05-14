@@ -50,12 +50,12 @@
     "f2": {
       "title": "Smartes Entdecken",
       "body": "Finde Treffer nach Interessen, Sprachen, Glauben, Beruf, Altersbereich und mehr. Starke Filter mit UND/ODER-Logik. Echte Menschen, echte Nähe.",
-      "footer": "INTERESTS • LANGUAGES • FAITH"
+      "footer": "INTERESSEN • SPRACHEN • GLAUBEN"
     },
     "f3": {
       "title": "Lokale Events",
       "body": "Erstelle und entdecke Events in der Nähe. RSVP, sieh wer dabei ist, chatte vor dem Treffen. Schöne Event-Karten mit Fotos.",
-      "footer": "ANSTEHEND • MEINE EVENTS • RSVP"
+      "footer": "ANSTEHENDE / MEINE EVENTS • RSVP"
     },
     "f4": {
       "title": "Private Chats",
@@ -96,7 +96,7 @@
       "badge": "FILTER"
     },
     "tile4": {
-      "cat": "Settings",
+      "cat": "EINSTELLUNGEN",
       "title": "Datenschutz-Schalter, Account & Rechtstexte",
       "badge": "EINSTELLUNGEN"
     },
@@ -106,7 +106,7 @@
       "badge": "CHATS"
     },
     "tile6": {
-      "cat": "Profile",
+      "cat": "Profil",
       "title": "Öffentliche Profilansicht mit Fotos, Interessen & Statistiken",
       "badge": "ANSICHT"
     }
@@ -124,13 +124,13 @@
     },
     "b2": {
       "title": "Sichtbarkeit auf der Karte",
-      "body": "Erscheine im Entdecken-Tab für Nutzer:innen in deiner Rasterzelle oder bei passender Kategorie. Gezieltes Entdecken ohne invasives Tracking.",
+      "body": "Erscheine im Discover-Tab für Nutzer:innen in deiner Rasterzelle oder bei passender Kategorie. Gezieltes Entdecken ohne invasives Tracking.",
       "footer": "RASTERBASIERT • INTERESSEN ÜBEREINSTIMMUNG"
     },
     "b3": {
       "title": "Events & Aktionen",
       "body": "Veranstalte Events, starte Angebote und hole dir RSVPs direkt in der App. Chatte mit Interessierten vor dem Besuch.",
-      "footer": "SPONSORSHIPS • REAL-TIME RSVP"
+      "footer": "SPONSORING • ECHTZEIT RSVP"
     },
     "b4": {
       "title": "Lokal + global",
@@ -142,32 +142,32 @@
     "galleryH": "Business-Erlebnis",
     "gallerySub": "Einfache, starke Werkzeuge, um lokale Kund:innen zu erreichen – und deren Privatsphäre zu respektieren.",
     "g2": {
-      "cat": "About",
-      "title": "Beschreibung, Öffnungszeiten, Adresse & Kontakt"
-    },
-    "g3": {
       "cat": "Insights",
       "title": "Kernzahlen: Follower, Beiträge, Likes & gesendete Benachrichtigungen"
     },
+    "g3": {
+      "cat": "Meine Events",
+      "title": "Verwalte deine Events und sieh RSVPs an einem Ort"
+    },
     "g4": {
-      "cat": "Analytics",
-      "title": "Beitragstypen & Top-Posts nach Reichweite"
+      "cat": "Öffentliches Profil",
+      "title": "Präsentieren Sie Ihr Unternehmen"
     },
     "g5": {
       "cat": "Audience",
       "title": "Privacy-sichere Gruppen: Geschlecht, Altersbänder, Follower-Rasterzellen"
     },
     "g6": {
-      "cat": "Events",
-      "title": "Events mit Cover, Datum, Kategorie & max. Teilnehmer:innen"
+      "cat": "Online Präsenz",
+      "title": "Kund:innen sehen Ihr Geschäft online"
     },
     "g7": {
-      "cat": "My Events",
-      "title": "Verwalte deine Events und sieh RSVPs an einem Ort"
+      "cat": "Analytics",
+      "title": "Erreichen Sie Ihre Zielgruppe mit wenigen Klicks"
     },
     "g8": {
-      "cat": "Discover",
-      "title": "Dein Venue-Pin erscheint auf der Karte neben Menschen in der Nähe"
+      "cat": "Meine Events",
+      "title": "Verwalten Sie Ihre Events und posten Sie Updates"
     },
     "trust1": "In der Beta kostenlos",
     "trust2": "Manuelle Freigabe",
