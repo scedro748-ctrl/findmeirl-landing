@@ -32,8 +32,8 @@
     "scroll": "FAITES DÉFILER POUR EXPLORER ↓"
   },
   "trust": {
-    "supabase": "SUPABASE • SECURE",
-    "grid": "GRID OBFUSCATION",
+    "supabase": "SUPABASE • SÉCURISÉ",
+    "grid": "OBFUSCATION DE GRILLE",
     "osm": "OPENSTREETMAP",
     "firebase": "FIREBASE PUSH",
     "stack": "FLUTTER • RIVERPOD"
@@ -45,27 +45,27 @@
     "f1": {
       "title": "Obfuscation de localisation",
       "body": "Votre GPS réel reste privé sur nos serveurs. Les autres voient un point aléatoire à ~600 m à l’intérieur de la même cellule d’environ 1 km².",
-      "footer": "NEVER REVEALED • GRID ONLY"
+      "footer": "JAMAIS DIVULGUÉ • GRILLE UNIQUEMENT"
     },
     "f2": {
       "title": "Découverte intelligente",
       "body": "Associez intérêts, langues, foi, profession, tranche d’âge et plus encore. Filtres puissants en ET/OU. De vraies personnes, une vraie proximité.",
-      "footer": "INTERESTS • LANGUAGES • FAITH"
+      "footer": "INTÉRÊT • LANGUE • RELIGION"
     },
     "f3": {
       "title": "Événements locaux",
       "body": "Créez et découvrez des événements à proximité. RSVP, voyez qui vient, discutez avant de vous rencontrer. Belles cartes d’événement avec photos.",
-      "footer": "UPCOMING • MY EVENTS • RSVP"
+      "footer": "À VENIR • MES ÉVÉNEMENTS • RSVP"
     },
     "f4": {
       "title": "Chats privés",
       "body": "Messagerie en temps réel avec accusés de lecture. Ne connectez que les personnes que vous acceptez. Notifications in-app et push lorsque vous êtes absent.",
-      "footer": "REQUESTS • ACCEPT • BLOCK"
+      "footer": "DEMANDES • ACCEPTER • BLOQUER"
     },
     "f5": {
       "title": "Profils riches",
       "body": "Profils complets avec bio, galerie, pays d’héritage, hobbies personnalisés. Affichez l’avatar sur la carte ou restez privé.",
-      "footer": "AVATARS • BANNERS • GALLERY"
+      "footer": "AVATARS • BANNIÈRES • GALERIE"
     },
     "f6": {
       "title": "Construit avec soin",
@@ -86,19 +86,19 @@
       "badge": "EVENTS"
     },
     "tile2": {
-      "cat": "Profile",
+      "cat": "Profil",
       "title": "Soulmate Score, paliers d’affinité et bannière",
-      "badge": "YOU"
+      "badge": "TU"
     },
     "tile3": {
-      "cat": "Filters",
+      "cat": "Filtres",
       "title": "Genre, orientation, foi et héritage",
-      "badge": "FILTER"
+      "badge": "FILTRES"
     },
     "tile4": {
-      "cat": "Settings",
+      "cat": "paramètres",
       "title": "Interrupteurs confidentialité, compte et liens légaux",
-      "badge": "SETTINGS"
+      "badge": "PARAMÈTRES"
     },
     "tile5": {
       "cat": "Chats",
@@ -106,9 +106,9 @@
       "badge": "CHATS"
     },
     "tile6": {
-      "cat": "Profile",
+      "cat": "Vue",
       "title": "Profil public avec photos, intérêts et statistiques",
-      "badge": "VIEW"
+      "badge": "VUE"
     }
   },
   "biz": {
@@ -116,26 +116,26 @@
     "h2_l1": "Faites grandir votre activité.",
     "h2_l2": "Touchez les bonnes personnes.",
     "sub": "Les entreprises vérifiées obtiennent une forte visibilité sur la carte, des pages riches, des outils d’événements et une portée ciblée — tout en respectant la vie privée grâce à la découverte par grille.",
-    "reclaim": "Le commerce en ligne a transformé l’économie, et les commerces locaux perdent en visibilité. findmeIRL vous aide à reconquérir votre marché local.<br><br>Votre lieu apparaît naturellement sur la carte pour les personnes à proximité, tandis que vous créez facilement des promotions, événements et publications qui touchent le bon public. Obtenez des insights concrets et transformez le trafic local en clients fidèles.<br><br><strong>Reprenez votre quartier. Soyez vu. Soyez trouvé.</strong>",
+    "reclaim": "Le commerce en ligne a transformé l’économie, et les commerces locaux perdent en visibilité. FindmeIRL vous aide à reconquérir votre marché local.<br><br>Votre lieu apparaît naturellement sur la carte pour les personnes à proximité, tandis que vous créez facilement des promotions, événements et publications qui touchent le bon public. Obtenez des connaissances concrets et transformez le trafic local en clients fidèles.<br><br><strong>Reprenez votre quartier. Soyez vu. Soyez trouvé.</strong>",
     "b1": {
       "title": "Fiches entreprise complètes",
       "body": "Pages pro avec logo, photos, description, adresse, site, catégorie et contact. Démarquez-vous avec bannières et galerie.",
-      "footer": "VERIFIED • APPROVED BY TEAM"
+      "footer": "VÉRIFIÉ • APPROUVÉ PAR L'ÉQUIPE"
     },
     "b2": {
       "title": "Visibilité locale sur la carte",
       "body": "Apparaissez dans Découvrir pour les personnes dans votre cellule ou votre catégorie. Ciblage sans traque invasive.",
-      "footer": "GRID-BASED • INTEREST MATCHING"
+      "footer": "BASÉ SUR LE RÉSEAU • CORRESPONDANCE DES INTÉRÊTS"
     },
     "b3": {
       "title": "Événements & promos",
       "body": "Animez des événements et des offres, collectez des RSVP dans l’app. Échangez avec les personnes intéressées.",
-      "footer": "SPONSORSHIPS • REAL-TIME RSVP"
+      "footer": "PARRAINAGES • CONFIRMATION EN TEMPS RÉEL"
     },
     "b4": {
       "title": "Portée locale + globale",
       "body": "Connectez clients de proximité et voyageurs attirés par votre catégorie, votre héritage ou vos événements. Analyses à venir.",
-      "footer": "LOCAL GRID • INTERNATIONAL USERS"
+      "footer": "RÉSEAU LOCAL • UTILISATEURS INTERNATIONAUX"
     },
     "mockCaption": "Aperçu réel du profil entreprise",
     "galleryTag": "DANS L’APP",
@@ -146,11 +146,11 @@
       "title": "Description, horaires, adresse & contact"
     },
     "g3": {
-      "cat": "Insights",
+      "cat": "Connaissances",
       "title": "Indicateurs clés : abonnés, posts, likes & notifications"
     },
     "g4": {
-      "cat": "Analytics",
+      "cat": "Statistiques",
       "title": "Répartition des types de posts & meilleurs posts par portée"
     },
     "g5": {
@@ -158,15 +158,15 @@
       "title": "Segments respectueux du privacy : genre, tranches d’âge, cellules des abonnés"
     },
     "g6": {
-      "cat": "Events",
+      "cat": "Événements",
       "title": "Événements avec visuel, date, catégorie & nombre max de participants"
     },
     "g7": {
-      "cat": "My Events",
+      "cat": "Événements",
       "title": "Gérez vos événements et consultez les RSVP au même endroit"
     },
     "g8": {
-      "cat": "Discover",
+      "cat": "Découvrir",
       "title": "Votre épingle lieu apparaît sur la carte avec les personnes à proximité"
     },
     "trust1": "Gratuit pendant la bêta",
@@ -215,7 +215,7 @@
     "termsOfService": "Conditions d’utilisation",
     "about": "À propos",
     "copyright": "© 2026 findmeIRL",
-    "madeWith": "Fait avec ❤️ pour de meilleures connexions humaines",
+    "madeWith": "Fait avec ❤️ pour vraies connexions humaines",
     "blurb": "Une appli de découverte sociale axée sur la confidentialité"
   },
   "legal": {
