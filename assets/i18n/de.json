@@ -109,8 +109,7 @@
       "cat": "Profile",
       "title": "Öffentliche Profilansicht mit Fotos, Interessen & Statistiken",
       "badge": "VIEW"
-    },
-    "githubMore": "Mehr Vorschauen im Repo (website/sections/)"
+    }
   },
   "biz": {
     "badge": "BUSINESS-ENTDECKUNG",
