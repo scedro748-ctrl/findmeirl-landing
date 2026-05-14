@@ -33,7 +33,7 @@
   },
   "trust": {
     "supabase": "SUPABASE • SICHER",
-    "grid": "GITTERVERACHLEIERUNG",
+    "grid": "GITTERVERSCHLEIERUNG",
     "osm": "OPENSTREETMAP",
     "firebase": "FIREBASE PUSH",
     "stack": "FLUTTER • RIVERPOD"
