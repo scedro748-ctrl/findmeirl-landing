@@ -499,8 +499,16 @@
                     <!-- 1 -->
                     <div class="group">
                         <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                            <img src="assets/business/01-business-profile-header.png" alt="Business Profile Header" class="w-full h-full object-cover">
-                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
+                            <video
+                                class="block w-full h-full object-cover bg-black"
+                                controls
+                                muted
+                                playsinline
+                                preload="metadata">
+                                <source src="assets/video/venue.mov" type="video/quicktime">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5 pointer-events-none">
                                 <div class="text-xs uppercase tracking-widest text-amber-400">Profile</div>
                                 <div class="font-semibold text-sm">Banner, logo, verification &amp; follower count at a glance</div>
                             </div>
