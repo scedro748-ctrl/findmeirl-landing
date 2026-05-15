@@ -31,6 +31,13 @@
       metaDesc:
         "FindmeIRL connects people nearby and gives venues clear insights. Join the waitlist for early access.",
       langAria: "Language",
+      navSiteAria: "Site navigation",
+      navForBusinesses: "For businesses",
+      navForPeople: "For people",
+      navRecording: "Recording of App",
+      navTerms: "Terms of Service",
+      navPrivacy: "Privacy Policy",
+      legalBack: "Back",
       heroEyebrow: "In-person discovery · venues · nearby people",
       heroTitle: "Real places. Real people. Real momentum.",
       heroLeadHtml:
@@ -106,7 +113,7 @@
         "Chat inbox — threads stay scoped to real-life intent.",
       peopleCaption8:
         "Settings — privacy boundaries, alerts, and account control.",
-      footerWaitlist: "Join the waitlist",
+      footerContact: "Contact",
       footerPrivacy: "Privacy",
       footerTerms: "Terms",
     },
@@ -116,6 +123,13 @@
       metaDesc:
         "FindmeIRL verbindet Menschen in der Nähe und gibt Locations klare Insights. Jetzt für den Start auf die Warteliste setzen.",
       langAria: "Sprache",
+      navSiteAria: "Navigation",
+      navForBusinesses: "Für Unternehmen",
+      navForPeople: "Für Nutzer:innen",
+      navRecording: "App-Aufzeichnung",
+      navTerms: "Nutzungsbedingungen",
+      navPrivacy: "Datenschutz",
+      legalBack: "Zurück",
       heroEyebrow: "Entdeckung vor Ort · Locations · Menschen in der Nähe",
       heroTitle:
         "Echte Orte. Echte Menschen. Echte Dynamik.",
@@ -192,7 +206,7 @@
         "Chat-Inbox — Fäden gebunden an echte Offline-Absicht.",
       peopleCaption8:
         "Einstellungen — Privatsphäre, Hinweise und Konto-Kontrolle.",
-      footerWaitlist: "Zur Warteliste",
+      footerContact: "Kontakt",
       footerPrivacy: "Datenschutz",
       footerTerms: "AGB",
     },
@@ -202,6 +216,13 @@
       metaDesc:
         "FindmeIRL connecte les personnes à proximité et offre aux lieux des indicateurs clairs. Inscrivez-vous sur la liste d’attente.",
       langAria: "Langue",
+      navSiteAria: "Navigation du site",
+      navForBusinesses: "Pour les pros",
+      navForPeople: "Pour tout le monde",
+      navRecording: "Enregistrement de l’app",
+      navTerms: "Conditions d’utilisation",
+      navPrivacy: "Politique de confidentialité",
+      legalBack: "Retour",
       heroEyebrow:
         "Découverte IRL · lieux · personnes à proximité",
       heroTitle:
@@ -279,7 +300,7 @@
         "Boîte de chat — fils ancrés dans l’intention réelle.",
       peopleCaption8:
         "Réglages — limites de vie privée, alertes et compte.",
-      footerWaitlist: "Liste d’attente",
+      footerContact: "Contact",
       footerPrivacy: "Confidentialité",
       footerTerms: "Conditions",
     },
@@ -289,6 +310,13 @@
       metaDesc:
         "FindmeIRL connette persone vicine e offre ai locali insight chiari. Iscriviti alla lista d’attesa per l’accesso anticipato.",
       langAria: "Lingua",
+      navSiteAria: "Navigazione del sito",
+      navForBusinesses: "Per le attività",
+      navForPeople: "Per le persone",
+      navRecording: "Registrazione app",
+      navTerms: "Termini di servizio",
+      navPrivacy: "Informativa sulla privacy",
+      legalBack: "Indietro",
       heroEyebrow:
         "Scoperta dal vivo · locali · persone vicine",
       heroTitle:
@@ -366,7 +394,7 @@
         "Chat — thread legati a intenti dal vivo.",
       peopleCaption8:
         "Impostazioni — privacy, notifiche e controllo account.",
-      footerWaitlist: "Lista d’attesa",
+      footerContact: "Contatto",
       footerPrivacy: "Privacy",
       footerTerms: "Termini",
     },
@@ -413,12 +441,13 @@
     var L = normalizeLang(lang);
     var pack = LANDING[L] || LANDING.en;
     var year = String(new Date().getFullYear());
+    var onLegal = !!(document.body && document.body.getAttribute("data-legal-doc"));
 
     document.documentElement.lang = L;
 
-    if (pack.docTitle) document.title = pack.docTitle;
+    if (pack.docTitle && !onLegal) document.title = pack.docTitle;
     var meta = document.querySelector('meta[name="description"]');
-    if (meta && pack.metaDesc) meta.setAttribute("content", pack.metaDesc);
+    if (meta && pack.metaDesc && !onLegal) meta.setAttribute("content", pack.metaDesc);
 
     var nodes = document.querySelectorAll("[data-i18n]");
     for (var i = 0; i < nodes.length; i++) {
@@ -460,6 +489,7 @@
       syncLegalLinks(initial);
     } else {
       syncLegalLinks(pageLang || initial);
+      applyLandingStrings(pageLang || initial);
     }
 
     sel.addEventListener("change", function () {
