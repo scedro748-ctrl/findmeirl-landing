@@ -1,1001 +1,1159 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>findmeIRL — Privacy-First Social Discovery</title>
-    <meta name="description" content="Discover real connections nearby while protecting your exact location with grid-based obfuscation. Join the waitlist for early access.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FindmeIRL — Meet people and grow places, in real life</title>
+    <meta
+      name="description"
+      content="FindmeIRL connects people nearby and gives venues clear insights. Join the waitlist for early access."
+    />
+    <meta name="color-scheme" content="dark" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
-        
-        :root {
-            --primary: #5E9ED6;
-            --accent: #00D4FF;
-        }
-        
-        .tail-container {
-            font-family: 'Inter', system-ui, sans-serif;
-        }
-        
-        .logo-font {
-            font-family: 'Space Grotesk', sans-serif;
-        }
+      :root {
+        /* FindmeIRL app chrome — deep navy panels on true black (matches in-app UI) */
+        --bg: #000000;
+        --surface: #1a2840;
+        --surface-warm: #101c2e;
 
-        .hero-bg {
-            background: linear-gradient(135deg, #0F1B2E 0%, #1A2740 100%);
-        }
+        --fg: #e8ecf4;
+        --fg-2: var(--fg);
+        --muted: #7f8ca6;
+        --meta: var(--muted);
 
-        .glass {
-            background: rgba(26, 39, 74, 0.7);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(94, 158, 214, 0.2);
-        }
+        --border: #2f4a72;
+        --border-soft: color-mix(in oklab, var(--border), var(--bg) 35%);
 
-        .nav-link {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .nav-link:hover {
-            color: #5E9ED6;
-            transform: translateY(-1px);
-        }
+        /* Primary actions match in-app cyan CTAs */
+        --accent: #00e5ff;
+        --accent-on: #061018;
+        --accent-hover: color-mix(in oklab, var(--accent), white 22%);
+        --accent-active: color-mix(in oklab, var(--accent), black 12%);
 
-        .feature-card {
-            transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px -12px rgb(94 158 214 / 0.15);
-        }
+        /* Stats / highlights (profile meters, map pins) */
+        --highlight: #f5c84c;
+        --handle: #f09080;
 
-        .screenshot {
-            transition: all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3),
-                        0 4px 6px -4px rgb(0 0 0 / 0.3);
-        }
-        
-        .screenshot:hover {
-            transform: scale(1.03);
-            box-shadow: 0 25px 50px -12px rgb(94 158 214 / 0.25);
-        }
+        --success: #3ecf8e;
+        --warn: #eab308;
+        --danger: #dc2626;
 
-        .form-input {
-            transition: all 0.3s ease;
-        }
-        
-        .form-input:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(94, 158, 214, 0.3);
-            border-color: #5E9ED6;
-        }
+        --font-display: "Inter", -apple-system, system-ui, sans-serif;
+        --font-body: "Inter", -apple-system, system-ui, sans-serif;
+        --font-mono: ui-monospace, "JetBrains Mono", monospace;
 
-        .hero-glow {
-            animation: pulse 4s ease-in-out infinite;
-        }
+        --text-xs: 12px;
+        --text-sm: 14px;
+        --text-base: 16px;
+        --text-lg: 20px;
+        --text-xl: 24px;
+        --text-2xl: 32px;
+        --text-3xl: 48px;
+        --text-4xl: 64px;
 
-        @keyframes pulse {
-            0%, 100% { opacity: 0.6; }
-            50% { opacity: 1; }
-        }
+        --leading-body: 1.5;
+        --leading-tight: 1.2;
+        --tracking-display: -0.01em;
 
-        @media (max-width: 767px) {
-            .feature-card:hover,
-            .screenshot:hover {
-                transform: none;
-            }
+        --space-1: 4px;
+        --space-2: 8px;
+        --space-3: 12px;
+        --space-4: 16px;
+        --space-5: 20px;
+        --space-6: 24px;
+        --space-8: 32px;
+        --space-12: 48px;
+        --space-20: 80px;
+
+        --section-y-desktop: 80px;
+        --section-y-tablet: 48px;
+        --section-y-phone: 32px;
+
+        --radius-sm: 10px;
+        --radius-md: 16px;
+        --radius-lg: 22px;
+        --radius-pill: 9999px;
+
+        --elev-flat: none;
+        --elev-ring: 0 0 0 1px color-mix(in oklab, var(--border), var(--bg) 25%);
+        --elev-raised: 0 12px 40px
+          color-mix(in oklab, #000000, transparent 52%);
+
+        --focus-ring: 0 0 0 3px color-mix(in oklab, var(--accent), transparent 35%);
+
+        --motion-fast: 150ms;
+        --motion-base: 200ms;
+        --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+
+        --container-max: 1200px;
+        --container-gutter-desktop: 24px;
+        --container-gutter-tablet: 16px;
+        --container-gutter-phone: 12px;
+
+        --header-h: 64px;
+        --video-bg: #000000;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        background: #000000;
+        /* No visible page scrollbar — scroll still works (wheel, trackpad, keys). */
+        scrollbar-gutter: auto;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* legacy Edge */
+      }
+      html::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        padding-top: var(--header-h);
+        background: var(--bg);
+        color: var(--fg);
+        font-family: var(--font-body);
+        font-size: var(--text-base);
+        line-height: var(--leading-body);
+        -webkit-font-smoothing: antialiased;
+        color-scheme: dark;
+      }
+      ::selection {
+        background: color-mix(in oklab, var(--accent), transparent 50%);
+        color: var(--fg);
+      }
+
+      .site-header {
+        position: fixed;
+        inset: 0 0 auto 0;
+        z-index: 40;
+        height: var(--header-h);
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid var(--border-soft);
+        /* Same panel depth as in-app top chrome — not a flat black strip */
+        background: color-mix(in oklab, var(--surface-warm), var(--bg) 22%);
+      }
+      .site-header__inner {
+        width: 100%;
+        max-width: var(--container-max);
+        margin-inline: auto;
+        padding-inline: var(--container-gutter-desktop);
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        column-gap: var(--space-4);
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-3);
+        text-decoration: none;
+        color: inherit;
+      }
+      .brand:focus-visible {
+        outline: none;
+        border-radius: var(--radius-sm);
+        box-shadow: var(--focus-ring);
+      }
+      .brand-mark {
+        width: 40px;
+        height: 40px;
+        border-radius: var(--radius-md);
+        object-fit: cover;
+        flex-shrink: 0;
+        box-shadow:
+          var(--elev-ring),
+          0 0 0 2px color-mix(in oklab, var(--fg), transparent 88%);
+      }
+      .brand-name {
+        font-family: var(--font-display);
+        font-size: var(--text-xl);
+        font-weight: 600;
+        letter-spacing: var(--tracking-display);
+        line-height: 1.1;
+      }
+      .header-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 16px;
+        border-radius: var(--radius-sm);
+        font-size: var(--text-sm);
+        font-weight: 500;
+        text-decoration: none;
+        background: var(--accent);
+        color: var(--accent-on);
+        border: 1px solid transparent;
+        transition:
+          background-color var(--motion-fast) var(--ease-standard),
+          transform var(--motion-fast) var(--ease-standard);
+        white-space: nowrap;
+        /* Longest localized full label ≈ FR/IT “Liste …” — reserve width so the
+           language select doesn’t slide when copy changes. */
+        min-width: 10.75rem;
+        box-sizing: border-box;
+      }
+      .header-cta:hover {
+        background: var(--accent-hover);
+      }
+      .header-cta:active {
+        background: var(--accent-active);
+        transform: translateY(1px);
+      }
+      .header-cta:focus-visible {
+        outline: none;
+        box-shadow: var(--focus-ring);
+      }
+
+      .site-header__actions {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+        flex-shrink: 0;
+      }
+
+      .lang-select.site-lang-select {
+        appearance: none;
+        margin: 0;
+        background: color-mix(in oklab, var(--surface-warm), var(--bg) 5%);
+        border: 1px solid var(--border-soft);
+        color: var(--fg);
+        border-radius: var(--radius-sm);
+        padding: 8px 28px 8px var(--space-3);
+        font-size: var(--text-sm);
+        font-weight: 600;
+        font-family: inherit;
+        cursor: pointer;
+        color-scheme: dark;
+        /* Fixed footprint: options are always 2-letter codes — avoids width flicker. */
+        width: 4.25rem;
+        min-width: 4.25rem;
+        max-width: 4.25rem;
+        flex: 0 0 4.25rem;
+      }
+      .lang-select.site-lang-select:focus-visible {
+        outline: none;
+        box-shadow: var(--focus-ring);
+      }
+
+      .header-cta__compact {
+        display: none;
+      }
+
+      main {
+        max-width: var(--container-max);
+        margin-inline: auto;
+        padding-inline: var(--container-gutter-desktop);
+        background: var(--bg);
+      }
+      section {
+        padding-block: var(--section-y-desktop);
+        border-bottom: 1px solid var(--border-soft);
+      }
+      section:last-of-type {
+        border-bottom: none;
+      }
+
+      h1,
+      h2 {
+        font-family: var(--font-display);
+        line-height: var(--leading-tight);
+        margin: 0;
+        font-weight: 600;
+      }
+      h1 {
+        font-size: clamp(var(--text-2xl), 4.5vw, var(--text-3xl));
+        letter-spacing: var(--tracking-display);
+      }
+      h2 {
+        font-size: clamp(var(--text-xl), 3vw, var(--text-2xl));
+        letter-spacing: var(--tracking-display);
+      }
+      p {
+        margin: 0;
+      }
+      .lead {
+        font-size: var(--text-lg);
+        color: var(--muted);
+        max-width: 52ch;
+      }
+      .eyebrow {
+        font-size: var(--text-xs);
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 600;
+      }
+      .stack-3 > * + * {
+        margin-block-start: var(--space-3);
+      }
+      .stack-4 > * + * {
+        margin-block-start: var(--space-4);
+      }
+      .stack-6 > * + * {
+        margin-block-start: var(--space-6);
+      }
+      .stack-8 > * + * {
+        margin-block-start: var(--space-8);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.25fr 1fr;
+        gap: var(--space-12);
+        align-items: end;
+        padding-top: var(--space-8);
+      }
+      .hero .lead strong {
+        color: var(--handle);
+        font-weight: 600;
+      }
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+          align-items: start;
         }
+      }
+
+      .waitlist {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
+        max-width: 420px;
+      }
+      .waitlist__row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+      }
+      .waitlist input[type="email"] {
+        flex: 1 1 200px;
+        min-width: 0;
+        padding: 10px 12px;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--border-soft);
+        background: color-mix(in oklab, var(--surface-warm), var(--bg) 12%);
+        color: var(--fg);
+        font-family: inherit;
+        font-size: var(--text-sm);
+        outline: none;
+        transition:
+          border-color var(--motion-fast) var(--ease-standard),
+          box-shadow var(--motion-fast) var(--ease-standard);
+      }
+      .waitlist input[type="email"]::placeholder {
+        color: var(--muted);
+      }
+      .waitlist input[type="email"]:focus-visible {
+        border-color: var(--accent);
+        box-shadow: var(--focus-ring);
+      }
+      .waitlist button[type="submit"] {
+        padding: 10px 16px;
+        border-radius: var(--radius-sm);
+        font-size: var(--text-sm);
+        font-weight: 500;
+        font-family: inherit;
+        cursor: pointer;
+        border: 1px solid transparent;
+        background: var(--accent);
+        color: var(--accent-on);
+        transition:
+          background-color var(--motion-fast) var(--ease-standard),
+          transform var(--motion-fast) var(--ease-standard);
+      }
+      .waitlist button[type="submit"]:hover {
+        background: var(--accent-hover);
+      }
+      .waitlist button[type="submit"]:active {
+        background: var(--accent-active);
+        transform: translateY(1px);
+      }
+      .waitlist button[type="submit"]:focus-visible {
+        outline: none;
+        box-shadow: var(--focus-ring);
+      }
+      .waitlist__fine {
+        font-size: var(--text-xs);
+        color: var(--muted);
+      }
+      .waitlist__success {
+        display: none;
+        font-size: var(--text-sm);
+        color: var(--success);
+        font-weight: 500;
+      }
+      .waitlist.is-done .waitlist__row,
+      .waitlist.is-done .waitlist__fine {
+        display: none;
+      }
+      .waitlist.is-done .waitlist__success {
+        display: block;
+      }
+      .waitlist__error {
+        display: none;
+        font-size: var(--text-sm);
+        color: var(--danger);
+        font-weight: 500;
+        margin: 0;
+      }
+      .waitlist.is-error .waitlist__error {
+        display: block;
+      }
+      .waitlist input[type="email"][aria-invalid="true"] {
+        border-color: var(--danger);
+      }
+      .waitlist button[type="submit"]:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .hero-aside {
+        border: 1px solid var(--border-soft);
+        border-radius: var(--radius-lg);
+        background: linear-gradient(
+          165deg,
+          color-mix(in oklab, var(--surface), var(--accent) 9%) 0%,
+          var(--surface) 58%
+        );
+        padding: var(--space-5);
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        box-shadow: var(--elev-raised);
+      }
+      .hero-aside__top {
+        padding-bottom: var(--space-4);
+        margin-bottom: var(--space-4);
+        border-bottom: 1px solid var(--border-soft);
+      }
+      .stat-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: var(--space-4);
+        font-size: var(--text-sm);
+        padding-block: var(--space-3);
+        border-bottom: 1px solid var(--border-soft);
+      }
+      .stat-row:last-of-type {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .stat-row__label {
+        font-weight: 600;
+        color: var(--fg);
+      }
+      .stat-row__meta {
+        font-family: var(--font-mono);
+        font-variant-numeric: tabular-nums;
+        color: var(--highlight);
+        font-size: var(--text-xs);
+        text-align: right;
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px var(--space-3);
+        border-radius: var(--radius-pill);
+        font-size: var(--text-xs);
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        background: color-mix(in oklab, var(--accent), transparent 92%);
+        color: var(--accent);
+        border: 1px solid color-mix(in oklab, var(--accent), transparent 65%);
+      }
+
+      .section-head {
+        max-width: 46ch;
+      }
+      .section-head h2 {
+        position: relative;
+        padding-bottom: var(--space-4);
+      }
+      .section-head h2::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 56px;
+        height: 3px;
+        border-radius: 999px;
+        background: var(--accent);
+        box-shadow: 0 0 18px color-mix(in oklab, var(--accent), transparent 45%);
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-4);
+        margin-block-start: var(--space-8);
+      }
+      @media (max-width: 1023px) {
+        .gallery {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 520px) {
+        .gallery {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .shot {
+        margin: 0;
+        border: 1px solid var(--border-soft);
+        border-radius: var(--radius-lg);
+        background: var(--surface);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: var(--elev-ring);
+      }
+      .shot img {
+        display: block;
+        width: 100%;
+        height: auto;
+        vertical-align: middle;
+      }
+      .shot figcaption {
+        margin: 0;
+        padding: var(--space-3) var(--space-4) var(--space-4);
+        font-size: var(--text-sm);
+        color: var(--muted);
+        line-height: var(--leading-body);
+      }
+
+      .video-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-6);
+        margin-block-start: var(--space-8);
+      }
+      @media (max-width: 768px) {
+        .video-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .video-card {
+        margin: 0;
+        border: 1px solid var(--border-soft);
+        border-radius: var(--radius-lg);
+        background: linear-gradient(
+          180deg,
+          color-mix(in oklab, var(--surface), var(--accent) 6%) 0%,
+          var(--surface) 100%
+        );
+        padding: var(--space-4);
+        box-shadow: var(--elev-ring);
+      }
+      .video-card video {
+        display: block;
+        width: 100%;
+        border-radius: var(--radius-md);
+        background: var(--video-bg);
+        border: 1px solid var(--border-soft);
+      }
+      .video-card figcaption {
+        margin-block-start: var(--space-3);
+        font-size: var(--text-sm);
+        color: var(--muted);
+      }
+
+      .footer {
+        padding-block: var(--space-12);
+        font-size: var(--text-sm);
+        color: var(--muted);
+      }
+      .footer a {
+        color: var(--handle);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .footer a:hover {
+        color: var(--accent);
+      }
+
+      @media (max-width: 1023px) {
+        .site-header__inner,
+        main {
+          padding-inline: var(--container-gutter-tablet);
+        }
+        section {
+          padding-block: var(--section-y-tablet);
+        }
+      }
+      @media (max-width: 639px) {
+        .site-header__inner,
+        main {
+          padding-inline: var(--container-gutter-phone);
+        }
+        section {
+          padding-block: var(--section-y-phone);
+        }
+        .brand-name {
+          font-size: var(--text-lg);
+        }
+        .brand-mark {
+          width: 36px;
+          height: 36px;
+        }
+        .header-cta__full {
+          display: none;
+        }
+        .header-cta__compact {
+          display: inline;
+        }
+        .header-cta {
+          min-width: 6.75rem;
+        }
+      }
     </style>
-</head>
-<body class="tail-container bg-[#0F1B2E] text-white overflow-x-hidden">
-    <!-- NAVBAR -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0F1B2E]/90 backdrop-blur-lg border-b border-white/10 pt-[env(safe-area-inset-top,0px)]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 md:py-5 flex items-center justify-between gap-2">
-            <div class="flex items-center gap-x-3">
-                <img src="assets/images/app-icon.png" alt="findmeIRL" 
-                     class="w-12 h-12 rounded-2xl shadow-lg shadow-[#5E9ED6]/50 object-cover">
-                <div class="min-w-0">
-                    <span class="text-lg sm:text-2xl font-semibold tracking-tighter logo-font truncate">findmeIRL</span>
-                </div>
-            </div>
-            
-            <div class="hidden md:flex items-center gap-x-10 text-sm font-medium">
-                <a href="#features" onclick="smoothScrollTo('features')" class="nav-link text-white/80 hover:text-white"><span data-i18n="nav.features">Features</span></a>
-                <a href="#businesses" onclick="smoothScrollTo('businesses')" class="nav-link text-white/80 hover:text-white"><span data-i18n="nav.businesses">Businesses</span></a>
-                <a href="#screenshots" onclick="smoothScrollTo('screenshots')" class="nav-link text-white/80 hover:text-white"><span data-i18n="nav.screenshots">Screenshots</span></a>
-                <a href="#waitlist" onclick="smoothScrollTo('waitlist')" class="nav-link text-white/80 hover:text-white"><span data-i18n="nav.waitlist">Waitlist</span></a>
-                <a href="privacy.html" data-legal-link="privacy" class="nav-link text-white/80 hover:text-white"><span data-i18n="nav.privacy">Privacy</span></a>
-                <a href="terms.html" data-legal-link="terms" class="nav-link text-white/80 hover:text-white"><span data-i18n="nav.terms">Terms</span></a>
-            </div>
-            
-            <div class="flex items-center gap-x-2 sm:gap-x-4 flex-shrink-0">
-                <select class="site-lang-select text-xs sm:text-sm font-medium bg-white/5 border border-white/20 rounded-2xl px-2 sm:px-2.5 py-2 min-h-[44px] text-white focus:outline-none focus:ring-2 focus:ring-[#5E9ED6]/40" style="color-scheme: dark;" data-i18n-aria-label="nav.langAria">
-                    <option value="en">EN</option>
-                    <option value="de">DE</option>
-                    <option value="fr">FR</option>
-                    <option value="it">IT</option>
-                </select>
-                <a href="#waitlist" 
-                   onclick="smoothScrollTo('waitlist')"
-                   class="px-3 sm:px-6 py-2.5 min-h-[44px] text-xs sm:text-sm font-semibold rounded-2xl bg-white text-[#0F1B2E] hover:bg-white/90 transition-all active:scale-95 flex items-center justify-center gap-x-1.5 sm:gap-x-2">
-                    <i class="fa-solid fa-bell text-sm shrink-0"></i>
-                    <span data-i18n="nav.joinWaitlistShort" class="md:hidden whitespace-nowrap">Waitlist</span>
-                    <span data-i18n="nav.joinWaitlist" class="hidden md:inline whitespace-nowrap">Join Waitlist</span>
-                </a>
-                <button onclick="toggleMobileMenu()" 
-                        type="button"
-                        aria-label="Menu"
-                        class="md:hidden w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center text-2xl rounded-2xl hover:bg-white/5">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
+  </head>
+  <body data-i18n-page="landing">
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="#top" aria-label="FindmeIRL — home">
+          <img
+            class="brand-mark"
+            src="mp7c8vzw-app-icon.png"
+            width="40"
+            height="40"
+            alt=""
+          />
+          <span class="brand-name">FindmeIRL</span>
+        </a>
+        <div class="site-header__actions">
+          <select
+            id="site-lang"
+            class="lang-select site-lang-select"
+            aria-label="Language"
+          >
+            <option value="en">EN</option>
+            <option value="de">DE</option>
+            <option value="fr">FR</option>
+            <option value="it">IT</option>
+          </select>
+          <a class="header-cta" href="#waitlist"
+            ><span class="header-cta__full" data-i18n="headerCtaFull"
+              >Join waitlist</span
+            ><span class="header-cta__compact" data-i18n="headerCtaShort"
+              >Waitlist</span
+            ></a
+          >
         </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-[#0F1B2E] border-t border-white/10 px-6 py-6">
-            <div class="flex flex-col gap-y-6 text-lg">
-                <select class="site-lang-select w-full text-sm font-medium bg-white/5 border border-white/20 rounded-2xl px-3 py-3 text-white focus:outline-none focus:ring-2 focus:ring-[#5E9ED6]/40" style="color-scheme: dark;" data-i18n-aria-label="nav.langAria">
-                    <option value="en">EN</option>
-                    <option value="de">DE</option>
-                    <option value="fr">FR</option>
-                    <option value="it">IT</option>
-                </select>
-                <a href="#features" onclick="smoothScrollTo('features');toggleMobileMenu()" class="nav-link"><span data-i18n="nav.features">Features</span></a>
-                <a href="#businesses" onclick="smoothScrollTo('businesses');toggleMobileMenu()" class="nav-link"><span data-i18n="nav.mobileForBusinesses">For Businesses</span></a>
-                <a href="#screenshots" onclick="smoothScrollTo('screenshots');toggleMobileMenu()" class="nav-link"><span data-i18n="nav.screenshots">Screenshots</span></a>
-                <a href="#waitlist" onclick="smoothScrollTo('waitlist');toggleMobileMenu()" class="nav-link"><span data-i18n="nav.mobileJoinWaitlist">Join the Waitlist</span></a>
-                <a href="privacy.html" data-legal-link="privacy" class="nav-link"><span data-i18n="nav.mobilePrivacy">Privacy Policy</span></a>
-                <a href="terms.html" data-legal-link="terms" class="nav-link"><span data-i18n="nav.mobileTerms">Terms of Service</span></a>
-                <div class="pt-4 border-t border-white/10">
-                    <a href="#waitlist" onclick="smoothScrollTo('waitlist');toggleMobileMenu()" 
-                       class="block w-full py-4 text-center bg-[#5E9ED6] hover:bg-[#4A8AC2] rounded-3xl font-semibold text-lg">
-                        <span data-i18n="nav.getEarlyAccess">Get Early Access</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- HERO -->
-    <header class="hero-bg min-h-[100dvh] min-h-screen flex items-center pt-20 pb-16 md:pb-0 relative overflow-x-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(at_top_right,#5E9ED620_0%,transparent_50%)]"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-8 md:gap-16 items-center relative z-10">
-            <div class="space-y-6 md:space-y-8">
-                <div class="inline-flex items-center gap-x-2 bg-white/10 text-white/90 text-xs font-mono tracking-[2px] px-5 py-2 rounded-3xl border border-white/20">
-                    <div class="w-2 h-2 bg-[#00D4FF] rounded-full animate-pulse"></div>
-                    <span data-i18n="hero.badge">COMING SOON TO iOS &amp; ANDROID</span>
-                </div>
-                
-                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tighter leading-none logo-font hero-glow">
-                    <span data-i18n="hero.h1_l1">FIND REAL</span><br><span data-i18n="hero.h1_l2">CONNECTIONS.</span><br><span class="bg-clip-text text-transparent bg-gradient-to-r from-[#5E9ED6] to-[#00D4FF]" data-i18n="hero.h1_l3">PRIVACY FIRST.</span>
-                </h1>
-                
-                <p class="text-base sm:text-lg md:text-xl text-white/70 max-w-lg" data-i18n="hero.sub">
-                    Discover people nearby who share your interests. 
-                    Your exact location stays private — we use smart grid-based obfuscation so others see only an approximate position.
-                </p>
-                
-                <div class="flex flex-wrap gap-4">
-                    <a href="#waitlist" 
-                       onclick="smoothScrollTo('waitlist')"
-                       class="group px-10 py-4 bg-[#5E9ED6] hover:bg-[#4A8AC2] text-white font-semibold text-lg rounded-3xl flex items-center gap-x-3 transition-all active:scale-[0.97]">
-                        <span data-i18n="hero.ctaPrimary">JOIN THE WAITLIST</span>
-                        <i class="fa-solid fa-arrow-right group-active:rotate-45 transition-transform"></i>
-                    </a>
-                    
-                    <a href="#screenshots" 
-                       onclick="smoothScrollTo('screenshots')"
-                       class="px-8 py-4 border border-white/30 hover:border-white/60 font-medium rounded-3xl flex items-center gap-x-2 transition-colors">
-                        <i class="fa-solid fa-play"></i>
-                        <span data-i18n="hero.ctaSecondary">SEE THE APP</span>
-                    </a>
-                </div>
-                
-                <div class="flex items-center gap-x-8 text-sm pt-6">
-                    <div class="flex items-center gap-x-2">
-                        <div class="flex -space-x-2">
-                            <div class="w-6 h-6 bg-[#5E9ED6] rounded-full border-2 border-[#0F1B2E] flex items-center justify-center text-[10px]">🗺️</div>
-                            <div class="w-6 h-6 bg-[#00D4FF] rounded-full border-2 border-[#0F1B2E] flex items-center justify-center text-[10px]">💬</div>
-                        </div>
-                        <div class="text-white/60" data-i18n="hero.trusted">Trusted by early testers</div>
-                    </div>
-                    <div class="h-4 w-px bg-white/20"></div>
-                    <div class="text-emerald-400 flex items-center gap-x-1 text-sm">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <span class="font-medium" data-i18n="hero.privacyDesign">Privacy by design</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Hero visual -->
-            <div class="relative flex justify-center">
-                <div class="relative w-full max-w-[380px]">
-                    <!-- Phone mock with real screenshot -->
-                    <div class="glass rounded-[3rem] p-3 shadow-2xl border border-white/10 relative z-10 overflow-hidden">
-                        <!-- Status bar -->
-                        <div class="h-11 bg-black/60 flex items-end justify-center text-[10px] text-white/60 pt-3 z-20 relative">
-                            <span data-i18n="hero.phoneStatus">9:41 • findmeIRL</span>
-                        </div>
-                        <img src="assets/hero-discover-map.png" alt="findmeIRL Discover map" draggable="false" decoding="async"
-                             class="block w-full max-h-[52vh] sm:max-h-[58vh] md:h-[576px] md:max-h-none object-contain object-bottom bg-[#0F1B2E] select-none pointer-events-none">
-                    </div>
-                    
-                    <!-- Decorative elements -->
-                    <div class="absolute -top-8 -right-8 w-48 h-48 bg-[#00D4FF]/10 rounded-full blur-3xl"></div>
-                    <div class="absolute -bottom-12 -left-12 w-64 h-64 bg-[#5E9ED6]/10 rounded-full blur-3xl"></div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="absolute bottom-12 left-1/2 flex flex-col items-center gap-y-2 text-white/40 text-xs tracking-widest">
-            <div class="flex gap-x-8">
-                <div data-i18n="hero.scroll">SCROLL TO EXPLORE ↓</div>
-            </div>
-        </div>
+      </div>
     </header>
 
-    <!-- TRUST BAR -->
-    <div class="border-b border-white/10 py-6 bg-black/30">
-        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center items-center gap-x-12 gap-y-6 text-white/40 text-sm">
-            <div class="flex items-center gap-x-2">
-                <i class="fa-solid fa-lock text-emerald-400"></i>
-                <span data-i18n="trust.supabase">SUPABASE • SECURE</span>
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="stack-6">
+          <div class="stack-4">
+            <p class="eyebrow" data-i18n="heroEyebrow">
+              In-person discovery · venues · nearby people
+            </p>
+            <h1 id="hero-heading" data-i18n="heroTitle">
+              Real places. Real people. Real momentum.
+            </h1>
+            <p class="lead" data-i18n="heroLeadHtml" data-i18n-html>
+              FindmeIRL helps people discover what’s happening around them —
+              while giving venues a clear view of
+              <strong>audience, visits, and events.</strong>
+            </p>
+          </div>
+          <form
+            id="waitlist"
+            class="waitlist"
+            novalidate
+            aria-describedby="waitlist-help"
+          >
+            <div class="waitlist__row">
+              <input
+                id="email"
+                type="email"
+                name="email"
+                autocomplete="email"
+                inputmode="email"
+                required
+                placeholder="Work or personal email"
+                aria-label="Email for waitlist"
+                data-i18n-placeholder="emailPlaceholder"
+                data-i18n-aria-label="emailAria"
+              />
+              <button type="submit" id="waitlist-submit">
+                <span id="waitlist-submit-label" data-i18n="submitCta"
+                  >Get access</span
+                >
+              </button>
             </div>
-            <div data-i18n="trust.grid">GRID OBFUSCATION</div>
-            <div class="flex items-center gap-x-2">
-                <i class="fa-solid fa-map-marker-alt"></i>
-                <span data-i18n="trust.osm">OPENSTREETMAP</span>
-            </div>
-            <div data-i18n="trust.firebase">FIREBASE PUSH</div>
-            <div data-i18n="trust.stack">FLUTTER • RIVERPOD</div>
+            <p id="waitlist-help" class="waitlist__fine" data-i18n="waitlistFine">
+              No spam — we’ll only email you about launch and early invites.
+            </p>
+            <p id="waitlist-error" class="waitlist__error" role="alert"></p>
+            <p class="waitlist__success" role="status" aria-live="polite" data-i18n="waitlistOk">
+              You’re on the list. We’ll be in touch.
+            </p>
+          </form>
         </div>
-    </div>
+        <aside class="hero-aside" aria-label="Product preview">
+          <div class="hero-aside__top">
+            <span class="pill" data-i18n="asidePill">Same app · two modes</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-row__label" data-i18n="stat1a">Tonight nearby</span>
+            <span class="stat-row__meta" data-i18n="stat1b"
+              >live · map + list</span
+            >
+          </div>
+          <div class="stat-row">
+            <span class="stat-row__label" data-i18n="stat2a">Venue insights</span>
+            <span class="stat-row__meta" data-i18n="stat2b"
+              >visits · audience · events</span
+            >
+          </div>
+          <div class="stat-row">
+            <span class="stat-row__label" data-i18n="stat3a">Your profile</span>
+            <span class="stat-row__meta" data-i18n="stat3b"
+              >filters · chat · settings</span
+            >
+          </div>
+        </aside>
+      </section>
 
-    <!-- FEATURES -->
-    <section id="features" class="py-24 bg-[#0A1424]">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <div class="inline px-4 py-1.5 bg-white/5 text-[#5E9ED6] text-xs font-mono tracking-widest rounded-3xl mb-4" data-i18n="features.tag">BUILT DIFFERENT</div>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tighter logo-font section-header" data-i18n="features.h2">Privacy-first by design</h2>
-                <p class="mt-4 text-white/60 max-w-md mx-auto" data-i18n="features.sub">No exact GPS ever leaves your device to other users. Only approximate grid cells.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="feature-card glass rounded-3xl p-8 group">
-                    <div class="w-12 h-12 bg-[#5E9ED6]/10 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🛡️</div>
-                    <h3 class="text-2xl font-semibold mb-3" data-i18n="features.f1.title">Location Obfuscation</h3>
-                    <p class="text-white/70" data-i18n="features.f1.body">Your real GPS stays private on our servers. Others see a randomized point within ~600m inside the same 1km² grid cell.</p>
-                    <div class="mt-8 pt-6 border-t border-white/10 text-xs font-mono text-[#00D4FF]" data-i18n="features.f1.footer">NEVER REVEALED • GRID ONLY</div>
-                </div>
-                
-                <!-- Feature 2 -->
-                <div class="feature-card glass rounded-3xl p-8 group">
-                    <div class="w-12 h-12 bg-[#00D4FF]/10 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🔍</div>
-                    <h3 class="text-2xl font-semibold mb-3" data-i18n="features.f2.title">Smart Discovery</h3>
-                    <p class="text-white/70" data-i18n="features.f2.body">Match on interests, languages, faith, profession, age range, and more. Powerful filters with AND/OR logic. Real people, real proximity.</p>
-                    <div class="mt-8 pt-6 border-t border-white/10 text-xs font-mono text-[#5E9ED6]" data-i18n="features.f2.footer">INTERESTS • LANGUAGES • FAITH</div>
-                </div>
-                
-                <!-- Feature 3 -->
-                <div class="feature-card glass rounded-3xl p-8 group">
-                    <div class="w-12 h-12 bg-violet-500/10 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">📅</div>
-                    <h3 class="text-2xl font-semibold mb-3" data-i18n="features.f3.title">Local Events</h3>
-                    <p class="text-white/70" data-i18n="features.f3.body">Create and discover events nearby. RSVP, see who's attending, chat with attendees before you meet. Beautiful event cards with photos.</p>
-                    <div class="mt-8 pt-6 border-t border-white/10 text-xs font-mono text-[#00D4FF]" data-i18n="features.f3.footer">UPCOMING • MY EVENTS • RSVP</div>
-                </div>
-                
-                <!-- Feature 4 -->
-                <div class="feature-card glass rounded-3xl p-8 group">
-                    <div class="w-12 h-12 bg-rose-500/10 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">💬</div>
-                    <h3 class="text-2xl font-semibold mb-3" data-i18n="features.f4.title">Private Chats</h3>
-                    <p class="text-white/70" data-i18n="features.f4.body">Real-time messaging with read receipts. Only connect with people you approve. In-app notifications and push when you're away.</p>
-                    <div class="mt-8 pt-6 border-t border-white/10 text-xs font-mono text-[#5E9ED6]" data-i18n="features.f4.footer">REQUESTS • ACCEPT • BLOCK</div>
-                </div>
-                
-                <!-- Feature 5 -->
-                <div class="feature-card glass rounded-3xl p-8 group">
-                    <div class="w-12 h-12 bg-amber-500/10 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">👥</div>
-                    <h3 class="text-2xl font-semibold mb-3" data-i18n="features.f5.title">Meaningful Profiles</h3>
-                    <p class="text-white/70" data-i18n="features.f5.body">Rich profiles with bio, gallery photos, countries of heritage, custom hobbies. Show avatar on map or keep private.</p>
-                    <div class="mt-8 pt-6 border-t border-white/10 text-xs font-mono text-[#00D4FF]" data-i18n="features.f5.footer">AVATARS • BANNERS • GALLERY</div>
-                </div>
-                
-                <!-- Feature 6 -->
-                <div class="feature-card glass rounded-3xl p-8 group">
-                    <div class="w-12 h-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🌐</div>
-                    <h3 class="text-2xl font-semibold mb-3" data-i18n="features.f6.title">Built with Care</h3>
-                    <p class="text-white/70" data-i18n="features.f6.body">Flutter + Riverpod • Supabase backend • Realtime updates • Beautiful dark UI that matches our mobile experience perfectly.</p>
-                    <div class="mt-8 pt-6 border-t border-white/10 text-xs font-mono text-[#5E9ED6]" data-i18n="features.f6.footer">OPEN SOURCE SPIRIT</div>
-                </div>
-            </div>
+      <section aria-labelledby="biz-heading">
+        <div class="section-head stack-3">
+          <p class="eyebrow" data-i18n="tourEyebrow">Product tour</p>
+          <h2 id="biz-heading" data-i18n="bizTitle">For businesses</h2>
+          <p class="lead" data-i18n="bizLead">
+            Profiles, discovery, events, and insights — built for operators who
+            want the story behind the foot traffic.
+          </p>
         </div>
-    </section>
-
-    <!-- SCREENSHOTS -->
-    <section id="screenshots" class="py-24 bg-[#0F1B2E]">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-                <div>
-                    <div class="uppercase text-xs tracking-[3px] text-[#5E9ED6] font-medium mb-2" data-i18n="shots.kicker">THE EXPERIENCE</div>
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tighter logo-font" data-i18n="shots.h2">See it in action</h2>
-                </div>
-                <p class="max-w-xs text-white/60 mt-4 md:mt-0" data-i18n="shots.sub">
-                    Real screenshots from the Flutter app — filters, profile, settings and more.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- Featured Demo Video -->
-                <div class="group">
-                    <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 relative aspect-[9/16]">
-                        <!-- Source is already portrait (e.g. 828×1792); no CSS rotation -->
-                        <video 
-                            class="block w-full h-full object-cover bg-black" 
-                            controls 
-                            muted 
-                            playsinline
-                            preload="none">
-                            <source src="assets/video/findmeirl-demo.mp4" type="video/mp4">
-                            <span data-i18n="shots.videoNoSupport">Your browser does not support the video tag.</span>
-                        </video>
-                    </div>
-                    <div class="mt-3 px-1 flex items-center gap-x-2">
-                        <span class="text-sm font-medium text-white/80" data-i18n="shots.demoCaption">See the full app experience</span>
-                        <span class="text-xs px-2 py-0.5 rounded bg-white/10 text-white/60" data-i18n="shots.demoLive">LIVE RECORDING</span>
-                    </div>
-                </div>
-
-                <!-- Screenshot 1: Events -->
-                <div class="group">
-                    <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                        <img src="assets/business/07-business-my-events.png" alt="Events Tab" loading="lazy" decoding="async"
-                             class="w-full h-full object-cover">
-                        <div class="absolute top-4 right-4 bg-black/70 text-[10px] px-3 py-1 rounded-2xl font-mono" data-i18n="shots.tile1.badge">EVENTS</div>
-                    </div>
-                    <div class="mt-3 px-1 space-y-0.5">
-                        <div class="text-xs uppercase tracking-widest text-violet-400" data-i18n="shots.tile1.cat">Events</div>
-                        <div class="text-sm md:text-base font-semibold text-white/80" data-i18n="shots.tile1.title">Create, discover &amp; manage local events with RSVPs</div>
-                    </div>
-                </div>
-                
-                <!-- Screenshot 2: Profile -->
-                <div class="group">
-                    <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                        <img src="assets/screenshots/03-profile-soulmate.png" alt="Profile Tab" loading="lazy" decoding="async"
-                             class="w-full h-full object-cover">
-                        <div class="absolute top-4 right-4 bg-black/70 text-[10px] px-3 py-1 rounded-2xl font-mono" data-i18n="shots.tile2.badge">YOU</div>
-                    </div>
-                    <div class="mt-3 px-1 space-y-0.5">
-                        <div class="text-xs uppercase tracking-widest text-[#5E9ED6]" data-i18n="shots.tile2.cat">Profile</div>
-                        <div class="text-sm md:text-base font-semibold text-white/80" data-i18n="shots.tile2.title">Soulmate Score, match tiers &amp; banner upload</div>
-                    </div>
-                </div>
-                
-                <!-- Screenshot 3: Filters -->
-                <div class="group">
-                    <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                        <img src="assets/screenshots/01-filters-people.png" alt="Filters - People" loading="lazy" decoding="async"
-                             class="w-full h-full object-cover">
-                        <div class="absolute top-4 right-4 bg-black/70 text-[10px] px-3 py-1 rounded-2xl font-mono" data-i18n="shots.tile3.badge">FILTER</div>
-                    </div>
-                    <div class="mt-3 px-1 space-y-0.5">
-                        <div class="text-xs uppercase tracking-widest text-emerald-400" data-i18n="shots.tile3.cat">Filters</div>
-                        <div class="text-sm md:text-base font-semibold text-white/80" data-i18n="shots.tile3.title">Gender, orientation, faith &amp; heritage</div>
-                    </div>
-                </div>
-                
-                <!-- Screenshot 4: Settings -->
-                <div class="group">
-                    <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                        <img src="assets/screenshots/04-settings.png" alt="Settings" loading="lazy" decoding="async"
-                             class="w-full h-full object-cover">
-                        <div class="absolute top-4 right-4 bg-black/70 text-[10px] px-3 py-1 rounded-2xl font-mono" data-i18n="shots.tile4.badge">SETTINGS</div>
-                    </div>
-                    <div class="mt-3 px-1 space-y-0.5">
-                        <div class="text-xs uppercase tracking-widest text-violet-400" data-i18n="shots.tile4.cat">Settings</div>
-                        <div class="text-sm md:text-base font-semibold text-white/80" data-i18n="shots.tile4.title">Privacy toggles, account &amp; legal links</div>
-                    </div>
-                </div>
-
-                <!-- Screenshot 5: Chats -->
-                <div class="group">
-                    <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                        <img src="assets/screenshots/05-chats-tab.png" alt="Chats Tab" loading="lazy" decoding="async"
-                             class="w-full h-full object-cover">
-                        <div class="absolute top-4 right-4 bg-black/70 text-[10px] px-3 py-1 rounded-2xl font-mono" data-i18n="shots.tile5.badge">CHATS</div>
-                    </div>
-                    <div class="mt-3 px-1 space-y-0.5">
-                        <div class="text-xs uppercase tracking-widest text-emerald-400" data-i18n="shots.tile5.cat">Chats</div>
-                        <div class="text-sm md:text-base font-semibold text-white/80" data-i18n="shots.tile5.title">Inbox with direct + event group chats, unread badges</div>
-                    </div>
-                </div>
-
-                <!-- Screenshot 6: Profile Detail -->
-                <div class="group">
-                    <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                        <img src="assets/screenshots/06-profile-detail.png" alt="Profile Detail" loading="lazy" decoding="async"
-                             class="w-full h-full object-cover">
-                        <div class="absolute top-4 right-4 bg-black/70 text-[10px] px-3 py-1 rounded-2xl font-mono" data-i18n="shots.tile6.badge">VIEW</div>
-                    </div>
-                    <div class="mt-3 px-1 space-y-0.5">
-                        <div class="text-xs uppercase tracking-widest text-[#5E9ED6]" data-i18n="shots.tile6.cat">Profile</div>
-                        <div class="text-sm md:text-base font-semibold text-white/80" data-i18n="shots.tile6.title">Public profile view with photos, interests &amp; stats</div>
-                    </div>
-                </div>
-            </div>
+        <div class="gallery">
+          <figure class="shot">
+            <img
+              src="mp7c8w07-business-profile-real.png"
+              alt="Business profile view"
+              loading="lazy"
+            />
+            <figcaption data-i18n="bizCaption1">
+              Live business profile as visitors see it in discovery.
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="mp7c8w02-05-business-audience.png"
+              alt="Business insights overview — followers and posts by week"
+              loading="lazy"
+            />
+            <figcaption data-i18n="bizCaption2">
+              Insights overview — visits, taps, and what changed this week.
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="mp7c8w02-03-business-insights-overview.png"
+              alt="Create event — title, timing, venue or virtual"
+              loading="lazy"
+            />
+            <figcaption data-i18n="bizCaption3">
+              Publish an event — title, timing, pinned location or virtual, and
+              the essentials guests need.
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="mp7c8w06-01-business-profile-header.png"
+              alt="Business profile header in the app"
+              loading="lazy"
+            />
+            <figcaption data-i18n="bizCaption4">
+              Venue profile header — name, hours, and quick actions (signed-in
+              view).
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="mp7c8w02-02-business-about-tab.png"
+              alt="Post and promotion insights in My business"
+              loading="lazy"
+            />
+            <figcaption data-i18n="bizCaption5">
+              Post &amp; promotion insights — top posts by reach, promotion mix,
+              and privacy-safe audience signals.
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="mp7c8vzz-12-business-events-upcoming.png"
+              alt="Discover map — people and venues nearby"
+              loading="lazy"
+            />
+            <figcaption data-i18n="bizCaption6">
+              Map view — scout nearby venues and how people cluster in real
+              time.
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="mp7c8w02-08-business-discover-map.png"
+              alt="My Events — manage listings"
+              loading="lazy"
+            />
+            <figcaption data-i18n="bizCaption7">
+              Overview your scheduled events - post updates and manage
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="mp7c8w00-10-business-visitor-preview.png"
+              alt="Upcoming events guests can browse and RSVP"
+              loading="lazy"
+            />
+            <figcaption data-i18n="bizCaption8">
+              Upcoming foot traffic moments — lineup guests can browse.
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="mp7c8w02-07-business-my-events.png"
+              alt="Audience demographics — privacy-safe insights"
+              loading="lazy"
+            />
+            <figcaption data-i18n="bizCaption9">
+              Audience insights — gender, age bands, and who your reach
+              represents (privacy-safe).
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="mp7c8w02-04-business-insights-charts.png"
+              alt="Business profile — about tab details"
+              loading="lazy"
+            />
+            <figcaption data-i18n="bizCaption10">
+              About the venue — description, hours, and contact guests rely on.
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="mp7c8vzz-11-business-insights-audience-detail.png"
+              alt="Discover — map, people, and venues"
+              loading="lazy"
+            />
+            <figcaption data-i18n="bizCaption11">
+              Discovery map — nearby people, venues, and live interest on the
+              canvas you already use in-app.
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="mp7c8w02-06-business-create-event.png"
+              alt="My business — About tab with venue details"
+              loading="lazy"
+            />
+            <figcaption data-i18n="bizCaption12">
+              Signed-in venue view — About, posts, and quick actions in one
+              dashboard.
+            </figcaption>
+          </figure>
         </div>
-    </section>
+      </section>
 
-    <!-- BUSINESSES -->
-    <section id="businesses" class="py-24 bg-[#1A2740] relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-x-2 px-6 py-2 bg-amber-500/10 text-amber-400 rounded-3xl text-sm font-medium mb-6">
-                    <i class="fa-solid fa-store"></i>
-                    <span data-i18n="biz.badge">BUSINESS DISCOVERY</span>
-                </div>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tighter logo-font mb-6"><span data-i18n="biz.h2_l1">Grow your business.</span><br><span data-i18n="biz.h2_l2">Reach the right people.</span></h2>
-                <p class="max-w-2xl mx-auto text-xl text-white/70" data-i18n="biz.sub">
-                    Verified businesses get prominent placement on the map, rich profile pages, event hosting tools, and targeted reach to local customers — all while respecting user privacy through grid-based discovery.
-                </p>
-                <p class="max-w-2xl mx-auto mt-6 text-lg text-white/70 leading-relaxed text-center" data-i18n-html="biz.reclaim">
-                    Your venue appears naturally on the map for people nearby, while you easily create promotions, events, and posts that reach the right audience. Gain real insights and turn local foot traffic into loyal customers.<br><br>Online commerce has reshaped the economy, and local businesses are losing visibility. findmeIRL helps you reclaim your local market.<br><br><strong class="text-white">Reclaim your neighborhood.</strong><br><span class="inline-block whitespace-nowrap font-semibold text-white">Be seen. Be found.</span>
-                </p>
-            </div>
-
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                <!-- Benefits -->
-                <div class="lg:col-span-7 space-y-8">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <!-- Business Card 1 -->
-                        <div class="glass rounded-3xl p-8 group hover:border-amber-400/30 transition-all">
-                            <div class="w-14 h-14 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center text-4xl mb-6 group-hover:scale-110 transition-transform">🏪</div>
-                            <h3 class="text-2xl font-semibold mb-3 text-amber-100" data-i18n="biz.b1.title">Rich Business Profiles</h3>
-                            <p class="text-white/70" data-i18n="biz.b1.body">Professional pages with logo, photos, description, address, website, category, and contact info. Stand out with banners and gallery.</p>
-                            <div class="mt-8 text-xs font-mono text-amber-400 border-t border-white/10 pt-6" data-i18n="biz.b1.footer">VERIFIED • APPROVED BY TEAM</div>
-                        </div>
-
-                        <!-- Business Card 2 -->
-                        <div class="glass rounded-3xl p-8 group hover:border-amber-400/30 transition-all">
-                            <div class="w-14 h-14 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center text-4xl mb-6 group-hover:scale-110 transition-transform">📍</div>
-                            <h3 class="text-2xl font-semibold mb-3 text-amber-100" data-i18n="biz.b2.title">Local Map Visibility</h3>
-                            <p class="text-white/70" data-i18n="biz.b2.body">Appear in the Discover tab for users in your grid cell or searching your category. Targeted discovery without invasive user tracking.</p>
-                            <div class="mt-8 text-xs font-mono text-[#00D4FF] border-t border-white/10 pt-6" data-i18n="biz.b2.footer">GRID-BASED • INTEREST MATCHING</div>
-                        </div>
-
-                        <!-- Business Card 3 -->
-                        <div class="glass rounded-3xl p-8 group hover:border-amber-400/30 transition-all">
-                            <div class="w-14 h-14 bg-gradient-to-br from-violet-500 to-purple-500 rounded-2xl flex items-center justify-center text-4xl mb-6 group-hover:scale-110 transition-transform">🎟️</div>
-                            <h3 class="text-2xl font-semibold mb-3 text-amber-100" data-i18n="biz.b3.title">Events &amp; Promotions</h3>
-                            <p class="text-white/70" data-i18n="biz.b3.body">Host events, run special offers, and get RSVPs directly in-app. Chat with interested customers before they visit.</p>
-                            <div class="mt-8 text-xs font-mono text-violet-400 border-t border-white/10 pt-6" data-i18n="biz.b3.footer">SPONSORSHIPS • REAL-TIME RSVP</div>
-                        </div>
-
-                        <!-- Business Card 4 -->
-                        <div class="glass rounded-3xl p-8 group hover:border-amber-400/30 transition-all">
-                            <div class="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center text-4xl mb-6 group-hover:scale-110 transition-transform">🌍</div>
-                            <h3 class="text-2xl font-semibold mb-3 text-amber-100" data-i18n="biz.b4.title">Local + Global Reach</h3>
-                            <p class="text-white/70" data-i18n="biz.b4.body">Connect with nearby customers and international travelers interested in your category, heritage, or events. Analytics on engagement coming soon.</p>
-                            <div class="mt-8 text-xs font-mono text-emerald-400 border-t border-white/10 pt-6" data-i18n="biz.b4.footer">LOCAL GRID • INTERNATIONAL USERS</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Visual Mock -->
-                <div class="lg:col-span-5">
-                    <div class="glass rounded-3xl p-2 shadow-2xl border border-amber-400/20">
-                        <img src="assets/business-profile-real.png" alt="Real business profile view" loading="lazy" decoding="async"
-                             class="w-full rounded-3xl shadow-xl">
-                    </div>
-                    
-                    <div class="mt-6 text-center text-xs text-white/50 flex items-center justify-center gap-x-4">
-                        <div class="h-px flex-1 bg-white/10"></div>
-                        <span data-i18n="biz.mockCaption">Real business profile view</span>
-                        <div class="h-px flex-1 bg-white/10"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Business Experience Gallery -->
-            <div class="mt-20">
-                <div class="text-center mb-10">
-                    <div class="inline px-4 py-1.5 bg-white/5 text-amber-400 text-xs font-mono tracking-widest rounded-3xl mb-4" data-i18n="biz.galleryTag">IN THE APP</div>
-                    <h3 class="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tighter logo-font" data-i18n="biz.galleryH">Business Experience</h3>
-                    <p class="mt-3 text-white/60 max-w-md mx-auto" data-i18n="biz.gallerySub">Simple, powerful tools to connect with nearby customers while keeping their privacy intact.</p>
-                </div>
-
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    <!-- 1 -->
-                    <div class="group">
-                        <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                            <video
-                                class="block w-full h-full object-cover bg-black"
-                                controls
-                                muted
-                                playsinline
-                                preload="none">
-                                <source src="assets/video/venue.mov" type="video/quicktime">
-                                <span data-i18n="shots.videoNoSupport">Your browser does not support the video tag.</span>
-                            </video>
-                        </div>
-                    </div>
-
-                    <!-- 2 -->
-                    <div class="group">
-                        <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                            <img src="assets/business/02-business-about-tab.png" alt="Business About Tab" loading="lazy" decoding="async" class="w-full h-full object-cover">
-                        </div>
-                        <div class="mt-3 px-1 space-y-0.5">
-                            <div class="text-xs uppercase tracking-widest text-amber-400" data-i18n="biz.g2.cat">About</div>
-                            <div class="text-sm md:text-base font-semibold text-white/80" data-i18n="biz.g2.title">Description, opening hours, address &amp; contact details</div>
-                        </div>
-                    </div>
-
-                    <!-- 3 -->
-                    <div class="group">
-                        <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                            <img src="assets/business/03-business-insights-overview.png" alt="Business Insights Overview" loading="lazy" decoding="async" class="w-full h-full object-cover">
-                        </div>
-                        <div class="mt-3 px-1 space-y-0.5">
-                            <div class="text-xs uppercase tracking-widest text-amber-400" data-i18n="biz.g3.cat">Insights</div>
-                            <div class="text-sm md:text-base font-semibold text-white/80" data-i18n="biz.g3.title">Key metrics: followers, posts published, likes &amp; notifications sent</div>
-                        </div>
-                    </div>
-
-                    <!-- 4 -->
-                    <div class="group">
-                        <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                            <img src="assets/business/04-business-insights-charts.png" alt="Business Insights Charts" loading="lazy" decoding="async" class="w-full h-full object-cover">
-                        </div>
-                        <div class="mt-3 px-1 space-y-0.5">
-                            <div class="text-xs uppercase tracking-widest text-amber-400" data-i18n="biz.g4.cat">Analytics</div>
-                            <div class="text-sm md:text-base font-semibold text-white/80" data-i18n="biz.g4.title">Post type breakdown &amp; top posts ranked by reach</div>
-                        </div>
-                    </div>
-
-                    <!-- 5 -->
-                    <div class="group">
-                        <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                            <img src="assets/business/05-business-audience.png" alt="Business Audience Insights" loading="lazy" decoding="async" class="w-full h-full object-cover">
-                        </div>
-                        <div class="mt-3 px-1 space-y-0.5">
-                            <div class="text-xs uppercase tracking-widest text-amber-400" data-i18n="biz.g5.cat">Audience</div>
-                            <div class="text-sm md:text-base font-semibold text-white/80" data-i18n="biz.g5.title">Privacy-safe buckets: gender, age bands, follower grid cells</div>
-                        </div>
-                    </div>
-
-                    <!-- 6 -->
-                    <div class="group">
-                        <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                            <img src="assets/business/06-business-create-event.png" alt="Create Event Modal" loading="lazy" decoding="async" class="w-full h-full object-cover">
-                        </div>
-                        <div class="mt-3 px-1 space-y-0.5">
-                            <div class="text-xs uppercase tracking-widest text-amber-400" data-i18n="biz.g6.cat">Events</div>
-                            <div class="text-sm md:text-base font-semibold text-white/80" data-i18n="biz.g6.title">Create events with cover, date, category &amp; max attendees</div>
-                        </div>
-                    </div>
-
-                    <!-- 7 -->
-                    <div class="group">
-                        <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                            <img src="assets/business/07-business-my-events.png" alt="My Events Tab" loading="lazy" decoding="async" class="w-full h-full object-cover">
-                        </div>
-                        <div class="mt-3 px-1 space-y-0.5">
-                            <div class="text-xs uppercase tracking-widest text-amber-400" data-i18n="biz.g7.cat">My Events</div>
-                            <div class="text-sm md:text-base font-semibold text-white/80" data-i18n="biz.g7.title">Manage your hosted events and see RSVPs in one place</div>
-                        </div>
-                    </div>
-
-                    <!-- 8 -->
-                    <div class="group">
-                        <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
-                            <img src="assets/business/08-business-discover-map.png" alt="Discover Map with Venue" loading="lazy" decoding="async" class="w-full h-full object-cover">
-                        </div>
-                        <div class="mt-3 px-1 space-y-0.5">
-                            <div class="text-xs uppercase tracking-widest text-amber-400" data-i18n="biz.g8.cat">Discover</div>
-                            <div class="text-sm md:text-base font-semibold text-white/80" data-i18n="biz.g8.title">Your venue pin appears on the map alongside nearby people</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Trust signals for businesses -->
-            <div class="mt-20 pt-12 border-t border-white/10 max-w-xl mx-auto space-y-4 text-sm text-white/70">
-                <div class="flex items-start gap-x-3">
-                    <i class="fa-solid fa-check text-emerald-400 mt-0.5 shrink-0" aria-hidden="true"></i>
-                    <span class="text-left leading-snug" data-i18n="biz.trust1">Free during beta</span>
-                </div>
-                <div class="flex items-start gap-x-3">
-                    <i class="fa-solid fa-check text-emerald-400 mt-0.5 shrink-0" aria-hidden="true"></i>
-                    <span class="text-left leading-snug" data-i18n="biz.trust2">Manual approval</span>
-                </div>
-                <div class="flex items-start gap-x-3">
-                    <i class="fa-solid fa-check text-emerald-400 mt-0.5 shrink-0" aria-hidden="true"></i>
-                    <span class="text-left leading-snug" data-i18n="biz.trust3">Privacy-first advertising</span>
-                </div>
-                <div class="flex items-start gap-x-3">
-                    <i class="fa-solid fa-check text-emerald-400 mt-0.5 shrink-0" aria-hidden="true"></i>
-                    <span class="text-left leading-snug" data-i18n="biz.trust4">Built on the same Supabase backend as the consumer app</span>
-                </div>
-            </div>
-
-            <div class="text-center mt-16">
-                <a href="#waitlist" onclick="smoothScrollTo('waitlist')" 
-                   class="inline-flex items-center px-10 py-5 bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 rounded-3xl font-semibold text-xl shadow-xl shadow-orange-500/30 hover:brightness-110 transition-all group">
-                    <span data-i18n="biz.cta">SIGN UP YOUR BUSINESS</span>
-                    <span class="ml-4 text-3xl group-active:rotate-45 transition-transform">→</span>
-                </a>
-                <p class="text-amber-400/70 text-sm mt-6" data-i18n="biz.ctaSub">Join the business waitlist • Early access includes profile setup help</p>
-            </div>
+      <section aria-labelledby="people-heading">
+        <div class="section-head stack-3">
+          <p class="eyebrow" data-i18n="peopleEyebrow">Everyday use</p>
+          <h2 id="people-heading" data-i18n="peopleTitle">For people</h2>
+          <p class="lead" data-i18n="peopleLead">
+            Search with intent, tune who you meet, chat when it clicks — keeping
+            the social layer fast and grounded.
+          </p>
         </div>
-    </section>
-
-    <!-- WAITING LIST -->
-    <section id="waitlist" class="py-24 relative">
-        <div class="max-w-2xl mx-auto px-6">
-            <div class="glass rounded-3xl p-12 md:p-16 text-center">
-                <div class="mx-auto w-20 h-20 bg-gradient-to-br from-[#5E9ED6] to-[#00D4FF] rounded-3xl flex items-center justify-center mb-8 shadow-xl">
-                    <span class="text-4xl">📍</span>
-                </div>
-                
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tighter logo-font mb-4" data-i18n="waitlist.h2">Join the waitlist</h2>
-                <p class="text-xl text-white/70 max-w-md mx-auto mb-10" data-i18n="waitlist.sub">
-                    Whether you're an individual looking for real connections or a business ready to reach local customers — be among the first to get access.
-                </p>
-                
-                <form id="waitlist-form" action="#" method="post"
-                      class="space-y-6 max-w-md mx-auto">
-                    <div>
-                        <label class="block text-xs font-medium text-white/60 mb-2 tracking-wider" data-i18n="waitlist.labelEmail">EMAIL ADDRESS</label>
-                        <input type="email" name="email" id="email" required
-                               class="form-input w-full bg-white/5 border border-white/20 focus:border-[#5E9ED6] rounded-3xl px-7 py-6 text-lg placeholder:text-white/40"
-                               data-i18n-placeholder="waitlist.phEmail"
-                               placeholder="you@email.com">
-                    </div>
-                    
-                    <div>
-                        <label class="block text-xs font-medium text-white/60 mb-2 tracking-wider" data-i18n="waitlist.labelCity">CITY (OPTIONAL)</label>
-                        <input type="text" name="city" id="city"
-                               class="form-input w-full bg-white/5 border border-white/20 focus:border-[#5E9ED6] rounded-3xl px-7 py-6 text-lg placeholder:text-white/40"
-                               data-i18n-placeholder="waitlist.phCity"
-                               placeholder="Where you'll be using Findme">
-                    </div>
-                    
-                    <div>
-                        <label class="block text-xs font-medium text-white/60 mb-2 tracking-wider" data-i18n="waitlist.labelType">I AM A</label>
-                        <select name="user_type" id="user_type"
-                                class="form-input w-full bg-white/5 border border-white/20 focus:border-[#5E9ED6] rounded-3xl px-7 py-6 text-lg">
-                            <option value="individual" data-i18n="waitlist.optIndividual">Individual User</option>
-                            <option value="business" data-i18n="waitlist.optBusiness">Business / Brand Owner</option>
-                        </select>
-                    </div>
-                    
-                    <button type="submit" id="waitlist-submit"
-                            class="w-full py-6 bg-gradient-to-r from-[#5E9ED6] to-[#00D4FF] hover:brightness-110 font-semibold text-xl rounded-3xl transition-all active:scale-[0.985] flex items-center justify-center gap-x-3 shadow-xl shadow-[#5E9ED6]/40 disabled:opacity-50 disabled:pointer-events-none">
-                        <span id="waitlist-submit-label" data-i18n="waitlist.submit">GET EARLY ACCESS</span>
-                        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-                    </button>
-
-                    <div id="waitlist-error" class="hidden text-left p-4 bg-red-950/40 border border-red-500/30 rounded-2xl text-red-200 text-sm" role="alert"></div>
-                    
-                    <p class="text-[10px] text-white/40 pt-4">
-                        <span data-i18n="waitlist.footnote1">We respect your inbox. No spam ever. You'll only hear from us about launch updates and invites.</span>
-                        <br><span class="text-emerald-400" data-i18n="waitlist.footnote2">🔒 Your data is safe with us.</span>
-                    </p>
-                </form>
-                
-                <div id="form-success" class="hidden mt-8 p-6 bg-emerald-900/30 border border-emerald-500/30 rounded-3xl text-emerald-300">
-                    <i class="fa-solid fa-check-circle text-4xl mb-4 block"></i>
-                    <div class="font-semibold text-lg" data-i18n="waitlist.successTitle">Thank you! You're on the list.</div>
-                    <div class="text-sm mt-2" data-i18n="waitlist.successSub">We'll reach out with launch updates and invites.</div>
-                    <button type="button" id="waitlist-add-another"
-                            class="mt-6 text-sm text-white/80 underline underline-offset-4 hover:text-white">
-                        <span data-i18n="waitlist.addAnother">Submit another entry</span>
-                    </button>
-                </div>
-            </div>
+        <div class="gallery">
+          <figure class="shot">
+            <img
+              src="mp7c8c1y-01-filters-people.png"
+              alt="People filters"
+              loading="lazy"
+            />
+            <figcaption data-i18n="peopleCaption1">
+              Discovery filters — control who surfaces in your nearby feed.
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="mp7c8c1y-02-filters-distance.png"
+              alt="Distance filter"
+              loading="lazy"
+            />
+            <figcaption data-i18n="peopleCaption2">
+              Distance slider — widen or tighten how far you’re willing to look.
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="mp7c8c1w-05-filters-heritage.png"
+              alt="Heritage filters"
+              loading="lazy"
+            />
+            <figcaption data-i18n="peopleCaption3">
+              Heritage preferences — intentional matching beyond the basics.
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="mp7c8c1w-06-filters-custom.png"
+              alt="Custom filters"
+              loading="lazy"
+            />
+            <figcaption data-i18n="peopleCaption4">
+              Custom filters — save combinations you actually use nightly.
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="mp7c8c1y-03-profile-soulmate.png"
+              alt="Soulmate score on profile"
+              loading="lazy"
+            />
+            <figcaption data-i18n="peopleCaption5">
+              Soulmate score — see how your profile lines up with nearby
+              matches.
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="mp7c8c1u-06-profile-detail.png"
+              alt="Profile detail"
+              loading="lazy"
+            />
+            <figcaption data-i18n="peopleCaption6">
+              Profile detail — photos, bio, and the context before you say hi.
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="mp7c8c1w-05-chats-tab.png"
+              alt="Chats tab"
+              loading="lazy"
+            />
+            <figcaption data-i18n="peopleCaption7">
+              Chat inbox — threads stay scoped to real-life intent.
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="mp7c8c1y-04-settings.png"
+              alt="Settings"
+              loading="lazy"
+            />
+            <figcaption data-i18n="peopleCaption8">
+              Settings — privacy boundaries, alerts, and account control.
+            </figcaption>
+          </figure>
         </div>
-    </section>
+      </section>
 
-    <!-- FINAL CTA -->
-    <div class="bg-black/40 py-16">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <div class="text-[#00D4FF] text-sm font-medium tracking-widest mb-3" data-i18n="final.kicker">PRIVACY FIRST SOCIAL DISCOVERY</div>
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-8" data-i18n="final.h2">Ready to find your people?</h2>
-                <div class="flex justify-center">
-                <a href="#waitlist" onclick="smoothScrollTo('waitlist')" 
-                   class="px-10 py-5 bg-white text-[#0F1B2E] rounded-3xl font-semibold flex items-center justify-center gap-x-3 hover:shadow-2xl hover:shadow-white/20 transition-all">
-                    <span data-i18n="final.cta">JOIN WAITLIST</span>
-                </a>
-            </div>
+      <section aria-labelledby="videos-heading">
+        <div class="section-head stack-3">
+          <p class="eyebrow" data-i18n="motionEyebrow">Motion</p>
+          <h2 id="videos-heading" data-i18n="motionTitle">See it in motion</h2>
+          <p class="lead" data-i18n="motionLead">
+            Short walkthroughs for venues and for everyday discovery — same
+            product, two sides of the experience.
+          </p>
         </div>
-    </div>
-
-    <!-- FOOTER -->
-    <footer class="bg-black py-20 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-y-12">
-            <div class="col-span-2 md:col-span-1">
-                <div class="flex items-center gap-x-3 mb-6">
-                    <img src="assets/images/app-icon.png" alt="findmeIRL" 
-                         class="w-8 h-8 rounded-2xl shadow-inner object-cover">
-                    <span class="text-3xl font-semibold tracking-tighter logo-font">findmeIRL</span>
-                </div>
-                <p class="text-white/50 text-sm max-w-[180px]">
-                    <span data-i18n="footer.tag1">Real connections.</span><br><span data-i18n="footer.tag2">Real privacy.</span>
-                </p>
-            </div>
-            
-            <div>
-                <div class="uppercase text-xs text-white/40 mb-6 tracking-widest" data-i18n="footer.colProduct">Product</div>
-                <div class="space-y-3 text-sm">
-                    <a href="#features" onclick="smoothScrollTo('features')" class="block text-white/70 hover:text-white"><span data-i18n="nav.features">Features</span></a>
-                    <a href="#screenshots" onclick="smoothScrollTo('screenshots')" class="block text-white/70 hover:text-white"><span data-i18n="nav.screenshots">Screenshots</span></a>
-                    <a href="#waitlist" onclick="smoothScrollTo('waitlist')" class="block text-white/70 hover:text-white"><span data-i18n="nav.waitlist">Waitlist</span></a>
-                </div>
-            </div>
-            
-            <div>
-                <div class="uppercase text-xs text-white/40 mb-6 tracking-widest" data-i18n="footer.colCompany">Company</div>
-                <div class="space-y-3 text-sm">
-                    <a href="privacy.html" data-legal-link="privacy" class="block text-white/70 hover:text-white"><span data-i18n="footer.privacyPolicy">Privacy Policy</span></a>
-                    <a href="terms.html" data-legal-link="terms" class="block text-white/70 hover:text-white"><span data-i18n="footer.termsOfService">Terms of Service</span></a>
-                    <a href="#" class="block text-white/70 hover:text-white"><span data-i18n="footer.about">About</span></a>
-                </div>
-            </div>
-            
-            <div>
-                <div class="uppercase text-xs text-white/40 mb-6 tracking-widest" data-i18n="footer.colLegal">Legal</div>
-                <div class="space-y-3 text-sm text-white/70">
-                    <div data-i18n="footer.copyright">© 2026 findmeIRL</div>
-                    <div class="text-xs" data-i18n="footer.madeWith">Made with ❤️ for better human connections</div>
-                </div>
-            </div>
-            
-            <div class="col-span-2 md:col-span-1 md:text-right">
-                <div class="mt-8 text-[10px] text-white/30 md:text-right">
-                    <a href="mailto:info@findmeirl.app" class="hover:text-white transition-colors">info@findmeirl.app</a><br>
-                    <span data-i18n="footer.blurb">A privacy-first social discovery app</span>
-                </div>
-            </div>
+        <div class="video-grid">
+          <figure class="video-card">
+            <video controls playsinline preload="metadata">
+              <source src="mp7cgxr5-venue.mov" type="video/quicktime" />
+            </video>
+            <figcaption data-i18n="videoBiz">
+              For businesses — venue walkthrough
+            </figcaption>
+          </figure>
+          <figure class="video-card">
+            <video controls playsinline preload="metadata">
+              <source src="mp7d6h14-0515_2_.mp4" type="video/mp4" />
+            </video>
+            <figcaption data-i18n="videoPeople">For people — app demo</figcaption>
+          </figure>
         </div>
-    </footer>
+      </section>
 
-    <script src="assets/i18n/site-i18n.js?v=20260514"></script>
+      <footer class="footer">
+        <p>
+          © <span id="y"></span> FindmeIRL ·
+          <a href="#waitlist" data-i18n="footerWaitlist">Join the waitlist</a>
+          ·
+          <a
+            data-legal-link="privacy"
+            href="privacy.html"
+            data-i18n="footerPrivacy"
+            >Privacy</a
+          >
+          ·
+          <a
+            data-legal-link="terms"
+            href="terms.html"
+            data-i18n="footerTerms"
+            >Terms</a
+          >
+        </p>
+      </footer>
+    </main>
+
+    <script src="assets/i18n/site-i18n.js?v=20260515"></script>
     <script>
-        // Public anon key (RLS + RPC only — same as Flutter client defaults).
-        const SUPABASE_URL = 'https://xqxltowodthtgtelhqjf.supabase.co';
-        const SUPABASE_ANON_KEY =
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhxeGx0b3dvZHRodGd0ZWxocWpmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYxMjMwMTksImV4cCI6MjA5MTY5OTAxOX0.nWKqjcTjhTKUX5wbM4HTdO6c7Yy7XuAd5XQDQvajHu8';
+      (function () {
+        var SUPABASE_URL = "https://xqxltowodthtgtelhqjf.supabase.co";
+        var SUPABASE_ANON_KEY =
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhxeGx0b3dvZHRodGd0ZWxocWpmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYxMjMwMTksImV4cCI6MjA5MTY5OTAxOX0.nWKqjcTjhTKUX5wbM4HTdO6c7Yy7XuAd5XQDQvajHu8";
 
-        // Tailwind script run
-        function initializeTailwind() {
-            // Already initialized via CDN
+        var y = document.getElementById("y");
+        if (y) y.textContent = String(new Date().getFullYear());
+
+        function t(key) {
+          return window.findmeI18n && window.findmeI18n.t
+            ? window.findmeI18n.t(key)
+            : "";
         }
-        
-        // Smooth scroll helper
-        function smoothScrollTo(sectionId) {
-            const element = document.getElementById(sectionId);
-            if (element) {
-                const navHeight = 80;
-                const elementPosition = element.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.scrollY - navHeight;
-                
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        }
-        
-        // Mobile menu
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-        
+
         function waitlistFriendlyErrorMessage(raw) {
-            var t = window.findmeI18n && window.findmeI18n.t ? window.findmeI18n.t.bind(window.findmeI18n) : function () { return ''; };
-            var tt = (raw || '').toLowerCase();
-            if (tt.includes('invalid_email')) {
-                return t('waitlist.errEmail') || 'Please enter a valid email address.';
+          var tt = String(raw || "").toLowerCase();
+          if (tt.includes("invalid_email")) {
+            return t("waitlistErrEmail") || "Please enter a valid email address.";
+          }
+          return (
+            t("waitlistErrGeneric") ||
+            "We couldn’t save your signup. Check your connection and try again."
+          );
+        }
+
+        function setupWaitlist() {
+          var form = document.getElementById("waitlist");
+          if (!form) return;
+
+          var errBox = document.getElementById("waitlist-error");
+          var submitBtn = document.getElementById("waitlist-submit");
+          var submitLabel = document.getElementById("waitlist-submit-label");
+
+          form.addEventListener("submit", function (ev) {
+            ev.preventDefault();
+            var input = document.getElementById("email");
+            var email = input && input.value ? input.value.trim() : "";
+
+            form.classList.remove("is-error");
+            if (errBox) {
+              errBox.textContent = "";
             }
-            if (tt.includes('invalid_user_type')) {
-                return t('waitlist.errType') || 'Something went wrong. Refresh the page and try again.';
+
+            var simpleOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            if (!simpleOk) {
+              if (input) {
+                input.setAttribute("aria-invalid", "true");
+                input.focus();
+              }
+              if (errBox) {
+                errBox.textContent = waitlistFriendlyErrorMessage("invalid_email");
+                form.classList.add("is-error");
+              }
+              return;
             }
-            return t('waitlist.errGeneric') || "We couldn't save your signup. Check your connection and try again in a moment.";
-        }
+            if (input) input.removeAttribute("aria-invalid");
 
-        function resetWaitlistSuccessPanel() {
-            var success = document.getElementById('form-success');
-            if (!success) return;
-            success.innerHTML = '<i class="fa-solid fa-check-circle text-4xl mb-4 block"></i>' +
-                '<div class="font-semibold text-lg" data-i18n="waitlist.successTitle">Thank you! You\'re on the list.</div>' +
-                '<div class="text-sm mt-2" data-i18n="waitlist.successSub">We\'ll reach out with launch updates and invites.</div>' +
-                '<button type="button" id="waitlist-add-another" class="mt-6 text-sm text-white/80 underline underline-offset-4 hover:text-white">' +
-                '<span data-i18n="waitlist.addAnother">Submit another entry</span></button>';
-            success.style.borderColor = '';
-            if (window.findmeI18n && window.findmeI18n.apply) window.findmeI18n.apply(success);
-            wireWaitlistAddAnother();
-        }
+            var busy =
+              t("waitlistJoining") || t("submitCta") + "…" || "Joining…";
+            if (submitBtn) {
+              submitBtn.disabled = true;
+              submitBtn.setAttribute("aria-busy", "true");
+            }
+            if (submitLabel) submitLabel.textContent = busy;
 
-        function wireWaitlistAddAnother() {
-            const btn = document.getElementById('waitlist-add-another');
-            if (!btn) return;
-            btn.addEventListener('click', function () {
-                const form = document.getElementById('waitlist-form');
-                const success = document.getElementById('form-success');
-                const errBox = document.getElementById('waitlist-error');
-                if (form) {
-                    form.reset();
-                    form.classList.remove('hidden');
+            fetch(SUPABASE_URL + "/rest/v1/rpc/submit_waitlist_signup", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                apikey: SUPABASE_ANON_KEY,
+                Authorization: "Bearer " + SUPABASE_ANON_KEY,
+                Prefer: "return=minimal",
+              },
+              body: JSON.stringify({
+                p_email: email,
+                p_city: null,
+                p_user_type: "individual",
+              }),
+            })
+              .then(async function (res) {
+                if (res.ok) {
+                  form.classList.remove("is-error");
+                  form.classList.add("is-done");
+                  return;
                 }
-                if (success) success.classList.add('hidden');
+                var detail = "";
+                try {
+                  var j = await res.json();
+                  detail =
+                    (j && (j.message || j.error || j.hint)) ||
+                    JSON.stringify(j);
+                } catch (_) {
+                  try {
+                    detail = await res.text();
+                  } catch (__) {
+                    detail = "error";
+                  }
+                }
                 if (errBox) {
-                    errBox.classList.add('hidden');
-                    errBox.textContent = '';
+                  errBox.textContent = waitlistFriendlyErrorMessage(detail);
+                  form.classList.add("is-error");
                 }
-                resetWaitlistSuccessPanel();
-            });
-        }
-
-        // Form → Supabase RPC submit_waitlist_signup (upsert by email)
-        function setupForm() {
-            const form = document.getElementById('waitlist-form');
-            const success = document.getElementById('form-success');
-            const errBox = document.getElementById('waitlist-error');
-            const submitBtn = document.getElementById('waitlist-submit');
-            const submitLabel = document.getElementById('waitlist-submit-label');
-
-            if (!form) return;
-
-            wireWaitlistAddAnother();
-
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                if (!success) return;
-
-                const emailInput = document.getElementById('email');
-                const cityInput = document.getElementById('city');
-                const userTypeEl = document.getElementById('user_type');
-                const email = (emailInput && emailInput.value) ? emailInput.value.trim() : '';
-                const cityRaw = (cityInput && cityInput.value) ? cityInput.value.trim() : '';
-                const userType = userTypeEl ? userTypeEl.value : 'individual';
-
+              })
+              .catch(function () {
                 if (errBox) {
-                    errBox.classList.add('hidden');
-                    errBox.textContent = '';
+                  errBox.textContent = waitlistFriendlyErrorMessage("network");
+                  form.classList.add("is-error");
                 }
-
-                const simpleEmailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-                if (!simpleEmailOk) {
-                    if (errBox) {
-                        errBox.textContent = waitlistFriendlyErrorMessage('invalid_email');
-                        errBox.classList.remove('hidden');
-                    }
-                    return;
-                }
-
-                const isBusiness = userType === 'business';
-                var tBusy = window.findmeI18n && window.findmeI18n.t ? window.findmeI18n.t.bind(window.findmeI18n) : function () { return ''; };
-                const busyLabel = isBusiness ? (tBusy('waitlist.sending') || 'Sending…') : (tBusy('waitlist.joining') || 'Joining…');
-
+              })
+              .finally(function () {
                 if (submitBtn) {
-                    submitBtn.disabled = true;
-                    submitBtn.setAttribute('aria-busy', 'true');
+                  submitBtn.disabled = false;
+                  submitBtn.removeAttribute("aria-busy");
                 }
-                if (submitLabel) submitLabel.textContent = busyLabel;
-
-                const payload = {
-                    p_email: email,
-                    p_city: cityRaw === '' ? null : cityRaw,
-                    p_user_type: userType,
-                };
-
-                fetch(SUPABASE_URL + '/rest/v1/rpc/submit_waitlist_signup', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        apikey: SUPABASE_ANON_KEY,
-                        Authorization: 'Bearer ' + SUPABASE_ANON_KEY,
-                        Prefer: 'return=minimal',
-                    },
-                    body: JSON.stringify(payload),
-                })
-                    .then(async function (res) {
-                        if (res.ok) {
-                            if (isBusiness) {
-                                success.innerHTML = '<i class="fa-solid fa-store text-4xl mb-4 block text-amber-400"></i>' +
-                                    '<div class="font-semibold text-lg" data-i18n="waitlist.businessSuccessTitle">Business application received!</div>' +
-                                    '<div class="text-sm mt-2" data-i18n="waitlist.businessSuccessSub">Our team will reach out about profile setup and early access.</div>' +
-                                    '<button type="button" id="waitlist-add-another" class="mt-6 text-sm text-white/80 underline underline-offset-4 hover:text-white">' +
-                                    '<span data-i18n="waitlist.addAnother">Submit another entry</span></button>';
-                                success.style.borderColor = 'rgb(245 158 11 / 0.3)';
-                                if (window.findmeI18n && window.findmeI18n.apply) window.findmeI18n.apply(success);
-                            } else {
-                                resetWaitlistSuccessPanel();
-                            }
-                            form.classList.add('hidden');
-                            success.classList.remove('hidden');
-                            wireWaitlistAddAnother();
-                            return;
-                        }
-
-                        let detail = '';
-                        try {
-                            const j = await res.json();
-                            detail = (j && (j.message || j.error || j.hint)) || JSON.stringify(j);
-                        } catch (_) {
-                            detail = await res.text();
-                        }
-                        if (errBox) {
-                            errBox.textContent = waitlistFriendlyErrorMessage(detail);
-                            errBox.classList.remove('hidden');
-                        }
-                    })
-                    .catch(function () {
-                        if (errBox) {
-                            errBox.textContent = waitlistFriendlyErrorMessage('network');
-                            errBox.classList.remove('hidden');
-                        }
-                    })
-                    .finally(function () {
-                        if (submitBtn) {
-                            submitBtn.disabled = false;
-                            submitBtn.removeAttribute('aria-busy');
-                        }
-                        var tSub = window.findmeI18n && window.findmeI18n.t ? window.findmeI18n.t.bind(window.findmeI18n) : function () { return ''; };
-                        if (submitLabel) submitLabel.textContent = tSub('waitlist.submit') || 'GET EARLY ACCESS';
-                    });
-            });
+                if (submitLabel) {
+                  submitLabel.textContent =
+                    t("submitCta") || "Get access";
+                }
+              });
+          });
         }
-        
-        // Keyboard shortcuts & other utils
-        function handleKeyboard(e) {
-            if (e.metaKey && e.key === "k") {
-                e.preventDefault();
-                const waitlist = document.getElementById('waitlist');
-                if (waitlist) smoothScrollTo('waitlist');
-            }
+
+        function run() {
+          setupWaitlist();
         }
-        
-        // Initialize everything
-        window.onload = function() {
-            initializeTailwind();
-            setupForm();
-            document.addEventListener('keydown', handleKeyboard);
-            window.addEventListener('findme:locale-changed', function () {
-                if (window.findmeI18n && window.findmeI18n.apply) window.findmeI18n.apply(document.getElementById('waitlist') || document.body);
-            });
-            
-            // Add active states to nav on scroll
-            const sections = ['features', 'businesses', 'screenshots', 'waitlist'];
-            const navLinks = document.querySelectorAll('.nav-link');
-            
-            window.addEventListener('scroll', () => {
-                let current = '';
-                sections.forEach(sectionId => {
-                    const section = document.getElementById(sectionId);
-                    if (!section) return;
-                    const sectionTop = section.offsetTop;
-                    if (scrollY >= sectionTop - 200) {
-                        current = sectionId;
-                    }
-                });
-                
-                navLinks.forEach(link => {
-                    link.classList.remove('!text-[#5E9ED6]');
-                    if (link.getAttribute('href') === `#${current}`) {
-                        link.classList.add('!text-[#5E9ED6]');
-                    }
-                });
-            });
-            
-            console.log('%c🚀 findmeIRL landing page initialized. Waitlist → Supabase RPC.', 'color:#5E9ED6; font-family:monospace');
-        };
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", run);
+        } else {
+          run();
+        }
+
+        window.addEventListener("findme:locale-changed", function () {
+          var form = document.getElementById("waitlist");
+          var submitLabel = document.getElementById("waitlist-submit-label");
+          if (submitLabel && form && !form.classList.contains("is-done")) {
+            var def = t("submitCta");
+            if (def) submitLabel.textContent = def;
+          }
+        });
+      })();
     </script>
-</body>
+  </body>
 </html>

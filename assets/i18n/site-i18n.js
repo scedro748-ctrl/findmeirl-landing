@@ -1,246 +1,527 @@
+/**
+ * Shared language picker + localized hrefs for findmeIRL static pages.
+ * Persists preference in localStorage; legal pages navigate to sibling HTML files.
+ */
 (function () {
-  var STORAGE_KEY = 'findmeirl_site_lang';
-  var SUPPORTED = ['en', 'de', 'fr', 'it'];
-  var DEFAULT = 'en';
+  "use strict";
 
-  var LEGAL_HREF = {
+  var STORAGE_KEY = "findmeirl-site-lang";
+  var SUPPORTED = ["en", "de", "fr", "it"];
+
+  var LEGAL_FILES = {
     privacy: {
-      en: 'privacy.html',
-      de: 'privacy_de.html',
-      fr: 'privacy_fr.html',
-      it: 'privacy_it.html',
+      en: "privacy.html",
+      de: "privacy_de.html",
+      fr: "privacy_fr.html",
+      it: "privacy_it.html",
     },
     terms: {
-      en: 'terms.html',
-      de: 'terms_de.html',
-      fr: 'terms_fr.html',
-      it: 'terms_it.html',
+      en: "terms.html",
+      de: "terms_de.html",
+      fr: "terms_fr.html",
+      it: "terms_it.html",
     },
   };
 
-  function legalHref(kind, lang) {
-    var L = normalizeLang(lang);
-    var m = LEGAL_HREF[kind];
-    if (!m) return '#';
-    return m[L] || m[DEFAULT];
-  }
-
-  function updateLegalLinkHrefs() {
-    document.querySelectorAll('a[data-legal-link]').forEach(function (a) {
-      var kind = a.getAttribute('data-legal-link');
-      if (!LEGAL_HREF[kind]) return;
-      var file = legalHref(kind, currentLang);
-      a.setAttribute('href', file);
-      if (a.hasAttribute('data-legal-sync-href')) {
-        try {
-          a.textContent = new URL(file, window.location.href).href;
-        } catch (_) {
-          a.textContent = file;
-        }
-      }
-    });
-  }
-
-  function maybeRedirectLegalDocument() {
-    var doc = document.body && document.body.getAttribute('data-legal-doc');
-    var docLangRaw = document.body && document.body.getAttribute('data-legal-lang');
-    if (!doc || !docLangRaw) return false;
-    var L = normalizeLang(currentLang);
-    var want = normalizeLang(docLangRaw);
-    if (L === want) return false;
-    var target = legalHref(doc, L);
-    var currentFile = window.location.pathname.split('/').pop() || '';
-    if (currentFile === target) return false;
-    window.location.replace(target);
-    return true;
-  }
+  /** @type Record<string, Record<string, string>> */
+  var LANDING = {
+    en: {
+      docTitle:
+        "FindmeIRL — Meet people and grow places, in real life",
+      metaDesc:
+        "FindmeIRL connects people nearby and gives venues clear insights. Join the waitlist for early access.",
+      langAria: "Language",
+      headerCtaFull: "Join waitlist",
+      headerCtaShort: "Waitlist",
+      heroEyebrow: "In-person discovery · venues · nearby people",
+      heroTitle: "Real places. Real people. Real momentum.",
+      heroLeadHtml:
+        "FindmeIRL helps people discover what’s happening around them — while giving venues a clear view of <strong>audience, visits, and events.</strong>",
+      emailPlaceholder: "Work or personal email",
+      emailAria: "Email for waitlist",
+      submitCta: "Get access",
+      waitlistFine:
+        "No spam — we’ll only email you about launch and early invites.",
+      waitlistOk: "You’re on the list. We’ll be in touch.",
+      waitlistErrEmail: "Please enter a valid email address.",
+      waitlistErrGeneric:
+        "We couldn’t save your signup. Check your connection and try again.",
+      waitlistJoining: "Joining…",
+      asidePill: "Same app · two modes",
+      stat1a: "Tonight nearby",
+      stat1b: "live · map + list",
+      stat2a: "Venue insights",
+      stat2b: "visits · audience · events",
+      stat3a: "Your profile",
+      stat3b: "filters · chat · settings",
+      tourEyebrow: "Product tour",
+      bizTitle: "For businesses",
+      bizLead:
+        "Profiles, discovery, events, and insights — built for operators who want the story behind the foot traffic.",
+      peopleEyebrow: "Everyday use",
+      peopleTitle: "For people",
+      peopleLead:
+        "Search with intent, tune who you meet, chat when it clicks — keeping the social layer fast and grounded.",
+      motionEyebrow: "Motion",
+      motionTitle: "See it in motion",
+      motionLead:
+        "Short walkthroughs for venues and for everyday discovery — same product, two sides of the experience.",
+      videoBiz: "For businesses — venue walkthrough",
+      videoPeople: "For people — app demo",
+      bizCaption1:
+        "Live business profile as visitors see it in discovery.",
+      bizCaption2:
+        "Insights overview — visits, taps, and what changed this week.",
+      bizCaption3:
+        "Publish an event — title, timing, pinned location or virtual, and the essentials guests need.",
+      bizCaption4:
+        "Venue profile header — name, hours, and quick actions (signed-in view).",
+      bizCaption5:
+        "Post & promotion insights — top posts by reach, promotion mix, and privacy-safe audience signals.",
+      bizCaption6:
+        "Map view — scout nearby venues and how people cluster in real time.",
+      bizCaption7:
+        "Overview your scheduled events - post updates and manage",
+      bizCaption8:
+        "Upcoming foot traffic moments — lineup guests can browse.",
+      bizCaption9:
+        "Audience insights — gender, age bands, and who your reach represents (privacy-safe).",
+      bizCaption10:
+        "About the venue — description, hours, and contact guests rely on.",
+      bizCaption11:
+        "Discovery map — nearby people, venues, and live interest on the canvas you already use in-app.",
+      bizCaption12:
+        "Signed-in venue view — About, posts, and quick actions in one dashboard.",
+      peopleCaption1:
+        "Discovery filters — control who surfaces in your nearby feed.",
+      peopleCaption2:
+        "Distance slider — widen or tighten how far you’re willing to look.",
+      peopleCaption3:
+        "Heritage preferences — intentional matching beyond the basics.",
+      peopleCaption4:
+        "Custom filters — save combinations you actually use nightly.",
+      peopleCaption5:
+        "Soulmate score — see how your profile lines up with nearby matches.",
+      peopleCaption6:
+        "Profile detail — photos, bio, and the context before you say hi.",
+      peopleCaption7:
+        "Chat inbox — threads stay scoped to real-life intent.",
+      peopleCaption8:
+        "Settings — privacy boundaries, alerts, and account control.",
+      footerWaitlist: "Join the waitlist",
+      footerPrivacy: "Privacy",
+      footerTerms: "Terms",
+    },
+    de: {
+      docTitle:
+        "FindmeIRL — Menschen treffen und Orte vor Ort wachsen lassen",
+      metaDesc:
+        "FindmeIRL verbindet Menschen in der Nähe und gibt Locations klare Insights. Jetzt für den Start auf die Warteliste setzen.",
+      langAria: "Sprache",
+      headerCtaFull: "Warteliste",
+      headerCtaShort: "Liste",
+      heroEyebrow: "Entdeckung vor Ort · Locations · Menschen in der Nähe",
+      heroTitle:
+        "Echte Orte. Echte Menschen. Echte Dynamik.",
+      heroLeadHtml:
+        "FindmeIRL zeigt, was um dich herum passiert — und gibt Betreibern Einblick in <strong>Publikum, Besuche und Events.</strong>",
+      emailPlaceholder: "Berufs- oder private E-Mail",
+      emailAria: "E-Mail für die Warteliste",
+      submitCta: "Zugang sichern",
+      waitlistFine:
+        "Kein Spam — wir schreiben nur zum Launch und zu frühen Zugängen.",
+      waitlistOk: "Du stehst auf der Liste. Wir melden uns.",
+      waitlistErrEmail: "Bitte gib eine gültige E-Mail-Adresse ein.",
+      waitlistErrGeneric:
+        "Wir konnten deine Anmeldung nicht speichern. Bitte kurz warten und erneut versuchen.",
+      waitlistJoining: "Wird gesendet…",
+      asidePill: "Eine App · zwei Modi",
+      stat1a: "Heute in der Nähe",
+      stat1b: "live · Karte + Liste",
+      stat2a: "Location-Insights",
+      stat2b: "Besuche · Publikum · Events",
+      stat3a: "Dein Profil",
+      stat3b: "Filter · Chat · Einstellungen",
+      tourEyebrow: "Produkttour",
+      bizTitle: "Für Unternehmen",
+      bizLead:
+        "Profile, Entdeckung, Events und Insights — für Betreiber, die die Geschichte hinter dem Traffic verstehen wollen.",
+      peopleEyebrow: "Im Alltag",
+      peopleTitle: "Für Nutzer:innen",
+      peopleLead:
+        "Gezielt suchen, auswählen, chatten — schnell und bodenständig.",
+      motionEyebrow: "In Bewegung",
+      motionTitle: "So fühlt es sich an",
+      motionLead:
+        "Kurze Walkthroughs für Locations und für die Alltags-Nutzung — ein Produkt, zwei Perspektiven.",
+      videoBiz: "Für Unternehmen — Venue-Walkthrough",
+      videoPeople: "Für Nutzer:innen — App-Demo",
+      bizCaption1:
+        "Live-Profil so, wie es Gäste in der Entdeckung sehen.",
+      bizCaption2:
+        "Insights-Überblick — Besuche, Taps und was sich diese Woche bewegt.",
+      bizCaption3:
+        "Event veröffentlichen — Titel, Zeit, ortsfester Pin oder virtuell und was Gäste wissen müssen.",
+      bizCaption4:
+        "Profil-Header — Name, Zeiten und Schnellaktionen (eingeloggt).",
+      bizCaption5:
+        "Post- & Promo-Insights — Top-Posts nach Reichweite, Mix und datenschutzfreundliche Audience.",
+      bizCaption6:
+        "Kartenansicht — Nachbar-Locations und wie sich Personen in Echtzeit bündeln.",
+      bizCaption7:
+        "Überblick über geplante Events — Updates posten und verwalten",
+      bizCaption8:
+        "Kommende Hochlauf-Momente — Programm zum Durchscrollen.",
+      bizCaption9:
+        "Audience-Insights — Geschlecht, Altersbänder und wer eure Reichweite repräsentiert (privacy-safe).",
+      bizCaption10:
+        "Über das Venue — Beschreibung, Zeiten und Kontakt, auf die Gäste sich verlassen.",
+      bizCaption11:
+        "Discovery-Karte — Menschen, Locations und Signal auf der Karte aus der App.",
+      bizCaption12:
+        "Venue-Dashboard eingeloggt — About, Posts und Schnellaktionen an einem Ort.",
+      peopleCaption1:
+        "Entdeckungs-Filter — wer in deinem Nahbereich-Feed erscheint.",
+      peopleCaption2:
+        "Distanzregler — Radius vergrößern oder enger stellen.",
+      peopleCaption3:
+        "Herkunfts-Präferenzen — Matching jenseits der Basics.",
+      peopleCaption4:
+        "Benutzerdefinierte Filter — Kombinationen, die du wirklich nutzt.",
+      peopleCaption5:
+        "Soulmate-Score — so passt dein Profil zu Matches in der Nähe.",
+      peopleCaption6:
+        "Profil-Detail — Fotos, Bio und Kontext vor dem ersten Hi.",
+      peopleCaption7:
+        "Chat-Inbox — Fäden gebunden an echte Offline-Absicht.",
+      peopleCaption8:
+        "Einstellungen — Privatsphäre, Hinweise und Konto-Kontrolle.",
+      footerWaitlist: "Zur Warteliste",
+      footerPrivacy: "Datenschutz",
+      footerTerms: "AGB",
+    },
+    fr: {
+      docTitle:
+        "FindmeIRL — Rencontrez des gens et faites vivre les lieux, dans la vraie vie",
+      metaDesc:
+        "FindmeIRL connecte les personnes à proximité et offre aux lieux des indicateurs clairs. Inscrivez-vous sur la liste d’attente.",
+      langAria: "Langue",
+      headerCtaFull: "Liste d’attente",
+      headerCtaShort: "Attente",
+      heroEyebrow:
+        "Découverte IRL · lieux · personnes à proximité",
+      heroTitle:
+        "De vrais lieux. De vraies personnes. Une vraie dynamique.",
+      heroLeadHtml:
+        "FindmeIRL aide à voir ce qui se passe autour de vous — tout en donnant aux lieux une vision claire de <strong>l’audience, des visites et des événements.</strong>",
+      emailPlaceholder: "E-mail pro ou perso",
+      emailAria: "E-mail pour la liste d’attente",
+      submitCta: "Obtenir l’accès",
+      waitlistFine:
+        "Pas de spam — uniquement le lancement et les accès anticipés.",
+      waitlistOk: "C’est noté. Nous revenons vers vous.",
+      waitlistErrEmail: "Veuillez saisir une adresse e-mail valide.",
+      waitlistErrGeneric:
+        "Impossible d’enregistrer votre inscription. Vérifiez la connexion et réessayez.",
+      waitlistJoining: "Envoi…",
+      asidePill: "Une app · deux modes",
+      stat1a: "Ce soir à proximité",
+      stat1b: "live · carte + liste",
+      stat2a: "Insights lieu",
+      stat2b: "visites · audience · événements",
+      stat3a: "Votre profil",
+      stat3b: "filtres · chat · réglages",
+      tourEyebrow: "Visite produit",
+      bizTitle: "Pour les pros",
+      bizLead:
+        "Profils, découverte, événements et insights — pour les opérateurs qui veulent comprendre la fréquentation.",
+      peopleEyebrow: "Au quotidien",
+      peopleTitle: "Pour tout le monde",
+      peopleLead:
+        "Recherche intentionnelle, filtres, chat quand ça matche — fluide et ancré dans le réel.",
+      motionEyebrow: "En mouvement",
+      motionTitle: "Voir en action",
+      motionLead:
+        "Courtes démos pour les lieux et pour l’usage quotidien — le même produit, deux angles.",
+      videoBiz: "Pour les pros — parcours lieu",
+      videoPeople: "Pour tout le monde — démo app",
+      bizCaption1:
+        "Fiche entreprise live telle que vue dans la découverte.",
+      bizCaption2:
+        "Vue Insights — visites, interactions et mouvement de la semaine.",
+      bizCaption3:
+        "Publier un événement — titre, horaires, lieu épinglé ou virtuel, et infos invités.",
+      bizCaption4:
+        "En-tête de fiche — nom, horaires et actions rapides (compte connecté).",
+      bizCaption5:
+        "Insights posts & promo — top posts par portée, mix promo et audience respectueuse de la vie privée.",
+      bizCaption6:
+        "Carte — lieux voisins et affluence en temps réel sur la carte.",
+      bizCaption7:
+        "Vue d’ensemble de vos événements planifiés — publiez des mises à jour et gérez",
+      bizCaption8:
+        "Moments à venir — liste que les clients parcourent vite.",
+      bizCaption9:
+        "Insights audience — genre, tranches d’âge et qui porte votre portée (privacy-safe).",
+      bizCaption10:
+        "À propos du lieu — description, horaires et contact pour les invités.",
+      bizCaption11:
+        "Carte découverte — personnes, lieux et signaux comme dans l’app.",
+      bizCaption12:
+        "Vue lieu connectée — À propos, publications et actions dans un tableau de bord.",
+      peopleCaption1:
+        "Filtres découverte — qui apparaît dans le fil local.",
+      peopleCaption2:
+        "Curseur de distance — élargir ou resserrer la zone.",
+      peopleCaption3:
+        "Préférences d’origine — matching plus intentionnel.",
+      peopleCaption4:
+        "Filtres personnalisés — combos que vous gardez au quotidien.",
+      peopleCaption5:
+        "Score Soulmate — l’adéquation de votre profil avec les profils proches.",
+      peopleCaption6:
+        "Profil détaillé — photos, bio et contexte avant le premier message.",
+      peopleCaption7:
+        "Boîte de chat — fils ancrés dans l’intention réelle.",
+      peopleCaption8:
+        "Réglages — limites de vie privée, alertes et compte.",
+      footerWaitlist: "Liste d’attente",
+      footerPrivacy: "Confidentialité",
+      footerTerms: "Conditions",
+    },
+    it: {
+      docTitle:
+        "FindmeIRL — Incontra persone e valorizza i luoghi, nella vita reale",
+      metaDesc:
+        "FindmeIRL connette persone vicine e offre ai locali insight chiari. Iscriviti alla lista d’attesa per l’accesso anticipato.",
+      langAria: "Lingua",
+      headerCtaFull: "Lista d’attesa",
+      headerCtaShort: "Lista",
+      heroEyebrow:
+        "Scoperta dal vivo · locali · persone vicine",
+      heroTitle:
+        "Luoghi veri. Persone vere. Slancio vero.",
+      heroLeadHtml:
+        "FindmeIRL aiuta a capire cosa succede intorno a te — e dà ai locali una visione chiara di <strong>pubblico, visite ed eventi.</strong>",
+      emailPlaceholder: "Email di lavoro o personale",
+      emailAria: "Email per la lista d’attesa",
+      submitCta: "Ottieni accesso",
+      waitlistFine:
+        "Niente spam — solo aggiornamenti su lancio e accessi anticipati.",
+      waitlistOk: "Sei in lista. Ti scriviamo noi.",
+      waitlistErrEmail: "Inserisci un indirizzo email valido.",
+      waitlistErrGeneric:
+        "Non siamo riusciti a salvare l’iscrizione. Controlla la connessione e riprova.",
+      waitlistJoining: "Invio…",
+      asidePill: "Stessa app · due modalità",
+      stat1a: "Stasera vicino a te",
+      stat1b: "live · mappa + elenco",
+      stat2a: "Insight locale",
+      stat2b: "visite · pubblico · eventi",
+      stat3a: "Il tuo profilo",
+      stat3b: "filtri · chat · impostazioni",
+      tourEyebrow: "Tour del prodotto",
+      bizTitle: "Per le attività",
+      bizLead:
+        "Profili, scoperta, eventi e insight — per chi vuole capire il traffico in negozio.",
+      peopleEyebrow: "Uso quotidiano",
+      peopleTitle: "Per le persone",
+      peopleLead:
+        "Cerca con intenzione, affina chi incontri, chatta quando scatta — veloce e con i piedi per terra.",
+      motionEyebrow: "In movimento",
+      motionTitle: "Guardalo in azione",
+      motionLead:
+        "Walkthrough brevi per i locali e per l’uso quotidiano — stesso prodotto, due lati.",
+      videoBiz: "Per le attività — tour del locale",
+      videoPeople: "Per le persone — demo app",
+      bizCaption1:
+        "Profilo business live come in scoperta.",
+      bizCaption2:
+        "Panoramica insight — visite, tap e cosa è cambiato.",
+      bizCaption3:
+        "Pubblica un evento — titolo, orari, pin sul luogo o virtuale, e info per gli ospiti.",
+      bizCaption4:
+        "Header profilo locale — nome, orari e azioni rapide (account connesso).",
+      bizCaption5:
+        "Insight post e promo — top post per reach, mix promozioni e audience privacy-safe.",
+      bizCaption6:
+        "Mappa — locali vicini e come si concentrano le persone in tempo reale.",
+      bizCaption7:
+        "Panoramica degli eventi programmati — pubblica aggiornamenti e gestisci",
+      bizCaption8:
+        "Prossimi momenti di afflusso — elenco facile da scorrere.",
+      bizCaption9:
+        "Insight audience — genere, fasce d’età e chi rappresenta il tuo reach (privacy-safe).",
+      bizCaption10:
+        "Informazioni sul locale — descrizione, orari e contatti su cui contano gli ospiti.",
+      bizCaption11:
+        "Mappa discovery — persone, locali e segnali come nell’app.",
+      bizCaption12:
+        "Dashboard venue connesso — About, post e azioni rapide in un solo posto.",
+      peopleCaption1:
+        "Filtri scoperta — chi compare nel feed vicino a te.",
+      peopleCaption2:
+        "Cursore distanza — allarga o restringi il raggio.",
+      peopleCaption3:
+        "Preferenze eredità — matching oltre i campi base.",
+      peopleCaption4:
+        "Filtri personalizzati — combinazioni che usi davvero.",
+      peopleCaption5:
+        "Punteggio Soulmate — quanto il tuo profilo si allinea ai match vicini.",
+      peopleCaption6:
+        "Profilo completo — foto, bio e contesto prima del ciao.",
+      peopleCaption7:
+        "Chat — thread legati a intenti dal vivo.",
+      peopleCaption8:
+        "Impostazioni — privacy, notifiche e controllo account.",
+      footerWaitlist: "Lista d’attesa",
+      footerPrivacy: "Privacy",
+      footerTerms: "Termini",
+    },
+  };
 
   function normalizeLang(code) {
-    if (!code) return DEFAULT;
-    var c = String(code).toLowerCase().split('-')[0];
-    return SUPPORTED.indexOf(c) !== -1 ? c : DEFAULT;
+    if (!code) return "en";
+    var c = String(code).toLowerCase().slice(0, 2);
+    return SUPPORTED.indexOf(c) >= 0 ? c : "en";
   }
 
-  function getNested(obj, path) {
-    if (!obj || !path) return null;
-    var parts = path.split('.');
-    var o = obj;
-    for (var i = 0; i < parts.length; i++) {
-      if (o == null || typeof o !== 'object') return null;
-      o = o[parts[i]];
+  function getStoredLang() {
+    try {
+      return normalizeLang(localStorage.getItem(STORAGE_KEY));
+    } catch (e) {
+      return "en";
     }
-    return typeof o === 'string' ? o : o == null ? null : String(o);
   }
 
-  var dict = null;
-  var currentLang = DEFAULT;
+  function setStoredLang(lang) {
+    try {
+      localStorage.setItem(STORAGE_KEY, normalizeLang(lang));
+    } catch (e) {}
+  }
 
-  function apply(root) {
-    if (!dict) return;
-    root = root || document;
+  function currentDocLang() {
+    var b = document.body;
+    if (!b) return null;
+    return normalizeLang(b.getAttribute("data-legal-lang"));
+  }
 
-    root.querySelectorAll('[data-i18n]').forEach(function (el) {
-      var key = el.getAttribute('data-i18n');
-      var fullTr =
-        document.body && document.body.hasAttribute('data-legal-full-translation');
-      if (fullTr && key === 'legal.bindingNote') {
-        el.classList.add('hidden');
+  function syncLegalLinks(lang) {
+    var L = normalizeLang(lang);
+    var nodes = document.querySelectorAll("a[data-legal-link]");
+    for (var i = 0; i < nodes.length; i++) {
+      var a = nodes[i];
+      var doc = a.getAttribute("data-legal-link");
+      if (!doc || !LEGAL_FILES[doc] || !LEGAL_FILES[doc][L]) continue;
+      a.setAttribute("href", LEGAL_FILES[doc][L]);
+    }
+  }
+
+  function applyLandingStrings(lang) {
+    var L = normalizeLang(lang);
+    var pack = LANDING[L] || LANDING.en;
+    var year = String(new Date().getFullYear());
+
+    document.documentElement.lang = L;
+
+    if (pack.docTitle) document.title = pack.docTitle;
+    var meta = document.querySelector('meta[name="description"]');
+    if (meta && pack.metaDesc) meta.setAttribute("content", pack.metaDesc);
+
+    var nodes = document.querySelectorAll("[data-i18n]");
+    for (var i = 0; i < nodes.length; i++) {
+      var el = nodes[i];
+      var key = el.getAttribute("data-i18n");
+      if (!key || !pack[key]) continue;
+      var val = pack[key].replace(/\{year\}/g, year);
+      if (el.hasAttribute("data-i18n-html")) el.innerHTML = val;
+      else el.textContent = val;
+    }
+
+    var ph = document.querySelectorAll("[data-i18n-placeholder]");
+    for (var j = 0; j < ph.length; j++) {
+      var inp = ph[j];
+      var pk = inp.getAttribute("data-i18n-placeholder");
+      if (pk && pack[pk]) inp.setAttribute("placeholder", pack[pk]);
+    }
+
+    var ar = document.querySelectorAll("[data-i18n-aria-label]");
+    for (var k = 0; k < ar.length; k++) {
+      var ela = ar[k];
+      var ak = ela.getAttribute("data-i18n-aria-label");
+      var ariaKey =
+        ak === "nav.langAria" ? "langAria" : ak;
+      if (ariaKey && pack[ariaKey]) ela.setAttribute("aria-label", pack[ariaKey]);
+    }
+  }
+
+  function initLangSelect() {
+    var sel = document.querySelector(".site-lang-select");
+    if (!sel) return;
+
+    var onLegal = !!document.body.getAttribute("data-legal-doc");
+    var pageLang = currentDocLang();
+    var initial = onLegal && pageLang ? pageLang : getStoredLang();
+    sel.value = initial;
+    if (!onLegal) {
+      applyLandingStrings(initial);
+      syncLegalLinks(initial);
+    } else {
+      syncLegalLinks(pageLang || initial);
+    }
+
+    sel.addEventListener("change", function () {
+      var next = normalizeLang(sel.value);
+      setStoredLang(next);
+
+      var legal = document.body.getAttribute("data-legal-doc");
+      if (legal && LEGAL_FILES[legal] && LEGAL_FILES[legal][next]) {
+        window.location.href = LEGAL_FILES[legal][next];
         return;
       }
-      var val = getNested(dict, key);
-      if (el.hasAttribute('data-i18n-toggle-hidden')) {
-        var show = val != null && String(val).trim() !== '';
-        el.classList.toggle('hidden', !show);
-      }
-      if (val != null) el.textContent = val;
+
+      applyLandingStrings(next);
+      syncLegalLinks(next);
+      try {
+        window.dispatchEvent(new CustomEvent("findme:locale-changed"));
+      } catch (e) {}
+      sel.setAttribute(
+        "aria-label",
+        (LANDING[next] || LANDING.en).langAria || "Language",
+      );
     });
 
-    root.querySelectorAll('[data-i18n-html]').forEach(function (el) {
-      var key = el.getAttribute('data-i18n-html');
-      var val = getNested(dict, key);
-      if (val != null) el.innerHTML = val;
-    });
-
-    root.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
-      var key = el.getAttribute('data-i18n-placeholder');
-      var val = getNested(dict, key);
-      if (val != null) el.setAttribute('placeholder', val);
-    });
-
-    root.querySelectorAll('[data-i18n-aria-label]').forEach(function (el) {
-      var key = el.getAttribute('data-i18n-aria-label');
-      var val = getNested(dict, key);
-      if (val != null) el.setAttribute('aria-label', val);
-    });
-
-    var page =
-      document.body && document.body.getAttribute('data-i18n-page')
-        ? document.body.getAttribute('data-i18n-page')
-        : '';
-
-    if (page !== 'privacy' && page !== 'terms') {
-      var mt = getNested(dict, 'meta.title');
-      if (mt) document.title = mt;
-
-      var md = getNested(dict, 'meta.description');
-      if (md) {
-        var m = document.querySelector('meta[name="description"]');
-        if (m) m.setAttribute('content', md);
-      }
-    }
-
-    if (page === 'privacy') {
-      var pmt = getNested(dict, 'legal.priv.metaTitle');
-      if (pmt) document.title = pmt;
-      var pmd = getNested(dict, 'legal.priv.metaDesc');
-      if (pmd) {
-        var pm = document.querySelector('meta[name="description"]');
-        if (pm) pm.setAttribute('content', pmd);
-      }
-    } else if (page === 'terms') {
-      var tmt = getNested(dict, 'legal.tos.metaTitle');
-      if (tmt) document.title = tmt;
-      var tmd = getNested(dict, 'legal.tos.metaDesc');
-      if (tmd) {
-        var tm = document.querySelector('meta[name="description"]');
-        if (tm) tm.setAttribute('content', tmd);
-      }
-    }
-
-    document.documentElement.setAttribute('lang', currentLang);
-
-    document.querySelectorAll('.site-lang-select').forEach(function (sel) {
-      sel.value = currentLang;
-    });
-
-    updateLegalLinkHrefs();
-    if (maybeRedirectLegalDocument()) return;
-
-    window.dispatchEvent(
-      new CustomEvent('findme:locale-changed', {
-        detail: { lang: currentLang, dict: dict, t: window.findmeI18n.t },
-      })
+    sel.setAttribute(
+      "aria-label",
+      (LANDING[normalizeLang(sel.value)] || LANDING.en).langAria || "Language",
     );
   }
 
-  function setLang(lang, skipApply) {
-    var L = normalizeLang(lang);
-    var url = 'assets/i18n/' + L + '.json?v=2';
-    return fetch(url)
-      .then(function (res) {
-        if (!res.ok) throw new Error(res.statusText);
-        return res.json();
-      })
-      .then(function (data) {
-        dict = data;
-        currentLang = L;
-        try {
-          localStorage.setItem(STORAGE_KEY, L);
-        } catch (_) {}
-        if (!skipApply) apply(document);
-      })
-      .catch(function (err) {
-        console.error('[findme i18n]', err);
-        if (L !== DEFAULT) return setLang(DEFAULT);
-      });
-  }
-
-  function t(k) {
-    return getNested(dict, k) || '';
-  }
-
-  function init() {
-    var initial = DEFAULT;
-    var body = document.body;
-    var docLangFromPage =
-      body &&
-      body.getAttribute('data-legal-doc') &&
-      body.getAttribute('data-legal-lang');
-    if (docLangFromPage) {
-      initial = normalizeLang(docLangFromPage);
-    } else {
-      try {
-        var stored = localStorage.getItem(STORAGE_KEY);
-        if (stored && SUPPORTED.indexOf(stored) !== -1) initial = stored;
-        else {
-          var nav = (navigator.language || '').toLowerCase().split('-')[0];
-          if (SUPPORTED.indexOf(nav) !== -1) initial = nav;
-        }
-      } catch (_) {}
-    }
-
-    document.querySelectorAll('.site-lang-select').forEach(function (sel) {
-      sel.addEventListener('change', function (e) {
-        var v = e.target.value;
-        document.querySelectorAll('.site-lang-select').forEach(function (s) {
-          s.value = v;
-        });
-        setLang(v);
-      });
-    });
-
-    window.findmeI18n._setLangInternal = setLang;
-    setLang(initial);
+  function currentUiLang() {
+    var sel = document.querySelector(".site-lang-select");
+    return sel ? normalizeLang(sel.value) : getStoredLang();
   }
 
   window.findmeI18n = {
-    init: init,
-    setLang: function (lang) {
-      return setLang(lang);
+    t: function (key) {
+      var L = currentUiLang();
+      var pack = LANDING[L] || LANDING.en;
+      return pack[key] || "";
     },
-    getLang: function () {
-      return currentLang;
-    },
-    t: t,
-    apply: apply,
-    getDict: function () {
-      return dict;
+    apply: function () {
+      var L = currentUiLang();
+      applyLandingStrings(L);
+      syncLegalLinks(L);
     },
   };
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+  function boot() {
+    initLangSelect();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot);
   } else {
-    init();
+    boot();
   }
 })();
