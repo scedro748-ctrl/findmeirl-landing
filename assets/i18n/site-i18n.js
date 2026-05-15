@@ -165,7 +165,7 @@
 
   function setLang(lang, skipApply) {
     var L = normalizeLang(lang);
-    var url = 'assets/i18n/' + L + '.json?v=1';
+    var url = 'assets/i18n/' + L + '.json?v=2';
     return fetch(url)
       .then(function (res) {
         if (!res.ok) throw new Error(res.statusText);
