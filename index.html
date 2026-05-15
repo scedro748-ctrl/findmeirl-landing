@@ -388,6 +388,7 @@
         box-shadow: var(--focus-ring);
       }
 
+      main {
         max-width: var(--container-max);
         margin-inline: auto;
         padding-inline: var(--container-gutter-desktop);
@@ -724,6 +725,16 @@
       }
       .footer a:hover {
         color: var(--accent);
+      }
+
+      /* Wider viewports only: extra inset so chrome and sections don’t hug the window edge. */
+      @media (min-width: 1024px) {
+        .site-header__inner,
+        main {
+          padding-inline: calc(
+            var(--container-gutter-desktop) + var(--space-5)
+          );
+        }
       }
 
       @media (max-width: 1023px) {
