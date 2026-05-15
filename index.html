@@ -121,7 +121,8 @@
                    onclick="smoothScrollTo('waitlist')"
                    class="px-3 sm:px-6 py-2.5 min-h-[44px] text-xs sm:text-sm font-semibold rounded-2xl bg-white text-[#0F1B2E] hover:bg-white/90 transition-all active:scale-95 flex items-center justify-center gap-x-1.5 sm:gap-x-2">
                     <i class="fa-solid fa-bell text-sm shrink-0"></i>
-                    <span data-i18n="nav.joinWaitlist" class="whitespace-nowrap">Join Waitlist</span>
+                    <span data-i18n="nav.joinWaitlistShort" class="md:hidden whitespace-nowrap">Waitlist</span>
+                    <span data-i18n="nav.joinWaitlist" class="hidden md:inline whitespace-nowrap">Join Waitlist</span>
                 </a>
                 <button onclick="toggleMobileMenu()" 
                         type="button"
@@ -353,11 +354,15 @@
                     <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
                         <img src="assets/business/07-business-my-events.png" alt="Events Tab" loading="lazy" decoding="async"
                              class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
+                        <div class="hidden md:block absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
                             <div class="text-xs uppercase tracking-widest text-violet-400" data-i18n="shots.tile1.cat">Events</div>
                             <div class="font-semibold" data-i18n="shots.tile1.title">Create, discover &amp; manage local events with RSVPs</div>
                         </div>
                         <div class="absolute top-4 right-4 bg-black/70 text-[10px] px-3 py-1 rounded-2xl font-mono" data-i18n="shots.tile1.badge">EVENTS</div>
+                    </div>
+                    <div class="md:hidden mt-3 px-1 space-y-0.5">
+                        <div class="text-xs uppercase tracking-widest text-violet-400" data-i18n="shots.tile1.cat">Events</div>
+                        <div class="text-sm font-medium text-white/80" data-i18n="shots.tile1.title">Create, discover &amp; manage local events with RSVPs</div>
                     </div>
                 </div>
                 
@@ -366,11 +371,15 @@
                     <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
                         <img src="assets/screenshots/03-profile-soulmate.png" alt="Profile Tab" loading="lazy" decoding="async"
                              class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
+                        <div class="hidden md:block absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
                             <div class="text-xs uppercase tracking-widest text-[#5E9ED6]" data-i18n="shots.tile2.cat">Profile</div>
                             <div class="font-semibold" data-i18n="shots.tile2.title">Soulmate Score, match tiers &amp; banner upload</div>
                         </div>
                         <div class="absolute top-4 right-4 bg-black/70 text-[10px] px-3 py-1 rounded-2xl font-mono" data-i18n="shots.tile2.badge">YOU</div>
+                    </div>
+                    <div class="md:hidden mt-3 px-1 space-y-0.5">
+                        <div class="text-xs uppercase tracking-widest text-[#5E9ED6]" data-i18n="shots.tile2.cat">Profile</div>
+                        <div class="text-sm font-medium text-white/80" data-i18n="shots.tile2.title">Soulmate Score, match tiers &amp; banner upload</div>
                     </div>
                 </div>
                 
@@ -379,11 +388,15 @@
                     <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
                         <img src="assets/screenshots/01-filters-people.png" alt="Filters - People" loading="lazy" decoding="async"
                              class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
+                        <div class="hidden md:block absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
                             <div class="text-xs uppercase tracking-widest text-emerald-400" data-i18n="shots.tile3.cat">Filters</div>
                             <div class="font-semibold" data-i18n="shots.tile3.title">Gender, orientation, faith &amp; heritage</div>
                         </div>
                         <div class="absolute top-4 right-4 bg-black/70 text-[10px] px-3 py-1 rounded-2xl font-mono" data-i18n="shots.tile3.badge">FILTER</div>
+                    </div>
+                    <div class="md:hidden mt-3 px-1 space-y-0.5">
+                        <div class="text-xs uppercase tracking-widest text-emerald-400" data-i18n="shots.tile3.cat">Filters</div>
+                        <div class="text-sm font-medium text-white/80" data-i18n="shots.tile3.title">Gender, orientation, faith &amp; heritage</div>
                     </div>
                 </div>
                 
@@ -392,11 +405,15 @@
                     <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
                         <img src="assets/screenshots/04-settings.png" alt="Settings" loading="lazy" decoding="async"
                              class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
+                        <div class="hidden md:block absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
                             <div class="text-xs uppercase tracking-widest text-violet-400" data-i18n="shots.tile4.cat">Settings</div>
                             <div class="font-semibold" data-i18n="shots.tile4.title">Privacy toggles, account &amp; legal links</div>
                         </div>
                         <div class="absolute top-4 right-4 bg-black/70 text-[10px] px-3 py-1 rounded-2xl font-mono" data-i18n="shots.tile4.badge">SETTINGS</div>
+                    </div>
+                    <div class="md:hidden mt-3 px-1 space-y-0.5">
+                        <div class="text-xs uppercase tracking-widest text-violet-400" data-i18n="shots.tile4.cat">Settings</div>
+                        <div class="text-sm font-medium text-white/80" data-i18n="shots.tile4.title">Privacy toggles, account &amp; legal links</div>
                     </div>
                 </div>
 
@@ -405,11 +422,15 @@
                     <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
                         <img src="assets/screenshots/05-chats-tab.png" alt="Chats Tab" loading="lazy" decoding="async"
                              class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
+                        <div class="hidden md:block absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
                             <div class="text-xs uppercase tracking-widest text-emerald-400" data-i18n="shots.tile5.cat">Chats</div>
                             <div class="font-semibold" data-i18n="shots.tile5.title">Inbox with direct + event group chats, unread badges</div>
                         </div>
                         <div class="absolute top-4 right-4 bg-black/70 text-[10px] px-3 py-1 rounded-2xl font-mono" data-i18n="shots.tile5.badge">CHATS</div>
+                    </div>
+                    <div class="md:hidden mt-3 px-1 space-y-0.5">
+                        <div class="text-xs uppercase tracking-widest text-emerald-400" data-i18n="shots.tile5.cat">Chats</div>
+                        <div class="text-sm font-medium text-white/80" data-i18n="shots.tile5.title">Inbox with direct + event group chats, unread badges</div>
                     </div>
                 </div>
 
@@ -418,11 +439,15 @@
                     <div class="screenshot bg-[#1A2740] rounded-3xl overflow-hidden border border-white/10 aspect-[9/16] relative">
                         <img src="assets/screenshots/06-profile-detail.png" alt="Profile Detail" loading="lazy" decoding="async"
                              class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
+                        <div class="hidden md:block absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
                             <div class="text-xs uppercase tracking-widest text-[#5E9ED6]" data-i18n="shots.tile6.cat">Profile</div>
                             <div class="font-semibold" data-i18n="shots.tile6.title">Public profile view with photos, interests &amp; stats</div>
                         </div>
                         <div class="absolute top-4 right-4 bg-black/70 text-[10px] px-3 py-1 rounded-2xl font-mono" data-i18n="shots.tile6.badge">VIEW</div>
+                    </div>
+                    <div class="md:hidden mt-3 px-1 space-y-0.5">
+                        <div class="text-xs uppercase tracking-widest text-[#5E9ED6]" data-i18n="shots.tile6.cat">Profile</div>
+                        <div class="text-sm font-medium text-white/80" data-i18n="shots.tile6.title">Public profile view with photos, interests &amp; stats</div>
                     </div>
                 </div>
             </div>
