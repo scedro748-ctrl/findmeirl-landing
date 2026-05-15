@@ -31,8 +31,6 @@
       metaDesc:
         "FindmeIRL connects people nearby and gives venues clear insights. Join the waitlist for early access.",
       langAria: "Language",
-      headerCtaFull: "Join waitlist",
-      headerCtaShort: "Waitlist",
       heroEyebrow: "In-person discovery · venues · nearby people",
       heroTitle: "Real places. Real people. Real momentum.",
       heroLeadHtml:
@@ -118,8 +116,6 @@
       metaDesc:
         "FindmeIRL verbindet Menschen in der Nähe und gibt Locations klare Insights. Jetzt für den Start auf die Warteliste setzen.",
       langAria: "Sprache",
-      headerCtaFull: "Warteliste",
-      headerCtaShort: "Liste",
       heroEyebrow: "Entdeckung vor Ort · Locations · Menschen in der Nähe",
       heroTitle:
         "Echte Orte. Echte Menschen. Echte Dynamik.",
@@ -206,8 +202,6 @@
       metaDesc:
         "FindmeIRL connecte les personnes à proximité et offre aux lieux des indicateurs clairs. Inscrivez-vous sur la liste d’attente.",
       langAria: "Langue",
-      headerCtaFull: "Liste d’attente",
-      headerCtaShort: "Attente",
       heroEyebrow:
         "Découverte IRL · lieux · personnes à proximité",
       heroTitle:
@@ -295,8 +289,6 @@
       metaDesc:
         "FindmeIRL connette persone vicine e offre ai locali insight chiari. Iscriviti alla lista d’attesa per l’accesso anticipato.",
       langAria: "Lingua",
-      headerCtaFull: "Lista d’attesa",
-      headerCtaShort: "Lista",
       heroEyebrow:
         "Scoperta dal vivo · locali · persone vicine",
       heroTitle:

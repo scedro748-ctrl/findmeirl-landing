@@ -178,38 +178,6 @@
         letter-spacing: var(--tracking-display);
         line-height: 1.1;
       }
-      .header-cta {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px 16px;
-        border-radius: var(--radius-sm);
-        font-size: var(--text-sm);
-        font-weight: 500;
-        text-decoration: none;
-        background: var(--accent);
-        color: var(--accent-on);
-        border: 1px solid transparent;
-        transition:
-          background-color var(--motion-fast) var(--ease-standard),
-          transform var(--motion-fast) var(--ease-standard);
-        white-space: nowrap;
-        /* Longest localized full label ≈ FR/IT “Liste …” — reserve width so the
-           language select doesn’t slide when copy changes. */
-        min-width: 10.75rem;
-        box-sizing: border-box;
-      }
-      .header-cta:hover {
-        background: var(--accent-hover);
-      }
-      .header-cta:active {
-        background: var(--accent-active);
-        transform: translateY(1px);
-      }
-      .header-cta:focus-visible {
-        outline: none;
-        box-shadow: var(--focus-ring);
-      }
 
       .site-header__actions {
         display: flex;
@@ -606,15 +574,6 @@
           width: 36px;
           height: 36px;
         }
-        .header-cta__full {
-          display: none;
-        }
-        .header-cta__compact {
-          display: inline;
-        }
-        .header-cta {
-          min-width: 6.75rem;
-        }
       }
     </style>
   </head>
@@ -642,13 +601,6 @@
             <option value="fr">FR</option>
             <option value="it">IT</option>
           </select>
-          <a class="header-cta" href="#waitlist"
-            ><span class="header-cta__full" data-i18n="headerCtaFull"
-              >Join waitlist</span
-            ><span class="header-cta__compact" data-i18n="headerCtaShort"
-              >Waitlist</span
-            ></a
-          >
         </div>
       </div>
     </header>
@@ -1011,7 +963,7 @@
       </footer>
     </main>
 
-    <script src="assets/i18n/site-i18n.js?v=20260515"></script>
+    <script src="assets/i18n/site-i18n.js?v=20260516"></script>
     <script>
       (function () {
         var SUPABASE_URL = "https://xqxltowodthtgtelhqjf.supabase.co";
