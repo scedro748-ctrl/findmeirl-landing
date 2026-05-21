@@ -59,8 +59,8 @@
     <!-- NAV -->
     <nav class="border-b border-white/10 bg-[#0F1B2E]/95 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-4xl mx-auto px-6 py-6 flex items-center justify-between">
-            <a href="../index.html" class="flex items-center gap-x-3 group">
-                <img src="../assets/images/app-icon.png" alt="findmeIRL" 
+            <a href="index.html" class="flex items-center gap-x-3 group">
+                <img src="assets/images/app-icon.png" alt="findmeIRL" 
                      class="w-8 h-8 rounded-2xl shadow-inner object-cover">
                 <span class="text-2xl font-semibold tracking-tighter logo-font group-hover:text-[#5E9ED6] transition-colors">findmeIRL</span>
             </a>
@@ -71,7 +71,7 @@
                     <option value="fr">FR</option>
                     <option value="it">IT</option>
                 </select>
-                <a href="../index.html" class="flex items-center gap-x-2 text-white/70 hover:text-white transition-colors">
+                <a href="index.html" class="flex items-center gap-x-2 text-white/70 hover:text-white transition-colors">
                     <i class="fa-solid fa-arrow-left text-xs"></i>
                     <span data-i18n="legal.priv.back">Back to Home</span>
                 </a>
@@ -86,7 +86,7 @@
             <div class="mb-16">
                 <div class="inline-flex items-center px-5 py-2 bg-white/10 rounded-3xl text-sm mb-6">
                     <span class="text-emerald-400">●</span>
-                    <span class="ml-2 font-medium" data-i18n="legal.priv.updated">Last updated: May 15, 2026</span>
+                    <span class="ml-2 font-medium" data-i18n="legal.priv.updated">Last updated: May 21, 2026</span>
                 </div>
                 <h1 class="text-6xl font-semibold tracking-tighter logo-font mb-4" data-i18n="legal.priv.h1">Privacy Policy</h1>
                 <p class="text-2xl text-white/70" data-i18n="legal.priv.subtitle">findmeIRL (“Findme”, “we”, “us”, or “our”)</p>
@@ -122,7 +122,7 @@
             <div class="mt-6 mb-8">
                 <div class="font-semibold text-white mb-3">Business Users (Venue Owners)</div>
                 <ul class="list-disc pl-6 space-y-2 text-white/80 text-[17px]">
-                    <li>Business profile details: business name, contact person, business email, phone number, description, category, physical address, website URL, avatar/logo, banner image, owner-selected geographic coordinates (latitude/longitude), opening hours schedule (JSON format), and moderation status fields (<code>paused_at</code>, <code>paused_until</code>, <code>paused_reason_internal</code>)</li>
+                    <li>Business profile details: business name, contact person, business email, phone number, description, category, physical address, website URL, avatar/logo, banner image, owner-selected geographic coordinates (latitude/longitude), opening hours schedule (JSON format), and moderation status fields</li>
                     <li>Business content: posts including title, body, post type (promotion, update, event, behind-the-scenes, testimonial, community), optional image or external link</li>
                 </ul>
             </div>
@@ -155,7 +155,7 @@
             <p class="text-lg leading-relaxed text-white/80">We do not integrate advertising SDKs, sell personal data to data brokers, or use your information for behavioral advertising.</p>
 
             <h3>2.6 User-Generated Content and Image Scanning</h3>
-            <p class="text-lg leading-relaxed text-white/80">All images uploaded to the App (avatars, banners, gallery photos, event covers/memories, business logos, banners, and posts) are first placed in a private staging bucket (<code>temp-uploads</code>) and scanned by an automated AI system (Google Cloud Vision Safe Search) before being promoted to public storage. The scan detects illegal, explicit, or harmful content. Content that fails the scan is blocked from publication.</p>
+            <p class="text-lg leading-relaxed text-white/80">All images uploaded to the App (avatars, banners, gallery photos, event covers/memories, business logos, banners, and posts) are first placed in a private staging bucket and scanned by an automated AI system (Google Cloud Vision Safe Search) before being promoted to public storage. The scan detects illegal, explicit, or harmful content. Content that fails the scan is blocked from publication.</p>
             <p class="text-lg leading-relaxed text-white/80 mt-4">User-submitted text—such as profile biographies, business descriptions, custom hobby or interest submissions, and business posts—is processed by an automated AI content moderation system. This system analyzes text for prohibited categories including hate speech, harassment, threats, explicit or sexual content, violence, spam, scams, and other violations. Content that exceeds defined risk thresholds may be blocked from publication or flagged for review. This helps maintain a safe environment for all users.</p>
 
             <!-- 3. How We Use -->
@@ -168,7 +168,7 @@
                 <li>Deliver push notifications (only with your explicit permission) for messages, connection activity, event updates, and business posts from followed venues</li>
                 <li>Enable Business Users to manage listings, publish posts, view follower counts and insights, and moderate their venue content</li>
                 <li>Enforce safety, moderation, and compliance (including in-app reporting, blocking, chat bans, administrative review of custom interests, proactive AI moderation of bios / descriptions / posts / submissions for hate speech and other prohibited content, and automated AI triage of reports)</li>
-                <li>Record your acceptance of these Terms and this Policy (via the <code class="bg-white/10 px-1.5 py-0.5 rounded text-sm">terms_accepted_at</code> timestamp on your profile) for compliance and audit purposes</li>
+                <li>Record your acceptance of these Terms and this Policy (via the acceptance timestamp on your profile) for compliance and audit purposes</li>
                 <li>Improve, debug, and analyze App performance using anonymized or aggregated data</li>
                 <li>Power optional AI assistance features that generate profile and chat suggestions using secure,
                     privacy-preserving AI processing (no user data is used to train models)</li>
@@ -192,7 +192,7 @@
             
             <div class="mt-8">
                 <div class="font-semibold text-white mb-4">With other Users</div>
-                <p class="text-white/80">Obfuscated location and profile data for Personal Users (subject to your privacy settings, connection status, and <code>is_private</code> flag); fixed public venue coordinates, business profile details, and approved business posts for Venues. Business posts are visible to followers and, for approved venues, publicly via API.</p>
+                <p class="text-white/80">Obfuscated location and profile data for Personal Users (subject to your privacy settings, connection status, and profile visibility flags); fixed public venue coordinates, business profile details, and approved business posts for Venues. Business posts are visible to followers and, for approved venues, publicly via API.</p>
             </div>
             
             <div class="mt-8">
@@ -217,12 +217,12 @@
 
             <!-- 5. Location Data Special Notice -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">5. Location Data – Special Notice for Personal Users</h2>
-            <p class="text-lg leading-relaxed text-white/80">Precise location access is essential for the core discovery functionality of the App. You control when location is shared via device settings (“When In Use” permission). Exact coordinates remain on our servers and are used exclusively for grid computation and obfuscation. Other Users see only a randomized position within the same ~1 km² grid cell. You may stop sharing location at any time. You can also choose whether your obfuscated location appears as a map pin via the <code>show_avatar_on_map</code> setting. Business venue coordinates are owner-controlled and publicly visible by design.</p>
+            <p class="text-lg leading-relaxed text-white/80">Precise location access is essential for the core discovery functionality of the App. You control when location is shared via device settings (“When In Use” permission). Exact coordinates remain on our servers and are used exclusively for grid computation and obfuscation. Other Users see only a randomized position within the same ~1 km² grid cell. You may stop sharing location at any time. You can also choose whether your obfuscated location appears as a map pin via your privacy settings. Business venue coordinates are owner-controlled and publicly visible by design.</p>
 
             <!-- 6. Data Retention -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">6. Data Retention and Deletion</h2>
             <p class="text-lg leading-relaxed text-white/80">We retain personal data for as long as your account remains active or as necessary to provide the Services and comply with legal obligations. Upon account deletion (initiated by you in Profile → Account or by us for violations), we perform cascading deletion of your profile, messages, connections, events, business profiles (if owned), posts, follows, and gallery photos, subject to any legal hold or backup retention requirements. Location history for Personal Users is retained only for a limited period. Anonymized or aggregated data (including match score statistics and usage analytics) may be retained indefinitely for service improvement.</p>
-            <p class="text-lg leading-relaxed text-white/80 mt-4">Account suspension (via <code>suspended_at</code> / <code>suspended_until</code>) or Business Venue pause (via <code>paused_at</code> / <code>paused_until</code>) temporarily restricts access or visibility while retaining the underlying data. Full deletion only occurs on explicit user request or permanent termination. Suspended/paused records remain subject to the same retention rules until the account is fully deleted.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4">Account suspension or Business Venue pause temporarily restricts access or visibility while retaining the underlying data. Full deletion only occurs on explicit user request or permanent termination. Suspended/paused records remain subject to the same retention rules until the account is fully deleted.</p>
 
             <!-- 7. Your Rights -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">7. Your Rights and Choices</h2>
@@ -248,7 +248,7 @@
 
             <!-- 8. Security -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">8. Security</h2>
-            <p class="text-lg leading-relaxed text-white/80">We implement appropriate technical and organizational measures to protect personal data, including Row-Level Security (RLS) policies in our database, encryption in transit (TLS) and at rest where applicable, strict access controls, scoped API keys, and regular security reviews. Automated pre-publication scanning of user-uploaded images (via Google Cloud Vision Safe Search on the private <code>temp-uploads</code> bucket) helps prevent the distribution of illegal or harmful content. No system is 100% secure. We strongly encourage you to use a strong, unique password and enable any available two-factor authentication.</p>
+            <p class="text-lg leading-relaxed text-white/80">We implement appropriate technical and organizational measures to protect personal data, including Row-Level Security (RLS) policies in our database, encryption in transit (TLS) and at rest where applicable, strict access controls, scoped API keys, and regular security reviews. Automated pre-publication scanning of user-uploaded images (via Google Cloud Vision Safe Search on the private staging bucket) helps prevent the distribution of illegal or harmful content. No system is 100% secure. We strongly encourage you to use a strong, unique password and enable any available two-factor authentication.</p>
 
             <!-- 9. Children’s Privacy -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">9. Children’s Privacy</h2>
@@ -273,8 +273,8 @@
                 </div>
                 <div class="mt-6 pt-6 border-t border-white/10 text-sm text-white/60">
                     <span data-i18n="legal.priv.published">Legal pages are published at:</span><br>
-                    <span data-i18n="legal.priv.ppLabel">Privacy Policy:</span> <a data-legal-link="privacy" data-legal-sync-href="" href="privacy.html" class="text-[#5E9ED6]">https://findmeirl.app/legal/privacy.html</a><br>
-                    <span data-i18n="legal.priv.tosLabel">Terms of Service:</span> <a data-legal-link="terms" data-legal-sync-href="" href="terms.html" class="text-[#5E9ED6]">https://findmeirl.app/legal/terms.html</a>
+                    <span data-i18n="legal.priv.ppLabel">Privacy Policy:</span> <a data-legal-link="privacy" data-legal-sync-href="" href="privacy.html" class="text-[#5E9ED6]">https://findmeirl.app/privacy.html</a><br>
+                    <span data-i18n="legal.priv.tosLabel">Terms of Service:</span> <a data-legal-link="terms" data-legal-sync-href="" href="terms.html" class="text-[#5E9ED6]">https://findmeirl.app/terms.html</a>
                 </div>
             </div>
             
@@ -282,13 +282,13 @@
 
             <!-- Footer -->
             <div class="mt-20 pt-12 border-t border-white/10 text-center text-xs text-white/40">
-                <span data-i18n="legal.priv.effective">Effective Date: April 30, 2026 • Last Updated: May 15, 2026</span><br>
+                <span data-i18n="legal.priv.effective">Effective Date: April 30, 2026 • Last Updated: May 21, 2026</span><br>
                 <span data-i18n="legal.priv.footer">findmeirl.app • Privacy-first social discovery</span>
             </div>
         </div>
     </div>
 
-    <script src="../assets/i18n/site-i18n.js?v=20260514"></script>
+    <script src="assets/i18n/site-i18n.js?v=20260514"></script>
     <script>
         function initializeTailwind() {
             // Tailwind CDN already loaded
