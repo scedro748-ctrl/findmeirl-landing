@@ -17,11 +17,25 @@
 </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>FindmeIRL — Meet people and grow places, in real life</title>
-    <meta
-      name="description"
-      content="FindmeIRL connects people nearby and gives venues clear insights. Join the waitlist for early access."
-    />
+    
+    <!-- Primary SEO -->
+    <title>FindmeIRL — Meet Nearby People & Venues • Privacy-First Social Discovery</title>
+    <meta name="description" content="Discover real people and venues nearby with shared interests. Grid-based location privacy. Download the app or join the waitlist for early access.">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="FindmeIRL — Meet Nearby People & Venues • Privacy-First" />
+    <meta property="og:description" content="Real places. Real people. Real momentum. Privacy-first social discovery app for iOS & Android." />
+    <meta property="og:image" content="https://findmeirl.app/assets/og-image.jpg" /> <!-- update with real image if available -->
+    <meta property="og:url" content="https://findmeirl.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="FindmeIRL" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="FindmeIRL — Meet Nearby People & Venues" />
+    <meta name="twitter:description" content="Privacy-first social discovery. Join the waitlist." />
+    <meta name="twitter:image" content="https://findmeirl.app/assets/og-image.jpg" />
+    
     <meta name="color-scheme" content="dark" />
     <style>
       :root {
@@ -780,6 +794,39 @@
         }
       }
     </style>
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "FindmeIRL",
+      "url": "https://findmeirl.app",
+      "description": "Privacy-first social discovery app to meet nearby people and venues with shared interests.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://findmeirl.app/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "FindmeIRL",
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "SocialNetworkingApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0"
+      },
+      "description": "Discover real people nearby with shared interests while protecting your exact location.",
+      "url": "https://findmeirl.app",
+      "downloadUrl": "https://apps.apple.com/app/findmeirl",
+      "installUrl": "https://play.google.com/store/apps/details?id=com.findme.findme_app"
+    }
+    </script>
   </head>
   <body data-i18n-page="landing">
     <header class="site-header">
