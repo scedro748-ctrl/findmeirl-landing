@@ -8,6 +8,8 @@
   var STORAGE_KEY = "findmeirl-site-lang";
   var SUPPORTED = ["en", "de", "fr", "it"];
 
+  var LEGAL_DIR = "legal/";
+
   var LEGAL_FILES = {
     privacy: {
       en: "privacy.html",
@@ -22,6 +24,15 @@
       it: "terms_it.html",
     },
   };
+
+  function isOnLegalPage() {
+    return !!(document.body && document.body.getAttribute("data-legal-doc"));
+  }
+
+  /** Same-folder href on legal pages; `legal/…` from site root (e.g. index). */
+  function legalHref(filename) {
+    return isOnLegalPage() ? filename : LEGAL_DIR + filename;
+  }
 
   /** @type Record<string, Record<string, string>> */
   var LANDING = {
@@ -445,7 +456,7 @@
       var a = nodes[i];
       var doc = a.getAttribute("data-legal-link");
       if (!doc || !LEGAL_FILES[doc] || !LEGAL_FILES[doc][L]) continue;
-      a.setAttribute("href", LEGAL_FILES[doc][L]);
+      a.setAttribute("href", legalHref(LEGAL_FILES[doc][L]));
     }
   }
 
@@ -510,7 +521,7 @@
 
       var legal = document.body.getAttribute("data-legal-doc");
       if (legal && LEGAL_FILES[legal] && LEGAL_FILES[legal][next]) {
-        window.location.href = LEGAL_FILES[legal][next];
+        window.location.href = legalHref(LEGAL_FILES[legal][next]);
         return;
       }
 

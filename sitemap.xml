@@ -8,91 +8,91 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://findmeirl.app/privacy.html</loc>
+    <loc>https://findmeirl.app/legal/privacy.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://findmeirl.app/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://findmeirl.app/privacy_de.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://findmeirl.app/privacy_fr.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://findmeirl.app/privacy_it.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://findmeirl.app/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://findmeirl.app/legal/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://findmeirl.app/legal/privacy_de.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://findmeirl.app/legal/privacy_fr.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://findmeirl.app/legal/privacy_it.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://findmeirl.app/legal/privacy.html"/>
   </url>
   <url>
-    <loc>https://findmeirl.app/privacy_de.html</loc>
+    <loc>https://findmeirl.app/legal/privacy_de.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://findmeirl.app/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://findmeirl.app/privacy_de.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://findmeirl.app/privacy_fr.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://findmeirl.app/privacy_it.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://findmeirl.app/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://findmeirl.app/legal/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://findmeirl.app/legal/privacy_de.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://findmeirl.app/legal/privacy_fr.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://findmeirl.app/legal/privacy_it.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://findmeirl.app/legal/privacy.html"/>
   </url>
   <url>
-    <loc>https://findmeirl.app/privacy_fr.html</loc>
+    <loc>https://findmeirl.app/legal/privacy_fr.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://findmeirl.app/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://findmeirl.app/privacy_de.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://findmeirl.app/privacy_fr.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://findmeirl.app/privacy_it.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://findmeirl.app/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://findmeirl.app/legal/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://findmeirl.app/legal/privacy_de.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://findmeirl.app/legal/privacy_fr.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://findmeirl.app/legal/privacy_it.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://findmeirl.app/legal/privacy.html"/>
   </url>
   <url>
-    <loc>https://findmeirl.app/privacy_it.html</loc>
+    <loc>https://findmeirl.app/legal/privacy_it.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://findmeirl.app/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://findmeirl.app/privacy_de.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://findmeirl.app/privacy_fr.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://findmeirl.app/privacy_it.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://findmeirl.app/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://findmeirl.app/legal/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://findmeirl.app/legal/privacy_de.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://findmeirl.app/legal/privacy_fr.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://findmeirl.app/legal/privacy_it.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://findmeirl.app/legal/privacy.html"/>
   </url>
   <url>
-    <loc>https://findmeirl.app/terms.html</loc>
+    <loc>https://findmeirl.app/legal/terms.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://findmeirl.app/terms.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://findmeirl.app/terms_de.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://findmeirl.app/terms_fr.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://findmeirl.app/terms_it.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://findmeirl.app/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://findmeirl.app/legal/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://findmeirl.app/legal/terms_de.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://findmeirl.app/legal/terms_fr.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://findmeirl.app/legal/terms_it.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://findmeirl.app/legal/terms.html"/>
   </url>
   <url>
-    <loc>https://findmeirl.app/terms_de.html</loc>
+    <loc>https://findmeirl.app/legal/terms_de.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://findmeirl.app/terms.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://findmeirl.app/terms_de.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://findmeirl.app/terms_fr.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://findmeirl.app/terms_it.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://findmeirl.app/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://findmeirl.app/legal/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://findmeirl.app/legal/terms_de.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://findmeirl.app/legal/terms_fr.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://findmeirl.app/legal/terms_it.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://findmeirl.app/legal/terms.html"/>
   </url>
   <url>
-    <loc>https://findmeirl.app/terms_fr.html</loc>
+    <loc>https://findmeirl.app/legal/terms_fr.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://findmeirl.app/terms.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://findmeirl.app/terms_de.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://findmeirl.app/terms_fr.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://findmeirl.app/terms_it.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://findmeirl.app/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://findmeirl.app/legal/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://findmeirl.app/legal/terms_de.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://findmeirl.app/legal/terms_fr.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://findmeirl.app/legal/terms_it.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://findmeirl.app/legal/terms.html"/>
   </url>
   <url>
-    <loc>https://findmeirl.app/terms_it.html</loc>
+    <loc>https://findmeirl.app/legal/terms_it.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://findmeirl.app/terms.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://findmeirl.app/terms_de.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://findmeirl.app/terms_fr.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://findmeirl.app/terms_it.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://findmeirl.app/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://findmeirl.app/legal/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://findmeirl.app/legal/terms_de.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://findmeirl.app/legal/terms_fr.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://findmeirl.app/legal/terms_it.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://findmeirl.app/legal/terms.html"/>
   </url>
 </urlset>
