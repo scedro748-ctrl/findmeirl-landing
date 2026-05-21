@@ -8,6 +8,12 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-4HT70S9RTE');
+  function trackWaitlistSignup() {
+    gtag('event', 'waitlist_signup', {
+      event_category: 'engagement',
+      event_label: 'findmeirl_landing',
+    });
+  }
 </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -893,6 +899,7 @@
             class="waitlist"
             novalidate
             aria-describedby="waitlist-help"
+            onsubmit="trackWaitlistSignup()"
           >
             <div class="waitlist__row">
               <input
@@ -907,7 +914,7 @@
                 data-i18n-placeholder="emailPlaceholder"
                 data-i18n-aria-label="emailAria"
               />
-              <button type="submit" id="waitlist-submit">
+              <button type="submit" id="waitlist-submit" onclick="trackWaitlistSignup()">
                 <span id="waitlist-submit-label" data-i18n="submitCta"
                   >Get access</span
                 >
