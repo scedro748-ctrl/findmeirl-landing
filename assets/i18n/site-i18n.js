@@ -620,6 +620,8 @@
   function normalizeLang(code) {
     if (!code) return "en";
     var c = String(code).toLowerCase().slice(0, 2);
+    // Prefer packs that exist (handles stale caches where SUPPORTED lagged behind LANDING).
+    if (Object.prototype.hasOwnProperty.call(LANDING, c)) return c;
     return SUPPORTED.indexOf(c) >= 0 ? c : "en";
   }
 
@@ -693,14 +695,44 @@
     }
   }
 
+  function onLangSelectChange(sel) {
+    var next = normalizeLang(sel.value);
+    setStoredLang(next);
+
+    var legal = document.body.getAttribute("data-legal-doc");
+    if (legal && LEGAL_FILES[legal] && LEGAL_FILES[legal][next]) {
+      window.location.href = legalHref(LEGAL_FILES[legal][next]);
+      return;
+    }
+
+    applyLandingStrings(next);
+    syncLegalLinks(next);
+    try {
+      window.dispatchEvent(new CustomEvent("findme:locale-changed"));
+    } catch (e) {}
+
+    var pack = LANDING[next] || LANDING.en;
+    var aria = pack.langAria || "Language";
+    var all = document.querySelectorAll(".site-lang-select");
+    for (var i = 0; i < all.length; i++) {
+      all[i].value = next;
+      all[i].setAttribute("aria-label", aria);
+    }
+  }
+
   function initLangSelect() {
-    var sel = document.querySelector(".site-lang-select");
-    if (!sel) return;
+    var selects = document.querySelectorAll(".site-lang-select");
+    if (!selects.length) return;
 
     var onLegal = !!document.body.getAttribute("data-legal-doc");
     var pageLang = currentDocLang();
     var initial = onLegal && pageLang ? pageLang : getStoredLang();
-    sel.value = initial;
+    initial = normalizeLang(initial);
+
+    for (var s = 0; s < selects.length; s++) {
+      selects[s].value = initial;
+    }
+
     if (!onLegal) {
       applyLandingStrings(initial);
       syncLegalLinks(initial);
@@ -709,31 +741,19 @@
       applyLandingStrings(pageLang || initial);
     }
 
-    sel.addEventListener("change", function () {
-      var next = normalizeLang(sel.value);
-      setStoredLang(next);
+    for (var j = 0; j < selects.length; j++) {
+      (function (sel) {
+        sel.addEventListener("change", function () {
+          onLangSelectChange(sel);
+        });
+      })(selects[j]);
+    }
 
-      var legal = document.body.getAttribute("data-legal-doc");
-      if (legal && LEGAL_FILES[legal] && LEGAL_FILES[legal][next]) {
-        window.location.href = legalHref(LEGAL_FILES[legal][next]);
-        return;
-      }
-
-      applyLandingStrings(next);
-      syncLegalLinks(next);
-      try {
-        window.dispatchEvent(new CustomEvent("findme:locale-changed"));
-      } catch (e) {}
-      sel.setAttribute(
-        "aria-label",
-        (LANDING[next] || LANDING.en).langAria || "Language",
-      );
-    });
-
-    sel.setAttribute(
-      "aria-label",
-      (LANDING[normalizeLang(sel.value)] || LANDING.en).langAria || "Language",
-    );
+    var pack0 = LANDING[initial] || LANDING.en;
+    var aria0 = pack0.langAria || "Language";
+    for (var k = 0; k < selects.length; k++) {
+      selects[k].setAttribute("aria-label", aria0);
+    }
   }
 
   function currentUiLang() {
