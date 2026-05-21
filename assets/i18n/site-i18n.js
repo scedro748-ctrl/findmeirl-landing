@@ -425,6 +425,196 @@
       footerPrivacy: "Privacy",
       footerTerms: "Termini",
     },
+    es: {
+      docTitle:
+        "FindmeIRL — Conoce gente y haz crecer los lugares, en la vida real",
+      metaDesc:
+        "FindmeIRL conecta personas cercanas y ofrece a los locales información clara. Únete a la lista de espera para acceso anticipado.",
+      langAria: "Idioma",
+      navSiteAria: "Navegación del sitio",
+      navForBusinesses: "Para negocios",
+      navForPeople: "Para personas",
+      navRecording: "Grabación de la app",
+      navTerms: "Términos de servicio",
+      navPrivacy: "Política de privacidad",
+      navMenuTitle: "Menú",
+      navMenuOpen: "Abrir menú",
+      navMenuClose: "Cerrar menú",
+      legalBack: "Volver",
+      heroEyebrow: "Descubrimiento en persona · locales · gente cercana",
+      heroTitle: "Lugares reales. Personas reales. Impulso real.",
+      heroLeadHtml:
+        "FindmeIRL ayuda a descubrir qué ocurre a tu alrededor — y ofrece a los locales una visión clara de <strong>público, visitas y eventos.</strong>",
+      emailPlaceholder: "Correo profesional o personal",
+      emailAria: "Correo para la lista de espera",
+      submitCta: "Obtener acceso",
+      waitlistFine:
+        "Sin spam — solo te escribiremos sobre el lanzamiento y accesos anticipados.",
+      waitlistOk: "Estás en la lista. Nos pondremos en contacto.",
+      waitlistErrEmail: "Introduce una dirección de correo válida.",
+      waitlistErrGeneric:
+        "No pudimos guardar tu registro. Comprueba la conexión e inténtalo de nuevo.",
+      waitlistJoining: "Enviando…",
+      asidePill: "Misma app · dos modos",
+      stat1a: "Esta noche cerca",
+      stat1b: "en vivo · mapa + lista",
+      stat2a: "Información del local",
+      stat2b: "visitas · público · eventos",
+      stat3a: "Tu perfil",
+      stat3b: "filtros · chat · ajustes",
+      tourEyebrow: "Recorrido del producto",
+      bizTitle: "Para negocios",
+      bizLead:
+        "Perfiles, descubrimiento, eventos e información — para quienes quieren entender el tráfico real.",
+      peopleEyebrow: "Uso diario",
+      peopleTitle: "Para personas",
+      peopleLead:
+        "Busca con intención, afina a quién conoces, chatea cuando encaja — social y con los pies en la tierra.",
+      motionEyebrow: "En movimiento",
+      motionTitle: "Míralo en acción",
+      motionLead:
+        "Recorridos breves para locales y para el día a día — el mismo producto, dos caras.",
+      videoBiz: "Para negocios — recorrido del local",
+      videoPeople: "Para personas — demo de la app",
+      bizCaption1:
+        "Perfil de negocio en vivo como lo ven los visitantes en descubrimiento.",
+      bizCaption2:
+        "Resumen de información — visitas, interacciones y cambios de la semana.",
+      bizCaption3:
+        "Publicar un evento — título, horario, ubicación fija o virtual y lo esencial para los invitados.",
+      bizCaption4:
+        "Cabecera del local — nombre, horarios y acciones rápidas (sesión iniciada).",
+      bizCaption5:
+        "Información de publicaciones y promos — mejores posts por alcance, mix y señales de público respetuosas con la privacidad.",
+      bizCaption6:
+        "Vista de mapa — locales cercanos y cómo se agrupa la gente en tiempo real.",
+      bizCaption7:
+        "Resumen de tus eventos programados — publica actualizaciones y gestiona",
+      bizCaption8:
+        "Próximos momentos de afluencia — lista que los clientes pueden explorar.",
+      bizCaption9:
+        "Información de audiencia — género, franjas de edad y quién representa tu alcance (privacidad segura).",
+      bizCaption10:
+        "Sobre el local — descripción, horarios y contacto en los que confían los invitados.",
+      bizCaption11:
+        "Mapa de descubrimiento — personas, locales e interés en vivo como en la app.",
+      bizCaption12:
+        "Vista del local con sesión — About, publicaciones y acciones rápidas en un panel.",
+      peopleCaption1:
+        "Filtros de descubrimiento — controla quién aparece en tu feed cercano.",
+      peopleCaption2:
+        "Control de distancia — amplía o reduce hasta dónde quieres mirar.",
+      peopleCaption3:
+        "Preferencias de origen — emparejamiento intencional más allá de lo básico.",
+      peopleCaption4:
+        "Filtros personalizados — guarda combinaciones que usas de verdad.",
+      peopleCaption5:
+        "Puntuación Soulmate — cómo encaja tu perfil con matches cercanos.",
+      peopleCaption6:
+        "Detalle del perfil — fotos, bio y contexto antes del primer hola.",
+      peopleCaption7:
+        "Bandeja de chat — hilos ligados a intención en la vida real.",
+      peopleCaption8:
+        "Ajustes — límites de privacidad, alertas y control de la cuenta.",
+      footerContact: "Contacto",
+      footerPrivacy: "Privacidad",
+      footerTerms: "Términos",
+    },
+    pt: {
+      docTitle:
+        "FindmeIRL — Conheça pessoas e valorize locais, na vida real",
+      metaDesc:
+        "O FindmeIRL liga pessoas por perto e dá aos locais informação clara. Junte-se à lista de espera para acesso antecipado.",
+      langAria: "Idioma",
+      navSiteAria: "Navegação do site",
+      navForBusinesses: "Para negócios",
+      navForPeople: "Para pessoas",
+      navRecording: "Gravação da app",
+      navTerms: "Termos de serviço",
+      navPrivacy: "Política de privacidade",
+      navMenuTitle: "Menu",
+      navMenuOpen: "Abrir menu",
+      navMenuClose: "Fechar menu",
+      legalBack: "Voltar",
+      heroEyebrow: "Descoberta presencial · locais · pessoas por perto",
+      heroTitle: "Lugares reais. Pessoas reais. Ímpeto real.",
+      heroLeadHtml:
+        "O FindmeIRL ajuda a perceber o que se passa à sua volta — e dá aos locais uma visão clara de <strong>público, visitas e eventos.</strong>",
+      emailPlaceholder: "Email profissional ou pessoal",
+      emailAria: "Email para a lista de espera",
+      submitCta: "Obter acesso",
+      waitlistFine:
+        "Sem spam — só escrevemos sobre o lançamento e convites antecipados.",
+      waitlistOk: "Está na lista. Entraremos em contacto.",
+      waitlistErrEmail: "Introduza um endereço de email válido.",
+      waitlistErrGeneric:
+        "Não foi possível guardar o registo. Verifique a ligação e tente novamente.",
+      waitlistJoining: "A enviar…",
+      asidePill: "A mesma app · dois modos",
+      stat1a: "Esta noite por perto",
+      stat1b: "ao vivo · mapa + lista",
+      stat2a: "Informação do local",
+      stat2b: "visitas · público · eventos",
+      stat3a: "O seu perfil",
+      stat3b: "filtros · chat · definições",
+      tourEyebrow: "Tour do produto",
+      bizTitle: "Para negócios",
+      bizLead:
+        "Perfis, descoberta, eventos e informação — para quem quer perceber o tráfego real.",
+      peopleEyebrow: "Uso quotidiano",
+      peopleTitle: "Para pessoas",
+      peopleLead:
+        "Pesquise com intenção, afine quem conhece, converse quando faz sentido — social e com os pés na terra.",
+      motionEyebrow: "Em movimento",
+      motionTitle: "Veja em ação",
+      motionLead:
+        "Percursos breves para locais e para o dia a dia — o mesmo produto, dois lados.",
+      videoBiz: "Para negócios — percurso do local",
+      videoPeople: "Para pessoas — demo da app",
+      bizCaption1:
+        "Perfil de negócio em direto como os visitantes veem na descoberta.",
+      bizCaption2:
+        "Resumo de informação — visitas, toques e o que mudou esta semana.",
+      bizCaption3:
+        "Publicar um evento — título, horário, local fixo ou virtual e o essencial para os convidados.",
+      bizCaption4:
+        "Cabeçalho do local — nome, horários e ações rápidas (sessão iniciada).",
+      bizCaption5:
+        "Informação de publicações e promoções — melhores posts por alcance, mix e sinais de público respeitosos com a privacidade.",
+      bizCaption6:
+        "Vista de mapa — locais vizinhos e como as pessoas se agrupam em tempo real.",
+      bizCaption7:
+        "Resumo dos seus eventos programados — publique atualizações e gira",
+      bizCaption8:
+        "Próximos momentos de afluência — lista que os clientes podem explorar.",
+      bizCaption9:
+        "Informação de audiência — género, faixas etárias e quem o seu alcance representa (privacidade segura).",
+      bizCaption10:
+        "Sobre o local — descrição, horários e contacto em que os convidados confiam.",
+      bizCaption11:
+        "Mapa de descoberta — pessoas, locais e interesse em direto como na app.",
+      bizCaption12:
+        "Vista do local com sessão — About, publicações e ações rápidas num painel.",
+      peopleCaption1:
+        "Filtros de descoberta — controlo de quem aparece no feed por perto.",
+      peopleCaption2:
+        "Controlo de distância — alargue ou restrinja o raio de pesquisa.",
+      peopleCaption3:
+        "Preferências de origem — correspondência intencional para além do básico.",
+      peopleCaption4:
+        "Filtros personalizados — guarde combinações que usa mesmo.",
+      peopleCaption5:
+        "Pontuação Soulmate — como o seu perfil se alinha com matches por perto.",
+      peopleCaption6:
+        "Detalhe do perfil — fotos, bio e contexto antes do primeiro olá.",
+      peopleCaption7:
+        "Caixa de chat — conversas ligadas à intenção na vida real.",
+      peopleCaption8:
+        "Definições — limites de privacidade, alertas e controlo da conta.",
+      footerContact: "Contacto",
+      footerPrivacy: "Privacidade",
+      footerTerms: "Termos",
+    },
   };
 
   function normalizeLang(code) {
