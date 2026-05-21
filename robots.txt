@@ -1,0 +1,10 @@
+# findmeirl.app — GitHub Pages marketing site
+# https://github.com/scedro748-ctrl/findmeirl-landing
+
+User-agent: *
+Allow: /
+
+# OAuth redirect handler (not public content)
+Disallow: /auth/
+
+Sitemap: https://findmeirl.app/sitemap.xml
