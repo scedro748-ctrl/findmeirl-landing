@@ -6,7 +6,7 @@
   "use strict";
 
   var STORAGE_KEY = "findmeirl-site-lang";
-  var SUPPORTED = ["en", "de", "fr", "it"];
+  var SUPPORTED = ["en", "de", "fr", "it", "es", "pt"];
 
   var LEGAL_DIR = "legal/";
 
@@ -16,12 +16,16 @@
       de: "privacy_de.html",
       fr: "privacy_fr.html",
       it: "privacy_it.html",
+      es: "privacy_es.html",
+      pt: "privacy_pt.html",
     },
     terms: {
       en: "terms.html",
       de: "terms_de.html",
       fr: "terms_fr.html",
       it: "terms_it.html",
+      es: "terms_es.html",
+      pt: "terms_pt.html",
     },
   };
 
