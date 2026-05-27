@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Política de privacidad para findmeIRL — aplicación de descubrimiento social centrada en la privacidad con soporte para sedes empresariales.">
+    <meta name="description" content="Política de privacidad de findmeIRL — aplicación de descubrimiento social respetuosa con la privacidad con soporte para sedes empresariales.">
     <title>Política de privacidad — findmeIRL</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -66,18 +66,18 @@
             </a>
             <div class="flex items-center gap-x-4 text-sm flex-wrap justify-end">
                 <select class="site-lang-select text-sm font-medium bg-white/5 border border-white/20 rounded-2xl px-2.5 py-2 text-white focus:outline-none focus:ring-2 focus:ring-[#5E9ED6]/40" style="color-scheme: dark;" data-i18n-aria-label="nav.langAria">
+                    <option value="es">ES</option>
                     <option value="en">EN</option>
                     <option value="de">DE</option>
                     <option value="fr">FR</option>
                     <option value="it">IT</option>
-                    <option value="es" selected>ES</option>
                     <option value="pt">PT</option>
                 </select>
                 <a href="../index.html" class="flex items-center gap-x-2 text-white/70 hover:text-white transition-colors">
                     <i class="fa-solid fa-arrow-left text-xs"></i>
-                    <span>Volver al inicio</span>
+                    <span data-i18n="legal.priv.back">Volver al inicio</span>
                 </a>
-                <a href="terms_es.html" data-legal-link="terms" class="text-white/70 hover:text-[#5E9ED6] transition-colors"><span>Términos de servicio</span></a>
+                <a href="terms_es.html" data-legal-link="terms" class="text-white/70 hover:text-[#5E9ED6] transition-colors"><span data-i18n="legal.priv.cross">Términos de servicio</span></a>
             </div>
         </div>
     </nav>
@@ -88,20 +88,20 @@
             <div class="mb-16">
                 <div class="inline-flex items-center px-5 py-2 bg-white/10 rounded-3xl text-sm mb-6">
                     <span class="text-emerald-400">●</span>
-                    <span class="ml-2 font-medium">Última actualización: 21 de mayo de 2026</span>
+                    <span class="ml-2 font-medium" data-i18n="legal.priv.updated">Última actualización: 27 de mayo de 2026</span>
                 </div>
-                <h1 class="text-6xl font-semibold tracking-tighter logo-font mb-4">Política de privacidad</h1>
-                <p class="text-2xl text-white/70">findmeIRL (« Findme », « nosotros », « nos » o « nuestro »)</p>
-                <p class="text-sm text-amber-200/70 mb-8 max-w-2xl hidden" data-i18n-toggle-hidden="true"></p>
+                <h1 class="text-6xl font-semibold tracking-tighter logo-font mb-4" data-i18n="legal.priv.h1">Política de privacidad</h1>
+                <p class="text-2xl text-white/70" data-i18n="legal.priv.subtitle">findmeIRL (« Findme », « nosotros », « nuestro » o « nuestros »)</p>
+                <p class="text-sm text-amber-200/70 mb-8 max-w-2xl hidden" data-i18n="legal.bindingNote" data-i18n-toggle-hidden="true"></p>
             </div>
 
             <!-- 1. Introduction -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">1. Introducción</h2>
             <p class="text-lg leading-relaxed text-white/80">
-                Bienvenido a findmeIRL, una aplicación móvil de descubrimiento social centrada en la privacidad y servicios relacionados (conjuntamente, la « App » o los « Servicios »). La App permite a los usuarios descubrir individuos cercanos con intereses compartidos protegiendo la ubicación exacta mediante ofuscación basada en cuadrícula, y permite a las empresas y sedes registradas crear perfiles públicos, publicar actualizaciones e interactuar con sus seguidores.
+                Bienvenido a findmeIRL, una aplicación móvil de descubrimiento social respetuosa con la privacidad y servicios relacionados (colectivamente, la « Aplicación » o los « Servicios »). La Aplicación permite a los usuarios descubrir personas cercanas con intereses compartidos protegiendo su ubicación exacta a través del ofuscamiento basado en cuadrícula, y permite a las empresas y sedes registradas crear perfiles públicos, publicar actualizaciones e interactuar con sus seguidores.
             </p>
             <p class="text-lg leading-relaxed text-white/80 mt-6">
-                Esta Política de privacidad (« Política ») explica cómo recopilamos, usamos, divulgamos y protegemos la información personal cuando usas la App. Al descargar, instalar o usar la App, consientes las prácticas descritas en esta Política. Si no estás de acuerdo, no uses la App.
+                Esta Política de privacidad (« Política ») explica cómo recopilamos, utilizamos, divulgamos y protegemos la información personal cuando utilizas la Aplicación. Al descargar, instalar o utilizar la Aplicación, consientes las prácticas descritas en esta Política. Si no estás de acuerdo, no utilices la Aplicación.
             </p>
             <p class="text-lg leading-relaxed text-white/80 mt-6">
                 Esta Política debe leerse junto con nuestros <a href="terms_es.html" data-legal-link="terms">Términos de servicio</a>. Los términos en mayúsculas no definidos aquí tienen los significados establecidos en los Términos de servicio.
@@ -116,66 +116,75 @@
             <div class="mt-6 mb-8">
                 <div class="font-semibold text-white mb-3">Usuarios personales</div>
                 <ul class="list-disc pl-6 space-y-2 text-white/80 text-[17px]">
-                    <li>Credenciales de cuenta: dirección de correo electrónico y contraseña</li>
-                    <li>Información de perfil: apodo, fecha de nacimiento, género, país(es) de origen, país de residencia actual, profesión, fe, idiomas hablados, intereses (predefinidos y personalizados), biografía, avatar, imagen de banner y fotos de galería opcionales (hasta 15)</li>
+                    <li>Credenciales de la cuenta: dirección de correo electrónico y contraseña</li>
+                    <li>Información del perfil: apodo, fecha de nacimiento, género, país de origen, país de residencia actual, profesión, fe, idiomas hablados, intereses (predefinidos y personalizados), biografía, avatar, imagen de banner y fotos de galería opcionales (hasta 15)</li>
                 </ul>
             </div>
             
             <div class="mt-6 mb-8">
                 <div class="font-semibold text-white mb-3">Usuarios empresariales (propietarios de sedes)</div>
                 <ul class="list-disc pl-6 space-y-2 text-white/80 text-[17px]">
-                    <li>Detalles del perfil empresarial: nombre de la empresa, persona de contacto, correo electrónico empresarial, número de teléfono, descripción, categoría, dirección física, URL del sitio web, avatar/logotipo, imagen de banner, coordenadas geográficas elegidas por el propietario (latitud/longitud), horarios de apertura (formato JSON) y campos de estado de moderación</li>
-                    <li>Contenido empresarial: publicaciones que incluyen título, cuerpo, tipo de publicación (promoción, actualización, evento, detrás de escena, testimonio, comunidad), imagen opcional o enlace externo</li>
+                    <li>Detalles del perfil empresarial: nombre de la empresa, persona de contacto, correo electrónico empresarial, número de teléfono, descripción, categoría, dirección física, URL del sitio web, avatar/logo, imagen de banner, coordenadas geográficas elegidas por el propietario (latitud/longitud), horarios de apertura (formato JSON) y campos de estado de moderación</li>
+                    <li>Contenido empresarial: publicaciones que incluyen título, cuerpo, tipo de publicación (promoción, actualización, evento, entre bastidores, testimonio, comunidad), imagen opcional o enlace externo; las notificaciones a seguidores y el recuento de likes en las publicaciones de sedes reflejan las métricas de engagement</li>
                 </ul>
             </div>
             
             <div class="mt-6 mb-8">
-                <div class="font-semibold text-white mb-3">Contenido generado por el usuario (todos los usuarios)</div>
+                <div class="font-semibold text-white mb-3">Contenido generado por usuarios (todos los usuarios)</div>
                 <ul class="list-disc pl-6 space-y-2 text-white/80 text-[17px]">
                     <li>Eventos creados o a los que has respondido, mensajes de chat, solicitudes de conexión, reportes y reacciones</li>
                 </ul>
             </div>
 
             <h3>2.2 Datos de ubicación</h3>
-            <p class="text-lg leading-relaxed text-white/80">Perfiles personales: Recopilamos coordenadas GPS precisas (latitud y longitud) solo cuando activas activamente el uso compartido de ubicación. Estas coordenadas se almacenan del lado del servidor exclusivamente para calcular un identificador de celda de cuadrícula (aproximadamente 1 km²) y generar una posición ofuscada (desplazamiento aleatorio de aproximadamente 500-800 metros). Tus coordenadas GPS exactas nunca se muestran a otros usuarios.</p>
-            <p class="text-lg leading-relaxed text-white/80 mt-4">Sedes empresariales: Las ubicaciones de las sedes son seleccionadas por el Usuario empresarial y son intencionalmente públicas y no ofuscadas. Estas coordenadas fijas se utilizan para mostrar pines de sede en el mapa Descubrir y son visibles para todos los usuarios de la App. Los Usuarios empresariales pueden actualizar estas coordenadas en cualquier momento a través de la App.</p>
-            <p class="text-lg leading-relaxed text-white/80 mt-4">Derivados automáticamente: Identificadores de celda de cuadrícula para coincidencia de proximidad.</p>
+            <p class="text-lg leading-relaxed text-white/80">Perfiles personales: recopilamos coordenadas GPS precisas (latitud y longitud) solo cuando activas activamente el uso compartido de ubicación. Estas coordenadas se almacenan en el servidor exclusivamente para calcular un identificador de celda de cuadrícula (aproximadamente 1 km²) y generar una posición ofuscada (desplazamiento aleatorio de aproximadamente 500–800 metros). Tus coordenadas GPS exactas nunca se muestran a otros usuarios.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4">Sedes empresariales: las ubicaciones de las sedes son seleccionadas por el usuario empresarial y son intencionalmente públicas y no ofuscadas. Estas coordenadas fijas se utilizan para mostrar pines de sedes en el mapa Descubrir y son visibles para todos los usuarios de la Aplicación. Los usuarios empresariales pueden actualizar estas coordenadas en cualquier momento a través de la Aplicación.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4">Derivadas automáticamente: identificadores de celda de cuadrícula para el matching de proximidad.</p>
 
             <h3>2.3 Información recopilada automáticamente</h3>
             <ul class="list-disc pl-6 space-y-3 text-white/80 text-[17px]">
                 <li>Información del dispositivo: modelo, versión del sistema operativo e identificadores únicos del dispositivo</li>
                 <li>Token de registro de Firebase Cloud Messaging (FCM) para la entrega de notificaciones push</li>
-                <li>Datos de uso e interacción de la App (ej.: uso de funciones, duración de sesión)</li>
-                <li>Dirección IP y ubicación aproximada (nivel de país) para análisis y prevención de abusos</li>
-                <li>Solicitudes de geocodificación a través de servicios de terceros (ej.: Nominatim) cuando un Usuario empresarial busca o establece una dirección de sede</li>
+                <li>Datos de uso e interacción de la aplicación (ej. uso de funciones, duración de sesiones)</li>
+                <li>Dirección IP y ubicación aproximada (nivel país) para análisis y prevención de abusos</li>
+                <li>Solicitudes de geocodificación a través de servicios de terceros (ej. Nominatim) cuando un usuario empresarial busca o establece una dirección de sede</li>
+                <li>Atribución de referral (ej. identificadores de campaña o enlaces de referral vinculados a instalaciones y eventos de recompensa elegibles procesados según las reglas de producto descritas en la aplicación)</li>
             </ul>
 
-            <h3>2.4 Datos de intereses y coincidencias</h3>
-            <p class="text-lg leading-relaxed text-white/80">Recopilamos y procesamos tus intereses seleccionados y tus envíos de intereses personalizados para impulsar recomendaciones personalizadas, puntuaciones de compatibilidad « alma gemela » y el ranking del feed Descubrir. Los envíos de intereses personalizados están sujetos a revisión administrativa antes de agregarse al catálogo público. Las puntuaciones de compatibilidad se calculan del lado del servidor y se comparten solo en forma agregada o anonimizada dentro de la App. Las funciones de asistencia de IA opcionales (optimización de perfil y sugerencias de chat) procesan tu perfil y el contexto de conversación de manera transitoria para generar sugerencias personalizadas; las entradas no se almacenan para entrenamiento de modelos ni se conservan más allá de la solicitud inmediata.</p>
+            <h3>2.4 Matching, recomendaciones y funcionalidades asistidas por IA</h3>
+            <p class="text-lg leading-relaxed text-white/80">Recopilamos y procesamos tus intereses seleccionados, idioma, datos demográficos, hobbies de catálogo opcionales o hobbies/intereses personalizados y campos de perfil relacionados (incluyendo puntuaciones de matching semánticas o híbridas cuando están habilitadas) para alimentar recomendaciones personalizadas, puntuaciones de compatibilidad soulmate y el ranking del feed Descubrir. Las sumbisiones de intereses personalizados están sujetas a revisión administrativa antes de ser añadidas al catálogo público. Las puntuaciones de matching pueden calcularse en el servidor y compartirse con otros usuarios autenticados en las vistas previas o rankings como parte del descubrimiento.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4"><strong class="text-white">Asistente de perfil IA (opt-in).</strong> Si lo activas en la configuración, puedes generar sugerencias de bio y textos de perfil relacionados a través de nuestras Edge Functions de Supabase. Los resultados son transitorios a menos que deliberadamente guardes texto editado en tu perfil. La activación del asistente de perfil IA es distinta de las funcionalidades de sugerencia de chat en la aplicación.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4"><strong class="text-white">« Wingman » chat IA (opt-in).</strong> Si lo activas en la configuración, fragmentos de texto de borrador de chat — y contexto de perfil limitado permitido por nuestras políticas (como tags vibe derivados de imágenes de galería cargadas donde estén disponibles) — pueden enviarse a las Edge Functions para que el servicio pueda proponer frases de respuesta opcionales. Los inputs se procesan solo para esa solicitud y no se utilizan para entrenar modelos. Los suscriptores premium reciben créditos Wingman mensuales; el uso restante puede basarse en asignaciones o reglas promocionales mostradas en la aplicación.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4">Los pipelines de formateo y validación para textos de hobbies o intereses ingresados manualmente también pueden invocar automatización para mejorar la ortografía o sugerir etiquetas de catálogo antes de la revisión del moderador.</p>
 
-            <h3>2.5 Sin publicidad de terceros ni corretaje de datos</h3>
-            <p class="text-lg leading-relaxed text-white/80">No integramos SDK publicitarios, no vendemos datos personales a intermediarios de datos y no usamos tu información para publicidad basada en comportamiento.</p>
+            <h3>2.5 Monedas virtuales, Premium, referrals y pagos</h3>
+            <p class="text-lg leading-relaxed text-white/80">La Aplicación incluye una capa de fidelidad in-app (« monedas »), insignias/cosmética, ofertas de monedas opcionales basadas en sedes o flujos de financiación de pools, regalos de monedas a contactos aceptados (con mensajes cortos opcionales), participación en clasificaciones de tu ciudad cuando consientes expresamente, hitos de tipo explorador vinculados a la actividad de cuadrícula amplia, referrals y recompensas relacionadas con la presencia, además de insignias del lado del servidor y filas de clasificación asociadas a hitos sociales « combo ». Los datos asociados incluyen típicamente identificadores, marcas de tiempo, entradas de libro mayor/deltas de monedas, insignias ganadas, expiraciones de boosts o marcos, opt-in de clasificación, atribución de referral vinculada a instalaciones o instalaciones más comportamientos reales elegibles, metadatos de sesión Checkout de Stripe para la financiación pool de sedes iniciada por propietarios de sedes que eligen recargas pagadas opcionales o detalles postales de cumplimiento físico cuando solicitas voluntariamente artículos por correo.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4"><strong class="text-white">Suscripciones premium:</strong> Cuando te suscribes a través de Apple App Store o Google Play, la facturación es manejada exclusivamente por Apple o Google de conformidad con sus términos. RevenueCat mapea de forma segura los recibos de la Store con tu cuenta autenticada para que podamos otorgar el derecho premium (mostrado en el perfil y utilizado para beneficios como multiplicadores de ganancias, tie-breaking Discover, cosmética, asignaciones Wingman, desbloqueos de marcos opcionales).</p>
 
-            <h3>2.6 Contenido generado por el usuario y escaneo de imágenes</h3>
-            <p class="text-lg leading-relaxed text-white/80">Todas las imágenes subidas a la App (avatares, banners, fotos de galería, portadas/recuerdos de eventos, logotipos empresariales, banners y publicaciones) se colocan primero en un bucket de staging privado y se escanean por un sistema de IA automatizado (Google Cloud Vision Safe Search) antes de promoverse al almacenamiento público. El escaneo detecta contenido ilegal, explícito o dañino. El contenido que no pasa el escaneo se bloquea de la publicación.</p>
-            <p class="text-lg leading-relaxed text-white/80 mt-4">Los textos enviados por usuarios —como biografías de perfil, descripciones empresariales, hobbies personalizados o envíos de intereses y publicaciones empresariales— son procesados por un sistema automatizado de moderación de contenido de IA. Este sistema analiza los textos para categorías prohibidas incluyendo discursos de odio, acoso, amenazas, contenido explícito o sexual, violencia, spam, estafas y otras violaciones. El contenido que excede los umbrales de riesgo definidos puede bloquearse de la publicación o marcarse para revisión. Esto ayuda a mantener un entorno seguro para todos los usuarios.</p>
+            <h3>2.6 Sin publicidad de terceros ni corretaje de datos</h3>
+            <p class="text-lg leading-relaxed text-white/80">No integramos SDK de publicidad, no vendemos datos personales a corredores de datos y no utilizamos tu información para publicidad basada en comportamiento.</p>
+
+            <h3>2.7 Contenido generado por usuarios y escaneo de imágenes</h3>
+            <p class="text-lg leading-relaxed text-white/80">Todas las imágenes cargadas a la Aplicación (avatares, banners, fotos de galería, portadas/recuerdos de eventos, logos empresariales, banners y publicaciones) se colocan primero en un bucket de staging privado y se escanean por un sistema IA automatizado (Google Cloud Vision Safe Search) antes de ser promovidas al almacenamiento público. El escaneo detecta contenido ilegal, explícito o dañino. El contenido que falla el escaneo queda bloqueado de la publicación.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4">Los textos enviados por los usuarios — como biografías de perfil, descripciones empresariales, sumbisiones de hobbies o intereses personalizados y publicaciones empresariales — son procesados por un sistema automatizado de moderación de contenido IA. Este sistema analiza los textos para categorías prohibidas incluyendo discurso de odio, acoso, amenazas, contenido explícito o sexual, violencia, spam, estafas y otras violaciones. El contenido que excede los umbrales de riesgo definidos puede ser bloqueado de la publicación o marcado para revisión. Esto ayuda a mantener un entorno seguro para todos los usuarios.</p>
 
             <!-- 3. How We Use -->
-            <h2 class="text-3xl font-semibold mt-16 mb-6">3. Cómo usamos tu información</h2>
-            <p class="text-lg leading-relaxed text-white/80">Usamos la información que recopilamos para:</p>
+            <h2 class="text-3xl font-semibold mt-16 mb-6">3. Cómo utilizamos tu información</h2>
+            <p class="text-lg leading-relaxed text-white/80">Utilizamos la información que recopilamos para:</p>
             <ul class="list-disc pl-6 mt-6 space-y-3 text-white/80 text-[17px]">
-                <li>Proporcionar y operar las funciones principales de la App, incluyendo el descubrimiento basado en mapa (personas y sedes), coincidencia basada en intereses, chat en tiempo real, eventos, conexiones y líneas de tiempo de publicaciones empresariales</li>
-                <li>Calcular ubicaciones ofuscadas y proximidad basada en cuadrícula para Usuarios personales mientras se muestran coordenadas públicas fijas para Sedes</li>
-                <li>Personalizar la experiencia del usuario mediante filtros, recomendaciones, etiquetas de tendencia e información de intereses específicas de la ciudad</li>
-                <li>Entregar notificaciones push (solo con tu permiso explícito) para mensajes, actividad de conexión, actualizaciones de eventos y publicaciones empresariales de sedes seguidas</li>
-                <li>Permitir a los Usuarios empresariales gestionar listados, publicar publicaciones, ver el número de seguidores e información y moderar el contenido de su sede</li>
-                <li>Aplicar seguridad, moderación y cumplimiento (incluyendo reportes en la App, bloqueo, expulsiones de chat, revisión administrativa de intereses personalizados, moderación proactiva de IA de biografías/descripciones/publicaciones/envíos para discursos de odio y otro contenido prohibido, y triage automatizado de IA de reportes)</li>
-                <li>Registrar tu aceptación de estos Términos y esta Política (mediante la marca de tiempo de aceptación en tu perfil) para fines de cumplimiento y auditoría</li>
-                <li>Mejorar, depurar y analizar el rendimiento de la App utilizando datos anonimizados o agregados</li>
-                <li>Alimentar funciones de asistencia de IA opcionales que generan sugerencias de perfil y chat utilizando procesamiento de IA seguro y respetuoso de la privacidad (ningún dato de usuario se usa para entrenar modelos)</li>
-                <li>Responder a solicitudes legales y proteger los derechos, la seguridad y los bienes de Findme, los usuarios y el público</li>
+                <li>Proporcionar y operar las funciones principales de la Aplicación, incluyendo el descubrimiento basado en mapa (personas y sedes), matching basado en intereses, chat en tiempo real, eventos, conexiones y líneas de tiempo de publicaciones empresariales</li>
+                <li>Calcular ubicaciones ofuscadas y proximidad basada en cuadrícula para los usuarios personales mientras mostramos coordenadas públicas fijas para las sedes</li>
+                <li>Personalizar la experiencia del usuario a través de filtros, recomendaciones, tags de tendencia e insights de intereses específicos de la ciudad</li>
+                <li>Entregar notificaciones push (solo con tu permiso explícito) para mensajes, actividad de conexión, actualizaciones de eventos y publicaciones de sedes seguidas</li>
+                <li>Permitir a los usuarios empresariales gestionar fichas, publicar publicaciones, ver recuentos de seguidores e insights y moderar el contenido de su sede</li>
+                <li>Hacer cumplir la seguridad, moderación y cumplimiento (incluyendo reportes in-app, bloqueos, bans de chat, revisión administrativa de intereses personalizados, moderación proactiva IA de bios/descripciones/publicaciones/sumbisiones por discurso de odio y otro contenido prohibido y triage automatizado IA de reportes)</li>
+                <li>Registrar tu aceptación de estos Términos y de esta Política (a través de la marca de tiempo de aceptación en tu perfil) para fines de cumplimiento y auditoría</li>
+                <li>Mejorar, depurar y analizar el rendimiento de la Aplicación utilizando datos anonimizados o agregados</li>
+                <li>Proporcionar workflows opcionales de fidelidad, recompensas, regalos, clasificaciones, exploradores, referrals, insignias, cosmética, boosts, financiación promocional pool de sedes, resúmenes de Checkout alojados por Stripe, sincronización de suscripciones mediada por RevenueCat, asignaciones Wingman, ventajas por niveles, insights agregados sobre sedes — y métricas de visita agregadas anónimas opt-in — cada funcionalidad regida por los controles descritos aquí</li>
+                <li>Alimentar funcionalidades de asistencia IA opcionales (<strong class="text-white">Asistente de perfil</strong> / <strong class="text-white">Wingman chat</strong>) estrictamente cuando se habilitan individualmente a través de la configuración más el procesamiento de Edge Function descrito en la sección 2.4 (las solicitudes son efímeras y no se reutilizan indefinidamente para el entrenamiento de modelos no relacionados)</li>
+                <li>Responder a solicitudes legales y proteger los derechos, la seguridad y los bienes de Findme, de los usuarios y del público</li>
             </ul>
-            <p class="text-lg leading-relaxed text-white/80 mt-4">Usamos reportes en la App y herramientas automatizadas —incluyendo moderación de texto de IA para contenido generado por usuarios y triage de IA de reportes— para detectar y responder a violaciones. Los reportes repetidos contra el mismo sujeto pueden activar una revisión de escalamiento. La creación de eventos requiere que los anfitriones confirmen el cumplimiento de nuestra política de no discriminación (ver la sección « Eventos abiertos y no discriminación » en los Términos de servicio). Esta atestación se registra y ayuda a mantener un entorno inclusivo.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4">Utilizamos los reportes in-app y las herramientas automatizadas — incluyendo la moderación de texto IA para el contenido generado por usuarios y el triage IA de reportes — para detectar y responder a violaciones. Los reportes repetidos contra el mismo sujeto pueden activar un examen de escalada. La creación de un evento requiere que los anfitriones confirmen el cumplimiento de nuestra política de no discriminación (ver la sección « Eventos abiertos y no discriminación » en los <a href="terms_es.html" data-legal-link="terms">Términos de servicio</a> para detalles). Esta atestación se registra y ayuda a mantener un entorno inclusivo.</p>
 
             <!-- 4. How We Share -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">4. Cómo compartimos (o no compartimos) tu información</h2>
@@ -183,7 +192,7 @@
             <div class="bg-red-900/20 border-l-4 border-red-500 p-8 my-10 rounded-r-3xl">
                 <div class="font-semibold text-xl mb-4 text-red-300">Nunca compartimos:</div>
                 <ul class="space-y-3">
-                    <li class="flex gap-x-4"><span class="text-red-400 font-bold">✕</span> Tus coordenadas GPS exactas con otros usuarios</li>
+                    <li class="flex gap-x-4"><span class="text-red-400 font-bold">✕</span> Tus coordenadas GPS exactas con otro usuario</li>
                     <li class="flex gap-x-4"><span class="text-red-400 font-bold">✕</span> Vender o alquilar tus datos personales</li>
                     <li class="flex gap-x-4"><span class="text-red-400 font-bold">✕</span> Compartir datos con terceros para fines publicitarios o de corretaje de datos</li>
                 </ul>
@@ -193,108 +202,111 @@
             
             <div class="mt-8">
                 <div class="font-semibold text-white mb-4">Con otros usuarios</div>
-                <p class="text-white/80">Ubicación ofuscada y datos de perfil para Usuarios personales (sujeto a tus ajustes de privacidad, estado de conexión e indicadores de visibilidad); coordenadas públicas fijas de sedes, detalles de perfiles empresariales y publicaciones empresariales aprobadas para Sedes. Las publicaciones empresariales son visibles para los seguidores y, para sedes aprobadas, públicamente a través de API.</p>
+                <p class="text-white/80">Datos de ubicación ofuscada y perfil para usuarios personales (sujetos a tus configuraciones de privacidad, estado de conexión y flags de visibilidad de perfil); handles de clasificación opcionales cuando consientes; los visuales económicos que eliges exponer (tiers de monedas, marcos cosméticos/insignias, indicadores premium, highlights de explorador) pueden aparecer junto a las vistas previas de Descubrir o chats; las notificaciones de regalos se muestran a los destinatarios. Las coordenadas públicas fijas de las sedes, los detalles de los perfiles empresariales, las publicaciones empresariales aprobadas, las relaciones de seguidores y los metadatos de éxito de Stripe necesarios para acreditar los pools promocionales permanecen visibles según los controles de la sede. Las publicaciones son visibles para los seguidores — y, para las sedes aprobadas, legibles a través de rutas de lectura públicas o API que mantenemos.</p>
             </div>
             
             <div class="mt-8">
                 <div class="font-semibold text-white mb-4">Con proveedores de servicios</div>
-                <p class="text-white/80">Los datos se comparten con procesadores contratados vinculados por obligaciones de confidencialidad y protección de datos:</p>
+                <p class="text-white/80">Los datos se comparten con subcontratistas contractuales vinculados por obligaciones de confidencialidad y protección de datos:</p>
                 <ul class="list-disc pl-6 mt-3 space-y-2 text-white/80">
-                    <li><strong>Supabase</strong> — base de datos, autenticación, almacenamiento, suscripciones en tiempo real, Row-Level Security</li>
-                    <li><strong>Firebase</strong> — entrega de notificaciones push a través de FCM</li>
-                    <li><strong>Nominatim / contribuyentes de OpenStreetMap</strong> — geocodificación para búsqueda de dirección de sede (sin almacenamiento persistente de consultas por Findme)</li>
+                    <li><strong>Supabase</strong> — PostgreSQL gestionado incluyendo realtime, auth, buckets de almacenamiento de objetos cifrados, envío de webhooks, Row-Level Security, Edge Functions que alimentan sugerencias asistidas por IA más RPC económicos y logs de auditoría</li>
+                    <li><strong>Firebase (Google)</strong> — Firebase Cloud Messaging para relays de push</li>
+                    <li><strong>Apple &amp; Google</strong> — tiendas móviles que facilitan las compras in-app premium opcionales</li>
+                    <li><strong>RevenueCat</strong> — validación de recibos de suscripción / mapeo de cliente que vincula las tiendas con nuestros registros de derechos</li>
+                    <li><strong>Stripe</strong> — checkout basado en tarjeta que alimenta los flujos opcionales de financiación de pools de monedas para sedes iniciados explícitamente por los propietarios de sedes</li>
+                    <li><strong>Proveedores de modelos/API de terceros</strong> (incluyendo Google Cloud Vision, modelos de lenguaje, servicios de embedding o equivalentes) — invocados transitoriamente a través de Edge Functions de Supabase solo para textos de asistente de perfil moderados, generación de sugerencias de chat, etiquetado vibe de galería, ayudas de formateo de hobbies/intereses, pipelines de triage automatizados o exámenes de seguridad suplementarios descritos arriba</li>
+                    <li><strong>Nominatim / contribuyentes de OpenStreetMap</strong> — búsquedas de geocodificación forward para propietarios de sedes (Findme minimiza la retención de cadenas de búsqueda más allá de los logs operativos)</li>
                 </ul>
             </div>
             
             <div class="mt-8">
                 <div class="font-semibold text-white mb-4">Legal y seguridad</div>
-                <p class="text-white/80">Cuando lo requiera la ley, un proceso legal o para proteger los derechos, la seguridad o los bienes de Findme, los usuarios o el público.</p>
+                <p class="text-white/80">Cuando lo requiera la ley, un proceso legal o para proteger los derechos, la seguridad o los bienes de Findme, de los usuarios o del público.</p>
             </div>
             
             <div class="mt-8">
                 <div class="font-semibold text-white mb-4">Transferencias empresariales</div>
-                <p class="text-white/80">En relación con una fusión, adquisición o venta de activos (con notificación a los usuarios afectados cuando sea requerido).</p>
+                <p class="text-white/80">En conexión con una fusión, adquisición o venta de activos (con notificación a los usuarios afectados donde se requiera).</p>
             </div>
 
             <!-- 5. Location Data Special Notice -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">5. Datos de ubicación – Aviso especial para usuarios personales</h2>
-            <p class="text-lg leading-relaxed text-white/80">El acceso a la ubicación precisa es esencial para la funcionalidad principal de descubrimiento de la App. Controlas cuándo se comparte la ubicación a través de los ajustes del dispositivo (permiso « Mientras usas »). Las coordenadas exactas permanecen en nuestros servidores y se usan exclusivamente para el cálculo de cuadrícula y ofuscación. Otros usuarios solo ven una posición aleatoria dentro de la misma celda de cuadrícula de ~1 km². Puedes dejar de compartir tu ubicación en cualquier momento. También puedes elegir si tu ubicación ofuscada aparece como un pin en el mapa a través de tus ajustes de privacidad. Las coordenadas de las sedes empresariales son controladas por el propietario y son visibles públicamente por diseño.</p>
+            <p class="text-lg leading-relaxed text-white/80">El acceso a la ubicación precisa soporta las experiencias principales de descubrimiento. Los permisos del sistema operativo del dispositivo (« Al usar la aplicación ») controlan si se capturan nuevas lecturas GPS. Las coordenadas almacenadas — para los usuarios personales — alimentan la lógica de cuadrícula/ofuscamiento, la elegibilidad para el descubrimiento Nearby, los premios de explorador vinculados a huellas de cuadrícula gruesas, los referrals o verificaciones de presencia donde sea aplicable, y nunca exponen tus pines de latitud/longitud exactos a extraños. Desactivar Nearby discovery te elimina de las consultas Nearby de otros usuarios y deshabilita la persistencia de coordenadas precisas frescas en tu perfil como está implementado actualmente, aunque otras pestañas pueden invitar permisos de dispositivo independientemente. Controles separados te permiten suprimir tu marcador de persona en el mapa Descubrir mientras sigues apareciendo en las franjas contextuales cuando eres elegible. Las coordenadas de las sedes permanecen publicadas por el propietario e intrínsecamente visibles públicamente.</p>
 
             <!-- 6. Data Retention -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">6. Conservación y eliminación de datos</h2>
-            <p class="text-lg leading-relaxed text-white/80">Conservamos los datos personales mientras tu cuenta permanezca activa o sea necesario para proporcionar los Servicios y cumplir con obligaciones legales. Al eliminar la cuenta (iniciada por ti en Perfil → sección Cuenta o por nosotros por violaciones), realizamos una eliminación en cascada de tu perfil, mensajes, conexiones, eventos, perfiles empresariales (si los tienes), publicaciones, seguimientos y fotos de galería, sujeta a cualquier requisito legal de retención o respaldo. El historial de ubicación para Usuarios personales se conserva solo por un período limitado. Los datos anonimizados o agregados (incluyendo estadísticas de puntuaciones de compatibilidad y análisis de uso) pueden conservarse indefinidamente para mejora del servicio.</p>
-            <p class="text-lg leading-relaxed text-white/80 mt-4">La suspensión de cuenta o la pausa de Sede empresarial restringe temporalmente el acceso o visibilidad mientras se conservan los datos subyacentes. La eliminación completa solo ocurre por solicitud explícita del usuario o terminación permanente. Los registros suspendidos/pausados permanecen sujetos a las mismas reglas de conservación hasta que la cuenta se elimine completamente.</p>
+            <p class="text-lg leading-relaxed text-white/80">Conservamos los datos personales mientras tu cuenta permanezca activa o sea necesario para proporcionar los Servicios y cumplir con las obligaciones legales. Al eliminar la cuenta (iniciada por ti en Perfil → Cuenta o por nosotros por violaciones), realizamos una eliminación en cascada de tu perfil, mensajes, conexiones, eventos, perfiles empresariales (si se poseen), publicaciones, seguidores, fotos de galería, entradas del libro mayor de monedas, insignias, espejos de suscripción, metadatos de referral y registros económicos asociados vinculados a tu ID de usuario (donde esté configurado), sujetos a cualquier obligación legal de conservación o requisitos de retención de backup. El historial de ubicación para usuarios personales se conserva solo por un período limitado. Los datos anonimizados o agregados (incluyendo estadísticas de puntuaciones de matching y análisis de uso) pueden conservarse indefinidamente para la mejora del servicio.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4">La suspensión de la cuenta o la pausa de una sede empresarial restringe temporalmente el acceso o la visibilidad mientras retiene los datos subyacentes. La eliminación completa ocurre solo por solicitud expresa del usuario o terminación permanente. Los registros suspendidos/pausados permanecen sujetos a las mismas reglas de conservación hasta que la cuenta sea completamente eliminada.</p>
 
             <!-- 7. Your Rights -->
-            <h2 class="text-3xl font-semibold mt-16 mb-6">7. Tus derechos y opciones</h2>
+            <h2 class="text-3xl font-semibold mt-16 mb-6">7. Tus derechos y elecciones</h2>
             <p class="text-lg leading-relaxed text-white/80">Dependiendo de tu jurisdicción, puedes tener derecho a:</p>
             <ul class="list-disc pl-6 mt-4 space-y-3 text-white/80 text-[17px]">
                 <li>Acceder, rectificar o borrar tus datos personales</li>
-                <li>Retirar el consentimiento (cuando el procesamiento se basa en consentimiento)</li>
+                <li>Retirar el consentimiento (donde el procesamiento se basa en el consentimiento)</li>
                 <li>Oponerte o restringir ciertos procesamientos</li>
-                <li>Solicitar la portabilidad de datos</li>
+                <li>Solicitar la portabilidad de los datos</li>
                 <li>Presentar una queja ante una autoridad de control</li>
             </ul>
-            <p class="text-lg leading-relaxed text-white/80 mt-6">Puedes ejercer estos derechos directamente en la App (Perfil → sección Cuenta para eliminación y ciertas ediciones) o contactándonos en la dirección a continuación. Respondemos a solicitudes válidas dentro de 30 días (o antes para solicitudes de eliminación). Los Usuarios empresariales pueden además gestionar la visibilidad de sedes, listas de seguidores y contenido de publicaciones a través de la App. Si tu cuenta o sede ha sido suspendida o pausada por violaciones de políticas, puedes apelar la decisión a través del flujo de soporte en la App o contactándonos.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-6">Puedes ejercer estos derechos directamente en la Aplicación (sección Perfil → Cuenta para eliminación y ciertas ediciones) o contactándonos en la dirección a continuación. Respondemos a solicitudes válidas dentro de los 30 días (o más rápido para solicitudes de eliminación). Los usuarios empresariales pueden además gestionar la visibilidad de las sedes, listas de seguidores y contenido de publicaciones a través de la Aplicación. Si tu cuenta o sede ha sido suspendida o pausada por violaciones de política, puedes apelar la decisión a través del flujo de soporte in-app o contactándonos.</p>
             
             <div class="mt-8">
-                <div class="font-semibold text-white mb-4">Controles adicionales disponibles en la App:</div>
+                <div class="font-semibold text-white mb-4">Controles adicionales disponibles en la Aplicación:</div>
                 <ul class="list-disc pl-6 space-y-2 text-white/80">
-                    <li>Ocultar conversaciones individuales de tu bandeja de entrada hasta que ocurra nueva actividad</li>
-                    <li>Excluirte de mostrar tu presencia en línea a pares</li>
-                    <li>Controlar si tu avatar aparece en el mapa</li>
-                    <li>Establecer tu perfil como privado (tarjeta mínima visible para no conexiones)</li>
+                    <li>Habilitar o deshabilitar Nearby discovery (la elegibilidad a la mapa/franja Nearby y la sincronización de nuevas coordenadas precisas frescas en los perfiles sigue este toggle)</li>
+                    <li>Habilitar/deshabilitar independientemente el asistente de perfil IA y Wingman chat IA</li>
+                    <li>Consentir o rechazar compartir datos de visita de sede agregados anónimos que soportan los insights de las fichas y rechazar cualquier prompt relacionado</li>
+                    <li>Consentir a la visibilidad de la clasificación de la ciudad o permanecer fuera de las clasificaciones sin participación expresa</li>
+                    <li>Ocultar hilos individuales de la bandeja de entrada hasta que la actividad actualizada los restaure</li>
+                    <li>Desactivar la visualización de la presencia online a los pares</li>
+                    <li>Controlar si los pines de persona basados en avatar aparecen en el mapa Descubrir o solo en las franjas</li>
+                    <li>Marcar el perfil como privado (ficha mínima visible a los no conectados)</li>
+                    <li>Gestionar las suscripciones premium exclusivamente a través de las tiendas vinculadas o las consolas de facturación de Google</li>
                 </ul>
             </div>
 
             <!-- 8. Security -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">8. Seguridad</h2>
-            <p class="text-lg leading-relaxed text-white/80">Implementamos medidas técnicas y organizativas apropiadas para proteger los datos personales, incluyendo políticas de Row-Level Security (RLS) en nuestra base de datos, cifrado en tránsito (TLS) y en reposo cuando corresponda, controles de acceso estrictos, claves API limitadas y revisiones de seguridad regulares. El escaneo automatizado previo a la publicación de imágenes subidas por usuarios (a través de Google Cloud Vision Safe Search en el bucket de staging privado) ayuda a prevenir la distribución de contenido ilegal o dañino. Ningún sistema es 100% seguro. Te recomendamos encarecidamente usar una contraseña fuerte y única y activar cualquier autenticación de dos factores disponible.</p>
+            <p class="text-lg leading-relaxed text-white/80">Implementamos medidas técnicas y organizativas apropiadas para proteger los datos personales, incluyendo políticas de seguridad a nivel de fila (RLS) en nuestra base de datos, cifrado en tránsito (TLS) y en reposo donde sea aplicable, controles de acceso estrictos, claves API limitadas y revisiones de seguridad regulares. El escaneo automatizado pre-publicación de las imágenes cargadas por los usuarios (a través de Google Cloud Vision Safe Search en el bucket de staging privado) ayuda a prevenir la distribución de contenido ilegal o dañino. Ningún sistema es 100% seguro. Te recomendamos encarecidamente utilizar una contraseña fuerte y única y habilitar cualquier autenticación de dos factores disponible.</p>
 
             <!-- 9. Children’s Privacy -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">9. Privacidad de los niños</h2>
-            <p class="text-lg leading-relaxed text-white/80">La App está destinada exclusivamente a personas de <strong>16 años o más</strong>. No recopilamos, solicitamos ni procesamos conscientemente datos personales de nadie menor de 16 años. Si nos enteramos de que un usuario tiene menos de 16 años, eliminaremos rápidamente la cuenta y todos los datos asociados. Las cuentas empresariales están sujetas a la misma restricción de edad. Los padres o tutores que crean que su hijo ha proporcionado datos deben contactarnos inmediatamente.</p>
+            <p class="text-lg leading-relaxed text-white/80">La Aplicación está destinada exclusivamente a personas de <strong>16 años o más</strong>. No recopilamos, solicitamos ni procesamos conscientemente datos personales de ninguna persona menor de 16 años. Si nos enteramos de que un usuario tiene menos de 16 años, eliminaremos rápidamente la cuenta y todos los datos asociados. Las cuentas empresariales están sujetas a la misma restricción de edad. Los padres o tutores que crean que su hijo ha proporcionado datos deben contactarnos inmediatamente.</p>
 
             <!-- 10. International Data Transfers -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">10. Transferencias internacionales de datos</h2>
-            <p class="text-lg leading-relaxed text-white/80">Nuestro principal proveedor de infraestructura (Supabase) procesa datos en centros de datos seguros ubicados principalmente en el Espacio Económico Europeo. Cuando los datos personales se transfieren fuera de tu país de residencia, nos aseguramos de que existan salvaguardas apropiadas, incluyendo cláusulas contractuales estándar y cumplimiento de las leyes de protección de datos aplicables (incluyendo el RGPD y la Ley Federal Suiza de Protección de Datos).</p>
+            <p class="text-lg leading-relaxed text-white/80">Nuestro principal proveedor de infraestructura (Supabase) procesa los datos en centros de datos seguros ubicados principalmente en el Espacio Económico Europeo. Cuando los datos personales se transfieren fuera de tu país de residencia, nos aseguramos de que se implementen garantías apropiadas, incluyendo cláusulas contractuales estándar y el cumplimiento de las leyes aplicables de protección de datos (incluyendo el RGPD y la Ley Federal Suiza de Protección de Datos).</p>
 
             <!-- 11. Changes -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">11. Cambios a esta política de privacidad</h2>
-            <p class="text-lg leading-relaxed text-white/80">Podemos actualizar esta Política de vez en cuando para reflejar cambios en nuestras prácticas, la App o requisitos legales. Te notificaremos de cambios sustanciales mediante aviso en la App, notificación push o correo electrónico. Tu uso continuado de la App después de la fecha de entrada en vigor de una actualización constituye aceptación de la Política revisada.</p>
+            <p class="text-lg leading-relaxed text-white/80">Podemos actualizar esta Política de vez en cuando para reflejar cambios en nuestras prácticas, la Aplicación o los requisitos legales. Te notificaremos de cambios sustanciales a través de aviso in-app, notificación push o correo electrónico. Tu uso continuado de la Aplicación después de la fecha de entrada en vigor de cualquier actualización constituye tu aceptación de la Política revisada.</p>
 
             <!-- 12. Contact -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">12. Contáctanos</h2>
-            <p class="text-lg leading-relaxed text-white/80">Para preguntas, solicitudes o quejas sobre esta Política de privacidad o nuestras prácticas de datos, contáctanos en:</p>
+            <p class="text-lg leading-relaxed text-white/80">Para preguntas, solicitudes o quejas relacionadas con esta Política de privacidad o nuestras prácticas de datos, por favor contáctanos en:</p>
             
             <div class="mt-6 p-8 bg-white/5 rounded-3xl border border-white/10">
                 <div class="flex flex-col gap-y-3">
-                    <div><span class="font-semibold text-white">Correo electrónico:</span> <a href="mailto:info@findmeirl.app" class="text-[#5E9ED6]">info@findmeirl.app</a></div>
-                    <div><span class="font-semibold text-white">Sitio web:</span> <a href="https://findmeirl.app" class="text-[#5E9ED6]">https://findmeirl.app</a></div>
+                    <div><span class="font-semibold text-white" data-i18n="legal.priv.emailLabel">Email:</span> <a href="mailto:info@findmeirl.app" class="text-[#5E9ED6]">info@findmeirl.app</a></div>
+                    <div><span class="font-semibold text-white" data-i18n="legal.priv.webLabel">Sitio web:</span> <a href="https://findmeirl.app" class="text-[#5E9ED6]">https://findmeirl.app</a></div>
                 </div>
                 <div class="mt-6 pt-6 border-t border-white/10 text-sm text-white/60">
-                    <span>Las páginas legales se publican en:</span><br>
-                    <span>Política de privacidad:</span> <a data-legal-link="privacy" data-legal-sync-href="" href="privacy_es.html" class="text-[#5E9ED6]">https://findmeirl.app/privacy_es.html</a><br>
-                    <span>Términos de servicio:</span> <a data-legal-link="terms" data-legal-sync-href="" href="terms_es.html" class="text-[#5E9ED6]">https://findmeirl.app/terms_es.html</a>
+                    <span data-i18n="legal.priv.published">Las páginas legales se publican en:</span><br>
+                    <span data-i18n="legal.priv.ppLabel">Política de privacidad:</span> <a data-legal-link="privacy" data-legal-sync-href="" href="privacy_es.html" class="text-[#5E9ED6]">https://findmeirl.app/privacy_es.html</a><br>
+                    <span data-i18n="legal.priv.tosLabel">Términos de servicio:</span> <a data-legal-link="terms" data-legal-sync-href="" href="terms_es.html" class="text-[#5E9ED6]">https://findmeirl.app/terms_es.html</a>
                 </div>
             </div>
             
-            <p class="mt-8 text-sm text-white/60">Nos comprometemos a responder de manera rápida y transparente a todas las consultas legítimas.</p>
+            <p class="mt-8 text-sm text-white/60" data-i18n="legal.priv.committed">Nos comprometemos a responder de manera oportuna y transparente a todas las consultas legítimas.</p>
 
             <!-- Footer -->
             <div class="mt-20 pt-12 border-t border-white/10 text-center text-xs text-white/40">
-                <span>Fecha de vigencia: 30 de abril de 2026 • Última actualización: 21 de mayo de 2026</span><br>
-                <span>findmeirl.app • Descubrimiento social centrado en la privacidad</span>
+                <span data-i18n="legal.priv.effective">Fecha de entrada en vigor: 30 de abril de 2026 • Última actualización: 27 de mayo de 2026</span><br>
+                <span data-i18n="legal.priv.footer">findmeirl.app • Descubrimiento social respetuoso con la privacidad</span>
             </div>
         </div>
     </div>
 
     <script src="../assets/i18n/site-i18n.js?v=20260522"></script>
-    <script>
-        function initializeTailwind() {
-            console.log('%c[findmeIRL] Política de privacidad (ES) inicializada', 'color:#5E9ED6;font-size:10px');
-        }
-        window.onload = initializeTailwind;
-    </script>
 </body>
 </html>

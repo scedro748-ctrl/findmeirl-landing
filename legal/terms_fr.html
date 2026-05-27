@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Conditions d'utilisation pour findmeIRL — application de découverte sociale respectueuse de la vie privée avec prise en charge des lieux d'affaires.">
+        content="Conditions d'utilisation de findmeIRL — application de découverte sociale respectueuse de la vie privée avec prise en charge des lieux d'affaires.">
     <title>Conditions d'utilisation — findmeIRL</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -75,19 +75,20 @@
                 <select
                     class="site-lang-select text-sm font-medium bg-white/5 border border-white/20 rounded-2xl px-2.5 py-2 text-white focus:outline-none focus:ring-2 focus:ring-[#5E9ED6]/40"
                     style="color-scheme: dark;" data-i18n-aria-label="nav.langAria">
+                    <option value="fr">FR</option>
                     <option value="en">EN</option>
                     <option value="de">DE</option>
-                    <option value="fr" selected>FR</option>
                     <option value="it">IT</option>
                     <option value="es">ES</option>
                     <option value="pt">PT</option>
                 </select>
                 <a href="../index.html" class="flex items-center gap-x-2 text-white/70 hover:text-white transition-colors">
                     <i class="fa-solid fa-arrow-left text-xs"></i>
-                    <span>Retour à l'accueil</span>
+                    <span data-i18n="legal.tos.back">Retour à l'accueil</span>
                 </a>
                 <a href="privacy_fr.html" data-legal-link="privacy"
-                    class="text-white/70 hover:text-[#5E9ED6] transition-colors"><span>Politique de confidentialité</span></a>
+                    class="text-white/70 hover:text-[#5E9ED6] transition-colors"><span
+                        data-i18n="legal.tos.cross">Politique de confidentialité</span></a>
             </div>
         </div>
     </nav>
@@ -98,21 +99,21 @@
             <div class="mb-16">
                 <div class="inline-flex items-center px-5 py-2 bg-white/10 rounded-3xl text-sm mb-6">
                     <span class="text-emerald-400">●</span>
-                    <span class="ml-2 font-medium">Dernière mise à jour : 21 mai 2026</span>
+                    <span class="ml-2 font-medium" data-i18n="legal.tos.updated">Dernière mise à jour : 27 mai 2026</span>
                 </div>
-                <h1 class="text-6xl font-semibold tracking-tighter logo-font mb-4">Conditions d'utilisation</h1>
-                <p class="text-2xl text-white/70">findmeIRL (« Findme », « nous », « notre » ou « nos »)</p>
-                <p class="text-sm text-amber-200/70 mb-8 max-w-2xl hidden" data-i18n-toggle-hidden="true"></p>
+                <h1 class="text-6xl font-semibold tracking-tighter logo-font mb-4" data-i18n="legal.tos.h1">Conditions d'utilisation</h1>
+                <p class="text-2xl text-white/70" data-i18n="legal.tos.subtitle">findmeIRL (« Findme », « nous », « notre » ou « nos »)</p>
+                <p class="text-sm text-amber-200/70 mb-8 max-w-2xl hidden" data-i18n="legal.bindingNote"
+                    data-i18n-toggle-hidden="true"></p>
             </div>
 
             <!-- 1. Introduction -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">1. Introduction et acceptation des conditions</h2>
             <p class="text-lg leading-relaxed text-white/80">
-                Bienvenue sur findmeIRL — une application mobile de découverte sociale respectueuse de la vie privée et services associés
-                (collectivement, l'« App » ou les « Services »). L'App permet aux particuliers (« Utilisateurs personnels ») de découvrir et de se connecter avec des personnes à proximité partageant les mêmes centres d'intérêt tout en protégeant leur localisation exacte, et permet aux entreprises et propriétaires de lieux (« Utilisateurs professionnels ») de créer des profils publics, de publier des mises à jour et d'interagir avec leurs abonnés.
+                Bienvenue sur findmeIRL — une application mobile de découverte sociale respectueuse de la vie privée et services associés (collectivement, l'« Application » ou les « Services »). L'Application permet aux particuliers (« Utilisateurs personnels ») de découvrir et de se connecter avec des personnes à proximité partageant les mêmes intérêts tout en protégeant leur localisation exacte, et permet aux entreprises et propriétaires de lieux (« Utilisateurs professionnels ») de créer des profils publics, de publier des mises à jour et d'interagir avec leurs abonnés.
             </p>
             <p class="text-lg leading-relaxed text-white/80 mt-6">
-                En téléchargeant, installant, accédant ou utilisant l'App, vous acceptez d'être lié par ces Conditions d'utilisation (« Conditions »). Si vous n'acceptez pas ces Conditions, vous ne devez pas utiliser l'App.
+                En téléchargeant, installant, accédant ou utilisant l'Application, vous acceptez d'être lié par ces Conditions d'utilisation (« Conditions »). Si vous n'acceptez pas ces Conditions, vous ne devez pas utiliser l'Application.
             </p>
             <p class="text-lg leading-relaxed text-white/80 mt-6">
                 Ces Conditions constituent un accord juridiquement contraignant entre vous et Findme. Veuillez les lire attentivement avec notre <a href="privacy_fr.html" data-legal-link="privacy">Politique de confidentialité</a>. Les termes en majuscules ont les significations définies ici ou dans la Politique de confidentialité.
@@ -120,169 +121,177 @@
 
             <!-- 2. Eligibility -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">2. Admissibilité</h2>
-            <p class="text-lg leading-relaxed text-white/80">Vous devez avoir au moins <strong>seize (16) ans</strong> pour utiliser l'App. En utilisant l'App, vous déclarez et garantissez que vous avez au moins 16 ans et que vous avez la capacité juridique de conclure ces Conditions. Nous n'autorisons pas sciemment les personnes de moins de 16 ans à créer des comptes ou à accéder aux Services. Les comptes professionnels sont soumis à la même exigence d'âge minimum.</p>
+            <p class="text-lg leading-relaxed text-white/80">Vous devez avoir au moins <strong>seize (16) ans</strong> pour utiliser l'Application. En utilisant l'Application, vous déclarez et garantissez que vous avez au moins 16 ans et que vous avez la capacité juridique de conclure ces Conditions. Nous n'autorisons pas sciemment les personnes de moins de 16 ans à créer des comptes ou à accéder aux Services. Les comptes professionnels sont soumis à la même exigence d'âge minimum.</p>
 
             <!-- 3. Definitions -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">3. Définitions</h2>
             <ul class="list-disc pl-6 space-y-3 text-white/80 text-[17px]">
-                <li><strong>« Utilisateur personnel »</strong> désigne un particulier utilisant l'App à des fins personnelles de découverte sociale.</li>
-                <li><strong>« Utilisateur professionnel »</strong> ou <strong>« Propriétaire de lieu »</strong> désigne un utilisateur qui a enregistré un ou plusieurs profils professionnels via l'App.</li>
-                <li><strong>« Lieu »</strong> désigne un emplacement physique d'entreprise listé via un Profil professionnel, affiché avec des coordonnées publiques choisies par le propriétaire.</li>
-                <li><strong>« Contenu »</strong> désigne tout texte, image, publication, événement, message, profil ou autre matériel téléversé, publié ou transmis via l'App.</li>
-                <li><strong>« Publication professionnelle »</strong> désigne le contenu publié par un Utilisateur professionnel sur la timeline de son lieu (types incluant promotion, mise à jour, événement, coulisses, témoignage et communauté).</li>
+                <li><strong>« Utilisateur personnel »</strong> désigne un particulier utilisant l'Application à des fins personnelles de découverte sociale.</li>
+                <li><strong>« Utilisateur professionnel »</strong> ou <strong>« Propriétaire de lieu »</strong> désigne un utilisateur ayant enregistré un ou plusieurs profils professionnels via l'Application.</li>
+                <li><strong>« Lieu »</strong> désigne un emplacement physique d'entreprise répertorié via un profil professionnel, affiché avec des coordonnées publiques choisies par le propriétaire.</li>
+                <li><strong>« Contenu »</strong> désigne tout texte, image, publication, événement, message, profil ou autre matériel téléchargé, publié ou transmis via l'Application.</li>
+                <li><strong>« Publication professionnelle »</strong> désigne le contenu publié par un utilisateur professionnel sur la chronologie de son lieu (types : promotion, mise à jour, événement, coulisses, témoignage, communauté).</li>
             </ul>
 
             <!-- 4. Our Services -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">4. Nos Services</h2>
-            <p class="text-lg leading-relaxed text-white/80">L'App fournit une plateforme respectueuse de la vie privée pour la découverte sociale et l'engagement avec les lieux. Les fonctionnalités clés incluent :</p>
+            <p class="text-lg leading-relaxed text-white/80">L'Application fournit une plateforme respectueuse de la vie privée pour la découverte sociale et l'engagement avec les lieux. Les fonctionnalités principales incluent :</p>
             <ul class="list-disc pl-6 mt-6 space-y-3 text-white/80 text-[17px]">
-                <li><strong>Découvrir :</strong> Carte interactive affichant des positions obfusquées pour les Utilisateurs personnels et des épingles publiques fixes pour les Lieux, avec une bande horizontale de personnes et une bande de publications de lieux suivis. Les utilisateurs peuvent choisir si leur position obfusquée apparaît comme une épingle sur la carte.</li>
-                <li><strong>Événements :</strong> Création, découverte et fonctionnalité RSVP avec création automatique de chat de groupe pour chaque événement.</li>
-                <li><strong>Chats :</strong> Messagerie directe entre utilisateurs connectés et chats de groupe liés aux événements (avec privilèges d'administrateur de l'hôte, gestion des membres et fonctionnalité de bannissement), avec assistance IA optionnelle pour les suggestions de messages.</li>
-                <li><strong>Connexions &amp; Contacts :</strong> Envoi, acceptation, refus et blocage de demandes de connexion ; affichage des contacts acceptés.</li>
-                <li><strong>Profil :</strong> Gestion du profil personnel, sélection d'intérêts, scores de correspondance « âme sœur », galerie, contrôles de confidentialité (incluant le mode privé et l'opt-out du statut en ligne) et suggestions optionnelles d'optimisation de profil assistées par IA.</li>
-                <li><strong>Entreprises &amp; Lieux :</strong> Inscription de compte professionnel, éditeur de listing de lieu (incluant adresse, coordonnées, horaires d'ouverture), composition de publications et gestion de timeline, insights sur les abonnés et découvrabilité publique pour les Lieux approuvés.</li>
+                <li><strong>Découvrir :</strong> Carte interactive affichant des positions brouillées pour les utilisateurs personnels et des épingles publiques fixes pour les lieux, avec une bande horizontale de personnes et une bande de publications des lieux suivis. Les utilisateurs peuvent choisir si leur position brouillée apparaît comme une épingle sur la carte.</li>
+                <li><strong>Événements :</strong> Création, découverte et fonctionnalité RSVP avec création automatique de chat de groupe pour chaque événement</li>
+                <li><strong>Chats :</strong> Messagerie directe entre utilisateurs connectés et chats de groupe liés aux événements (avec privilèges d'administrateur de l'hôte, gestion des membres et fonctionnalité de bannissement), avec des suggestions de réponses optionnelles par l'assistant IA lorsque vous activez indépendamment l'assistance IA dans les paramètres</li>
+                <li><strong>Connexions &amp; Contacts :</strong> Envoi, acceptation, refus et blocage des demandes de connexion ; affichage des contacts acceptés</li>
+                <li><strong>Profil :</strong> Gestion du profil personnel, sélection d'intérêts (y compris la rédaction assistée par IA optionnelle lorsque vous l'activez dans les paramètres), photos de galerie (qui peuvent contribuer à des « tags vibe » assistés par machine pour le matching ou l'assistance aux chats), scores de compatibilité soulmate, contrôles de confidentialité (mode privé, désactivation du statut en ligne, bascule Nearby discovery, bascule assistant de profil IA, bascule Wingman chat IA), visibilité optionnelle du classement de la ville, portefeuille de coins, badges, jalons d'explorateur, statut premium et points d'entrée pour offrir des coins</li>
+                <li><strong>Entreprises &amp; Lieux :</strong> Inscription de compte professionnel, éditeur de fiche de lieu (y compris adresse, coordonnées, horaires d'ouverture), composition de publications et chronologies destinées aux abonnés, insights pour les abonnés, copie assistée par IA optionnelle lorsque activée dans les paramètres, financement optionnel de pools de coins via Stripe pour les fiches éligibles, et découvrabilité publique pour les lieux approuvés</li>
             </ul>
-            <p class="text-lg leading-relaxed text-white/80 mt-6">Nous utilisons une obfuscation de localisation basée sur une grille afin que les coordonnées GPS exactes des Utilisateurs personnels ne soient jamais affichées aux autres. Les coordonnées des lieux d'affaires sont intentionnellement publiques et contrôlées par le Propriétaire du lieu. L'App propose des outils optionnels alimentés par l'IA pour suggérer des améliorations de profil et des idées de messages de chat ; ces suggestions sont fournies uniquement pour votre commodité. Vous restez seul responsable de la révision, de la modification et de l'approbation de tout contenu assisté par IA avant sa publication ou son envoi.</p>
+
+            <h3>4.1 Coins virtuels, badges, dons, explorateurs, combos et classements</h3>
+            <p class="text-lg leading-relaxed text-white/80">L'Application propose des fonctionnalités de fidélité non transférables telles que des coins in-app, des badges, des cosmétiques, des boosts Discover, des tiers de coins ou des multiplicateurs de gains, des offres « dépenser pour déverrouiller », des dons entre contacts acceptés, des bonus de parrainage et de présence, des jalons d'explorateur liés aux grilles de carte grossières, des célébrations de combos, des avantages de coins pour les lieux, un placement optionnel dans le classement de la ville lorsque vous y consentez expressément, et des mécanismes similaires décrits dans l'interface. Les coins et récompenses n'ont aucune valeur monétaire intrinsèque sauf si la loi l'exige — ne peuvent pas être échangés contre des devises fiduciaires en l'absence d'un programme expressément approuvé — et Findme peut à tout moment modifier, mettre fin, retenir, révoquer, récupérer des soldes, disqualifier des participants aux classements, imposer des plafonds/limitations/périodes de récupération ou ajuster les taux de gain pour des raisons d'équilibre, d'équité, de réglementation, de suspension, d'exploitation, de remboursements/chargebacks ou d'abus.</p>
+
+            <h3>4.2 Abonnements premium</h3>
+            <p class="text-lg leading-relaxed text-white/80">Les plans premium optionnels sont facturés par l'Apple App Store ou Google Play via leurs interfaces, soumises à leurs conditions standard. La validation des reçus et le mappage des droits peuvent utiliser RevenueCat. Les avantages premium (y compris les multiplicateurs de gains, le tie-breaking Discover, les cosmétiques et les allocations Wingman — chacun tel qu'annoncé dans l'application) dépendent d'achats Store réussis et de la synchronisation avec les serveurs ; l'annulation via le store arrête les renouvellements, tandis que les périodes prépayées actives se poursuivent généralement jusqu'à la fin de la période de facturation selon les règles de la plateforme.</p>
+
+            <h3>4.3 Rechargements de pools de coins pour lieux financés par Stripe</h3>
+            <p class="text-lg leading-relaxed text-white/80">Les utilisateurs professionnels initiant des bundles optionnels de financement de pools de coins ouvrent des sessions Checkout hébergées par Stripe ; Stripe reçoit les données de carte de paiement — pas les clients mobiles de Findme — et Findme enregistre les droits/métadonnées nécessaires pour concilier les soldes promotionnels des lieux selon la politique.</p>
+
+            <p class="text-lg leading-relaxed text-white/80 mt-6">Nous utilisons un brouillage de localisation basé sur une grille afin que les coordonnées GPS exactes des utilisateurs personnels ne soient jamais affichées aux autres. Les coordonnées des lieux d'affaires sont intentionnellement publiques et contrôlées par le propriétaire du lieu. L'Application propose des outils optionnels alimentés par l'IA pour suggérer des améliorations de profil et des idées de messages de chat ; ces suggestions sont fournies uniquement pour votre commodité. Vous restez seul responsable de l'examen, de la modification et de l'approbation de tout contenu assisté par l'IA avant sa publication ou son envoi.</p>
 
             <!-- 5. User Accounts -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">5. Comptes utilisateurs et profils</h2>
 
             <h3>5.1 Règles générales des comptes</h3>
             <ul class="list-disc pl-6 space-y-3 text-white/80 text-[17px]">
-                <li>Vous êtes seul responsable du maintien de la confidentialité de vos identifiants de compte et de toute activité sous votre compte.</li>
-                <li>Vous devez fournir des informations exactes, actuelles et complètes lors de l'inscription et les tenir à jour.</li>
-                <li>Vous ne pouvez pas créer plus d'un compte personnel ni usurper l'identité d'une personne ou d'une entité.</li>
-                <li>Le contenu du profil doit respecter ces Conditions et nos Règles de la communauté.</li>
+                <li>Vous êtes seul responsable du maintien de la confidentialité de vos identifiants de compte et de toute activité sous votre compte</li>
+                <li>Vous devez fournir des informations exactes, actuelles et complètes lors de l'inscription et les maintenir à jour</li>
+                <li>Vous ne pouvez pas créer plus d'un compte personnel ni usurper l'identité d'une personne ou d'une entité</li>
+                <li>Le contenu du profil doit être conforme à ces Conditions et à nos Règles de la communauté</li>
             </ul>
 
             <h3>5.2 Comptes professionnels et lieux</h3>
-            <p class="text-lg leading-relaxed text-white/80">Les Utilisateurs professionnels peuvent enregistrer un ou plusieurs profils professionnels. Ce faisant, vous déclarez que vous avez l'autorité pour lister le Lieu et que toutes les informations fournies (incluant les horaires d'ouverture, les coordonnées et le contenu des publications) sont exactes et légales. Les profils professionnels sont liés à votre profil personnel ; votre statut de propriétaire d'entreprise vous exclut de la découverte de personnes personnelles. Vous êtes responsable de maintenir votre listing approuvé et à jour. Les listings non approuvés ou inexacts peuvent être supprimés ou limités en visibilité.</p>
+            <p class="text-lg leading-relaxed text-white/80">Les utilisateurs professionnels peuvent enregistrer un ou plusieurs profils professionnels. Ce faisant, vous déclarez que vous avez l'autorité de répertorier le lieu et que toutes les informations fournies (y compris les horaires d'ouverture, les coordonnées et le contenu des publications) sont exactes et légales. Les profils professionnels sont liés à votre profil personnel ; votre statut de propriétaire d'entreprise vous exclut de la découverte en tant que personne. Vous êtes responsable de maintenir votre fiche approuvée et à jour. Les fiches non approuvées ou inexactes peuvent être supprimées ou avoir une visibilité limitée.</p>
 
             <h3>5.3 Enregistrement du consentement</h3>
-            <p class="text-lg leading-relaxed text-white/80">Votre acceptation de ces Conditions et de la Politique de confidentialité est enregistrée via un horodatage sur votre profil. Cet enregistrement est requis avant l'accès complet à l'App (y compris après les flux OAuth) et est utilisé à des fins de conformité et d'audit.</p>
+            <p class="text-lg leading-relaxed text-white/80">Votre acceptation de ces Conditions et de la Politique de confidentialité est enregistrée via un horodatage sur votre dossier de profil. Cet enregistrement est requis avant d'obtenir un accès complet à l'Application (y compris après les flux OAuth) et est utilisé à des fins de conformité et d'audit.</p>
 
-            <h3>5.4 Suspension de compte et pause professionnelle</h3>
-            <p class="text-lg leading-relaxed text-white/80">Nous pouvons suspendre temporairement ou définitivement un compte d'Utilisateur personnel ou mettre en pause le listing d'un Lieu d'un Utilisateur professionnel lorsque cela est requis pour la sécurité, la conformité légale ou des violations répétées. Les comptes suspendus ou mis en pause ont un accès limité ou nul à l'App. Les utilisateurs concernés peuvent faire appel via le flux de support in-App ou en nous contactant à l'adresse ci-dessous.</p>
+            <h3>5.4 Suspension de compte et pause de lieu professionnel</h3>
+            <p class="text-lg leading-relaxed text-white/80">Nous pouvons suspendre temporairement ou définitivement un compte d'utilisateur personnel (ou mettre en pause la fiche d'un lieu d'un utilisateur professionnel) lorsque cela est nécessaire pour la sécurité, la conformité légale ou des violations répétées. Les comptes suspendus ou mis en pause ont un accès limité ou nul à l'Application. Les utilisateurs concernés peuvent faire appel via le flux de support in-app ou en nous contactant à l'adresse ci-dessous.</p>
 
             <!-- 6. User Content -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">6. Contenu utilisateur, règles de la communauté et publications professionnelles</h2>
 
             <h3>6.1 Responsabilité du contenu</h3>
-            <p class="text-lg leading-relaxed text-white/80">Vous êtes seul responsable de tout le Contenu que vous créez, téléversez, publiez ou transmettez via l'App, y compris les publications professionnelles, événements, messages et informations de profil. Vous conservez la propriété de votre Contenu mais accordez à Findme une licence mondiale, non exclusive, libre de droits, sous-licenciable pour héberger, stocker, afficher, reproduire et distribuer ce Contenu uniquement dans la mesure nécessaire pour exploiter et améliorer les Services.</p>
+            <p class="text-lg leading-relaxed text-white/80">Vous êtes seul responsable de tout le contenu que vous créez, téléchargez, publiez ou transmettez via l'Application, y compris les publications professionnelles, les événements, les messages et les informations de profil. Vous conservez la propriété de votre contenu mais accordez à Findme une licence mondiale, non exclusive, libre de droits, sous-licenciable pour héberger, stocker, afficher, reproduire et distribuer ce contenu uniquement dans la mesure nécessaire pour exploiter et améliorer les Services.</p>
 
             <h3>6.2 Conduite interdite</h3>
             <p class="text-lg leading-relaxed text-white/80">Vous acceptez de ne pas :</p>
             <ul class="list-disc pl-6 mt-4 space-y-3 text-white/80 text-[17px]">
-                <li>Harcéler, intimider, menacer, discriminer ou nuire à d'autres utilisateurs.</li>
-                <li>Publier, partager ou promouvoir du Contenu illégal, explicite, nuisible, trompeur ou contrefait.</li>
-                <li>Spammer, escroquer, solliciter ou s'engager dans une activité commerciale en dehors des fonctionnalités de publication professionnelle prévues.</li>
-                <li>Créer de faux profils, usurper l'identité d'autrui ou présenter faussement votre identité ou affiliation.</li>
-                <li>Violer la vie privée d'autres utilisateurs ou scraper, rétroconcevoir ou abuser de l'App ou de son infrastructure.</li>
-                <li>Publier des informations fausses ou trompeuses sur un Lieu, une promotion ou un événement.</li>
+                <li>Harcéler, intimider, menacer, discriminer ou nuire à d'autres utilisateurs</li>
+                <li>Publier, partager ou promouvoir du contenu illégal, explicite, nuisible, trompeur ou contrefait</li>
+                <li>Spammer, escroquer, solliciter ou s'engager dans une activité commerciale en dehors des fonctionnalités de publication professionnelle prévues</li>
+                <li>Créer de faux profils, usurper l'identité d'autrui ou déformer votre identité ou affiliation</li>
+                <li>Violer la vie privée d'autres utilisateurs ou scraper, rétro-concevoir ou abuser de l'Application ou de son infrastructure</li>
+                <li>Publier des informations fausses ou trompeuses sur un lieu, une promotion ou un événement</li>
+                <li>Utiliser des bots, une exploitation scriptée, une présence usurpée, des parrainages contrefaits, des schémas de blanchiment, des chargebacks abusifs ou d'autres tactiques trompeuses pour fausser les coins, combos, dons, explorateurs, placements de classement, avantages de pools de lieux, droits d'achat in-app, fenêtres premium ou primes de parrainage</li>
             </ul>
-            <p class="text-lg leading-relaxed text-white/80 mt-4">Les Publications professionnelles doivent respecter les lois applicables en matière de publicité et de protection des consommateurs. Les violations répétées ou graves peuvent déclencher un examen d'escalade automatisé et entraîner une suspension temporaire ou permanente. Nous nous réservons le droit de supprimer tout Contenu, d'émettre des avertissements, de suspendre des comptes ou de résilier l'accès en cas de violation, avec ou sans préavis.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4">Les publications professionnelles doivent respecter les lois applicables en matière de publicité et de protection des consommateurs. Les violations répétées ou graves peuvent déclencher un examen d'escalade automatisé et entraîner une suspension temporaire ou permanente. Nous nous réservons le droit de supprimer tout contenu, d'émettre des avertissements, de suspendre des comptes ou de mettre fin à l'accès en cas de violation, avec ou sans préavis.</p>
 
             <h3>6.3 Chats de groupe et modération</h3>
-            <p class="text-lg leading-relaxed text-white/80">Les chats de groupe d'événement sont créés automatiquement et liés aux événements. L'hôte de l'événement se voit accorder des privilèges d'administrateur et peut retirer des membres ou émettre des bannissements. Les utilisateurs bannis ne peuvent pas rejoindre le chat. Tous les participants doivent respecter les règles du chat ; les violations peuvent entraîner le retrait ou un bannissement permanent.</p>
+            <p class="text-lg leading-relaxed text-white/80">Les chats de groupe d'événements sont créés automatiquement et liés aux événements. L'hôte de l'événement se voit accorder des privilèges d'administrateur et peut supprimer des membres ou émettre des bannissements. Les utilisateurs bannis ne peuvent pas rejoindre le chat. Tous les participants doivent respecter les règles du chat ; les violations peuvent entraîner un retrait ou un bannissement permanent.</p>
 
             <h3>6.4 Événements ouverts et clause de non-discrimination</h3>
-            <p class="text-lg leading-relaxed text-white/80">Tous les événements créés sur l'App doivent être ouverts à tous les utilisateurs approuvés et doivent respecter notre politique de non-discrimination. Lors de la création d'un événement, l'hôte doit confirmer (via la case à cocher in-App) que l'événement ne discrimine pas sur la base de la race, l'origine ethnique, le genre, l'orientation sexuelle, la religion, le handicap ou toute autre caractéristique protégée. Cette attestation est enregistrée dans l'enregistrement de l'événement et est requise avant que l'événement puisse être publié. La même exigence s'applique aux Utilisateurs personnels et professionnels qui créent des événements.</p>
+            <p class="text-lg leading-relaxed text-white/80">Tous les événements créés sur l'Application doivent être ouverts à tous les utilisateurs approuvés et doivent respecter notre politique de non-discrimination. Lors de la création d'un événement, l'hôte doit confirmer (via la case à cocher in-app) que l'événement ne discrimine pas sur la base de la race, de l'origine ethnique, du sexe, de l'orientation sexuelle, de la religion, du handicap ou de toute autre caractéristique protégée. Cette attestation est enregistrée sur le dossier de l'événement et est requise avant que l'événement ne puisse être publié. La même exigence s'applique aux utilisateurs personnels et professionnels qui créent des événements.</p>
 
-            <h3>6.5 Modération de contenu et analyse d'images</h3>
-            <p class="text-lg leading-relaxed text-white/80">Toutes les images téléversées via l'App (avatars de profil, bannières, photos de galerie, couvertures et souvenirs d'événements, logos d'entreprise, bannières et publications) sont d'abord placées dans un compartiment de staging privé et analysées par un système IA automatisé (Google Cloud Vision Safe Search) avant d'être promues vers le stockage public. Le contenu qui échoue à l'analyse automatisée est bloqué de la publication.</p>
-            <p class="text-lg leading-relaxed text-white/80 mt-4">De plus, le contenu textuel soumis par les utilisateurs — incluant les bios de profil, descriptions d'entreprise, tags de hobbies et d'intérêts personnalisés et publications professionnelles — est analysé par un système automatisé de modération de contenu IA. Le système détecte et peut bloquer ou signaler le contenu interdit tel que les discours de haine, les insultes, le harcèlement, les menaces, le matériel sexuel explicite, la violence, le spam, les escroqueries ou autres violations des politiques. Les soumissions ou publications qui échouent à ces vérifications sont rejetées ou nécessitent un examen. Les utilisateurs peuvent contester les décisions de modération en contactant le support. Nous fournissons également des outils de signalement in-App ; les signalements répétés contre le même sujet peuvent entraîner un examen d'escalade et une action administrative.</p>
+            <h3>6.5 Modération du contenu et numérisation d'images</h3>
+            <p class="text-lg leading-relaxed text-white/80">Toutes les images téléchargées via l'Application (avatars de profil, bannières, photos de galerie, couvertures et souvenirs d'événements, logos d'entreprise, bannières et publications) sont d'abord mises en scène dans un bucket de staging privé et numérisées par un système d'IA automatisé (Google Cloud Vision Safe Search) avant d'être promues vers le stockage public. Le contenu qui échoue au scan automatisé est bloqué de la publication.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4">En outre, le contenu textuel soumis par les utilisateurs — y compris les bios de profil, les descriptions d'entreprise, les tags de passe-temps et d'intérêts personnalisés, et les publications professionnelles — est analysé par un système automatisé de modération de contenu par IA. Le système détecte et peut bloquer ou signaler le contenu interdit tel que les discours de haine, les insultes, le harcèlement, les menaces, le matériel sexuel explicite, la violence, le spam, les escroqueries ou d'autres violations des politiques. Les soumissions ou publications qui échouent à ces contrôles sont rejetées ou nécessitent un examen. Les utilisateurs peuvent faire appel des décisions de modération en contactant le support. Nous fournissons également des outils de signalement in-app ; les signalements répétés contre le même sujet peuvent entraîner un examen d'escalade et une action administrative.</p>
 
             <!-- 7. Connections, Chats, Events -->
-            <h2 class="text-3xl font-semibold mt-16 mb-6">7. Connexions, Chats, Événements et interactions avec les lieux</h2>
+            <h2 class="text-3xl font-semibold mt-16 mb-6">7. Connexions, chats, événements et interactions avec les lieux</h2>
             <ul class="list-disc pl-6 space-y-3 text-white/80 text-[17px]">
-                <li>Les demandes de connexion peuvent être acceptées, refusées ou bloquées à la discrétion du destinataire.</li>
-                <li>Tous les chats directs sont privés entre les participants.</li>
-                <li>Les événements sont créés et gérés par les utilisateurs. Chaque créateur d'événement doit confirmer la conformité à notre politique de non-discrimination avant que l'événement puisse être publié. Findme n'est pas responsable de l'organisation, de la sécurité, de la légalité ou de l'issue de toute rencontre ou événement réel organisé via l'App.</li>
-                <li>Les Utilisateurs professionnels peuvent publier des publications visibles par les abonnés et le public (pour les Lieux approuvés). Les abonnés reçoivent des notifications des nouvelles publications. Vous utilisez l'App à vos propres risques lorsque vous décidez de visiter un Lieu ou d'assister à un événement.</li>
+                <li>Les demandes de connexion peuvent être acceptées, refusées ou bloquées à la discrétion du destinataire</li>
+                <li>Tous les chats directs sont privés entre les participants</li>
+                <li>Les événements sont créés et gérés par les utilisateurs. Chaque créateur d'événement doit confirmer la conformité avec notre politique de non-discrimination avant que l'événement ne puisse être publié. Findme n'est pas responsable de l'organisation, de la sécurité, de la légalité ou de l'issue de toute rencontre, événement ou transaction réelle organisée via l'Application</li>
+                <li>Les utilisateurs professionnels peuvent publier des publications visibles par les abonnés et le public (pour les lieux approuvés). Les abonnés reçoivent des notifications des nouvelles publications. Vous utilisez l'Application à vos propres risques lorsque vous décidez de visiter un lieu ou d'assister à un événement</li>
             </ul>
 
             <!-- 8. Intellectual Property -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">8. Propriété intellectuelle</h2>
-            <p class="text-lg leading-relaxed text-white/80">L'App, sa conception, son code, ses marques et tout le contenu et fonctionnalités originaux sont la propriété de Findme ou de ses concédants et sont protégés par le droit d'auteur, le droit des marques et d'autres lois sur la propriété intellectuelle. Vous ne pouvez pas reproduire, distribuer, modifier ou créer des œuvres dérivées sans notre consentement écrit préalable.</p>
+            <p class="text-lg leading-relaxed text-white/80">L'Application, sa conception, son code, ses marques et tout le contenu et fonctionnalités originaux sont la propriété de Findme ou de ses concédants et sont protégés par le droit d'auteur, les marques et d'autres lois sur la propriété intellectuelle. Vous ne pouvez pas reproduire, distribuer, modifier ou créer des œuvres dérivées sans notre consentement écrit préalable.</p>
 
             <!-- 9. Privacy -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">9. Confidentialité</h2>
-            <p class="text-lg leading-relaxed text-white/80">Votre vie privée est d'une importance primordiale. Notre collecte, utilisation et partage des informations personnelles sont régis par la Politique de confidentialité, qui est incorporée par référence. En utilisant l'App, vous consentez à ce traitement.</p>
-            <p class="text-lg leading-relaxed text-white/80 mt-4">Les utilisateurs peuvent optionnellement accepter de contribuer des données agrégées anonymisées sur les visites de lieux. Ces données aident les propriétaires de lieux à comprendre la performance de leur listing et ne sont jamais liées à des identités individuelles.</p>
+            <p class="text-lg leading-relaxed text-white/80">Votre vie privée est d'une importance primordiale. Notre collecte, utilisation et partage des informations personnelles sont régis par la Politique de confidentialité, qui est incorporée par référence. En utilisant l'Application, vous consentez à ce traitement.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4">Les utilisateurs peuvent éventuellement choisir de contribuer des données agrégées anonymes sur les visites de lieux. Ces données aident les propriétaires de lieux à comprendre les performances de leurs fiches et ne sont jamais liées à des identités individuelles.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4">Les classements, parrainages, coins, statistiques d'explorateur, highlights de combos, métadonnées de règlement Stripe, reçus de store, journaux d'utilisation de Wingman et enregistrements économiques similaires sont traités conformément à la <a href="privacy_fr.html" data-legal-link="privacy">Politique de confidentialité</a> et aux contrôles in-app (par exemple, bascules pour Nearby discovery, assistants IA, métriques de visite anonymisées et participation optionnelle aux classements).</p>
 
             <!-- 10. Termination -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">10. Résiliation</h2>
             <ul class="list-disc pl-6 space-y-3 text-white/80 text-[17px]">
-                <li>Vous pouvez supprimer votre compte à tout moment via les paramètres in-App (Profil → section Compte). La suppression déclenche une suppression en cascade des données associées comme décrit dans la Politique de confidentialité.</li>
-                <li>Nous pouvons suspendre ou résilier votre compte, avec ou sans préavis, si vous violez ces Conditions, vous engagez dans une conduite interdite ou pour toute autre raison à notre discrétion raisonnable.</li>
-                <li>En cas de résiliation, votre droit d'utiliser l'App cesse immédiatement. Les dispositions qui par leur nature devraient survivre (incluant la PI, les exclusions de garantie, la limitation de responsabilité, l'indemnisation et le droit applicable) survivront à la résiliation.</li>
+                <li>Vous pouvez supprimer votre compte à tout moment via les paramètres in-app (section Profil → Compte). La suppression déclenche la suppression en cascade des données associées comme décrit dans la Politique de confidentialité</li>
+                <li>Nous pouvons suspendre ou résilier votre compte, avec ou sans préavis, si vous enfreignez ces Conditions, vous engagez dans une conduite interdite ou pour toute autre raison à notre discrétion raisonnable</li>
+                <li>À la résiliation, votre droit d'utiliser l'Application cesse immédiatement. Nous pouvons révoquer ou mettre à zéro les coins virtuels, les placements de classement, l'éligibilité aux dons, les progrès d'explorateur ou de combo, les crédits de parrainage, les allocations Wingman, les droits cosmétiques premium, les soldes promotionnels de pools de lieux, les boosts, les badges ou des fonctionnalités de fidélité similaires comme décrit dans la Politique de confidentialité ou les avis in-app. Les dispositions qui par leur nature devraient survivre (y compris la propriété intellectuelle, les exclusions de garantie, les limitations de responsabilité, l'indemnisation et le droit applicable) survivront à la résiliation</li>
             </ul>
 
             <!-- 11. Disclaimers -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">11. Exclusions de garantie et limitation de responsabilité</h2>
-            <p class="text-lg leading-relaxed text-white/80">L'APP ET LES SERVICES SONT FOURNIS « TELS QUELS » ET « TELS QUE DISPONIBLES » SANS GARANTIE D'AUCUNE SORTE, EXPRESSE OU IMPLICITE, Y COMPRIS MAIS SANS S'Y LIMITER LES GARANTIES DE QUALITÉ MARCHANDE, D'ADÉQUATION À UN USAGE PARTICULIER OU DE NON-CONTREFAÇON.</p>
+            <p class="text-lg leading-relaxed text-white/80">L'APPLICATION ET LES SERVICES SONT FOURNIS « TELS QUELS » ET « TELS QUE DISPONIBLES » SANS AUCUNE GARANTIE DE QUELQUE NATURE QUE CE SOIT, EXPRESSE OU IMPLICITE, Y COMPRIS MAIS SANS S'Y LIMITER LES GARANTIES DE QUALITÉ MARCHANDE, D'ADÉQUATION À UN USAGE PARTICULIER OU DE NON-CONTREFAÇON.</p>
             <p class="text-lg leading-relaxed text-white/80 mt-6">Nous ne garantissons pas :</p>
             <ul class="list-disc pl-6 mt-4 space-y-3 text-white/80 text-[17px]">
-                <li>Que vous trouverez des personnes compatibles ou des Lieux appropriés.</li>
-                <li>L'exactitude, l'exhaustivité ou l'actualité des données de localisation, des scores de correspondance, des informations professionnelles ou du Contenu.</li>
-                <li>Le comportement, l'identité ou la fiabilité d'autres utilisateurs ou propriétaires de lieux.</li>
-                <li>La sécurité, la légalité ou le succès de toute rencontre, événement ou transaction réelle.</li>
+                <li>Que vous trouverez des personnes compatibles ou des lieux appropriés</li>
+                <li>L'exactitude, l'exhaustivité ou l'actualité des données de localisation, des scores de matching, des informations commerciales ou du contenu</li>
+                <li>Le comportement, l'identité ou la fiabilité d'autres utilisateurs ou propriétaires de lieux</li>
+                <li>La sécurité, la légalité ou le succès de toute rencontre, événement ou transaction réelle</li>
+                <li>La disponibilité, la rareté ou la valeur de revente — le cas échéant — des coins virtuels, cosmétiques, classements, résultats de dons, explorateurs, combos, pools de lieux, primes de parrainage, cadres, boosts, badges, inventaire de boutique ou objets numériques analogues (ils restent des fonctionnalités d'application discrétionnaires et révocables — pas des comptes bancaires, instruments fiduciaires, valeurs mobilières, instruments de valeur stockée ou droits de propriété transférables en dehors des règles étroites de dons in-app)</li>
+                <li>La possibilité de remboursement au-delà de ce qu'Apple/Google/Stripe impose ; les chargebacks ou litiges de paiement peuvent nous amener à ajuster ou supprimer les droits associés, soldes de coins, fenêtres d'abonnement ou pools de coins sans préavis supplémentaire</li>
             </ul>
-            <p class="text-lg leading-relaxed text-white/80 mt-6">Dans toute la mesure permise par la loi applicable, Findme et ses affiliés, dirigeants, employés et agents ne seront pas responsables de tout dommage indirect, accessoire, spécial, consécutif, punitif ou exemplaire, y compris la perte de profits, de données, de goodwill ou d'autres pertes immatérielles, découlant de ou en relation avec votre utilisation (ou incapacité à utiliser) l'App, même si nous avons été informés de la possibilité de tels dommages.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-6">Dans toute la mesure permise par la loi applicable, Findme et ses affiliés, dirigeants, employés et agents ne seront pas responsables des dommages indirects, accessoires, spéciaux, consécutifs, punitifs ou exemplaires, y compris la perte de profits, de données, de goodwill ou d'autres pertes immatérielles, découlant de ou en relation avec votre utilisation (ou incapacité à utiliser) l'Application, même si nous avons été informés de la possibilité de tels dommages.</p>
 
             <!-- 12. Indemnification -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">12. Indemnisation</h2>
-            <p class="text-lg leading-relaxed text-white/80">Vous acceptez d'indemniser, de défendre et de dégager de toute responsabilité Findme et ses affiliés, dirigeants, administrateurs, employés et agents contre toute réclamation, dommage, perte, responsabilité, coût et dépense (y compris les honoraires d'avocat raisonnables) découlant de ou liés à votre utilisation de l'App, votre Contenu, votre violation de ces Conditions ou votre violation de tout droit de tiers.</p>
+            <p class="text-lg leading-relaxed text-white/80">Vous acceptez d'indemniser, de défendre et de dégager de toute responsabilité Findme et ses affiliés, dirigeants, administrateurs, employés et agents contre toutes réclamations, dommages, pertes, responsabilités, coûts et dépenses (y compris les honoraires d'avocats raisonnables) découlant de ou liés à votre utilisation de l'Application, votre contenu, votre violation de ces Conditions ou votre violation de tout droit de tiers.</p>
 
             <!-- 13. Governing Law -->
-            <h2 class="text-3xl font-semibold mt-16 mb-6">13. Droit applicable et résolution des litiges</h2>
-            <p class="text-lg leading-relaxed text-white/80">Ces Conditions sont régies et interprétées conformément aux lois de la Suisse, sans égard à ses principes de conflits de lois. Tout litige découlant de ou relatif à ces Conditions ou à l'App sera d'abord tenté d'être résolu à l'amiable. S'il n'est pas résolu dans les trente (30) jours, le litige sera soumis à la juridiction exclusive des tribunaux compétents de Bâle, Suisse.</p>
+            <h2 class="text-3xl font-semibold mt-16 mb-6">13. Loi applicable et résolution des litiges</h2>
+            <p class="text-lg leading-relaxed text-white/80">Ces Conditions sont régies par et interprétées conformément aux lois de la Suisse, sans égard à ses principes de conflits de lois. Tout litige découlant de ou lié à ces Conditions ou à l'Application sera d'abord tenté d'être résolu à l'amiable. S'il n'est pas résolu dans les trente (30) jours, le litige sera soumis à la juridiction exclusive des tribunaux compétents de Bâle, Suisse.</p>
 
             <!-- 14. Changes -->
-            <h2 class="text-3xl font-semibold mt-16 mb-6">14. Modifications de ces Conditions</h2>
-            <p class="text-lg leading-relaxed text-white/80">Nous pouvons mettre à jour ces Conditions de temps à autre. Nous vous informerons des modifications importantes via l'App, une notification push ou un e-mail. Votre utilisation continue de l'App après la date d'entrée en vigueur d'une mise à jour constitue l'acceptation des Conditions révisées.</p>
+            <h2 class="text-3xl font-semibold mt-16 mb-6">14. Modifications de ces conditions</h2>
+            <p class="text-lg leading-relaxed text-white/80">Nous pouvons mettre à jour ces Conditions de temps à autre. Nous vous informerons des modifications importantes via l'Application, une notification push ou un e-mail. Votre utilisation continue de l'Application après la date d'entrée en vigueur d'une mise à jour constitue votre acceptation des Conditions révisées.</p>
 
             <!-- 15. Contact -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">15. Nous contacter</h2>
-            <p class="text-lg leading-relaxed text-white/80">Pour toute question concernant ces Conditions d'utilisation, veuillez nous contacter à :</p>
+            <p class="text-lg leading-relaxed text-white/80">Pour toute question sur ces Conditions d'utilisation, veuillez nous contacter à :</p>
 
             <div class="mt-6 p-8 bg-white/5 rounded-3xl border border-white/10">
                 <div class="flex flex-col gap-y-3">
-                    <div><span class="font-semibold text-white">E-mail :</span> <a
+                    <div><span class="font-semibold text-white" data-i18n="legal.tos.emailLabel">E-mail :</span> <a
                             href="mailto:info@findmeirl.app" class="text-[#5E9ED6]">info@findmeirl.app</a></div>
-                    <div><span class="font-semibold text-white">Site web :</span> <a
+                    <div><span class="font-semibold text-white" data-i18n="legal.tos.webLabel">Site web :</span> <a
                             href="https://findmeirl.app" class="text-[#5E9ED6]">https://findmeirl.app</a></div>
                 </div>
                 <div class="mt-6 pt-6 border-t border-white/10 text-sm text-white/60">
-                    <span>Les pages légales sont publiées à :</span><br>
-                    <span>Politique de confidentialité :</span> <a data-legal-link="privacy"
+                    <span data-i18n="legal.tos.published">Les pages légales sont publiées à :</span><br>
+                    <span data-i18n="legal.tos.ppLabel">Politique de confidentialité :</span> <a data-legal-link="privacy"
                         data-legal-sync-href="" href="privacy_fr.html"
                         class="text-[#5E9ED6]">https://findmeirl.app/privacy_fr.html</a><br>
-                    <span>Conditions d'utilisation :</span> <a data-legal-link="terms"
+                    <span data-i18n="legal.tos.tosLabel">Conditions d'utilisation :</span> <a data-legal-link="terms"
                         data-legal-sync-href="" href="terms_fr.html"
                         class="text-[#5E9ED6]">https://findmeirl.app/terms_fr.html</a>
                 </div>
             </div>
 
-            <p class="mt-8 text-sm text-white/60">Ces Conditions, avec la Politique de confidentialité, constituent l'intégralité de l'accord entre vous et Findme concernant l'App et remplacent tous les accords antérieurs. Si une disposition est jugée inapplicable, les dispositions restantes resteront en vigueur.</p>
+            <p class="mt-8 text-sm text-white/60" data-i18n="legal.tos.closing">Ces Conditions, avec la Politique de confidentialité, constituent l'intégralité de l'accord entre vous et Findme concernant l'Application et remplacent tous les accords antérieurs. Si une disposition est jugée inapplicable, les dispositions restantes resteront en vigueur.</p>
 
             <!-- Footer -->
             <div class="mt-20 pt-12 border-t border-white/10 text-center text-xs text-white/40">
-                <span>Date d'entrée en vigueur : 30 avril 2026 • Dernière mise à jour : 21 mai 2026</span><br>
-                <span>Régi par les lois de la Suisse</span><br>
-                <span>findmeirl.app • Découverte sociale respectueuse de la vie privée</span>
+                <span data-i18n="legal.tos.effective">Date d'entrée en vigueur : 30 avril 2026 • Dernière mise à jour : 27 mai 2026</span><br>
+                <span data-i18n="legal.tos.footerLine">Governed by the laws of Switzerland</span><br>
+                <span data-i18n="legal.tos.footer">findmeirl.app • Découverte sociale respectueuse de la vie privée</span>
             </div>
         </div>
     </div>
 
     <script src="../assets/i18n/site-i18n.js?v=20260522"></script>
-    <script>
-        function initializeTailwind() {
-            console.log('%c[findmeIRL] Conditions d\'utilisation (FR) initialisées', 'color:#5E9ED6;font-size:10px');
-        }
-        window.onload = initializeTailwind;
-    </script>
 </body>
 
 </html>

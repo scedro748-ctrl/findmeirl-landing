@@ -99,7 +99,7 @@
             <div class="mb-16">
                 <div class="inline-flex items-center px-5 py-2 bg-white/10 rounded-3xl text-sm mb-6">
                     <span class="text-emerald-400">●</span>
-                    <span class="ml-2 font-medium" data-i18n="legal.tos.updated">Last updated: May 21, 2026</span>
+                    <span class="ml-2 font-medium" data-i18n="legal.tos.updated">Last updated: May 27, 2026</span>
                 </div>
                 <h1 class="text-6xl font-semibold tracking-tighter logo-font mb-4" data-i18n="legal.tos.h1">Terms of
                     Service</h1>
@@ -158,27 +158,34 @@
             <ul class="list-disc pl-6 mt-6 space-y-3 text-white/80 text-[17px]">
                 <li><strong>Discover:</strong> Interactive map displaying obfuscated positions for Personal Users and
                     fixed public pins for Venues, together with a horizontal people strip and followed-venue posts
-                    strip. Users may choose whether their obfuscated location appears as a map pin.</li>
+                    strip. Users may hide their avatar from the people-pin layer entirely, suppress fresh GPS syncing by
+                    disabling Nearby discovery, and optionally surface explorer-themed progress tied to coarse grid footprints.</li>
                 <li><strong>Events:</strong> Creation, discovery, and RSVP functionality with automatic group chat
                     creation for each event</li>
                 <li><strong>Chats:</strong> Direct messaging between connected Users and event-linked group chats (with
-                    host administrator privileges, member management, and ban functionality), with optional AI
-                    assistance for message suggestions</li>
+                    host administrator privileges, member management, and ban functionality), with optional Chat Wingman
+                    reply suggestions whenever you independently enable AI assistance in Settings</li>
                 <li><strong>Connections &amp; Contacts:</strong> Sending, accepting, declining, and blocking connection
                     requests; viewing accepted contacts</li>
-                <li><strong>Profile:</strong> Personal profile management, interest selection, soulmate matching scores,
-                    gallery, privacy controls (including private mode and online status opt-out), and optional AI-assisted
-                    profile optimization suggestions</li>
+                <li><strong>Profile:</strong> Personal profile management, interest selection (including optional AI-assisted drafting when you opt in under Settings), gallery photos (which may contribute machine-assistive “vibe” tags when analyzed for matching or chat assistance), soulmate matching scores, privacy controls (private mode, online status opt-out, Nearby discovery toggle, AI Profile Assistant toggle, AI Chat Wingman toggle), optional city leaderboard visibility, coin wallet, badges, explorer milestones, premium status, and gifting entry points</li>
                 <li><strong>Business &amp; Venues:</strong> Business account signup, venue listing editor (including
-                    address, coordinates, opening hours), post composition and timeline management, follower insights,
-                    and public discoverability for approved Venues</li>
+                    address, coordinates, opening hours), post composition and follower-facing timelines, follower insights, optional AI-assisted copy when enabled in Settings, Stripe-powered optional coin-pool funding/checkout for qualified listings, and public discoverability for approved Venues</li>
             </ul>
+
+            <h3>4.1 Virtual Coins, Badges, Gifting, Explorers, Combos &amp; Leaderboards</h3>
+            <p class="text-lg leading-relaxed text-white/80">The App offers non-transferable loyalty features such as in-app coins, badges, cosmetics, Discover boosts, coin tiers or earn multipliers, spend-to-unlock offers, gifting between accepted contacts, referrals and attendance-based bonuses, explorer milestones keyed to coarse map grids, combo-style celebration hooks, venue-level coin perks, optional city leaderboard placement when you expressly opt in, and similar mechanics described inside the UI. Coins and rewards have no intrinsic cash value unless required otherwise by mandatory law—cannot be redeemed for fiat absent an explicit approved program—and Findme may change, sunset, withhold, revoke, claw back balances, disqualify leaderboard participants, impose caps/throttles/cooldowns, or adjust earn rates anytime for balance, fairness, regulation, suspension, exploitation, refunds/chargebacks, or abuse reasons.</p>
+
+            <h3>4.2 Premium Subscriptions</h3>
+            <p class="text-lg leading-relaxed text-white/80">Optional premium plans are billed by Apple App Store or Google Play through interfaces they control subject to each platform’s standard terms. Receipt validation and entitlement mapping may leverage RevenueCat. Premium perks (including earn multipliers, Discover tie-breaking, cosmetics, and Wingman allowances—each as described in-product) depend on successful Store purchases and server sync; canceling through the storefront stops renewals, while active prepaid periods generally continue through the billing window per platform rules.</p>
+
+            <h3>4.3 Stripe-Funded Venue Pool Top-Ups</h3>
+            <p class="text-lg leading-relaxed text-white/80">Business Users initiating optional pooled coin funding bundles open Stripe-hosted Checkout sessions; Stripe receives payment card data—not Findme’s mobile clients—and Findme records resulting entitlements/metadata needed to reconcile venue promotional balances per policy.</p>
+
             <p class="text-lg leading-relaxed text-white/80 mt-6">We use grid-based location obfuscation so that exact
                 GPS coordinates of Personal Users are never shown to others. Business venue coordinates are
-                intentionally public and controlled by the Venue Owner. The App offers optional AI-powered tools to
-                suggest profile improvements and chat message ideas; these suggestions are provided for convenience
-                only. You remain solely responsible for reviewing, editing, and approving any AI-assisted content
-                before it is published or sent.</p>
+                intentionally public and controlled by the Venue Owner. Optional Profile Assistant prompts and Chat
+                Wingman reply ideas only run when activated under Settings—they are illustrative conveniences—not
+                professional advice—and you decide what is saved or sent.</p>
 
             <!-- 5. User Accounts -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">5. User Accounts and Profiles</h2>
@@ -234,6 +241,7 @@
                 <li>Violate the privacy of other Users or scrape, reverse-engineer, or abuse the App or its
                     infrastructure</li>
                 <li>Publish false or misleading information about a Venue, promotion, or event</li>
+                <li>Use bots, scripted exploitation, spoofed presence, counterfeit referrals, laundering schemes, abusive chargebacks or refunds, or other deceptive tactics to distort coins, combos, gifting, explorers, leaderboard placement, pooled venue perks, in-app purchase entitlements, premium subscription windows, or referral payouts</li>
             </ul>
             <p class="text-lg leading-relaxed text-white/80 mt-4">Business Posts must comply with applicable advertising
                 and consumer protection laws. Repeated or severe violations may trigger automated escalation review and
@@ -297,6 +305,7 @@
             <p class="text-lg leading-relaxed text-white/80 mt-4">Users may optionally opt in to contribute anonymized aggregate data about venue visits.
                 This data helps venue owners understand listing performance and is never linked to individual
                 identities.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4">Leaderboards, referrals, coins, explorer stats, combo highlights, Stripe settlement metadata, Store receipts, Wingman usage logs, and similar economy records are processed per the <a href="privacy.html" data-legal-link="privacy">Privacy Policy</a> and in-product controls (for example toggles for Nearby discovery, AI assistants, anonymized venue metrics, and optional leaderboard participation).</p>
 
             <!-- 10. Termination -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">10. Termination</h2>
@@ -305,7 +314,7 @@
                     Deletion triggers cascading removal of associated data as described in the Privacy Policy</li>
                 <li>We may suspend or terminate your account, with or without notice, if you violate these Terms, engage
                     in prohibited conduct, or for any other reason in our reasonable discretion</li>
-                <li>Upon termination, your right to use the App ceases immediately. Provisions that by their nature
+                <li>Upon termination, your right to use the App ceases immediately and we may revoke or zero out virtual coins, gifting eligibility, leaderboard standings, explorer or combo progress, referral credits, Wingman allowances, premium cosmetic entitlements, pooled venue promotional balances, boosts, badges, or similar loyalty features as described in this Privacy Policy or in-product notices. Provisions that by their nature
                     should survive (including IP, disclaimers, limitation of liability, indemnification, and governing
                     law) shall survive termination</li>
             </ul>
@@ -322,6 +331,8 @@
                     or Content</li>
                 <li>The behavior, identity, or reliability of other Users or Venue Owners</li>
                 <li>The safety, legality, or success of any real-world meeting, event, or transaction</li>
+                <li>Value, persistence, or liquidity of virtual coins, boosts, cosmetic frames, leaderboard ranks, referral bonuses, explorer badges, combo highlights, pooled venue promotional balances, shop inventory, gifting outcomes, or analogous in-app entitlements—these are discretionary, revocable mechanics with no guaranteed monetary value outside what mandatory law requires</li>
+                <li>Refund timelines beyond each storefront or payment processor’s policies; chargebacks, payment disputes, fraud findings, or reconciliation issues may cause us to adjust or remove related entitlements, coin balances, pooled funding, or leaderboard participation</li>
             </ul>
             <p class="text-lg leading-relaxed text-white/80 mt-6">To the fullest extent permitted by applicable law,
                 Findme and its affiliates, officers, employees, and agents shall not be liable for any indirect,
@@ -381,7 +392,7 @@
 
             <!-- Footer -->
             <div class="mt-20 pt-12 border-t border-white/10 text-center text-xs text-white/40">
-                <span data-i18n="legal.tos.effective">Effective Date: April 30, 2026 • Last Updated: May 21,
+                <span data-i18n="legal.tos.effective">Effective Date: April 30, 2026 • Last Updated: May 27,
                     2026</span><br>
                 <span data-i18n="legal.tos.footerLine">Governed by the laws of Switzerland</span><br>
                 <span data-i18n="legal.tos.footer">findmeirl.app • Privacy-first social discovery</span>
@@ -390,12 +401,6 @@
     </div>
 
     <script src="../assets/i18n/site-i18n.js?v=20260522"></script>
-    <script>
-        function initializeTailwind() {
-            console.log('%c[findmeIRL] Terms of Service page initialized', 'color:#5E9ED6;font-size:10px');
-        }
-        window.onload = initializeTailwind;
-    </script>
 </body>
 
 </html>

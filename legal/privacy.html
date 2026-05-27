@@ -88,7 +88,7 @@
             <div class="mb-16">
                 <div class="inline-flex items-center px-5 py-2 bg-white/10 rounded-3xl text-sm mb-6">
                     <span class="text-emerald-400">●</span>
-                    <span class="ml-2 font-medium" data-i18n="legal.priv.updated">Last updated: May 21, 2026</span>
+                    <span class="ml-2 font-medium" data-i18n="legal.priv.updated">Last updated: May 27, 2026</span>
                 </div>
                 <h1 class="text-6xl font-semibold tracking-tighter logo-font mb-4" data-i18n="legal.priv.h1">Privacy Policy</h1>
                 <p class="text-2xl text-white/70" data-i18n="legal.priv.subtitle">findmeIRL (“Findme”, “we”, “us”, or “our”)</p>
@@ -125,7 +125,7 @@
                 <div class="font-semibold text-white mb-3">Business Users (Venue Owners)</div>
                 <ul class="list-disc pl-6 space-y-2 text-white/80 text-[17px]">
                     <li>Business profile details: business name, contact person, business email, phone number, description, category, physical address, website URL, avatar/logo, banner image, owner-selected geographic coordinates (latitude/longitude), opening hours schedule (JSON format), and moderation status fields</li>
-                    <li>Business content: posts including title, body, post type (promotion, update, event, behind-the-scenes, testimonial, community), optional image or external link</li>
+                    <li>Business content: posts including title, body, post type (promotion, update, event, behind-the-scenes, testimonial, community), optional image or external link; follower notifications and likes count on venue posts reflect engagement metrics</li>
                 </ul>
             </div>
             
@@ -148,15 +148,23 @@
                 <li>App usage and interaction data (e.g., feature usage, session duration)</li>
                 <li>IP address and coarse location (country level) for analytics and abuse prevention</li>
                 <li>Geocoding requests via third-party services (e.g., Nominatim) when a Business User searches for or sets a venue address</li>
+                <li>Referral attribution (e.g., campaign identifiers or referrer links tied to installs and eligible reward events processed per product rules described in-product)</li>
             </ul>
 
-            <h3>2.4 Interest and Matching Data</h3>
-            <p class="text-lg leading-relaxed text-white/80">We collect and process your selected interests and custom interest submissions to power personalized recommendations, soulmate matching scores, and Discover feed ranking. Custom interest submissions are subject to administrative review before being added to the public catalog. Match scores are computed server-side and shared only in aggregated or anonymized form within the App. Optional AI assistance features (profile optimization and chat suggestions) process your profile and conversation context transiently to generate personalized suggestions; inputs are not stored for model training or retained beyond the immediate request.</p>
+            <h3>2.4 Matching, Recommendations, and AI-Assisted Features</h3>
+            <p class="text-lg leading-relaxed text-white/80">We collect and process your selected interests, language, demographics, optional catalog hobbies or custom hobbies/interests, and related profile fields (including semantic or hybrid match scores where enabled) to power personalized recommendations, soulmate matching scores, and Discover ranking. Custom interest submissions are subject to administrative review before being added to the public catalog. Match scores may be computed server-side and shown to other authenticated users in previews or rankings as part of discovery.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4"><strong class="text-white">AI Profile Assistant (opt-in).</strong> If you enable it in Settings, you may generate suggested bios and related profile text via our Supabase Edge Functions. Outputs are transient unless you deliberately save edited text into your profile. Enabling AI Profile Assistant is separate from in-app chat suggestion features.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4"><strong class="text-white">AI Chat “Wingman” (opt-in).</strong> If you enable it in Settings, snippets of chat draft text—and limited profile-derived context permitted by our policies (such as curator-approved vibe tags derived from uploaded gallery imagery where available)—may be sent to Edge Functions so the service can propose optional reply phrases. Inputs are processed for that request only and not used for model training. Premium subscribers receive monthly Wingman credits; remaining usage may rely on allowance or promotional rules shown in-app.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4">Formatting and validation pipelines for manually entered hobby or interest text may similarly call automation to improve spelling or suggest catalog labels prior to moderator review.</p>
 
-            <h3>2.5 No Third-Party Advertising or Data Brokerage</h3>
+            <h3>2.5 Virtual Coins, Premium, Referrals, and Payments</h3>
+            <p class="text-lg leading-relaxed text-white/80">The App includes an in-experience loyalty layer (“coins”), badges/cosmetics, optional venue-based coin offers or pool funding flows, gifting coins to accepted contacts (with optional short messages), leaderboard participation in your city where you explicitly opt in, explorer-style milestones tied to broad grid-location activity, referrals and attendance-related rewards, plus server-side badges and leaderboard rows associated with social “combo” milestones. Associated data typically includes identifiers, timestamps, ledger entries/coin deltas, badges earned, boosts or frames expiry, leaderboard opt-in, referral attribution tied to installs or installs plus eligible real-world behaviors, Stripe checkout session metadata for pooled venue funding initiated by Venue Owners who choose optional paid top-ups or physical fulfilment postal details when you voluntarily request mailed items.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4"><strong class="text-white">Premium subscriptions:</strong> When you subscribe through Apple App Store or Google Play, billing is handled exclusively by Apple or Google pursuant to their terms. RevenueCat securely maps Store receipts with your authenticated account so we can grant premium entitlement (shown in-profile and used for perks such as earn multipliers, Discover tie-breaking, cosmetics, Wingman allowances, optional frame unlocks).</p>
+
+            <h3>2.6 No Third-Party Advertising or Data Brokerage</h3>
             <p class="text-lg leading-relaxed text-white/80">We do not integrate advertising SDKs, sell personal data to data brokers, or use your information for behavioral advertising.</p>
 
-            <h3>2.6 User-Generated Content and Image Scanning</h3>
+            <h3>2.7 User-Generated Content and Image Scanning</h3>
             <p class="text-lg leading-relaxed text-white/80">All images uploaded to the App (avatars, banners, gallery photos, event covers/memories, business logos, banners, and posts) are first placed in a private staging bucket and scanned by an automated AI system (Google Cloud Vision Safe Search) before being promoted to public storage. The scan detects illegal, explicit, or harmful content. Content that fails the scan is blocked from publication.</p>
             <p class="text-lg leading-relaxed text-white/80 mt-4">User-submitted text—such as profile biographies, business descriptions, custom hobby or interest submissions, and business posts—is processed by an automated AI content moderation system. This system analyzes text for prohibited categories including hate speech, harassment, threats, explicit or sexual content, violence, spam, scams, and other violations. Content that exceeds defined risk thresholds may be blocked from publication or flagged for review. This helps maintain a safe environment for all users.</p>
 
@@ -172,8 +180,8 @@
                 <li>Enforce safety, moderation, and compliance (including in-app reporting, blocking, chat bans, administrative review of custom interests, proactive AI moderation of bios / descriptions / posts / submissions for hate speech and other prohibited content, and automated AI triage of reports)</li>
                 <li>Record your acceptance of these Terms and this Policy (via the acceptance timestamp on your profile) for compliance and audit purposes</li>
                 <li>Improve, debug, and analyze App performance using anonymized or aggregated data</li>
-                <li>Power optional AI assistance features that generate profile and chat suggestions using secure,
-                    privacy-preserving AI processing (no user data is used to train models)</li>
+                <li>Provide optional loyalty, rewards, gifting, leaderboard, explorer, referral, badge, cosmetics, boosts, pooled venue promotional funding workflows, Stripe-hosted checkout summaries, RevenueCat-mediated subscription syncing, Wingman allowances, tiered perks, aggregated venue insights—and opt-in anonymized aggregate visit metrics—with each feature governed by the controls described herein</li>
+                <li>Power optional AI assistance features (<strong class="text-white">Profile Assistant</strong> / <strong class="text-white">Chat Wingman</strong>) strictly when individually enabled via Settings plus related Edge Function processing described in Section&nbsp;2.4 (requests are ephemeral and not repurposed indefinitely for unrelated model training)</li>
                 <li>Respond to legal requests and protect the rights, safety, and property of Findme, Users, and the public</li>
             </ul>
             <p class="text-lg leading-relaxed text-white/80 mt-4">We use in-App reports and automated tools—including AI text moderation for user-generated content and AI triage of reports—to detect and respond to violations. Repeated reports against the same subject may trigger escalation review. Event creation requires hosts to confirm compliance with our non-discrimination policy (see the <a href="terms.html" data-legal-link="terms">Terms of Service</a> section on Open Events and Non-Discrimination for details). This attestation is recorded and helps maintain an inclusive environment.</p>
@@ -194,16 +202,20 @@
             
             <div class="mt-8">
                 <div class="font-semibold text-white mb-4">With other Users</div>
-                <p class="text-white/80">Obfuscated location and profile data for Personal Users (subject to your privacy settings, connection status, and profile visibility flags); fixed public venue coordinates, business profile details, and approved business posts for Venues. Business posts are visible to followers and, for approved venues, publicly via API.</p>
+                <p class="text-white/80">Obfuscated location plus profile cues for Personal Users (honoring Nearby discovery, strip-only-map modes, privacy flags, connections). Economy-oriented signals you deliberately surface—examples include coin tiers, cosmetic frames/badges, premium indicators, Discover boosts or explorer summaries, optional city leaderboard entries, gift notifications, curated gallery vibe tags feeding previews—travel with whichever UI exposes them. Venue pins share owner-selected coordinates, descriptive fields, follower-only or public posts consistent with moderation/approval workflows. Business posts remain visible to followers and, for approved venues, may be exposed through public read paths or APIs we maintain.</p>
             </div>
             
             <div class="mt-8">
                 <div class="font-semibold text-white mb-4">With service providers</div>
                 <p class="text-white/80">Data is shared with contracted processors bound by confidentiality and data protection obligations:</p>
                 <ul class="list-disc pl-6 mt-3 space-y-2 text-white/80">
-                    <li><strong>Supabase</strong> — database, authentication, storage, realtime subscriptions, Row-Level Security</li>
-                    <li><strong>Firebase</strong> — push notification delivery via FCM</li>
-                    <li><strong>Nominatim / OpenStreetMap contributors</strong> — geocoding for venue address lookup (no persistent storage of queries by Findme)</li>
+                    <li><strong>Supabase</strong> — managed PostgreSQL incl. realtime, auth, encrypted object storage buckets, webhook dispatch, Row-Level Security, Edge Functions powering AI-assisted suggestions plus economy maintenance RPCs plus audit logs</li>
+                    <li><strong>Firebase (Google)</strong> — Firebase Cloud Messaging for push relays</li>
+                    <li><strong>Apple &amp; Google</strong> — mobile storefronts facilitating optional premium IAP</li>
+                    <li><strong>RevenueCat</strong> — subscription receipt validation / customer mapping bridging stores with our entitlement records</li>
+                    <li><strong>Stripe</strong> — card-based checkout powering optional venue coin-pool financing flows initiated explicitly by Venue Owners</li>
+                    <li><strong>Third-party model/API providers</strong> (including Google Cloud Vision, language models, embedding services, or equivalents) — invoked transiently through Supabase Edge Functions for moderated profile-assistant copy, chat suggestion generation, gallery vibe labeling where enabled, hobby/interest formatting aids, automated triage pipelines, or supplementary safety reviews described above</li>
+                    <li><strong>Nominatim / OpenStreetMap contributors</strong> — forward geocode lookups for Venue Owners (Findme minimizes retention of lookup strings beyond operational logs)</li>
                 </ul>
             </div>
             
@@ -219,11 +231,11 @@
 
             <!-- 5. Location Data Special Notice -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">5. Location Data – Special Notice for Personal Users</h2>
-            <p class="text-lg leading-relaxed text-white/80">Precise location access is essential for the core discovery functionality of the App. You control when location is shared via device settings (“When In Use” permission). Exact coordinates remain on our servers and are used exclusively for grid computation and obfuscation. Other Users see only a randomized position within the same ~1 km² grid cell. You may stop sharing location at any time. You can also choose whether your obfuscated location appears as a map pin via your privacy settings. Business venue coordinates are owner-controlled and publicly visible by design.</p>
+            <p class="text-lg leading-relaxed text-white/80">Precise location access supports core discovery experiences. Device OS permissions (“When In Use”) control whether fresh GPS readings are captured. Stored coordinates—for Personal Users—power grid/obfuscation logic, Nearby discovery eligibility, explorer rewards keyed to coarse grid footprints, referrals or attendance checks where disclosed in-product, and never expose your exact latitude/longitude pins to strangers. Turning off Nearby discovery removes you from other users’ Nearby queries and disables persisting fresh precise coordinates onto your profile as implemented today, though other tabs may invite device permissions independently. Separate controls let you suppress your people-marker on the Discover map while still appearing in contextual strips when eligible. Venue coordinates remain owner-published and inherently public-facing.</p>
 
             <!-- 6. Data Retention -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">6. Data Retention and Deletion</h2>
-            <p class="text-lg leading-relaxed text-white/80">We retain personal data for as long as your account remains active or as necessary to provide the Services and comply with legal obligations. Upon account deletion (initiated by you in Profile → Account or by us for violations), we perform cascading deletion of your profile, messages, connections, events, business profiles (if owned), posts, follows, and gallery photos, subject to any legal hold or backup retention requirements. Location history for Personal Users is retained only for a limited period. Anonymized or aggregated data (including match score statistics and usage analytics) may be retained indefinitely for service improvement.</p>
+            <p class="text-lg leading-relaxed text-white/80">We retain personal data for as long as your account remains active or as necessary to provide the Services and comply with legal obligations. Upon account deletion (initiated by you in Profile → Account or by us for violations), we perform cascading deletion of your profile, messages, connections, events, business profiles (if owned), posts, follows, gallery photos, coin ledgers, badges, subscription mirrors, referral metadata, and related economy records tied to your user id where configured, subject to any legal hold or backup retention requirements. Location history for Personal Users is retained only for a limited period. Anonymized or aggregated data (including match score statistics and usage analytics) may be retained indefinitely for service improvement.</p>
             <p class="text-lg leading-relaxed text-white/80 mt-4">Account suspension or Business Venue pause temporarily restricts access or visibility while retaining the underlying data. Full deletion only occurs on explicit user request or permanent termination. Suspended/paused records remain subject to the same retention rules until the account is fully deleted.</p>
 
             <!-- 7. Your Rights -->
@@ -241,10 +253,15 @@
             <div class="mt-8">
                 <div class="font-semibold text-white mb-4">Additional controls available in the App:</div>
                 <ul class="list-disc pl-6 space-y-2 text-white/80">
-                    <li>Hide individual conversations from your inbox until new activity occurs</li>
+                    <li>Enable or disable Nearby discovery (Nearby map/strip eligibility and syncing fresh precise coordinates into profiles follows this toggle)</li>
+                    <li>Toggle AI Profile Assistant and AI Chat Wingman independently</li>
+                    <li>Opt in—or decline—to share anonymized aggregate venue visit telemetry supporting listing insights plus dismiss any related prompts</li>
+                    <li>Opt into city leaderboard visibility or stay off leaderboards absent explicit participation</li>
+                    <li>Hide individual inbox threads until refreshed activity restores them</li>
                     <li>Opt out of showing online presence to peers</li>
-                    <li>Control whether your avatar appears on the map</li>
-                    <li>Set your profile as private (minimal card visible to non-connections)</li>
+                    <li>Control whether avatar-driven people pins surface on Discover’s map versus strip appearances</li>
+                    <li>Mark profile private (minimal card for non-connections)</li>
+                    <li>Manage premium subscription renewals exclusively through linked App Stores or Google billing consoles</li>
                 </ul>
             </div>
 
@@ -284,19 +301,12 @@
 
             <!-- Footer -->
             <div class="mt-20 pt-12 border-t border-white/10 text-center text-xs text-white/40">
-                <span data-i18n="legal.priv.effective">Effective Date: April 30, 2026 • Last Updated: May 21, 2026</span><br>
+                <span data-i18n="legal.priv.effective">Effective Date: April 30, 2026 • Last Updated: May 27, 2026</span><br>
                 <span data-i18n="legal.priv.footer">findmeirl.app • Privacy-first social discovery</span>
             </div>
         </div>
     </div>
 
     <script src="../assets/i18n/site-i18n.js?v=20260522"></script>
-    <script>
-        function initializeTailwind() {
-            // Tailwind CDN already loaded
-            console.log('%c[findmeIRL] Privacy Policy page initialized', 'color:#5E9ED6;font-size:10px');
-        }
-        window.onload = initializeTailwind;
-    </script>
 </body>
 </html>

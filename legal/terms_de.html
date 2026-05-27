@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Nutzungsbedingungen für findmeIRL — datenschutzfreundliche Social-Discovery-App mit Unterstützung für Geschäftsstandorte.">
+        content="Nutzungsbedingungen für findmeIRL — datenschutzfreundliche App zur sozialen Entdeckung mit Unterstützung für Geschäftsorte.">
     <title>Nutzungsbedingungen — findmeIRL</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -75,8 +75,8 @@
                 <select
                     class="site-lang-select text-sm font-medium bg-white/5 border border-white/20 rounded-2xl px-2.5 py-2 text-white focus:outline-none focus:ring-2 focus:ring-[#5E9ED6]/40"
                     style="color-scheme: dark;" data-i18n-aria-label="nav.langAria">
+                    <option value="de">DE</option>
                     <option value="en">EN</option>
-                    <option value="de" selected>DE</option>
                     <option value="fr">FR</option>
                     <option value="it">IT</option>
                     <option value="es">ES</option>
@@ -84,10 +84,11 @@
                 </select>
                 <a href="../index.html" class="flex items-center gap-x-2 text-white/70 hover:text-white transition-colors">
                     <i class="fa-solid fa-arrow-left text-xs"></i>
-                    <span>Zurück zur Startseite</span>
+                    <span data-i18n="legal.tos.back">Zurück zur Startseite</span>
                 </a>
                 <a href="privacy_de.html" data-legal-link="privacy"
-                    class="text-white/70 hover:text-[#5E9ED6] transition-colors"><span>Datenschutzrichtlinie</span></a>
+                    class="text-white/70 hover:text-[#5E9ED6] transition-colors"><span
+                        data-i18n="legal.tos.cross">Datenschutzrichtlinie</span></a>
             </div>
         </div>
     </nav>
@@ -98,150 +99,164 @@
             <div class="mb-16">
                 <div class="inline-flex items-center px-5 py-2 bg-white/10 rounded-3xl text-sm mb-6">
                     <span class="text-emerald-400">●</span>
-                    <span class="ml-2 font-medium">Zuletzt aktualisiert: 21. Mai 2026</span>
+                    <span class="ml-2 font-medium" data-i18n="legal.tos.updated">Zuletzt aktualisiert: 27. Mai 2026</span>
                 </div>
-                <h1 class="text-6xl font-semibold tracking-tighter logo-font mb-4">Nutzungsbedingungen</h1>
-                <p class="text-2xl text-white/70">findmeIRL („Findme“, „wir“, „uns“ oder „unser“)</p>
-                <p class="text-sm text-amber-200/70 mb-8 max-w-2xl hidden" data-i18n-toggle-hidden="true"></p>
+                <h1 class="text-6xl font-semibold tracking-tighter logo-font mb-4" data-i18n="legal.tos.h1">Nutzungsbedingungen</h1>
+                <p class="text-2xl text-white/70" data-i18n="legal.tos.subtitle">findmeIRL („Findme“, „wir“, „uns“ oder „unser“)</p>
+                <p class="text-sm text-amber-200/70 mb-8 max-w-2xl hidden" data-i18n="legal.bindingNote"
+                    data-i18n-toggle-hidden="true"></p>
             </div>
 
             <!-- 1. Introduction -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">1. Einleitung und Annahme der Bedingungen</h2>
             <p class="text-lg leading-relaxed text-white/80">
-                Willkommen bei findmeIRL — einer datenschutzfreundlichen Social-Discovery-Mobilanwendung und zugehörigen Diensten
-                (zusammen die „App“ oder „Dienste“). Die App ermöglicht es Einzelpersonen („Persönliche Nutzer“), nahegelegene Personen mit gemeinsamen Interessen zu entdecken und sich mit ihnen zu verbinden, während der genaue Standort geschützt wird, und erlaubt es Unternehmen und Veranstaltungsort-Besitzern („Geschäftsnutzer“), öffentliche Profile zu erstellen, Updates zu veröffentlichen und mit Followern zu interagieren.
+                Willkommen bei findmeIRL — einer datenschutzfreundlichen mobilen App zur sozialen Entdeckung und verwandten Diensten (zusammen die „App“ oder „Dienste“). Die App ermöglicht es Einzelpersonen („Privatnutzer“), in der Nähe lebende Personen mit gemeinsamen Interessen zu entdecken und zu kontaktieren, während der genaue Standort geschützt bleibt, und erlaubt es Unternehmen und Betreibern von Veranstaltungsorten („Geschäftsnutzer“), öffentliche Profile zu erstellen, Updates zu veröffentlichen und mit Followern zu interagieren.
             </p>
             <p class="text-lg leading-relaxed text-white/80 mt-6">
                 Durch das Herunterladen, Installieren, Zugreifen oder Nutzen der App erklären Sie sich mit diesen Nutzungsbedingungen („Bedingungen“) einverstanden. Wenn Sie diesen Bedingungen nicht zustimmen, dürfen Sie die App nicht nutzen.
             </p>
             <p class="text-lg leading-relaxed text-white/80 mt-6">
-                Diese Bedingungen stellen eine rechtsverbindliche Vereinbarung zwischen Ihnen und Findme dar. Bitte lesen Sie sie sorgfältig zusammen mit unserer <a href="privacy_de.html" data-legal-link="privacy">Datenschutzrichtlinie</a>. Großgeschriebene Begriffe haben die hier oder in der Datenschutzrichtlinie definierten Bedeutungen.
+                Diese Bedingungen stellen eine rechtsverbindliche Vereinbarung zwischen Ihnen und Findme dar. Bitte lesen Sie sie zusammen mit unserer <a href="privacy_de.html" data-legal-link="privacy">Datenschutzrichtlinie</a> sorgfältig durch. Großgeschriebene Begriffe haben die hier oder in der Datenschutzrichtlinie definierten Bedeutungen.
             </p>
 
             <!-- 2. Eligibility -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">2. Teilnahmeberechtigung</h2>
-            <p class="text-lg leading-relaxed text-white/80">Sie müssen mindestens <strong>sechzehn (16) Jahre alt</strong> sein, um die App zu nutzen. Durch die Nutzung der App versichern und gewährleisten Sie, dass Sie mindestens 16 Jahre alt sind und die rechtliche Fähigkeit besitzen, diese Bedingungen einzugehen. Wir gestatten wissentlich keine Personen unter 16 Jahren, Konten zu erstellen oder auf die Dienste zuzugreifen. Geschäftskonten unterliegen derselben Mindestaltersanforderung.</p>
+            <p class="text-lg leading-relaxed text-white/80">Sie müssen mindestens <strong>sechzehn (16) Jahre</strong> alt sein, um die App zu nutzen. Mit der Nutzung der App erklären und gewährleisten Sie, dass Sie mindestens 16 Jahre alt sind und die rechtliche Befugnis haben, diese Bedingungen einzugehen. Wir gestatten Personen unter 16 Jahren nicht wissentlich, Konten zu erstellen oder auf die Dienste zuzugreifen. Geschäftskonten unterliegen derselben Mindestaltersanforderung.</p>
 
             <!-- 3. Definitions -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">3. Definitionen</h2>
             <ul class="list-disc pl-6 space-y-3 text-white/80 text-[17px]">
-                <li><strong>„Persönlicher Nutzer“</strong> bezeichnet eine Einzelperson, die die App zu persönlichen Social-Discovery-Zwecken nutzt.</li>
-                <li><strong>„Geschäftsnutzer“</strong> oder <strong>„Veranstaltungsort-Besitzer“</strong> bezeichnet einen Nutzer, der ein oder mehrere Geschäftsprofile über die App registriert hat.</li>
-                <li><strong>„Veranstaltungsort“</strong> bezeichnet einen physischen Geschäftsstandort, der über ein Geschäftsprofil aufgeführt wird und mit vom Besitzer gewählten öffentlichen Koordinaten angezeigt wird.</li>
-                <li><strong>„Inhalt“</strong> bezeichnet alle Texte, Bilder, Beiträge, Events, Nachrichten, Profile oder andere Materialien, die über die App hochgeladen, gepostet oder übertragen werden.</li>
-                <li><strong>„Geschäftsbeitrag“</strong> bezeichnet Inhalte, die von einem Geschäftsnutzer auf der Timeline seines Veranstaltungsorts veröffentlicht werden (Typen umfassen Werbung, Update, Event, Hinter-den-Kulissen, Testimonial und Community).</li>
+                <li><strong>„Privatnutzer“</strong> bezeichnet eine natürliche Person, die die App zu persönlichen Zwecken der sozialen Entdeckung nutzt.</li>
+                <li><strong>„Geschäftsnutzer“</strong> oder <strong>„Betreiber eines Veranstaltungsortes“</strong> bezeichnet einen Nutzer, der über die App ein oder mehrere Geschäftsprofile registriert hat.</li>
+                <li><strong>„Veranstaltungsort“</strong> bezeichnet einen physischen Geschäftsstandort, der über ein Geschäftsprofil eingetragen und mit vom Eigentümer festgelegten öffentlichen Koordinaten angezeigt wird.</li>
+                <li><strong>„Inhalt“</strong> bezeichnet alle Texte, Bilder, Beiträge, Veranstaltungen, Nachrichten, Profile oder sonstigen Materialien, die über die App hochgeladen, gepostet oder übertragen werden.</li>
+                <li><strong>„Geschäftsbeitrag“</strong> bezeichnet Inhalte, die ein Geschäftsnutzer auf der Timeline seines Veranstaltungsortes veröffentlicht (Typen: Werbung, Update, Veranstaltung, Hinter den Kulissen, Testimonial, Community).</li>
             </ul>
 
             <!-- 4. Our Services -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">4. Unsere Dienste</h2>
-            <p class="text-lg leading-relaxed text-white/80">Die App bietet eine datenschutzfreundliche Plattform für Social Discovery und Veranstaltungsort-Engagement. Zu den wichtigsten Funktionen gehören:</p>
+            <p class="text-lg leading-relaxed text-white/80">Die App bietet eine datenschutzfreundliche Plattform für soziale Entdeckung und die Interaktion mit Veranstaltungsorten. Zu den wichtigsten Funktionen gehören:</p>
             <ul class="list-disc pl-6 mt-6 space-y-3 text-white/80 text-[17px]">
-                <li><strong>Entdecken:</strong> Interaktive Karte mit verschleierten Positionen für persönliche Nutzer und festen öffentlichen Pins für Veranstaltungsorte, zusammen mit einem horizontalen Personen-Streifen und einem Streifen für gefolgten Veranstaltungsort-Beiträgen. Nutzer können wählen, ob ihr verschleierter Standort als Karten-Pin erscheint.</li>
-                <li><strong>Events:</strong> Erstellen, Entdecken und RSVP-Funktionen mit automatischer Gruppenchat-Erstellung für jedes Event.</li>
-                <li><strong>Chats:</strong> Direktnachrichten zwischen verbundenen Nutzern und event-verknüpften Gruppenchats (mit Administratorrechten des Hosts, Mitgliederverwaltung und Sperrfunktion), mit optionaler KI-Unterstützung für Nachrichtenvorschläge.</li>
-                <li><strong>Verbindungen &amp; Kontakte:</strong> Senden, Annehmen, Ablehnen und Blockieren von Verbindungsanfragen; Anzeigen akzeptierter Kontakte.</li>
-                <li><strong>Profil:</strong> Persönliche Profilpflege, Interessenauswahl, Soulmate-Matching-Scores, Galerie, Datenschutzeinstellungen (einschließlich Privatmodus und Opt-out für Online-Status) und optionale KI-gestützte Profiloptimierungsvorschläge.</li>
-                <li><strong>Geschäfte &amp; Veranstaltungsorte:</strong> Anmeldung für Geschäftskonten, Editor für Veranstaltungsort-Listings (einschließlich Adresse, Koordinaten, Öffnungszeiten), Verfassen von Beiträgen und Timeline-Verwaltung, Follower-Einblicke und öffentliche Auffindbarkeit für genehmigte Veranstaltungsorte.</li>
+                <li><strong>Entdecken:</strong> Interaktive Karte mit verschleierten Positionen für Privatnutzer und festen öffentlichen Pins für Veranstaltungsorte, zusammen mit einem horizontalen Personen-Streifen und einem Streifen mit Beiträgen gefolgter Veranstaltungsorte. Nutzer können festlegen, ob ihre verschleierte Position als Karten-Pin angezeigt wird.</li>
+                <li><strong>Veranstaltungen:</strong> Erstellen, Entdecken und RSVP-Funktion mit automatischer Erstellung von Gruppenchats für jede Veranstaltung</li>
+                <li><strong>Chats:</strong> Direkte Nachrichten zwischen verbundenen Nutzern und ereignisbezogene Gruppenchats (mit Administratorrechten des Gastgebers, Mitgliederverwaltung und Bann-Funktion), mit optionalen KI-gestützten Chat-Vorschlägen, sofern in den Einstellungen aktiviert</li>
+                <li><strong>Verbindungen &amp; Kontakte:</strong> Senden, Annehmen, Ablehnen und Blockieren von Verbindungsanfragen; Anzeigen akzeptierter Kontakte</li>
+                <li><strong>Profil:</strong> Verwaltung des persönlichen Profils, Auswahl von Interessen (einschließlich optionaler KI-gestützter Entwürfe bei Aktivierung in den Einstellungen), Galerie-Fotos (die maschinenunterstützte „Vibe-Tags“ für Matching oder Chat-Unterstützung liefern können), Soulmate-Match-Scores, Datenschutzeinstellungen (privater Modus, Online-Status deaktivieren, Nearby-Discovery deaktivieren, KI-Profil-Assistent, KI-Chat-Wingman), optionale Sichtbarkeit in der Stadt-Bestenliste, Coin-Wallet, Abzeichen, Explorer-Meilensteine, Premium-Status und Einstiegspunkte zum Verschenken von Coins</li>
+                <li><strong>Geschäfte &amp; Veranstaltungsorte:</strong> Anmeldung als Geschäftskonto, Editor für Veranstaltungsort-Einträge (einschließlich Adresse, Koordinaten, Öffnungszeiten), Erstellen von Beiträgen und Follower-Timelines, Einblicke für Follower, optionaler KI-gestützter Text bei Aktivierung in den Einstellungen, optionaler über Stripe finanzierter Coin-Pool für qualifizierte Einträge und öffentliche Auffindbarkeit für genehmigte Veranstaltungsorte</li>
             </ul>
-            <p class="text-lg leading-relaxed text-white/80 mt-6">Wir verwenden gitterbasierte Standortverschleierung, sodass exakte GPS-Koordinaten persönlicher Nutzer niemals anderen angezeigt werden. Koordinaten von Geschäftsveranstaltungsorten sind absichtlich öffentlich und werden vom Veranstaltungsort-Besitzer kontrolliert. Die App bietet optionale KI-gestützte Tools zur Verbesserung von Profilen und Chat-Nachrichtenvorschlägen; diese Vorschläge dienen nur der Bequemlichkeit. Sie bleiben allein verantwortlich für die Überprüfung, Bearbeitung und Genehmigung jeglicher KI-gestützter Inhalte, bevor sie veröffentlicht oder gesendet werden.</p>
+
+            <h3>4.1 Virtuelle Coins, Abzeichen, Geschenke, Explorer, Combos &amp; Bestenlisten</h3>
+            <p class="text-lg leading-relaxed text-white/80">Die App bietet nicht übertragbare Treuefunktionen wie In-App-Coins, Abzeichen, Kosmetik, Discover-Boosts, Coin-Tiers oder Verdienst-Multiplikatoren, Ausgaben-zum-Freischalten-Angebote, Geschenke zwischen akzeptierten Kontakten, Empfehlungs- und besuchsbasierte Boni, Explorer-Meilensteine basierend auf groben Karten-Rastern, Combo-Feiern, Coin-Vorteile für Veranstaltungsorte, optionale Platzierung in der Stadt-Bestenliste bei ausdrücklicher Zustimmung und ähnliche in der Benutzeroberfläche beschriebene Mechanismen. Coins und Belohnungen haben keinen intrinsischen Geldwert, es sei denn, dies ist durch zwingendes Recht vorgeschrieben — sie können nicht gegen Fiat-Geld eingelöst werden, es sei denn, es gibt ein ausdrücklich genehmigtes Programm — und Findme kann jederzeit Guthaben ändern, auslaufen lassen, einbehalten, widerrufen, zurückfordern, Bestenlisten-Teilnehmer disqualifizieren, Limits/Drosselungen/Cooldowns verhängen oder Verdienstsätze anpassen, um Gleichgewicht, Fairness, Regulierung, Sperrung, Ausbeutung, Rückerstattungen/Chargebacks oder Missbrauch zu gewährleisten.</p>
+
+            <h3>4.2 Premium-Abonnements</h3>
+            <p class="text-lg leading-relaxed text-white/80">Optionale Premium-Pläne werden über den Apple App Store oder Google Play abgerechnet, die ihre eigenen Standardbedingungen haben. Die Validierung von Belegen und die Zuordnung von Berechtigungen kann RevenueCat nutzen. Premium-Vorteile (einschließlich Verdienst-Multiplikatoren, Discover-Tie-Breaking, Kosmetik und Wingman-Guthaben — jeweils wie in der App beschrieben) hängen von erfolgreichen Store-Käufen und der Server-Synchronisation ab; eine Kündigung über den Store stoppt die Verlängerung, während bereits bezahlte Zeiträume in der Regel bis zum Ende des Abrechnungszeitraums gemäß den Plattformregeln weiterlaufen.</p>
+
+            <h3>4.3 Über Stripe finanzierte Coin-Pool-Aufladungen für Veranstaltungsorte</h3>
+            <p class="text-lg leading-relaxed text-white/80">Geschäftsnutzer, die optionale gebündelte Coin-Finanzierungspakete initiieren, öffnen von Stripe gehostete Checkout-Sitzungen; Stripe erhält die Kartendaten — nicht die mobilen Clients von Findme — und Findme speichert die zur Abstimmung der Werbeguthaben für Veranstaltungsorte erforderlichen Berechtigungs-/Metadaten.</p>
+
+            <p class="text-lg leading-relaxed text-white/80 mt-6">Wir verwenden eine rasterbasierte Standortverschleierung, sodass exakte GPS-Koordinaten von Privatnutzern niemals anderen angezeigt werden. Die Koordinaten von Geschäftsveranstaltungsorten sind absichtlich öffentlich und werden vom Betreiber des Veranstaltungsortes kontrolliert. Die App bietet optionale KI-gestützte Tools zur Verbesserung von Profilen und Chat-Nachrichtenvorschlägen; diese Vorschläge dienen nur der Bequemlichkeit. Sie sind allein dafür verantwortlich, jeglichen KI-gestützten Inhalt vor der Veröffentlichung oder dem Versand zu prüfen, zu bearbeiten und zu genehmigen.</p>
 
             <!-- 5. User Accounts -->
-            <h2 class="text-3xl font-semibold mt-16 mb-6">5. Nutzerkonten und Profile</h2>
+            <h2 class="text-3xl font-semibold mt-16 mb-6">5. Benutzerkonten und Profile</h2>
 
             <h3>5.1 Allgemeine Kontoregeln</h3>
             <ul class="list-disc pl-6 space-y-3 text-white/80 text-[17px]">
-                <li>Sie sind allein verantwortlich für die Geheimhaltung Ihrer Kontodaten und für alle Aktivitäten unter Ihrem Konto.</li>
-                <li>Sie müssen bei der Registrierung genaue, aktuelle und vollständige Informationen angeben und diese auf dem neuesten Stand halten.</li>
-                <li>Sie dürfen nicht mehr als ein persönliches Konto erstellen oder sich als eine andere Person oder Organisation ausgeben.</li>
-                <li>Profilinhalte müssen diesen Bedingungen und unseren Community-Richtlinien entsprechen.</li>
+                <li>Sie sind allein verantwortlich für die Vertraulichkeit Ihrer Kontodaten und für alle Aktivitäten unter Ihrem Konto</li>
+                <li>Sie müssen bei der Registrierung genaue, aktuelle und vollständige Informationen angeben und diese auf dem neuesten Stand halten</li>
+                <li>Sie dürfen nicht mehr als ein persönliches Konto erstellen oder eine andere Person oder Organisation imitieren</li>
+                <li>Profilinhalte müssen diesen Bedingungen und unseren Community-Richtlinien entsprechen</li>
             </ul>
 
             <h3>5.2 Geschäftskonten und Veranstaltungsorte</h3>
-            <p class="text-lg leading-relaxed text-white/80">Geschäftsnutzer können ein oder mehrere Geschäftsprofile registrieren. Damit versichern Sie, dass Sie berechtigt sind, den Veranstaltungsort aufzuführen, und dass alle angegebenen Informationen (einschließlich Öffnungszeiten, Koordinaten und Beitragsinhalte) korrekt und rechtmäßig sind. Geschäftsprofile sind mit Ihrem persönlichen Profil verknüpft; Ihr Status als Geschäftsinhaber schließt Sie von der Entdeckung persönlicher Personen aus. Sie sind dafür verantwortlich, dass Ihr Listing genehmigt und aktuell bleibt. Nicht genehmigte oder ungenaue Listings können entfernt oder in der Sichtbarkeit eingeschränkt werden.</p>
+            <p class="text-lg leading-relaxed text-white/80">Geschäftsnutzer können ein oder mehrere Geschäftsprofile registrieren. Damit erklären Sie, dass Sie berechtigt sind, den Veranstaltungsort einzutragen, und dass alle bereitgestellten Informationen (einschließlich Öffnungszeiten, Koordinaten und Beitragsinhalte) korrekt und rechtmäßig sind. Geschäftsprofile sind mit Ihrem persönlichen Profil verknüpft; Ihr Status als Geschäftseigentümer schließt Sie von der Entdeckung als Privatperson aus. Sie sind dafür verantwortlich, dass Ihr Eintrag genehmigt und aktuell bleibt. Nicht genehmigte oder ungenaue Einträge können entfernt oder in der Sichtbarkeit eingeschränkt werden.</p>
 
-            <h3>5.3 Zustimmungsprotokoll</h3>
-            <p class="text-lg leading-relaxed text-white/80">Ihre Annahme dieser Bedingungen und der Datenschutzrichtlinie wird über einen Zeitstempel auf Ihrem Profil erfasst. Dieser Eintrag ist erforderlich, bevor vollständiger Zugriff auf die App gewährt wird (auch nach OAuth-Flows) und dient Compliance- und Prüfungszwecken.</p>
+            <h3>5.3 Einwilligungsprotokoll</h3>
+            <p class="text-lg leading-relaxed text-white/80">Ihre Zustimmung zu diesen Bedingungen und der Datenschutzrichtlinie wird über einen Zeitstempel in Ihrem Profil gespeichert. Dieser Nachweis ist erforderlich, bevor Sie vollen Zugriff auf die App erhalten (auch nach OAuth-Flows) und dient der Einhaltung von Vorschriften und Audit-Zwecken.</p>
 
-            <h3>5.4 Kontosperrung und Geschäfts-Pause</h3>
-            <p class="text-lg leading-relaxed text-white/80">Wir können ein Konto eines persönlichen Nutzers vorübergehend oder dauerhaft sperren oder das Listing eines Veranstaltungsorts eines Geschäftsnutzers pausieren, wenn dies aus Sicherheits-, Rechts- oder Compliance-Gründen oder bei wiederholten Verstößen erforderlich ist. Gesperrte oder pausierte Konten haben nur eingeschränkten oder keinen Zugriff auf die App. Betroffene Nutzer können über den In-App-Support oder durch Kontaktaufnahme mit uns Berufung einlegen.</p>
+            <h3>5.4 Kontosperrung und Pause von Geschäftsprofilen</h3>
+            <p class="text-lg leading-relaxed text-white/80">Wir können ein Privatnutzer-Konto vorübergehend oder dauerhaft sperren (oder die Eintragung eines Veranstaltungsortes eines Geschäftsnutzers pausieren), wenn dies aus Sicherheits-, Rechts- oder wiederholten Verstößen erforderlich ist. Gesperrte oder pausierte Konten haben nur eingeschränkten oder keinen Zugriff auf die App. Betroffene Nutzer können über den In-App-Support oder unter der unten angegebenen Adresse Einspruch erheben.</p>
 
             <!-- 6. User Content -->
-            <h2 class="text-3xl font-semibold mt-16 mb-6">6. Nutzerinhalte, Community-Richtlinien und Geschäftsbeiträge</h2>
+            <h2 class="text-3xl font-semibold mt-16 mb-6">6. Benutzerinhalte, Community-Richtlinien und Geschäftsbeiträge</h2>
 
             <h3>6.1 Verantwortung für Inhalte</h3>
-            <p class="text-lg leading-relaxed text-white/80">Sie sind allein verantwortlich für alle Inhalte, die Sie über die App erstellen, hochladen, posten oder übertragen, einschließlich Geschäftsbeiträgen, Events, Nachrichten und Profilinformationen. Sie behalten das Eigentum an Ihren Inhalten, gewähren Findme jedoch eine weltweite, nicht-exklusive, gebührenfreie, unterlizenzierbare Lizenz, diese Inhalte zu hosten, zu speichern, anzuzeigen, zu reproduzieren und zu verteilen, soweit dies zur Bereitstellung und Verbesserung der Dienste erforderlich ist.</p>
+            <p class="text-lg leading-relaxed text-white/80">Sie sind allein verantwortlich für alle Inhalte, die Sie über die App erstellen, hochladen, posten oder übertragen, einschließlich Geschäftsbeiträgen, Veranstaltungen, Nachrichten und Profilinformationen. Sie behalten das Eigentum an Ihren Inhalten, räumen Findme jedoch eine weltweite, nicht-exklusive, gebührenfreie, unterlizenzierbare Lizenz ein, diese Inhalte zu hosten, zu speichern, anzuzeigen, zu reproduzieren und zu verbreiten, soweit dies zur Bereitstellung und Verbesserung der Dienste erforderlich ist.</p>
 
             <h3>6.2 Verbotenes Verhalten</h3>
             <p class="text-lg leading-relaxed text-white/80">Sie verpflichten sich, Folgendes zu unterlassen:</p>
             <ul class="list-disc pl-6 mt-4 space-y-3 text-white/80 text-[17px]">
-                <li>Andere Nutzer zu belästigen, zu mobben, zu bedrohen, zu diskriminieren oder zu schädigen.</li>
-                <li>Illegale, explizite, schädliche, irreführende oder rechtsverletzende Inhalte zu posten, zu teilen oder zu fördern.</li>
-                <li>Spam, Betrug, Werbung oder kommerzielle Aktivitäten außerhalb der vorgesehenen Geschäftsbeitragsfunktionen zu betreiben.</li>
-                <li>Fake-Profile zu erstellen, sich als andere auszugeben oder Ihre Identität oder Zugehörigkeit falsch darzustellen.</li>
-                <li>Die Privatsphäre anderer Nutzer zu verletzen oder die App oder ihre Infrastruktur zu scrapen, zu reverse-engineeren oder zu missbrauchen.</li>
-                <li>Falsche oder irreführende Informationen über einen Veranstaltungsort, eine Werbung oder ein Event zu veröffentlichen.</li>
+                <li>Andere Nutzer zu belästigen, zu schikanieren, zu bedrohen, zu diskriminieren oder zu schädigen</li>
+                <li>Illegale, explizite, schädliche, irreführende oder rechtsverletzende Inhalte zu posten, zu teilen oder zu fördern</li>
+                <li>Spam, Betrug, Werbung oder kommerzielle Aktivitäten außerhalb der vorgesehenen Geschäftsbeitrags-Funktionen zu betreiben</li>
+                <li>Fake-Profile zu erstellen, andere zu imitieren oder Ihre Identität oder Zugehörigkeit falsch darzustellen</li>
+                <li>Die Privatsphäre anderer Nutzer zu verletzen oder die App oder ihre Infrastruktur zu scrapen, zu reverse-engineeren oder zu missbrauchen</li>
+                <li>Falsche oder irreführende Informationen über einen Veranstaltungsort, eine Werbung oder eine Veranstaltung zu veröffentlichen</li>
+                <li>Bots, automatisierte Ausbeutung, gefälschte Anwesenheit, gefälschte Empfehlungen, Geldwäsche, missbräuchliche Chargebacks oder Rückerstattungen oder andere täuschende Taktiken einzusetzen, um Coins, Combos, Geschenke, Explorer, Bestenlisten-Platzierungen, Coin-Pools für Veranstaltungsorte, In-App-Käufe, Premium-Fenster oder Empfehlungsprämien zu verfälschen</li>
             </ul>
-            <p class="text-lg leading-relaxed text-white/80 mt-4">Geschäftsbeiträge müssen den geltenden Werbe- und Verbraucherschutzgesetzen entsprechen. Wiederholte oder schwere Verstöße können eine automatisierte Eskalationsprüfung auslösen und zu einer vorübergehenden oder dauerhaften Sperrung führen. Wir behalten uns das Recht vor, Inhalte zu entfernen, Warnungen auszusprechen, Konten zu sperren oder den Zugriff bei Verstößen ohne vorherige Ankündigung zu beenden.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4">Geschäftsbeiträge müssen den geltenden Werbe- und Verbraucherschutzgesetzen entsprechen. Wiederholte oder schwere Verstöße können eine automatisierte Eskalationsprüfung auslösen und zu einer vorübergehenden oder dauerhaften Sperrung führen. Wir behalten uns das Recht vor, Inhalte zu entfernen, Warnungen auszusprechen, Konten zu sperren oder den Zugriff bei Verstößen mit oder ohne vorherige Ankündigung zu beenden.</p>
 
             <h3>6.3 Gruppenchats und Moderation</h3>
-            <p class="text-lg leading-relaxed text-white/80">Event-Gruppenchats werden automatisch erstellt und mit Events verknüpft. Der Event-Host erhält Administratorrechte und kann Mitglieder entfernen oder sperren. Gesperrte Nutzer können dem Chat nicht wieder beitreten. Alle Teilnehmer müssen die Chat-Regeln einhalten; Verstöße können zum Entfernen oder zur dauerhaften Sperre führen.</p>
+            <p class="text-lg leading-relaxed text-white/80">Ereignisbezogene Gruppenchats werden automatisch erstellt und mit Veranstaltungen verknüpft. Der Gastgeber erhält Administratorrechte und kann Mitglieder entfernen oder bannen. Gebannte Nutzer können dem Chat nicht wieder beitreten. Alle Teilnehmer müssen die Chat-Regeln einhalten; bei Verstößen kann ein Ausschluss oder ein dauerhaftes Verbot erfolgen.</p>
 
-            <h3>6.4 Offene Events und Nichtdiskriminierungsklausel</h3>
-            <p class="text-lg leading-relaxed text-white/80">Alle über die App erstellten Events müssen für alle genehmigten Nutzer offen sein und unserer Nichtdiskriminierungsrichtlinie entsprechen. Bei der Erstellung eines Events muss der Host bestätigen (über die In-App-Checkbox), dass das Event nicht aufgrund von Rasse, Ethnie, Geschlecht, sexueller Orientierung, Religion, Behinderung oder anderer geschützter Merkmale diskriminiert. Diese Bestätigung wird im Event-Datensatz erfasst und ist vor der Veröffentlichung des Events erforderlich. Dieselbe Anforderung gilt für persönliche und geschäftliche Nutzer, die Events erstellen.</p>
+            <h3>6.4 Offene Veranstaltungen und Nichtdiskriminierungsklausel</h3>
+            <p class="text-lg leading-relaxed text-white/80">Alle in der App erstellten Veranstaltungen müssen für alle genehmigten Nutzer offen sein und unserer Nichtdiskriminierungsrichtlinie entsprechen. Bei der Erstellung einer Veranstaltung muss der Gastgeber bestätigen (über das In-App-Kontrollkästchen), dass die Veranstaltung nicht aufgrund von Rasse, ethnischer Zugehörigkeit, Geschlecht, sexueller Orientierung, Religion, Behinderung oder anderer geschützter Merkmale diskriminiert. Diese Bestätigung wird im Veranstaltungsdatensatz gespeichert und ist vor der Veröffentlichung erforderlich. Dieselbe Anforderung gilt für Privat- und Geschäftsnutzer, die Veranstaltungen erstellen.</p>
 
             <h3>6.5 Inhaltsmoderation und Bildscan</h3>
-            <p class="text-lg leading-relaxed text-white/80">Alle über die App hochgeladenen Bilder (Profilbilder, Banner, Galerie-Fotos, Event-Cover und Erinnerungen, Geschäftslogos, Banner und Beiträge) werden zunächst in einem privaten Staging-Bucket abgelegt und von einem automatisierten KI-System (Google Cloud Vision Safe Search) gescannt, bevor sie in den öffentlichen Speicher übernommen werden. Inhalte, die den automatisierten Scan nicht bestehen, werden von der Veröffentlichung blockiert.</p>
-            <p class="text-lg leading-relaxed text-white/80 mt-4">Zusätzlich werden nutzergenerierte Textinhalte — einschließlich Profil-Bios, Geschäftsbeschreibungen, benutzerdefinierte Hobbys und Interessentags sowie Geschäftsbeiträge — von einem automatisierten KI-Inhaltsmoderationssystem analysiert. Das System erkennt und kann verbotene Inhalte wie Hassrede, Beleidigungen, Belästigung, Drohungen, explizites sexuelles Material, Gewalt, Spam, Betrug oder andere Richtlinienverstöße blockieren oder kennzeichnen. Einsendungen oder Beiträge, die diese Prüfungen nicht bestehen, werden abgelehnt oder erfordern eine manuelle Prüfung. Nutzer können Moderationsentscheidungen durch Kontaktaufnahme mit dem Support anfechten. Wir stellen außerdem In-App-Meldetools zur Verfügung; wiederholte Meldungen gegen dasselbe Subjekt können zu einer Eskalationsprüfung und administrativen Maßnahmen führen.</p>
+            <p class="text-lg leading-relaxed text-white/80">Alle über die App hochgeladenen Bilder (Profil-Avatare, Banner, Galerie-Fotos, Veranstaltungscover und Erinnerungen, Geschäftslogos, Banner und Beiträge) werden zunächst in einem privaten Staging-Bucket gespeichert und von einem automatisierten KI-System (Google Cloud Vision Safe Search) gescannt, bevor sie in den öffentlichen Speicher übernommen werden. Inhalte, die den automatisierten Scan nicht bestehen, werden von der Veröffentlichung blockiert.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4">Zusätzlich werden benutzergenerierte Textinhalte — einschließlich Profil-Biografien, Geschäftsbeschreibungen, benutzerdefinierte Hobbys und Interessen-Tags sowie Geschäftsbeiträge — von einem automatisierten KI-Inhaltsmoderationssystem analysiert. Das System erkennt und kann verbotene Inhalte wie Hassrede, Beleidigungen, Belästigung, Drohungen, explizites sexuelles Material, Gewalt, Spam, Betrug oder andere Richtlinienverstöße blockieren oder kennzeichnen. Beiträge, die diese Prüfungen nicht bestehen, werden abgelehnt oder erfordern eine manuelle Prüfung. Nutzer können Moderationsentscheidungen beim Support anfechten. Wir stellen auch In-App-Meldetools bereit; wiederholte Meldungen gegen dasselbe Subjekt können zu einer Eskalationsprüfung und administrativen Maßnahmen führen.</p>
 
             <!-- 7. Connections, Chats, Events -->
-            <h2 class="text-3xl font-semibold mt-16 mb-6">7. Verbindungen, Chats, Events und Interaktionen mit Veranstaltungsorten</h2>
+            <h2 class="text-3xl font-semibold mt-16 mb-6">7. Verbindungen, Chats, Veranstaltungen und Interaktionen mit Veranstaltungsorten</h2>
             <ul class="list-disc pl-6 space-y-3 text-white/80 text-[17px]">
-                <li>Verbindungsanfragen können vom Empfänger nach eigenem Ermessen angenommen, abgelehnt oder blockiert werden.</li>
-                <li>Alle Direktchats sind privat zwischen den Teilnehmern.</li>
-                <li>Events werden von Nutzern erstellt und verwaltet. Jeder Event-Ersteller muss vor der Veröffentlichung die Einhaltung unserer Nichtdiskriminierungsrichtlinie bestätigen. Findme ist nicht verantwortlich für die Organisation, Sicherheit, Rechtmäßigkeit oder den Ausgang eines realen Events oder Treffens, das über die App arrangiert wurde.</li>
-                <li>Geschäftsnutzer können Beiträge veröffentlichen, die für Follower und die Öffentlichkeit sichtbar sind (bei genehmigten Veranstaltungsorten). Follower erhalten Benachrichtigungen über neue Beiträge. Sie nutzen die App auf eigenes Risiko, wenn Sie sich entscheiden, einen Veranstaltungsort zu besuchen oder an einem Event teilzunehmen.</li>
+                <li>Verbindungsanfragen können vom Empfänger nach eigenem Ermessen angenommen, abgelehnt oder blockiert werden</li>
+                <li>Alle direkten Chats sind privat zwischen den Teilnehmern</li>
+                <li>Veranstaltungen werden von Nutzern erstellt und verwaltet. Jeder Ersteller einer Veranstaltung muss vor der Veröffentlichung die Einhaltung unserer Nichtdiskriminierungsrichtlinie bestätigen. Findme ist nicht verantwortlich für die Organisation, Sicherheit, Rechtmäßigkeit oder den Ausgang einer realen Veranstaltung oder eines Treffens, das über die App vereinbart wurde</li>
+                <li>Geschäftsnutzer können Beiträge veröffentlichen, die für Follower und die Öffentlichkeit sichtbar sind (bei genehmigten Veranstaltungsorten). Follower erhalten Benachrichtigungen über neue Beiträge. Sie nutzen die App auf eigenes Risiko, wenn Sie sich entscheiden, einen Veranstaltungsort zu besuchen oder an einer Veranstaltung teilzunehmen</li>
             </ul>
 
             <!-- 8. Intellectual Property -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">8. Geistiges Eigentum</h2>
-            <p class="text-lg leading-relaxed text-white/80">Die App, ihr Design, Code, Marken und alle originalen Inhalte und Funktionen sind Eigentum von Findme oder seinen Lizenzgebern und werden durch Urheberrecht, Markenrecht und andere Gesetze zum geistigen Eigentum geschützt. Sie dürfen diese ohne unsere vorherige schriftliche Zustimmung nicht reproduzieren, verbreiten, modifizieren oder abgeleitete Werke erstellen.</p>
+            <p class="text-lg leading-relaxed text-white/80">Die App, ihr Design, Code, Marken und alle originären Inhalte und Funktionen sind Eigentum von Findme oder seinen Lizenzgebern und werden durch Urheber-, Marken- und andere geistige Eigentumsrechte geschützt. Sie dürfen diese ohne unsere vorherige schriftliche Zustimmung nicht reproduzieren, verbreiten, modifizieren oder abgeleitete Werke erstellen.</p>
 
             <!-- 9. Privacy -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">9. Datenschutz</h2>
-            <p class="text-lg leading-relaxed text-white/80">Ihr Datenschutz hat höchste Priorität. Unsere Erhebung, Nutzung und Weitergabe personenbezogener Daten richtet sich nach der Datenschutzrichtlinie, die durch Bezugnahme Bestandteil dieser Bedingungen ist. Durch die Nutzung der App stimmen Sie dieser Verarbeitung zu.</p>
-            <p class="text-lg leading-relaxed text-white/80 mt-4">Nutzer können optional zustimmen, anonymisierte aggregierte Daten über Veranstaltungsort-Besuche beizutragen. Diese Daten helfen Veranstaltungsort-Besitzern, die Performance ihrer Listings zu verstehen, und sind niemals mit individuellen Identitäten verknüpft.</p>
+            <p class="text-lg leading-relaxed text-white/80">Ihr Datenschutz hat höchste Priorität. Unsere Erhebung, Nutzung und Weitergabe personenbezogener Daten wird durch die Datenschutzrichtlinie geregelt, die durch Bezugnahme Bestandteil dieser Bedingungen ist. Durch die Nutzung der App stimmen Sie dieser Verarbeitung zu.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4">Nutzer können optional zustimmen, anonymisierte aggregierte Daten über Besuche von Veranstaltungsorten beizutragen. Diese Daten helfen Betreibern von Veranstaltungsorten, die Leistung ihrer Einträge zu verstehen, und sind niemals mit einzelnen Identitäten verknüpft.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-4">Bestenlisten, Empfehlungen, Coins, Explorer-Statistiken, Combo-Highlights, Stripe-Abrechnungsmetadaten, Store-Belege, Wingman-Nutzungsprotokolle und ähnliche Wirtschaftsdaten werden gemäß der <a href="privacy_de.html" data-legal-link="privacy">Datenschutzrichtlinie</a> und den in der App verfügbaren Steuerelementen (z. B. Umschalter für Nearby-Discovery, KI-Assistenten, anonymisierte Besuchsmetriken und optionale Bestenlisten-Teilnahme) verarbeitet.</p>
 
             <!-- 10. Termination -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">10. Kündigung</h2>
             <ul class="list-disc pl-6 space-y-3 text-white/80 text-[17px]">
-                <li>Sie können Ihr Konto jederzeit über die In-App-Einstellungen (Profil → Konto-Bereich) löschen. Die Löschung löst eine kaskadierende Entfernung zugehöriger Daten aus, wie in der Datenschutzrichtlinie beschrieben.</li>
-                <li>Wir können Ihr Konto mit oder ohne Vorankündigung sperren oder kündigen, wenn Sie diese Bedingungen verletzen, verbotenes Verhalten zeigen oder aus einem anderen Grund nach unserem vernünftigen Ermessen.</li>
-                <li>Bei Kündigung erlischt Ihr Recht zur Nutzung der App sofort. Bestimmungen, die ihrem Wesen nach überdauern sollten (einschließlich IP, Haftungsausschlüsse, Haftungsbeschränkung, Freistellung und anwendbares Recht), bleiben nach der Kündigung wirksam.</li>
+                <li>Sie können Ihr Konto jederzeit über die In-App-Einstellungen (Profil → Konto) löschen. Die Löschung löst eine kaskadierende Entfernung der zugehörigen Daten gemäß der Datenschutzrichtlinie aus</li>
+                <li>Wir können Ihr Konto mit oder ohne Vorankündigung sperren oder kündigen, wenn Sie gegen diese Bedingungen verstoßen, verbotenes Verhalten zeigen oder aus einem anderen Grund nach unserem vernünftigen Ermessen</li>
+                <li>Bei Kündigung erlischt Ihr Recht zur Nutzung der App sofort. Wir können virtuelle Coins, Bestenlisten-Platzierungen, Geschenkberechtigungen, Explorer- oder Combo-Fortschritte, Empfehlungsguthaben, Wingman-Guthaben, Premium-Kosmetik, Coin-Pools für Veranstaltungsorte, Boosts, Abzeichen oder ähnliche Treuefunktionen widerrufen oder auf null setzen, wie in der Datenschutzrichtlinie oder in App-Hinweisen beschrieben. Bestimmungen, die ihrem Wesen nach überdauern sollen (einschließlich IP, Haftungsausschlüssen, Haftungsbeschränkungen, Freistellung und anwendbarem Recht), bleiben nach der Kündigung wirksam</li>
             </ul>
 
             <!-- 11. Disclaimers -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">11. Haftungsausschlüsse und Haftungsbeschränkung</h2>
-            <p class="text-lg leading-relaxed text-white/80">DIE APP UND DIENSTE WERDEN „WIE BESEHEN“ UND „WIE VERFÜGBAR“ OHNE JEGLICHE GEWÄHRLEISTUNG, WEDER AUSDRÜCKLICH NOCH STILLSCHWEIGEND, EINSCHLIESSLICH, ABER NICHT BESCHRÄNKT AUF GEWÄHRLEISTUNGEN DER MARKTGÄNGIGKEIT, EIGNUNG FÜR EINEN BESTIMMTEN ZWECK ODER NICHTVERLETZUNG BEREITGESTELLT.</p>
+            <p class="text-lg leading-relaxed text-white/80">DIE APP UND DIENSTE WERDEN „WIE BESEHEN“ UND „WIE VERFÜGBAR“ OHNE JEGLICHE GEWÄHRLEISTUNG, WEDER AUSDRÜCKLICH NOCH STILLSCHWEIGEND, EINSCHLIESSLICH, ABER NICHT BESCHRÄNKT AUF GEWÄHRLEISTUNGEN DER MARKTGÄNGIGKEIT, EIGNUNG FÜR EINEN BESTIMMTEN ZWECK ODER NICHTVERLETZUNG VON RECHTEN DRITTER BEREITGESTELLT.</p>
             <p class="text-lg leading-relaxed text-white/80 mt-6">Wir garantieren nicht:</p>
             <ul class="list-disc pl-6 mt-4 space-y-3 text-white/80 text-[17px]">
-                <li>Dass Sie kompatible Personen oder geeignete Veranstaltungsorte finden werden.</li>
-                <li>Die Richtigkeit, Vollständigkeit oder Aktualität von Standortdaten, Matching-Scores, Geschäftsdaten oder Inhalten.</li>
-                <li>Das Verhalten, die Identität oder Zuverlässigkeit anderer Nutzer oder Veranstaltungsort-Besitzer.</li>
-                <li>Die Sicherheit, Rechtmäßigkeit oder den Erfolg eines realen Treffens, Events oder einer Transaktion.</li>
+                <li>Dass Sie kompatible Personen oder geeignete Veranstaltungsorte finden</li>
+                <li>Die Richtigkeit, Vollständigkeit oder Aktualität von Standortdaten, Match-Scores, Geschäftsdaten oder Inhalten</li>
+                <li>Das Verhalten, die Identität oder die Zuverlässigkeit anderer Nutzer oder Betreiber von Veranstaltungsorten</li>
+                <li>Die Sicherheit, Rechtmäßigkeit oder den Erfolg eines realen Treffens, einer Veranstaltung oder Transaktion</li>
+                <li>Verfügbarkeit, Wert oder Liquidität von virtuellen Coins, Kosmetik, Bestenlisten-Platzierungen, Geschenkergebnissen, Explorer, Combos, Coin-Pools für Veranstaltungsorte, Empfehlungsprämien, Rahmen, Boosts, Abzeichen, Shop-Inventar oder ähnlichen digitalen Gegenständen (diese bleiben widerrufbare, diskretionäre App-Funktionen — keine Bankkonten, Treuhandinstrumente, Wertpapiere, gespeicherte Wertinstrumente oder übertragbare Eigentumsrechte außerhalb der engen In-App-Geschenke-Regeln)</li>
+                <li>Rückerstattbarkeit über die von Apple/Google/Stripe vorgeschriebenen Fristen hinaus; Chargebacks oder Zahlungsstreitigkeiten können dazu führen, dass wir entsprechende Berechtigungen, Coin-Guthaben, Abonnementfenster oder Coin-Pools ohne weitere Ankündigung anpassen oder entfernen</li>
             </ul>
-            <p class="text-lg leading-relaxed text-white/80 mt-6">Soweit nach geltendem Recht zulässig, haften Findme und seine verbundenen Unternehmen, Führungskräfte, Mitarbeiter und Vertreter nicht für indirekte, zufällige, besondere, Folge-, Straf- oder exemplarische Schäden, einschließlich entgangener Gewinne, Daten, Goodwill oder anderer immaterieller Verluste, die aus Ihrer Nutzung (oder Unfähigkeit zur Nutzung) der App entstehen, auch wenn auf die Möglichkeit solcher Schäden hingewiesen wurde.</p>
+            <p class="text-lg leading-relaxed text-white/80 mt-6">Soweit gesetzlich zulässig, haften Findme und seine verbundenen Unternehmen, leitenden Angestellten, Mitarbeiter und Vertreter nicht für indirekte, zufällige, besondere, Folge-, Straf- oder exemplarische Schäden, einschließlich entgangener Gewinne, Daten, Goodwill oder anderer immaterieller Verluste, die aus Ihrer Nutzung (oder Unfähigkeit zur Nutzung) der App entstehen, auch wenn auf die Möglichkeit solcher Schäden hingewiesen wurde.</p>
 
             <!-- 12. Indemnification -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">12. Freistellung</h2>
-            <p class="text-lg leading-relaxed text-white/80">Sie verpflichten sich, Findme und seine verbundenen Unternehmen, Führungskräfte, Direktoren, Mitarbeiter und Vertreter von allen Ansprüchen, Schäden, Verlusten, Verbindlichkeiten, Kosten und Ausgaben (einschließlich angemessener Anwaltsgebühren) freizustellen, zu verteidigen und schadlos zu halten, die aus Ihrer Nutzung der App, Ihren Inhalten, Ihrer Verletzung dieser Bedingungen oder der Verletzung von Rechten Dritter entstehen.</p>
+            <p class="text-lg leading-relaxed text-white/80">Sie verpflichten sich, Findme und seine verbundenen Unternehmen, leitenden Angestellten, Direktoren, Mitarbeiter und Vertreter von allen Ansprüchen, Schäden, Verlusten, Verbindlichkeiten, Kosten und Ausgaben (einschließlich angemessener Anwaltskosten) freizustellen, zu verteidigen und schadlos zu halten, die aus Ihrer Nutzung der App, Ihren Inhalten, Ihrer Verletzung dieser Bedingungen oder der Verletzung von Rechten Dritter entstehen.</p>
 
             <!-- 13. Governing Law -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">13. Anwendbares Recht und Streitbeilegung</h2>
-            <p class="text-lg leading-relaxed text-white/80">Diese Bedingungen unterliegen dem Recht der Schweiz und werden nach diesem ausgelegt, ohne Berücksichtigung kollisionsrechtlicher Grundsätze. Jede Streitigkeit, die aus diesen Bedingungen oder der App entsteht, soll zunächst informell beigelegt werden. Wird sie nicht innerhalb von dreißig (30) Tagen beigelegt, wird die Streitigkeit der ausschließlichen Zuständigkeit der zuständigen Gerichte in Basel, Schweiz, unterbreitet.</p>
+            <p class="text-lg leading-relaxed text-white/80">Diese Bedingungen unterliegen dem Recht der Schweiz und werden nach diesem ausgelegt, ohne Berücksichtigung seiner Kollisionsnormen. Jede Streitigkeit, die aus diesen Bedingungen oder der App entsteht, wird zunächst informell zu lösen versucht. Wird sie nicht innerhalb von dreißig (30) Tagen beigelegt, wird die Streitigkeit der ausschließlichen Zuständigkeit der zuständigen Gerichte in Basel, Schweiz, unterbreitet.</p>
 
             <!-- 14. Changes -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">14. Änderungen dieser Bedingungen</h2>
-            <p class="text-lg leading-relaxed text-white/80">Wir können diese Bedingungen von Zeit zu Zeit aktualisieren. Wir werden Sie über wesentliche Änderungen über die App, Push-Benachrichtigung oder E-Mail informieren. Ihre fortgesetzte Nutzung der App nach dem Inkrafttreten einer Aktualisierung gilt als Annahme der geänderten Bedingungen.</p>
+            <p class="text-lg leading-relaxed text-white/80">Wir können diese Bedingungen von Zeit zu Zeit aktualisieren. Wir werden Sie über wesentliche Änderungen über die App, Push-Benachrichtigung oder E-Mail informieren. Ihre weitere Nutzung der App nach dem Inkrafttreten einer Aktualisierung gilt als Zustimmung zu den geänderten Bedingungen.</p>
 
             <!-- 15. Contact -->
             <h2 class="text-3xl font-semibold mt-16 mb-6">15. Kontakt</h2>
@@ -249,40 +264,34 @@
 
             <div class="mt-6 p-8 bg-white/5 rounded-3xl border border-white/10">
                 <div class="flex flex-col gap-y-3">
-                    <div><span class="font-semibold text-white">E-Mail:</span> <a
+                    <div><span class="font-semibold text-white" data-i18n="legal.tos.emailLabel">E-Mail:</span> <a
                             href="mailto:info@findmeirl.app" class="text-[#5E9ED6]">info@findmeirl.app</a></div>
-                    <div><span class="font-semibold text-white">Website:</span> <a
+                    <div><span class="font-semibold text-white" data-i18n="legal.tos.webLabel">Website:</span> <a
                             href="https://findmeirl.app" class="text-[#5E9ED6]">https://findmeirl.app</a></div>
                 </div>
                 <div class="mt-6 pt-6 border-t border-white/10 text-sm text-white/60">
-                    <span>Rechtliche Seiten werden veröffentlicht unter:</span><br>
-                    <span>Datenschutzrichtlinie:</span> <a data-legal-link="privacy"
+                    <span data-i18n="legal.tos.published">Rechtliche Seiten sind veröffentlicht unter:</span><br>
+                    <span data-i18n="legal.tos.ppLabel">Datenschutzrichtlinie:</span> <a data-legal-link="privacy"
                         data-legal-sync-href="" href="privacy_de.html"
                         class="text-[#5E9ED6]">https://findmeirl.app/privacy_de.html</a><br>
-                    <span>Nutzungsbedingungen:</span> <a data-legal-link="terms"
+                    <span data-i18n="legal.tos.tosLabel">Nutzungsbedingungen:</span> <a data-legal-link="terms"
                         data-legal-sync-href="" href="terms_de.html"
                         class="text-[#5E9ED6]">https://findmeirl.app/terms_de.html</a>
                 </div>
             </div>
 
-            <p class="mt-8 text-sm text-white/60">Diese Bedingungen zusammen mit der Datenschutzrichtlinie stellen die gesamte Vereinbarung zwischen Ihnen und Findme bezüglich der App dar und ersetzen alle vorherigen Vereinbarungen. Sollte eine Bestimmung unwirksam sein, bleiben die übrigen Bestimmungen in vollem Umfang wirksam.</p>
+            <p class="mt-8 text-sm text-white/60" data-i18n="legal.tos.closing">Diese Bedingungen zusammen mit der Datenschutzrichtlinie stellen die gesamte Vereinbarung zwischen Ihnen und Findme bezüglich der App dar und ersetzen alle früheren Vereinbarungen. Sollte eine Bestimmung als nicht durchsetzbar befunden werden, bleiben die übrigen Bestimmungen in vollem Umfang wirksam.</p>
 
             <!-- Footer -->
             <div class="mt-20 pt-12 border-t border-white/10 text-center text-xs text-white/40">
-                <span>Wirksamkeitsdatum: 30. April 2026 • Zuletzt aktualisiert: 21. Mai 2026</span><br>
-                <span>Beherrscht durch das Recht der Schweiz</span><br>
-                <span>findmeirl.app • Datenschutzfreundliches Social Discovery</span>
+                <span data-i18n="legal.tos.effective">Inkrafttreten: 30. April 2026 • Zuletzt aktualisiert: 27. Mai 2026</span><br>
+                <span data-i18n="legal.tos.footerLine">Governed by the laws of Switzerland</span><br>
+                <span data-i18n="legal.tos.footer">findmeirl.app • Datenschutzfreundliche soziale Entdeckung</span>
             </div>
         </div>
     </div>
 
     <script src="../assets/i18n/site-i18n.js?v=20260522"></script>
-    <script>
-        function initializeTailwind() {
-            console.log('%c[findmeIRL] Nutzungsbedingungen (DE) initialisiert', 'color:#5E9ED6;font-size:10px');
-        }
-        window.onload = initializeTailwind;
-    </script>
 </body>
 
 </html>
