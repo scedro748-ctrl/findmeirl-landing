@@ -62,6 +62,9 @@
         "FindmeIRL helps people discover what’s happening around them — while giving venues a clear view of <strong>audience, visits, and events.</strong>",
       emailPlaceholder: "Work or personal email",
       emailAria: "Email for waitlist",
+      platformAria: "Choose platform",
+      platformIos: "iOS",
+      platformAndroid: "Android",
       submitCta: "Get access",
       waitlistFine:
         "No spam — we’ll only email you about launch and early invites.",
@@ -158,6 +161,9 @@
         "FindmeIRL zeigt, was um dich herum passiert — und gibt Betreibern Einblick in <strong>Publikum, Besuche und Events.</strong>",
       emailPlaceholder: "Berufs- oder private E-Mail",
       emailAria: "E-Mail für die Warteliste",
+      platformAria: "Plattform wählen",
+      platformIos: "iOS",
+      platformAndroid: "Android",
       submitCta: "Zugang sichern",
       waitlistFine:
         "Kein Spam — wir schreiben nur zum Launch und zu frühen Zugängen.",
@@ -255,6 +261,9 @@
         "FindmeIRL aide à voir ce qui se passe autour de vous — tout en donnant aux lieux une vision claire de <strong>l’audience, des visites et des événements.</strong>",
       emailPlaceholder: "E-mail pro ou perso",
       emailAria: "E-mail pour la liste d’attente",
+      platformAria: "Choisir la plateforme",
+      platformIos: "iOS",
+      platformAndroid: "Android",
       submitCta: "Obtenir l’accès",
       waitlistFine:
         "Pas de spam — uniquement le lancement et les accès anticipés.",
@@ -352,6 +361,9 @@
         "FindmeIRL aiuta a capire cosa succede intorno a te — e dà ai locali una visione chiara di <strong>pubblico, visite ed eventi.</strong>",
       emailPlaceholder: "Email di lavoro o personale",
       emailAria: "Email per la lista d’attesa",
+      platformAria: "Scegli piattaforma",
+      platformIos: "iOS",
+      platformAndroid: "Android",
       submitCta: "Ottieni accesso",
       waitlistFine:
         "Niente spam — solo aggiornamenti su lancio e accessi anticipati.",
@@ -447,6 +459,9 @@
         "FindmeIRL ayuda a descubrir qué ocurre a tu alrededor — y ofrece a los locales una visión clara de <strong>público, visitas y eventos.</strong>",
       emailPlaceholder: "Correo profesional o personal",
       emailAria: "Correo para la lista de espera",
+      platformAria: "Elegir plataforma",
+      platformIos: "iOS",
+      platformAndroid: "Android",
       submitCta: "Obtener acceso",
       waitlistFine:
         "Sin spam — solo te escribiremos sobre el lanzamiento y accesos anticipados.",
@@ -542,6 +557,9 @@
         "O FindmeIRL ajuda a perceber o que se passa à sua volta — e dá aos locais uma visão clara de <strong>público, visitas e eventos.</strong>",
       emailPlaceholder: "Email profissional ou pessoal",
       emailAria: "Email para a lista de espera",
+      platformAria: "Escolher plataforma",
+      platformIos: "iOS",
+      platformAndroid: "Android",
       submitCta: "Obter acesso",
       waitlistFine:
         "Sem spam — só escrevemos sobre o lançamento e convites antecipados.",
