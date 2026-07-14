@@ -506,7 +506,7 @@
       }
       .waitlist__platform {
         display: inline-flex;
-        align-self: flex-start;
+        flex: 0 0 auto;
         padding: 3px;
         border-radius: var(--radius-pill);
         border: 1px solid var(--border-soft);
@@ -541,6 +541,16 @@
       .waitlist__row {
         display: flex;
         flex-wrap: wrap;
+        gap: var(--space-3);
+      }
+      .waitlist__row--email input[type="email"] {
+        flex: 1 1 100%;
+        width: 100%;
+      }
+      .waitlist__actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
         gap: var(--space-3);
       }
       .waitlist input[type="email"] {
@@ -600,8 +610,8 @@
         color: var(--success);
         font-weight: 500;
       }
-      .waitlist.is-done .waitlist__platform,
       .waitlist.is-done .waitlist__row,
+      .waitlist.is-done .waitlist__actions,
       .waitlist.is-done .waitlist__fine {
         display: none;
       }
@@ -988,32 +998,7 @@
             data-selected-platform="ios"
             onsubmit="trackWaitlistSignup()"
           >
-            <div
-              class="waitlist__platform"
-              role="group"
-              data-i18n-aria-label="platformAria"
-              aria-label="Choose platform"
-            >
-              <button
-                type="button"
-                class="waitlist__platform-btn is-active"
-                data-platform="ios"
-                aria-pressed="true"
-                data-i18n="platformIos"
-              >
-                iOS
-              </button>
-              <button
-                type="button"
-                class="waitlist__platform-btn"
-                data-platform="android"
-                aria-pressed="false"
-                data-i18n="platformAndroid"
-              >
-                Android
-              </button>
-            </div>
-            <div class="waitlist__row">
+            <div class="waitlist__row waitlist__row--email">
               <input
                 id="email"
                 type="email"
@@ -1026,6 +1011,33 @@
                 data-i18n-placeholder="emailPlaceholder"
                 data-i18n-aria-label="emailAria"
               />
+            </div>
+            <div class="waitlist__actions">
+              <div
+                class="waitlist__platform"
+                role="group"
+                data-i18n-aria-label="platformAria"
+                aria-label="Choose platform"
+              >
+                <button
+                  type="button"
+                  class="waitlist__platform-btn is-active"
+                  data-platform="ios"
+                  aria-pressed="true"
+                  data-i18n="platformIos"
+                >
+                  iOS
+                </button>
+                <button
+                  type="button"
+                  class="waitlist__platform-btn"
+                  data-platform="android"
+                  aria-pressed="false"
+                  data-i18n="platformAndroid"
+                >
+                  Android
+                </button>
+              </div>
               <button type="submit" id="waitlist-submit">
                 <span id="waitlist-submit-label" data-i18n="submitCta"
                   >Get access</span
